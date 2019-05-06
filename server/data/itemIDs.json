@@ -1,0 +1,3332 @@
+{
+    "6": {
+        "id": 6,
+        "name": "Tattered Headcloth",
+        "textID": "tattered_headcloth"
+    },
+    "7": {
+        "id": 7,
+        "name": "Ragged Woolen Cap",
+        "textID": "ragged_woolen_cap"
+    },
+    "8": {
+        "id": 8,
+        "name": "Stained Felt Hat",
+        "textID": "stained_felt_hat_b"
+    },
+    "9": {
+        "id": 9,
+        "name": "Straw Hat",
+        "textID": "straw_hat"
+    },
+    "10": {
+        "id": 10,
+        "name": "Head Wrapping",
+        "textID": "head_wrappings"
+    },
+    "11": {
+        "id": 11,
+        "name": "Headcloth",
+        "textID": "headcloth"
+    },
+    "12": {
+        "id": 12,
+        "name": "Woolen Cap",
+        "textID": "woolen_cap"
+    },
+    "13": {
+        "id": 13,
+        "name": "Felt Hat",
+        "textID": "sarranid_felt_hat"
+    },
+    "14": {
+        "id": 14,
+        "name": "Head Cloth",
+        "textID": "sarranid_felt_head_cloth"
+    },
+    "15": {
+        "id": 15,
+        "name": "Head Cloth",
+        "textID": "sarranid_felt_head_cloth_b"
+    },
+    "16": {
+        "id": 16,
+        "name": "Crown of Flowers",
+        "textID": "bride_crown"
+    },
+    "17": {
+        "id": 17,
+        "name": "Blue Head Scarf",
+        "textID": "khergit_lady_hat"
+    },
+    "18": {
+        "id": 18,
+        "name": "Leather Head Scarf",
+        "textID": "khergit_lady_hat_b"
+    },
+    "19": {
+        "id": 19,
+        "name": "Lady Head Cloth",
+        "textID": "sarranid_head_cloth"
+    },
+    "20": {
+        "id": 20,
+        "name": "Lady Head Cloth",
+        "textID": "sarranid_head_cloth_b"
+    },
+    "21": {
+        "id": 21,
+        "name": "Wimple",
+        "textID": "wimple_a"
+    },
+    "22": {
+        "id": 22,
+        "name": "Wimple",
+        "textID": "wimple_b"
+    },
+    "23": {
+        "id": 23,
+        "name": "Barbette",
+        "textID": "barbette"
+    },
+    "24": {
+        "id": 24,
+        "name": "Arming Cap",
+        "textID": "arming_cap"
+    },
+    "25": {
+        "id": 25,
+        "name": "Woolen Hood",
+        "textID": "ladys_hood"
+    },
+    "26": {
+        "id": 26,
+        "name": "Fur Hat",
+        "textID": "fur_hat"
+    },
+    "27": {
+        "id": 27,
+        "name": "Felt Hat",
+        "textID": "felt_hat"
+    },
+    "28": {
+        "id": 28,
+        "name": "Felt Hat",
+        "textID": "felt_hat_b"
+    },
+    "29": {
+        "id": 29,
+        "name": "Leather Cap",
+        "textID": "leather_cap"
+    },
+    "30": {
+        "id": 30,
+        "name": "Hood",
+        "textID": "common_hood"
+    },
+    "31": {
+        "id": 31,
+        "name": "Hood",
+        "textID": "hood_b"
+    },
+    "32": {
+        "id": 32,
+        "name": "Hood",
+        "textID": "hood_c"
+    },
+    "33": {
+        "id": 33,
+        "name": "Hood",
+        "textID": "hood_d"
+    },
+    "34": {
+        "id": 34,
+        "name": "Nomad Cap",
+        "textID": "nomad_cap"
+    },
+    "35": {
+        "id": 35,
+        "name": "Nomad Cap",
+        "textID": "nomad_cap_b"
+    },
+    "36": {
+        "id": 36,
+        "name": "Black Hood",
+        "textID": "black_hood"
+    },
+    "37": {
+        "id": 37,
+        "name": "Surgeon\u2019s Coif",
+        "textID": "surgeon_coif"
+    },
+    "38": {
+        "id": 38,
+        "name": "Pilgrim Hood",
+        "textID": "pilgrim_hood"
+    },
+    "39": {
+        "id": 39,
+        "name": "Priestly Coif",
+        "textID": "priest_coif"
+    },
+    "40": {
+        "id": 40,
+        "name": "Padded Coif",
+        "textID": "padded_coif"
+    },
+    "41": {
+        "id": 41,
+        "name": "Turban",
+        "textID": "turban"
+    },
+    "42": {
+        "id": 42,
+        "name": "Steppe Cap",
+        "textID": "leather_steppe_cap_a"
+    },
+    "43": {
+        "id": 43,
+        "name": "Steppe Cap",
+        "textID": "leather_steppe_cap_b"
+    },
+    "44": {
+        "id": 44,
+        "name": "Leather Helmet",
+        "textID": "nordic_archer_helmet"
+    },
+    "45": {
+        "id": 45,
+        "name": "Cap with Fur",
+        "textID": "vaegir_fur_cap"
+    },
+    "46": {
+        "id": 46,
+        "name": "Steppe Cap",
+        "textID": "steppe_cap"
+    },
+    "47": {
+        "id": 47,
+        "name": "Leather Warrior Cap",
+        "textID": "leather_warrior_cap"
+    },
+    "48": {
+        "id": 48,
+        "name": "Turban with Warrior Cap",
+        "textID": "sarranid_warrior_cap"
+    },
+    "49": {
+        "id": 49,
+        "name": "Leather Helmet",
+        "textID": "nordic_veteran_archer_helmet"
+    },
+    "50": {
+        "id": 50,
+        "name": "Skullcap",
+        "textID": "skullcap"
+    },
+    "51": {
+        "id": 51,
+        "name": "Fur Helmet",
+        "textID": "vaegir_fur_helmet"
+    },
+    "52": {
+        "id": 52,
+        "name": "Bishop\u2019s Mitre",
+        "textID": "bishop_mitre"
+    },
+    "53": {
+        "id": 53,
+        "name": "Mail Coif",
+        "textID": "mail_coif"
+    },
+    "54": {
+        "id": 54,
+        "name": "Footman\u2019s Helmet",
+        "textID": "footman_helmet"
+    },
+    "55": {
+        "id": 55,
+        "name": "Horseman Helmet",
+        "textID": "sarranid_horseman_helmet"
+    },
+    "56": {
+        "id": 56,
+        "name": "Nasal Helmet",
+        "textID": "nasal_helmet"
+    },
+    "57": {
+        "id": 57,
+        "name": "Helmet with Cap",
+        "textID": "norman_helmet"
+    },
+    "58": {
+        "id": 58,
+        "name": "Footman Helmet",
+        "textID": "nordic_footman_helmet"
+    },
+    "59": {
+        "id": 59,
+        "name": "War Helmet",
+        "textID": "khergit_war_helmet"
+    },
+    "60": {
+        "id": 60,
+        "name": "Segmented Helmet",
+        "textID": "segmented_helmet"
+    },
+    "61": {
+        "id": 61,
+        "name": "Spiked Cap",
+        "textID": "vaegir_spiked_helmet"
+    },
+    "62": {
+        "id": 62,
+        "name": "Helmet with Neckguard",
+        "textID": "helmet_with_neckguard"
+    },
+    "63": {
+        "id": 63,
+        "name": "Flat Topped Helmet",
+        "textID": "flat_topped_helmet"
+    },
+    "64": {
+        "id": 64,
+        "name": "Fighter Helmet",
+        "textID": "nordic_fighter_helmet"
+    },
+    "65": {
+        "id": 65,
+        "name": "Kettle Hat",
+        "textID": "kettle_hat"
+    },
+    "66": {
+        "id": 66,
+        "name": "Keffiyeh Helmet",
+        "textID": "sarranid_helmet1"
+    },
+    "67": {
+        "id": 67,
+        "name": "Helmet with Lamellar Guard",
+        "textID": "vaegir_lamellar_helmet"
+    },
+    "68": {
+        "id": 68,
+        "name": "Spiked Helmet",
+        "textID": "spiked_helmet"
+    },
+    "69": {
+        "id": 69,
+        "name": "Mail Coif",
+        "textID": "sarranid_mail_coif"
+    },
+    "70": {
+        "id": 70,
+        "name": "Huscarl\u2019s Helmet",
+        "textID": "nordic_huscarl_helmet"
+    },
+    "71": {
+        "id": 71,
+        "name": "Bascinet",
+        "textID": "bascinet"
+    },
+    "72": {
+        "id": 72,
+        "name": "Bascinet with Aventail",
+        "textID": "bascinet_2"
+    },
+    "73": {
+        "id": 73,
+        "name": "Bascinet with Nose Guard",
+        "textID": "bascinet_3"
+    },
+    "74": {
+        "id": 74,
+        "name": "Nobleman Helmet",
+        "textID": "vaegir_noble_helmet"
+    },
+    "75": {
+        "id": 75,
+        "name": "Guard Helmet",
+        "textID": "guard_helmet"
+    },
+    "76": {
+        "id": 76,
+        "name": "Veiled Helmet",
+        "textID": "sarranid_veiled_helmet"
+    },
+    "77": {
+        "id": 77,
+        "name": "War Helmet",
+        "textID": "vaegir_war_helmet"
+    },
+    "78": {
+        "id": 78,
+        "name": "Warlord Helmet",
+        "textID": "nordic_warlord_helmet"
+    },
+    "79": {
+        "id": 79,
+        "name": "Bishop\u2019s Helm",
+        "textID": "bishop_helm"
+    },
+    "80": {
+        "id": 80,
+        "name": "Full Helm",
+        "textID": "full_helm"
+    },
+    "81": {
+        "id": 81,
+        "name": "War Mask",
+        "textID": "vaegir_mask"
+    },
+    "82": {
+        "id": 82,
+        "name": "War Mask",
+        "textID": "vaegir_mask_b"
+    },
+    "83": {
+        "id": 83,
+        "name": "Great Helmet",
+        "textID": "great_helmet"
+    },
+    "84": {
+        "id": 84,
+        "name": "Winged Great Helmet",
+        "textID": "winged_great_helmet"
+    },
+    "85": {
+        "id": 85,
+        "name": "Black Helmet",
+        "textID": "black_helmet"
+    },
+    "86": {
+        "id": 86,
+        "name": "Crown",
+        "textID": "crown"
+    },
+    "87": {
+        "id": 87,
+        "name": "Bejeweled Crown",
+        "textID": "bejeweled_crown"
+    },
+    "88": {
+        "id": 88,
+        "name": "Brown Assassin Cape",
+        "textID": "brown_assassin_cape"
+    },
+    "89": {
+        "id": 89,
+        "name": "Green Assassin Cape",
+        "textID": "green_assassin_cape"
+    },
+    "90": {
+        "id": 90,
+        "name": "White Assassin Cape",
+        "textID": "white_assassin_cape"
+    },
+    "91": {
+        "id": 91,
+        "name": "Tourney Helm Yellow",
+        "textID": "tourney_helm_yellow"
+    },
+    "92": {
+        "id": 92,
+        "name": "Saracen Helmet with Leather",
+        "textID": "helm_saracin_c"
+    },
+    "93": {
+        "id": 93,
+        "name": "Saracen Helmet with Mail",
+        "textID": "sar_infantry_helmet1"
+    },
+    "94": {
+        "id": 94,
+        "name": "Chapel De Fer with Cloth",
+        "textID": "chapel_de_fer_cloth2"
+    },
+    "95": {
+        "id": 95,
+        "name": "Gnezdovo Helmet",
+        "textID": "gnezdovo_helm_a"
+    },
+    "96": {
+        "id": 96,
+        "name": "Bascinet",
+        "textID": "north_helmet"
+    },
+    "97": {
+        "id": 97,
+        "name": "Sallet",
+        "textID": "north_noseguard"
+    },
+    "98": {
+        "id": 98,
+        "name": "Barbuta",
+        "textID": "barbuta1"
+    },
+    "99": {
+        "id": 99,
+        "name": "Rus Helmet",
+        "textID": "rus_helm"
+    },
+    "100": {
+        "id": 100,
+        "name": "Decorated Saracen Helmet with Mail",
+        "textID": "helm_saracin_j"
+    },
+    "101": {
+        "id": 101,
+        "name": "Reinforced Kattlehat",
+        "textID": "dejawolf_kettlehat_1"
+    },
+    "102": {
+        "id": 102,
+        "name": "Chapel De Fer with Mail",
+        "textID": "chapel_de_fer_mail2"
+    },
+    "103": {
+        "id": 103,
+        "name": "Chapel De Fer with Mail",
+        "textID": "chapel_de_fer_mail3"
+    },
+    "104": {
+        "id": 104,
+        "name": "Open Sallet with Coif",
+        "textID": "open_salet_coif"
+    },
+    "105": {
+        "id": 105,
+        "name": "Open Tagancha",
+        "textID": "tagancha_helm_a"
+    },
+    "106": {
+        "id": 106,
+        "name": "Zitta Bascinet without Visor",
+        "textID": "zitta_bascinet_novisor"
+    },
+    "107": {
+        "id": 107,
+        "name": "Prato Chapel De Fer",
+        "textID": "prato_chapel_de_fer"
+    },
+    "108": {
+        "id": 108,
+        "name": "Gulam Helmet with Blue Cloth",
+        "textID": "gulam_helm_c_market"
+    },
+    "109": {
+        "id": 109,
+        "name": "Gulam Helmet with Red Cloth",
+        "textID": "gulam_helm_b_market"
+    },
+    "110": {
+        "id": 110,
+        "name": "Nikolskoe Helmet",
+        "textID": "nikolskoe_helm"
+    },
+    "111": {
+        "id": 111,
+        "name": "Gulam Helmet",
+        "textID": "gulam_helm_a"
+    },
+    "112": {
+        "id": 112,
+        "name": "Tagancha",
+        "textID": "tagancha_helm_b"
+    },
+    "113": {
+        "id": 113,
+        "name": "Novogrod Helmet",
+        "textID": "novogrod_helm"
+    },
+    "114": {
+        "id": 114,
+        "name": "Visored Sallet",
+        "textID": "visored_salet"
+    },
+    "115": {
+        "id": 115,
+        "name": "Visored Sallet with Coif",
+        "textID": "visored_salet_coif"
+    },
+    "116": {
+        "id": 116,
+        "name": "Open Sallet",
+        "textID": "north_aventail"
+    },
+    "117": {
+        "id": 117,
+        "name": "Closed Sallet",
+        "textID": "north_bascinet"
+    },
+    "118": {
+        "id": 118,
+        "name": "Open Sallet with Neckguard",
+        "textID": "north_sallet"
+    },
+    "119": {
+        "id": 119,
+        "name": "Sallet with Neckguard",
+        "textID": "north_neckguard"
+    },
+    "120": {
+        "id": 120,
+        "name": "Litchina Helmet",
+        "textID": "litchina_helm"
+    },
+    "121": {
+        "id": 121,
+        "name": "Decorated Gulam Helm",
+        "textID": "gulam_helm_f_market"
+    },
+    "122": {
+        "id": 122,
+        "name": "Hounskull Helmet",
+        "textID": "hounskull"
+    },
+    "123": {
+        "id": 123,
+        "name": "Open Zitta Bascinet",
+        "textID": "zitta_bascinet_open"
+    },
+    "124": {
+        "id": 124,
+        "name": "Zitta Bascinet",
+        "textID": "zitta_bascinet"
+    },
+    "125": {
+        "id": 125,
+        "name": "Open Pigface Helmet",
+        "textID": "pigface_klappvisor_open"
+    },
+    "126": {
+        "id": 126,
+        "name": "Pigface Helmet",
+        "textID": "pigface_klappvisor"
+    },
+    "127": {
+        "id": 127,
+        "name": "Open Klappvisier",
+        "textID": "klappvisier_open"
+    },
+    "128": {
+        "id": 128,
+        "name": "Klappvisier",
+        "textID": "klappvisier"
+    },
+    "129": {
+        "id": 129,
+        "name": "Milanese Helmet",
+        "textID": "dejawolf_sallet"
+    },
+    "130": {
+        "id": 130,
+        "name": "Sugarloaf",
+        "textID": "sugarloaf"
+    },
+    "131": {
+        "id": 131,
+        "name": "Sultan Helmet",
+        "textID": "helm_sultan_saracens_market"
+    },
+    "132": {
+        "id": 132,
+        "name": "Flemish Armet",
+        "textID": "flemish_armet"
+    },
+    "133": {
+        "id": 133,
+        "name": "Great Bascinet",
+        "textID": "greatbascinet1"
+    },
+    "134": {
+        "id": 134,
+        "name": "Greathelm with Bascinet",
+        "textID": "greathelm1"
+    },
+    "135": {
+        "id": 135,
+        "name": "Weimar Helmet",
+        "textID": "weimarhelm"
+    },
+    "136": {
+        "id": 136,
+        "name": "Ragged Shirt",
+        "textID": "ragged_shirt"
+    },
+    "137": {
+        "id": 137,
+        "name": "Old Coarse Tunic",
+        "textID": "old_coarse_tunic"
+    },
+    "138": {
+        "id": 138,
+        "name": "Old Linen Tunic",
+        "textID": "old_linen_tunic"
+    },
+    "139": {
+        "id": 139,
+        "name": "Ragged Leather Apron",
+        "textID": "ragged_leather_apron"
+    },
+    "140": {
+        "id": 140,
+        "name": "Old Tabard",
+        "textID": "old_tabard"
+    },
+    "141": {
+        "id": 141,
+        "name": "Shirt",
+        "textID": "shirt"
+    },
+    "142": {
+        "id": 142,
+        "name": "Linen Tunic",
+        "textID": "linen_tunic"
+    },
+    "143": {
+        "id": 143,
+        "name": "Black Robe",
+        "textID": "black_robe"
+    },
+    "144": {
+        "id": 144,
+        "name": "Dress",
+        "textID": "dress"
+    },
+    "145": {
+        "id": 145,
+        "name": "Blue Dress",
+        "textID": "blue_dress"
+    },
+    "146": {
+        "id": 146,
+        "name": "Peasant Dress",
+        "textID": "peasant_dress"
+    },
+    "147": {
+        "id": 147,
+        "name": "Woolen Dress",
+        "textID": "woolen_dress"
+    },
+    "148": {
+        "id": 148,
+        "name": "Gray Dress",
+        "textID": "sarranid_common_dress"
+    },
+    "149": {
+        "id": 149,
+        "name": "Brown Dress",
+        "textID": "sarranid_common_dress_b"
+    },
+    "150": {
+        "id": 150,
+        "name": "Red Dress",
+        "textID": "lady_dress_ruby"
+    },
+    "151": {
+        "id": 151,
+        "name": "Green Dress",
+        "textID": "lady_dress_green"
+    },
+    "152": {
+        "id": 152,
+        "name": "Blue Dress",
+        "textID": "lady_dress_blue"
+    },
+    "153": {
+        "id": 153,
+        "name": "Red Pattern Dress",
+        "textID": "court_dress"
+    },
+    "154": {
+        "id": 154,
+        "name": "Red Dress",
+        "textID": "red_dress"
+    },
+    "155": {
+        "id": 155,
+        "name": "Brown Dress",
+        "textID": "brown_dress"
+    },
+    "156": {
+        "id": 156,
+        "name": "Green Dress",
+        "textID": "green_dress"
+    },
+    "157": {
+        "id": 157,
+        "name": "Purple Dress",
+        "textID": "sarranid_lady_dress"
+    },
+    "158": {
+        "id": 158,
+        "name": "Orange Dress",
+        "textID": "sarranid_lady_dress_b"
+    },
+    "159": {
+        "id": 159,
+        "name": "Blue Dress",
+        "textID": "khergit_lady_dress"
+    },
+    "160": {
+        "id": 160,
+        "name": "Leather Dress",
+        "textID": "khergit_lady_dress_b"
+    },
+    "161": {
+        "id": 161,
+        "name": "Bride Dress",
+        "textID": "bride_dress"
+    },
+    "162": {
+        "id": 162,
+        "name": "Tunic with Green Cape",
+        "textID": "tunic_with_green_cape"
+    },
+    "163": {
+        "id": 163,
+        "name": "Rough Tunic",
+        "textID": "rough_tunic"
+    },
+    "164": {
+        "id": 164,
+        "name": "Red Shirt",
+        "textID": "red_shirt"
+    },
+    "165": {
+        "id": 165,
+        "name": "Pelt Coat",
+        "textID": "pelt_coat"
+    },
+    "166": {
+        "id": 166,
+        "name": "Worn Robe",
+        "textID": "sarranid_cloth_robe"
+    },
+    "167": {
+        "id": 167,
+        "name": "Worn Robe",
+        "textID": "sarranid_cloth_robe_b"
+    },
+    "168": {
+        "id": 168,
+        "name": "Rawhide Coat",
+        "textID": "rawhide_coat"
+    },
+    "169": {
+        "id": 169,
+        "name": "Tunic with Vest",
+        "textID": "coarse_tunic"
+    },
+    "170": {
+        "id": 170,
+        "name": "Leather Apron",
+        "textID": "leather_apron"
+    },
+    "171": {
+        "id": 171,
+        "name": "Fur Coat",
+        "textID": "fur_coat"
+    },
+    "172": {
+        "id": 172,
+        "name": "Friar\u2019s Robe",
+        "textID": "friar_robe"
+    },
+    "173": {
+        "id": 173,
+        "name": "Skirmisher Armor",
+        "textID": "skirmisher_armor"
+    },
+    "174": {
+        "id": 174,
+        "name": "Rich Outfit",
+        "textID": "rich_outfit"
+    },
+    "175": {
+        "id": 175,
+        "name": "Tabard",
+        "textID": "tabard"
+    },
+    "176": {
+        "id": 176,
+        "name": "Tribesman Armor",
+        "textID": "khergit_armor"
+    },
+    "177": {
+        "id": 177,
+        "name": "Leather Vest",
+        "textID": "leather_vest_plain"
+    },
+    "178": {
+        "id": 178,
+        "name": "Heraldic Leather Vest",
+        "textID": "leather_vest"
+    },
+    "179": {
+        "id": 179,
+        "name": "Leather Jacket",
+        "textID": "leather_jacket"
+    },
+    "180": {
+        "id": 180,
+        "name": "Priestly Robes",
+        "textID": "priest_robe"
+    },
+    "181": {
+        "id": 181,
+        "name": "Arena Tunic",
+        "textID": "arena_tunic"
+    },
+    "182": {
+        "id": 182,
+        "name": "Leather Breastplate",
+        "textID": "steppe_armor"
+    },
+    "183": {
+        "id": 183,
+        "name": "Leather Armor",
+        "textID": "leather_armor"
+    },
+    "184": {
+        "id": 184,
+        "name": "Pilgrim Disguise",
+        "textID": "pilgrim_disguise"
+    },
+    "185": {
+        "id": 185,
+        "name": "Red Gambeson",
+        "textID": "red_gambeson"
+    },
+    "186": {
+        "id": 186,
+        "name": "Aketon",
+        "textID": "padded_cloth"
+    },
+    "187": {
+        "id": 187,
+        "name": "Padded Cloth",
+        "textID": "aketon_green"
+    },
+    "188": {
+        "id": 188,
+        "name": "Archer\u2019s Padded Vest",
+        "textID": "archers_vest"
+    },
+    "189": {
+        "id": 189,
+        "name": "Nomad Vest",
+        "textID": "nomad_vest"
+    },
+    "190": {
+        "id": 190,
+        "name": "Ragged Outfit",
+        "textID": "ragged_outfit"
+    },
+    "191": {
+        "id": 191,
+        "name": "Surgeon\u2019s Coat",
+        "textID": "surgeon_coat"
+    },
+    "192": {
+        "id": 192,
+        "name": "Nomad Armor",
+        "textID": "nomad_armor"
+    },
+    "193": {
+        "id": 193,
+        "name": "Nomad Robe",
+        "textID": "nomad_robe"
+    },
+    "194": {
+        "id": 194,
+        "name": "Light Leather",
+        "textID": "light_leather"
+    },
+    "195": {
+        "id": 195,
+        "name": "Leather Jerkin",
+        "textID": "leather_jerkin"
+    },
+    "196": {
+        "id": 196,
+        "name": "Padded Leather",
+        "textID": "padded_leather"
+    },
+    "197": {
+        "id": 197,
+        "name": "Arena Armor",
+        "textID": "arena_armor"
+    },
+    "198": {
+        "id": 198,
+        "name": "Tribal Warrior Outfit",
+        "textID": "tribal_warrior_outfit"
+    },
+    "199": {
+        "id": 199,
+        "name": "Leather Armor",
+        "textID": "sarranid_leather_armor"
+    },
+    "200": {
+        "id": 200,
+        "name": "Courtly Outfit",
+        "textID": "courtly_outfit"
+    },
+    "201": {
+        "id": 201,
+        "name": "Nobleman Outfit",
+        "textID": "nobleman_outfit"
+    },
+    "202": {
+        "id": 202,
+        "name": "Brown Mail Shirt",
+        "textID": "sarranid_cavalry_robe"
+    },
+    "203": {
+        "id": 203,
+        "name": "Studded Leather Coat",
+        "textID": "studded_leather_coat"
+    },
+    "204": {
+        "id": 204,
+        "name": "Byrnie",
+        "textID": "byrnie"
+    },
+    "205": {
+        "id": 205,
+        "name": "Haubergeon",
+        "textID": "haubergeon"
+    },
+    "206": {
+        "id": 206,
+        "name": "Guard Armor",
+        "textID": "arabian_armor_b"
+    },
+    "207": {
+        "id": 207,
+        "name": "Lamellar Vest",
+        "textID": "lamellar_vest"
+    },
+    "208": {
+        "id": 208,
+        "name": "Lamellar Vest",
+        "textID": "lamellar_vest_khergit"
+    },
+    "209": {
+        "id": 209,
+        "name": "Mail Shirt",
+        "textID": "mail_shirt"
+    },
+    "210": {
+        "id": 210,
+        "name": "Mail Hauberk",
+        "textID": "mail_hauberk"
+    },
+    "211": {
+        "id": 211,
+        "name": "Orange Mail Shirt",
+        "textID": "sarranid_mail_shirt"
+    },
+    "212": {
+        "id": 212,
+        "name": "Bishop\u2019s Armor",
+        "textID": "bishop_armor"
+    },
+    "213": {
+        "id": 213,
+        "name": "Surcoat over Mail",
+        "textID": "mail_with_surcoat"
+    },
+    "214": {
+        "id": 214,
+        "name": "Surcoat over Mail",
+        "textID": "surcoat_over_mail"
+    },
+    "215": {
+        "id": 215,
+        "name": "Brigandine",
+        "textID": "brigandine_red"
+    },
+    "216": {
+        "id": 216,
+        "name": "Mail Robe",
+        "textID": "mamluke_mail"
+    },
+    "217": {
+        "id": 217,
+        "name": "Lamellar Armor",
+        "textID": "lamellar_armor"
+    },
+    "218": {
+        "id": 218,
+        "name": "Scale Armor",
+        "textID": "scale_armor"
+    },
+    "219": {
+        "id": 219,
+        "name": "Banded Armor",
+        "textID": "banded_armor"
+    },
+    "220": {
+        "id": 220,
+        "name": "Cuir Bouilli",
+        "textID": "cuir_bouilli"
+    },
+    "221": {
+        "id": 221,
+        "name": "Coat of Plates",
+        "textID": "coat_of_plates"
+    },
+    "222": {
+        "id": 222,
+        "name": "Heraldic Coat of Plates",
+        "textID": "coat_of_plates_red"
+    },
+    "223": {
+        "id": 223,
+        "name": "Heraldic Elite Armor",
+        "textID": "khergit_elite_armor"
+    },
+    "224": {
+        "id": 224,
+        "name": "Elite Armor",
+        "textID": "vaegir_elite_armor"
+    },
+    "225": {
+        "id": 225,
+        "name": "Elite Armor",
+        "textID": "sarranid_elite_armor"
+    },
+    "226": {
+        "id": 226,
+        "name": "Plate Armor",
+        "textID": "plate_armor"
+    },
+    "227": {
+        "id": 227,
+        "name": "Black Armor",
+        "textID": "black_armor"
+    },
+    "228": {
+        "id": 228,
+        "name": "Light Heraldic Mail",
+        "textID": "light_heraldic_mail"
+    },
+    "229": {
+        "id": 229,
+        "name": "Heraldic Mail with Tunic",
+        "textID": "heraldic_mail_with_tunic"
+    },
+    "230": {
+        "id": 230,
+        "name": "Heraldic Mail with Tabard",
+        "textID": "heraldic_mail_with_tabard"
+    },
+    "231": {
+        "id": 231,
+        "name": "Heraldic Mail with Surcoat",
+        "textID": "heraldic_mail_with_surcoat"
+    },
+    "232": {
+        "id": 232,
+        "name": "Red Robe with Cape",
+        "textID": "byrnie_a_tunic"
+    },
+    "233": {
+        "id": 233,
+        "name": "Green Robe with Cape",
+        "textID": "byrnie_a_tunic_c"
+    },
+    "234": {
+        "id": 234,
+        "name": "Rich Tunic",
+        "textID": "rich_tunic_e"
+    },
+    "235": {
+        "id": 235,
+        "name": "Sarranid Shirt",
+        "textID": "sar_pants"
+    },
+    "236": {
+        "id": 236,
+        "name": "Shirt",
+        "textID": "shirt_e"
+    },
+    "237": {
+        "id": 237,
+        "name": "Maroon Dress",
+        "textID": "ribaude_dress"
+    },
+    "238": {
+        "id": 238,
+        "name": "Tavernkeep Shirt",
+        "textID": "tavern_keep_shirt"
+    },
+    "239": {
+        "id": 239,
+        "name": "Red Courtly Dress",
+        "textID": "red_dress2"
+    },
+    "240": {
+        "id": 240,
+        "name": "Blue Courtly Dress",
+        "textID": "rich_blue_dress"
+    },
+    "241": {
+        "id": 241,
+        "name": "Blue Ornate Courtly Outfit",
+        "textID": "nobleman_outfit_charles"
+    },
+    "242": {
+        "id": 242,
+        "name": "Red Ornate Courtly Outfit",
+        "textID": "nobleman_outfit_anglais"
+    },
+    "243": {
+        "id": 243,
+        "name": "Rich Noble Tunic",
+        "textID": "new_noble_tunic_a"
+    },
+    "244": {
+        "id": 244,
+        "name": "Rich Noble Tunic",
+        "textID": "new_noble_tunic_b"
+    },
+    "245": {
+        "id": 245,
+        "name": "Brown Maid Dress",
+        "textID": "maid_dress"
+    },
+    "246": {
+        "id": 246,
+        "name": "Peasant Dress",
+        "textID": "peasant_dress_c"
+    },
+    "247": {
+        "id": 247,
+        "name": "Blue Shirt",
+        "textID": "shirt_c"
+    },
+    "248": {
+        "id": 248,
+        "name": "Green Shirt",
+        "textID": "shirt_b"
+    },
+    "249": {
+        "id": 249,
+        "name": "Decorated Khergit Vest",
+        "textID": "khergit_vest_d"
+    },
+    "250": {
+        "id": 250,
+        "name": "White Khergit Vest",
+        "textID": "khergit_vest_a"
+    },
+    "251": {
+        "id": 251,
+        "name": "Blue Kaftan",
+        "textID": "blue_kaftan"
+    },
+    "252": {
+        "id": 252,
+        "name": "Red Kaftan",
+        "textID": "drz_kaftan"
+    },
+    "253": {
+        "id": 253,
+        "name": "Gold Tourney Armor",
+        "textID": "padded_armor"
+    },
+    "254": {
+        "id": 254,
+        "name": "Ragged Armor",
+        "textID": "ragged_armour_a"
+    },
+    "255": {
+        "id": 255,
+        "name": "Studded Coat with Mail",
+        "textID": "studded_coat_mail_a"
+    },
+    "256": {
+        "id": 256,
+        "name": "Red Gambeson",
+        "textID": "gambeson_red"
+    },
+    "257": {
+        "id": 257,
+        "name": "Brown Gambeson",
+        "textID": "gambeson_brown"
+    },
+    "258": {
+        "id": 258,
+        "name": "Gambeson",
+        "textID": "gambeson"
+    },
+    "259": {
+        "id": 259,
+        "name": "Padded Leather",
+        "textID": "fred_padded_leather"
+    },
+    "260": {
+        "id": 260,
+        "name": "Padded Leather with Cape",
+        "textID": "fred_padded_leather_cowl"
+    },
+    "261": {
+        "id": 261,
+        "name": "Brown Assassin Armor",
+        "textID": "brown_assassin_armor"
+    },
+    "262": {
+        "id": 262,
+        "name": "White Assassin Armor",
+        "textID": "white_assassin_armor"
+    },
+    "263": {
+        "id": 263,
+        "name": "Green Assassin Armor",
+        "textID": "green_assassin_armor"
+    },
+    "264": {
+        "id": 264,
+        "name": "Aketon",
+        "textID": "aketon"
+    },
+    "265": {
+        "id": 265,
+        "name": "Light Mercenary Armor",
+        "textID": "light_mercenary_armor"
+    },
+    "266": {
+        "id": 266,
+        "name": "Aketon with Kneecops",
+        "textID": "aketon_kneecops"
+    },
+    "267": {
+        "id": 267,
+        "name": "Peasant Mail with Cape",
+        "textID": "fred_peasant_mail"
+    },
+    "268": {
+        "id": 268,
+        "name": "Brown Gambeson with Cape",
+        "textID": "cwe_archer_armor_2"
+    },
+    "269": {
+        "id": 269,
+        "name": "Black Gambeson with Cape",
+        "textID": "cwe_archer_armor_1"
+    },
+    "270": {
+        "id": 270,
+        "name": "Padded Mail with White Shirt",
+        "textID": "padded_mail_a"
+    },
+    "271": {
+        "id": 271,
+        "name": "Padded Mail with Green Shirt",
+        "textID": "padded_mail_b"
+    },
+    "272": {
+        "id": 272,
+        "name": "Byrnie with Green Tunic",
+        "textID": "byrnie_e"
+    },
+    "273": {
+        "id": 273,
+        "name": "Byrnie with Blue Tunic",
+        "textID": "byrnie_f"
+    },
+    "274": {
+        "id": 274,
+        "name": "Light Hauberk",
+        "textID": "hauberk"
+    },
+    "275": {
+        "id": 275,
+        "name": "Green Light Brigandine",
+        "textID": "brigandine_green"
+    },
+    "276": {
+        "id": 276,
+        "name": "Blue Lamellar Vest",
+        "textID": "sar_lamellar_vest_blue"
+    },
+    "277": {
+        "id": 277,
+        "name": "Red Lamellar Vest with Mail",
+        "textID": "sar_lamellar_vest_mail_red"
+    },
+    "278": {
+        "id": 278,
+        "name": "Black Gambeson with Mail",
+        "textID": "cwe_sergeant_armor_2"
+    },
+    "279": {
+        "id": 279,
+        "name": "Red Gambeson with Mail",
+        "textID": "cwe_sergeant_armor_3"
+    },
+    "280": {
+        "id": 280,
+        "name": "Brown Light Brigandine with Mail",
+        "textID": "brigandine_brown_mail"
+    },
+    "281": {
+        "id": 281,
+        "name": "Light Saracen Armor",
+        "textID": "turk_bandit_b"
+    },
+    "282": {
+        "id": 282,
+        "name": "Light Saracen Infantry Armor",
+        "textID": "turk_bandit_c"
+    },
+    "283": {
+        "id": 283,
+        "name": "Medium Mercenary Armor",
+        "textID": "medium_mercenary_armor"
+    },
+    "284": {
+        "id": 284,
+        "name": "Rus Lamellar Armor",
+        "textID": "rus_lamellar_a"
+    },
+    "285": {
+        "id": 285,
+        "name": "Light Kuyak",
+        "textID": "kuyak_a"
+    },
+    "286": {
+        "id": 286,
+        "name": "Saracen Infantry Armor",
+        "textID": "sar_infantry_armor"
+    },
+    "287": {
+        "id": 287,
+        "name": "Medium Saracen Armor",
+        "textID": "cwe_armor_medium_tyrk_d"
+    },
+    "288": {
+        "id": 288,
+        "name": "Heavy Kuyak",
+        "textID": "kuyak_b"
+    },
+    "289": {
+        "id": 289,
+        "name": "Saracen Lamellar Armor",
+        "textID": "sar_lamellar_armor"
+    },
+    "290": {
+        "id": 290,
+        "name": "Lamellar Armor",
+        "textID": "drz_lamellar_armor"
+    },
+    "291": {
+        "id": 291,
+        "name": "Heavy Saracen Armor",
+        "textID": "armor_medium_tyrk_f"
+    },
+    "292": {
+        "id": 292,
+        "name": "Heavy Hauberk",
+        "textID": "hauberk3"
+    },
+    "293": {
+        "id": 293,
+        "name": "Rus Scale Armor",
+        "textID": "rus_scale"
+    },
+    "294": {
+        "id": 294,
+        "name": "Heavy Hauberk with Plate",
+        "textID": "hauberk2"
+    },
+    "295": {
+        "id": 295,
+        "name": "Early Transitional Armor",
+        "textID": "early_transitional_heraldic"
+    },
+    "296": {
+        "id": 296,
+        "name": "Green Corrazina",
+        "textID": "corrazina_green"
+    },
+    "297": {
+        "id": 297,
+        "name": "Red Corrazina",
+        "textID": "corrazina_red"
+    },
+    "298": {
+        "id": 298,
+        "name": "Saracen Guard Armor",
+        "textID": "sarranid_guard_armor"
+    },
+    "299": {
+        "id": 299,
+        "name": "Blue Brigandine with Plate",
+        "textID": "brigandine_blue"
+    },
+    "300": {
+        "id": 300,
+        "name": "Red Brigandine with Plate",
+        "textID": "brigandine_red_a"
+    },
+    "301": {
+        "id": 301,
+        "name": "Elite Lamellar Armor",
+        "textID": "drz_elite_lamellar_armor"
+    },
+    "302": {
+        "id": 302,
+        "name": "Ghulam Lamellar Armor",
+        "textID": "ghulam_heavy_cavalryman_3"
+    },
+    "303": {
+        "id": 303,
+        "name": "Heavy Mercenary Armor",
+        "textID": "heavy_mercenary_armor"
+    },
+    "304": {
+        "id": 304,
+        "name": "Red Brigandine with Plate and Mail",
+        "textID": "brigandine_red_mail"
+    },
+    "305": {
+        "id": 305,
+        "name": "Black Brigandine with Plate and Mail",
+        "textID": "brigandine_black_mail"
+    },
+    "306": {
+        "id": 306,
+        "name": "Sultan Armor",
+        "textID": "armor_sultan_saracens"
+    },
+    "307": {
+        "id": 307,
+        "name": "Blue Churburg",
+        "textID": "churburg_13"
+    },
+    "308": {
+        "id": 308,
+        "name": "Decorated Red Churburg",
+        "textID": "churburg_13_brass"
+    },
+    "309": {
+        "id": 309,
+        "name": "Decorated Grey Churburg",
+        "textID": "churburg"
+    },
+    "310": {
+        "id": 310,
+        "name": "Milanese Plate",
+        "textID": "armour_new_b"
+    },
+    "311": {
+        "id": 311,
+        "name": "Gothic Plate",
+        "textID": "gothic_armour_plain"
+    },
+    "312": {
+        "id": 312,
+        "name": "Royal Plate",
+        "textID": "royal_plate"
+    },
+    "313": {
+        "id": 313,
+        "name": "Tattered Wrapping Boots",
+        "textID": "tattered_wrapping_boots"
+    },
+    "314": {
+        "id": 314,
+        "name": "Ripped Woolen Hose",
+        "textID": "ripped_woolen_hose"
+    },
+    "315": {
+        "id": 315,
+        "name": "Old Hide Boots",
+        "textID": "old_hide_boots"
+    },
+    "316": {
+        "id": 316,
+        "name": "Wrapping Boots",
+        "textID": "wrapping_boots"
+    },
+    "317": {
+        "id": 317,
+        "name": "Woolen Hose",
+        "textID": "woolen_hose"
+    },
+    "318": {
+        "id": 318,
+        "name": "Friar\u2019s Sandals",
+        "textID": "friar_sandals"
+    },
+    "319": {
+        "id": 319,
+        "name": "Blue Hose",
+        "textID": "blue_hose"
+    },
+    "320": {
+        "id": 320,
+        "name": "Bride Shoes",
+        "textID": "bride_shoes"
+    },
+    "321": {
+        "id": 321,
+        "name": "Priestly Leggings",
+        "textID": "priest_leggings"
+    },
+    "322": {
+        "id": 322,
+        "name": "Pointed Shoes",
+        "textID": "sarranid_boots_a"
+    },
+    "323": {
+        "id": 323,
+        "name": "Hunter Boots",
+        "textID": "hunter_boots"
+    },
+    "324": {
+        "id": 324,
+        "name": "Hide Boots",
+        "textID": "hide_boots"
+    },
+    "325": {
+        "id": 325,
+        "name": "Ankle Boots",
+        "textID": "ankle_boots"
+    },
+    "326": {
+        "id": 326,
+        "name": "Nomad Boots",
+        "textID": "nomad_boots"
+    },
+    "327": {
+        "id": 327,
+        "name": "Light Leather Boots",
+        "textID": "light_leather_boots"
+    },
+    "328": {
+        "id": 328,
+        "name": "Leather Boots",
+        "textID": "leather_boots"
+    },
+    "329": {
+        "id": 329,
+        "name": "Pointed Leather Boots",
+        "textID": "sarranid_boots_b"
+    },
+    "330": {
+        "id": 330,
+        "name": "Black Leather Boots",
+        "textID": "khergit_leather_boots"
+    },
+    "331": {
+        "id": 331,
+        "name": "Plated Boots",
+        "textID": "sarranid_boots_c"
+    },
+    "332": {
+        "id": 332,
+        "name": "Splinted Leather Greaves",
+        "textID": "splinted_leather_greaves"
+    },
+    "333": {
+        "id": 333,
+        "name": "Bishop\u2019s Chausses",
+        "textID": "bishop_chausses"
+    },
+    "334": {
+        "id": 334,
+        "name": "Mail Chausses",
+        "textID": "mail_chausses"
+    },
+    "335": {
+        "id": 335,
+        "name": "Splinted Greaves",
+        "textID": "splinted_greaves"
+    },
+    "336": {
+        "id": 336,
+        "name": "Mail Boots",
+        "textID": "sarranid_boots_d"
+    },
+    "337": {
+        "id": 337,
+        "name": "Mail Boots",
+        "textID": "mail_boots"
+    },
+    "338": {
+        "id": 338,
+        "name": "Iron Greaves",
+        "textID": "iron_greaves"
+    },
+    "339": {
+        "id": 339,
+        "name": "Plate Boots",
+        "textID": "plate_boots"
+    },
+    "340": {
+        "id": 340,
+        "name": "Black Greaves",
+        "textID": "black_greaves"
+    },
+    "341": {
+        "id": 341,
+        "name": "Black Rich Boots",
+        "textID": "civil_rich_boots_b"
+    },
+    "342": {
+        "id": 342,
+        "name": "Red Rich Boots",
+        "textID": "civil_rich_boots_a"
+    },
+    "343": {
+        "id": 343,
+        "name": "Rus Cavalry Boots",
+        "textID": "rus_cav_boots"
+    },
+    "344": {
+        "id": 344,
+        "name": "Saracen Leather Boots",
+        "textID": "sarranid_camel_boots1"
+    },
+    "345": {
+        "id": 345,
+        "name": "Noble Leather Boots",
+        "textID": "leather_boots_noble"
+    },
+    "346": {
+        "id": 346,
+        "name": "Red Saracen Leather Boots",
+        "textID": "sarranid_camel_boots2"
+    },
+    "347": {
+        "id": 347,
+        "name": "Saracen Elite Boots",
+        "textID": "sarranid_elite_boots"
+    },
+    "348": {
+        "id": 348,
+        "name": "Saracen Royal Boots",
+        "textID": "sarranid_royal_boots"
+    },
+    "349": {
+        "id": 349,
+        "name": "Rus Splinted Greaves",
+        "textID": "rus_splint_greaves"
+    },
+    "350": {
+        "id": 350,
+        "name": "Splinted Greaves",
+        "textID": "splinted_greaves_nospurs"
+    },
+    "351": {
+        "id": 351,
+        "name": "Steel Greaves",
+        "textID": "narf_greaves2"
+    },
+    "352": {
+        "id": 352,
+        "name": "Shynbaulds",
+        "textID": "shynbaulds"
+    },
+    "353": {
+        "id": 353,
+        "name": "Polished Steel Boots",
+        "textID": "narf_greaves"
+    },
+    "354": {
+        "id": 354,
+        "name": "Steel Boots",
+        "textID": "steel_greaves"
+    },
+    "355": {
+        "id": 355,
+        "name": "Leather Gloves",
+        "textID": "leather_gloves"
+    },
+    "356": {
+        "id": 356,
+        "name": "Bishop\u2019s Gloves",
+        "textID": "bishop_gloves"
+    },
+    "357": {
+        "id": 357,
+        "name": "Mail Mittens",
+        "textID": "mail_mittens"
+    },
+    "358": {
+        "id": 358,
+        "name": "Lamellar Gauntlets",
+        "textID": "lamellar_gauntlets"
+    },
+    "359": {
+        "id": 359,
+        "name": "Scale Gauntlets",
+        "textID": "scale_gauntlets"
+    },
+    "360": {
+        "id": 360,
+        "name": "Gauntlets",
+        "textID": "gauntlets"
+    },
+    "361": {
+        "id": 361,
+        "name": "Leather Gauntlets",
+        "textID": "leather_gauntlet"
+    },
+    "362": {
+        "id": 362,
+        "name": "Mail Gauntlets",
+        "textID": "mail_gauntlets"
+    },
+    "363": {
+        "id": 363,
+        "name": "Demi Gauntlets",
+        "textID": "demi_gauntlets"
+    },
+    "364": {
+        "id": 364,
+        "name": "Saracen Gauntlets",
+        "textID": "gauntlets_arabs_a"
+    },
+    "365": {
+        "id": 365,
+        "name": "Finger Gauntlets",
+        "textID": "finger_gauntlets"
+    },
+    "366": {
+        "id": 366,
+        "name": "Decorated Saracen Gauntlets",
+        "textID": "gauntlets_arabs_b"
+    },
+    "367": {
+        "id": 367,
+        "name": "Hourglass Gauntlets",
+        "textID": "hourglass_gauntlets"
+    },
+    "368": {
+        "id": 368,
+        "name": "Decorated Hourglass Gauntlets",
+        "textID": "hourglass_gauntlets_ornate"
+    },
+    "369": {
+        "id": 369,
+        "name": "Club",
+        "textID": "club"
+    },
+    "370": {
+        "id": 370,
+        "name": "Spiked Club",
+        "textID": "spiked_club"
+    },
+    "371": {
+        "id": 371,
+        "name": "Old Knife",
+        "textID": "old_knife"
+    },
+    "372": {
+        "id": 372,
+        "name": "Crude Spear",
+        "textID": "crude_spear"
+    },
+    "373": {
+        "id": 373,
+        "name": "Blunt Falchion",
+        "textID": "blunt_falchion"
+    },
+    "374": {
+        "id": 374,
+        "name": "Chipped Falchion",
+        "textID": "chipped_falchion"
+    },
+    "375": {
+        "id": 375,
+        "name": "Rusty Sword",
+        "textID": "rusty_sword"
+    },
+    "376": {
+        "id": 376,
+        "name": "Worn Sword",
+        "textID": "worn_sword"
+    },
+    "377": {
+        "id": 377,
+        "name": "Bent Lance",
+        "textID": "bent_lance"
+    },
+    "378": {
+        "id": 378,
+        "name": "Practice Sword",
+        "textID": "practice_sword"
+    },
+    "379": {
+        "id": 379,
+        "name": "Heavy Practice Sword",
+        "textID": "heavy_practice_sword"
+    },
+    "380": {
+        "id": 380,
+        "name": "Flanged Mace",
+        "textID": "winged_mace"
+    },
+    "381": {
+        "id": 381,
+        "name": "Spiked Mace",
+        "textID": "spiked_mace"
+    },
+    "382": {
+        "id": 382,
+        "name": "Knobbed Mace",
+        "textID": "mace_2"
+    },
+    "383": {
+        "id": 383,
+        "name": "Winged Mace",
+        "textID": "mace_4"
+    },
+    "384": {
+        "id": 384,
+        "name": "Spiked Staff",
+        "textID": "club_with_spike_head"
+    },
+    "385": {
+        "id": 385,
+        "name": "Long Spiked Club",
+        "textID": "long_spiked_club"
+    },
+    "386": {
+        "id": 386,
+        "name": "Long Hafted Spiked Mace",
+        "textID": "long_hafted_spiked_mace"
+    },
+    "387": {
+        "id": 387,
+        "name": "Fighting Pick",
+        "textID": "fighting_pick"
+    },
+    "388": {
+        "id": 388,
+        "name": "Military Pick",
+        "textID": "military_pick"
+    },
+    "389": {
+        "id": 389,
+        "name": "Military Sickle",
+        "textID": "military_sickle"
+    },
+    "390": {
+        "id": 390,
+        "name": "Military Hammer",
+        "textID": "military_hammer"
+    },
+    "391": {
+        "id": 391,
+        "name": "Morningstar",
+        "textID": "morningstar"
+    },
+    "392": {
+        "id": 392,
+        "name": "Falchion",
+        "textID": "falchion"
+    },
+    "393": {
+        "id": 393,
+        "name": "Curved Sword",
+        "textID": "curved_sword"
+    },
+    "394": {
+        "id": 394,
+        "name": "Sword",
+        "textID": "sword_medieval_a"
+    },
+    "395": {
+        "id": 395,
+        "name": "Short Sword",
+        "textID": "sword_medieval_b_small"
+    },
+    "396": {
+        "id": 396,
+        "name": "Arming Sword",
+        "textID": "sword_medieval_c_long"
+    },
+    "397": {
+        "id": 397,
+        "name": "Knightly Sword",
+        "textID": "sword_medieval_d_long"
+    },
+    "398": {
+        "id": 398,
+        "name": "Nordic Sword",
+        "textID": "sword_viking_c"
+    },
+    "399": {
+        "id": 399,
+        "name": "Nordic Short Sword",
+        "textID": "sword_viking_b_small"
+    },
+    "400": {
+        "id": 400,
+        "name": "Nordic Long Sword",
+        "textID": "sword_viking_a_long"
+    },
+    "401": {
+        "id": 401,
+        "name": "Arabian Sword",
+        "textID": "arabian_sword_a"
+    },
+    "402": {
+        "id": 402,
+        "name": "Arabian Arming Sword",
+        "textID": "arabian_sword_b"
+    },
+    "403": {
+        "id": 403,
+        "name": "Arabian Cavalry Sword",
+        "textID": "arabian_sword_c"
+    },
+    "404": {
+        "id": 404,
+        "name": "Arabian Guard Sword",
+        "textID": "arabian_sword_d"
+    },
+    "405": {
+        "id": 405,
+        "name": "Scimitar",
+        "textID": "scimitar"
+    },
+    "406": {
+        "id": 406,
+        "name": "Elite Scimitar",
+        "textID": "scimitar_b"
+    },
+    "407": {
+        "id": 407,
+        "name": "Sabre",
+        "textID": "khergit_sword_c"
+    },
+    "408": {
+        "id": 408,
+        "name": "Heavy Sabre",
+        "textID": "khergit_sword_d"
+    },
+    "409": {
+        "id": 409,
+        "name": "Two Handed Sabre",
+        "textID": "khergit_sword_two_handed_a"
+    },
+    "410": {
+        "id": 410,
+        "name": "War Cleaver",
+        "textID": "two_handed_cleaver"
+    },
+    "411": {
+        "id": 411,
+        "name": "Soldier\u2019s Cleaver",
+        "textID": "military_cleaver_b"
+    },
+    "412": {
+        "id": 412,
+        "name": "Military Cleaver",
+        "textID": "military_cleaver_c"
+    },
+    "413": {
+        "id": 413,
+        "name": "Bastard Sword",
+        "textID": "bastard_sword_a"
+    },
+    "414": {
+        "id": 414,
+        "name": "Heavy Bastard Sword",
+        "textID": "bastard_sword_b"
+    },
+    "415": {
+        "id": 415,
+        "name": "Two Handed Sword",
+        "textID": "sword_two_handed_b"
+    },
+    "416": {
+        "id": 416,
+        "name": "Great Sword",
+        "textID": "sword_two_handed_a"
+    },
+    "417": {
+        "id": 417,
+        "name": "One Handed War Axe",
+        "textID": "one_handed_war_axe_b"
+    },
+    "418": {
+        "id": 418,
+        "name": "One Handed Axe",
+        "textID": "one_handed_battle_axe_a"
+    },
+    "419": {
+        "id": 419,
+        "name": "One Handed Battle Axe",
+        "textID": "one_handed_battle_axe_b"
+    },
+    "420": {
+        "id": 420,
+        "name": "Spiked One Handed Battle Axe",
+        "textID": "one_handed_battle_axe_c"
+    },
+    "421": {
+        "id": 421,
+        "name": "Iron Battle Axe",
+        "textID": "sarranid_axe_a"
+    },
+    "422": {
+        "id": 422,
+        "name": "Iron War Axe",
+        "textID": "sarranid_axe_b"
+    },
+    "423": {
+        "id": 423,
+        "name": "Two Handed Axe",
+        "textID": "two_handed_axe"
+    },
+    "424": {
+        "id": 424,
+        "name": "Two Handed War Axe",
+        "textID": "two_handed_battle_axe"
+    },
+    "425": {
+        "id": 425,
+        "name": "Shortened Voulge",
+        "textID": "shortened_voulge"
+    },
+    "426": {
+        "id": 426,
+        "name": "Bardiche",
+        "textID": "bardiche"
+    },
+    "427": {
+        "id": 427,
+        "name": "Shortened Military Scythe",
+        "textID": "shortened_military_scythe"
+    },
+    "428": {
+        "id": 428,
+        "name": "Two Handed Iron Axe",
+        "textID": "sarranid_two_handed_axe_a"
+    },
+    "429": {
+        "id": 429,
+        "name": "Two Handed Iron Axe",
+        "textID": "sarranid_two_handed_axe_b"
+    },
+    "430": {
+        "id": 430,
+        "name": "Long Axe",
+        "textID": "long_axe_a"
+    },
+    "431": {
+        "id": 431,
+        "name": "Glaive",
+        "textID": "glaive"
+    },
+    "432": {
+        "id": 432,
+        "name": "Staff",
+        "textID": "staff"
+    },
+    "433": {
+        "id": 433,
+        "name": "Quarter Staff",
+        "textID": "quarter_staff"
+    },
+    "434": {
+        "id": 434,
+        "name": "Iron Staff",
+        "textID": "iron_staff"
+    },
+    "435": {
+        "id": 435,
+        "name": "Shortened Spear",
+        "textID": "shortened_spear"
+    },
+    "436": {
+        "id": 436,
+        "name": "Spear",
+        "textID": "spear"
+    },
+    "437": {
+        "id": 437,
+        "name": "Bamboo Spear",
+        "textID": "bamboo_spear"
+    },
+    "438": {
+        "id": 438,
+        "name": "War Spear",
+        "textID": "war_spear"
+    },
+    "439": {
+        "id": 439,
+        "name": "Light Lance",
+        "textID": "light_lance"
+    },
+    "440": {
+        "id": 440,
+        "name": "Lance",
+        "textID": "lance"
+    },
+    "441": {
+        "id": 441,
+        "name": "Heavy Lance",
+        "textID": "heavy_lance"
+    },
+    "442": {
+        "id": 442,
+        "name": "Great Lance",
+        "textID": "great_lance"
+    },
+    "443": {
+        "id": 443,
+        "name": "Jousting Lance",
+        "textID": "jousting_lance"
+    },
+    "444": {
+        "id": 444,
+        "name": "Awlpike",
+        "textID": "awlpike"
+    },
+    "445": {
+        "id": 445,
+        "name": "Long Awlpike",
+        "textID": "awlpike_long"
+    },
+    "446": {
+        "id": 446,
+        "name": "Pike",
+        "textID": "pike"
+    },
+    "447": {
+        "id": 447,
+        "name": "War Hammer",
+        "textID": "bec_de_corbin_a"
+    },
+    "448": {
+        "id": 448,
+        "name": "Bishop\u2019s Crosier",
+        "textID": "bishop_crosier"
+    },
+    "449": {
+        "id": 449,
+        "name": "Practice Dagger",
+        "textID": "practice_dagger"
+    },
+    "450": {
+        "id": 450,
+        "name": "Iberian Mace",
+        "textID": "faradon_iberianmace"
+    },
+    "451": {
+        "id": 451,
+        "name": "Warhammer",
+        "textID": "faradon_warhammer"
+    },
+    "452": {
+        "id": 452,
+        "name": "Grosse Messer",
+        "textID": "grosse_messer"
+    },
+    "453": {
+        "id": 453,
+        "name": "Milanese Sword",
+        "textID": "milanese_sword"
+    },
+    "454": {
+        "id": 454,
+        "name": "Scottish Sword",
+        "textID": "scottish_sword"
+    },
+    "455": {
+        "id": 455,
+        "name": "Italian Sword",
+        "textID": "italian_sword"
+    },
+    "456": {
+        "id": 456,
+        "name": "Crusader Sword",
+        "textID": "crusader_sword"
+    },
+    "457": {
+        "id": 457,
+        "name": "Langes Messer",
+        "textID": "grosse_messer_b"
+    },
+    "458": {
+        "id": 458,
+        "name": "Longsword",
+        "textID": "longsword_b"
+    },
+    "459": {
+        "id": 459,
+        "name": "German Longsword",
+        "textID": "german_bastard_sword"
+    },
+    "460": {
+        "id": 460,
+        "name": "English Longsword",
+        "textID": "english_longsword"
+    },
+    "461": {
+        "id": 461,
+        "name": "German Greatsword",
+        "textID": "faradon_twohanded1"
+    },
+    "462": {
+        "id": 462,
+        "name": "Danish Greatsword",
+        "textID": "danish_greatsword"
+    },
+    "463": {
+        "id": 463,
+        "name": "Claymore",
+        "textID": "claymore"
+    },
+    "464": {
+        "id": 464,
+        "name": "Executioner\u2019s Axe",
+        "textID": "executioners_axe"
+    },
+    "465": {
+        "id": 465,
+        "name": "Battle Fork",
+        "textID": "battle_fork"
+    },
+    "466": {
+        "id": 466,
+        "name": "Short Poleaxe",
+        "textID": "poleaxe_no3"
+    },
+    "467": {
+        "id": 467,
+        "name": "German Poleaxe",
+        "textID": "german_poleaxe"
+    },
+    "468": {
+        "id": 468,
+        "name": "Poleaxe",
+        "textID": "poleaxe_a"
+    },
+    "469": {
+        "id": 469,
+        "name": "Elegant Poleaxe",
+        "textID": "elegant_poleaxe"
+    },
+    "470": {
+        "id": 470,
+        "name": "English Bill",
+        "textID": "english_bill"
+    },
+    "471": {
+        "id": 471,
+        "name": "Swiss Halberd",
+        "textID": "swiss_halberd"
+    },
+    "472": {
+        "id": 472,
+        "name": "Crude Bow",
+        "textID": "crude_bow"
+    },
+    "473": {
+        "id": 473,
+        "name": "Practice Arrows",
+        "textID": "bent_arrows"
+    },
+    "474": {
+        "id": 474,
+        "name": "Flimsy Crossbow",
+        "textID": "flimsy_crossbow"
+    },
+    "475": {
+        "id": 475,
+        "name": "Practice Bolts",
+        "textID": "crude_bolts"
+    },
+    "476": {
+        "id": 476,
+        "name": "Hunting Bow",
+        "textID": "hunting_bow"
+    },
+    "477": {
+        "id": 477,
+        "name": "Short Bow",
+        "textID": "short_bow"
+    },
+    "478": {
+        "id": 478,
+        "name": "Nomad Bow",
+        "textID": "nomad_bow"
+    },
+    "479": {
+        "id": 479,
+        "name": "Long Bow",
+        "textID": "bow_f_longbow_1"
+    },
+    "480": {
+        "id": 480,
+        "name": "Khergit Bow",
+        "textID": "khergit_bow"
+    },
+    "481": {
+        "id": 481,
+        "name": "Strong Bow",
+        "textID": "strong_bow"
+    },
+    "482": {
+        "id": 482,
+        "name": "War Bow",
+        "textID": "war_bow1"
+    },
+    "483": {
+        "id": 483,
+        "name": "Arrows",
+        "textID": "arrows"
+    },
+    "484": {
+        "id": 484,
+        "name": "Barbed Arrows",
+        "textID": "barbed_arrows"
+    },
+    "485": {
+        "id": 485,
+        "name": "Broadhead Arrows",
+        "textID": "khergit_arrows"
+    },
+    "486": {
+        "id": 486,
+        "name": "Bodkin Arrows",
+        "textID": "bodkin_arrows"
+    },
+    "487": {
+        "id": 487,
+        "name": "Hunting Crossbow",
+        "textID": "hunting_crossbow"
+    },
+    "488": {
+        "id": 488,
+        "name": "Light Crossbow",
+        "textID": "light_crossbow"
+    },
+    "489": {
+        "id": 489,
+        "name": "Crossbow",
+        "textID": "crossbow"
+    },
+    "490": {
+        "id": 490,
+        "name": "Heavy Crossbow",
+        "textID": "heavy_crossbow"
+    },
+    "491": {
+        "id": 491,
+        "name": "Siege Crossbow",
+        "textID": "sniper_crossbow"
+    },
+    "492": {
+        "id": 492,
+        "name": "Bolts",
+        "textID": "bolts"
+    },
+    "493": {
+        "id": 493,
+        "name": "Steel Bolts",
+        "textID": "steel_bolts"
+    },
+    "494": {
+        "id": 494,
+        "name": "Decorated Longbow",
+        "textID": "bow_f_decorated_bow"
+    },
+    "495": {
+        "id": 495,
+        "name": "Old Shield",
+        "textID": "old_shield"
+    },
+    "496": {
+        "id": 496,
+        "name": "Practice Shield",
+        "textID": "practice_shield"
+    },
+    "497": {
+        "id": 497,
+        "name": "Plain Round Shield",
+        "textID": "tab_shield_round_b"
+    },
+    "498": {
+        "id": 498,
+        "name": "Round Shield",
+        "textID": "tab_shield_round_c"
+    },
+    "499": {
+        "id": 499,
+        "name": "Heavy Round Shield",
+        "textID": "tab_shield_round_d"
+    },
+    "500": {
+        "id": 500,
+        "name": "Huscarl\u2019s Round Shield",
+        "textID": "tab_shield_round_e"
+    },
+    "501": {
+        "id": 501,
+        "name": "Plain Kite Shield",
+        "textID": "tab_shield_kite_b"
+    },
+    "502": {
+        "id": 502,
+        "name": "Kite Shield",
+        "textID": "tab_shield_kite_c"
+    },
+    "503": {
+        "id": 503,
+        "name": "Heavy Kite Shield",
+        "textID": "tab_shield_kite_d"
+    },
+    "504": {
+        "id": 504,
+        "name": "Horseman\u2019s Kite Shield",
+        "textID": "tab_shield_kite_cav_a"
+    },
+    "505": {
+        "id": 505,
+        "name": "Knightly Kite Shield",
+        "textID": "tab_shield_kite_cav_b"
+    },
+    "506": {
+        "id": 506,
+        "name": "Plain Heater Shield",
+        "textID": "tab_shield_heater_b"
+    },
+    "507": {
+        "id": 507,
+        "name": "Heater Shield",
+        "textID": "tab_shield_heater_c"
+    },
+    "508": {
+        "id": 508,
+        "name": "Heavy Heater Shield",
+        "textID": "tab_shield_heater_d"
+    },
+    "509": {
+        "id": 509,
+        "name": "Horseman\u2019s Heater Shield",
+        "textID": "tab_shield_heater_cav_a"
+    },
+    "510": {
+        "id": 510,
+        "name": "Knightly Heater Shield",
+        "textID": "tab_shield_heater_cav_b"
+    },
+    "511": {
+        "id": 511,
+        "name": "Plain Board Shield",
+        "textID": "tab_shield_pavise_b"
+    },
+    "512": {
+        "id": 512,
+        "name": "Board Shield",
+        "textID": "tab_shield_pavise_c"
+    },
+    "513": {
+        "id": 513,
+        "name": "Heavy Board Shield",
+        "textID": "tab_shield_pavise_d"
+    },
+    "514": {
+        "id": 514,
+        "name": "Plain Cavalry Shield",
+        "textID": "tab_shield_small_round_a"
+    },
+    "515": {
+        "id": 515,
+        "name": "Round Cavalry Shield",
+        "textID": "tab_shield_small_round_b"
+    },
+    "516": {
+        "id": 516,
+        "name": "Elite Cavalry Shield",
+        "textID": "tab_shield_small_round_c"
+    },
+    "517": {
+        "id": 517,
+        "name": "Hide Covered Round Shield",
+        "textID": "hide_covered_round_shield"
+    },
+    "518": {
+        "id": 518,
+        "name": "Hide Covered Kite Shield",
+        "textID": "hide_covered_kite_shield"
+    },
+    "519": {
+        "id": 519,
+        "name": "Steel Shield",
+        "textID": "steel_shield"
+    },
+    "520": {
+        "id": 520,
+        "name": "Sumpter Horse",
+        "textID": "sumpter_horse"
+    },
+    "521": {
+        "id": 521,
+        "name": "Cart Horse",
+        "textID": "cart_horse"
+    },
+    "522": {
+        "id": 522,
+        "name": "Saddle Horse",
+        "textID": "saddle_horse"
+    },
+    "523": {
+        "id": 523,
+        "name": "Steppe Horse",
+        "textID": "steppe_horse"
+    },
+    "524": {
+        "id": 524,
+        "name": "Desert Horse",
+        "textID": "arabian_horse_a"
+    },
+    "525": {
+        "id": 525,
+        "name": "Silver Horse",
+        "textID": "arabian_horse_b"
+    },
+    "526": {
+        "id": 526,
+        "name": "Courser",
+        "textID": "courser"
+    },
+    "527": {
+        "id": 527,
+        "name": "Hunter",
+        "textID": "hunter"
+    },
+    "528": {
+        "id": 528,
+        "name": "Barded Horse",
+        "textID": "cwe_knight_horse_2"
+    },
+    "529": {
+        "id": 529,
+        "name": "War Horse",
+        "textID": "warhorse"
+    },
+    "530": {
+        "id": 530,
+        "name": "Steppe War Horse",
+        "textID": "warhorse_steppe"
+    },
+    "531": {
+        "id": 531,
+        "name": "Barded Horse with Mask",
+        "textID": "cwe_knight_horse_1_mask"
+    },
+    "532": {
+        "id": 532,
+        "name": "Saracen Sultan Horse",
+        "textID": "saracen_horse_sultan"
+    },
+    "533": {
+        "id": 533,
+        "name": "Barded War Horse",
+        "textID": "warhorse_sarranid"
+    },
+    "534": {
+        "id": 534,
+        "name": "Charger",
+        "textID": "charger"
+    },
+    "535": {
+        "id": 535,
+        "name": "Saracen War Horse",
+        "textID": "saracin_hard_horses_d"
+    },
+    "536": {
+        "id": 536,
+        "name": "Plated Charger",
+        "textID": "plated_charger"
+    },
+    "537": {
+        "id": 537,
+        "name": "Deer",
+        "textID": "deer"
+    },
+    "538": {
+        "id": 538,
+        "name": "Fawn",
+        "textID": "fawn"
+    },
+    "539": {
+        "id": 539,
+        "name": "Boar",
+        "textID": "boar"
+    },
+    "540": {
+        "id": 540,
+        "name": "Boarlet",
+        "textID": "boarlet"
+    },
+    "541": {
+        "id": 541,
+        "name": "Cow",
+        "textID": "cow"
+    },
+    "542": {
+        "id": 542,
+        "name": "Calf",
+        "textID": "calf"
+    },
+    "543": {
+        "id": 543,
+        "name": "Dog",
+        "textID": "dog"
+    },
+    "544": {
+        "id": 544,
+        "name": "Pig",
+        "textID": "pig"
+    },
+    "545": {
+        "id": 545,
+        "name": "Piglet",
+        "textID": "piglet"
+    },
+    "546": {
+        "id": 546,
+        "name": "Stick",
+        "textID": "stick"
+    },
+    "547": {
+        "id": 547,
+        "name": "Stick",
+        "textID": "stick_melee"
+    },
+    "548": {
+        "id": 548,
+        "name": "Branch",
+        "textID": "branch"
+    },
+    "549": {
+        "id": 549,
+        "name": "Short Wooden Pole",
+        "textID": "wood_pole_short"
+    },
+    "550": {
+        "id": 550,
+        "name": "Wooden Pole",
+        "textID": "wood_pole"
+    },
+    "551": {
+        "id": 551,
+        "name": "Wood Block",
+        "textID": "wood_block"
+    },
+    "552": {
+        "id": 552,
+        "name": "Board",
+        "textID": "board"
+    },
+    "553": {
+        "id": 553,
+        "name": "Small Iron Ore",
+        "textID": "iron_ore_small"
+    },
+    "554": {
+        "id": 554,
+        "name": "Iron Ore",
+        "textID": "iron_ore"
+    },
+    "555": {
+        "id": 555,
+        "name": "Iron Piece",
+        "textID": "iron_piece"
+    },
+    "556": {
+        "id": 556,
+        "name": "Short Iron Bar",
+        "textID": "iron_bar_short"
+    },
+    "557": {
+        "id": 557,
+        "name": "Iron Bar",
+        "textID": "iron_bar"
+    },
+    "558": {
+        "id": 558,
+        "name": "Long Iron Bar",
+        "textID": "iron_bar_long"
+    },
+    "559": {
+        "id": 559,
+        "name": "Gold Nugget",
+        "textID": "gold_nugget"
+    },
+    "560": {
+        "id": 560,
+        "name": "Gold Bar",
+        "textID": "gold_bar"
+    },
+    "561": {
+        "id": 561,
+        "name": "Silver Nugget",
+        "textID": "silver_nugget"
+    },
+    "562": {
+        "id": 562,
+        "name": "Silver Bar",
+        "textID": "silver_bar"
+    },
+    "563": {
+        "id": 563,
+        "name": "Flax Bundle",
+        "textID": "flax_bundle"
+    },
+    "564": {
+        "id": 564,
+        "name": "Linen Thread",
+        "textID": "linen_thread"
+    },
+    "565": {
+        "id": 565,
+        "name": "Linen Cloth",
+        "textID": "linen_cloth"
+    },
+    "566": {
+        "id": 566,
+        "name": "Small Linen Cloth",
+        "textID": "linen_cloth_small"
+    },
+    "567": {
+        "id": 567,
+        "name": "Raw Hide",
+        "textID": "raw_hide"
+    },
+    "568": {
+        "id": 568,
+        "name": "Leather Roll",
+        "textID": "leather_roll"
+    },
+    "569": {
+        "id": 569,
+        "name": "Leather Piece",
+        "textID": "leather_piece"
+    },
+    "570": {
+        "id": 570,
+        "name": "Saddle",
+        "textID": "saddle"
+    },
+    "571": {
+        "id": 571,
+        "name": "Horse Armor",
+        "textID": "horse_armor"
+    },
+    "572": {
+        "id": 572,
+        "name": "Hatchet",
+        "textID": "hatchet"
+    },
+    "573": {
+        "id": 573,
+        "name": "Small Mining Pick",
+        "textID": "small_mining_pick"
+    },
+    "574": {
+        "id": 574,
+        "name": "Woodcutter\u2019s Axe",
+        "textID": "woodcutter_axe"
+    },
+    "575": {
+        "id": 575,
+        "name": "Mining Pick",
+        "textID": "mining_pick"
+    },
+    "576": {
+        "id": 576,
+        "name": "Repair Hammer",
+        "textID": "repair_hammer"
+    },
+    "577": {
+        "id": 577,
+        "name": "Lock Pick",
+        "textID": "lock_pick"
+    },
+    "578": {
+        "id": 578,
+        "name": "Admin Lock Pick",
+        "textID": "admin_lock_pick"
+    },
+    "579": {
+        "id": 579,
+        "name": "Bucket",
+        "textID": "bucket"
+    },
+    "580": {
+        "id": 580,
+        "name": "Water Bucket",
+        "textID": "water_bucket"
+    },
+    "581": {
+        "id": 581,
+        "name": "Fishing Spear",
+        "textID": "fishing_spear"
+    },
+    "582": {
+        "id": 582,
+        "name": "Fishing Net",
+        "textID": "fishing_net"
+    },
+    "583": {
+        "id": 583,
+        "name": "Blunt Sickle",
+        "textID": "blunt_sickle"
+    },
+    "584": {
+        "id": 584,
+        "name": "Sickle",
+        "textID": "sickle"
+    },
+    "585": {
+        "id": 585,
+        "name": "Scythe",
+        "textID": "scythe"
+    },
+    "586": {
+        "id": 586,
+        "name": "Kitchen Knife",
+        "textID": "kitchen_knife"
+    },
+    "587": {
+        "id": 587,
+        "name": "Butchering Cleaver",
+        "textID": "cleaver"
+    },
+    "588": {
+        "id": 588,
+        "name": "Knife",
+        "textID": "knife"
+    },
+    "589": {
+        "id": 589,
+        "name": "Butchering Knife",
+        "textID": "butchering_knife"
+    },
+    "590": {
+        "id": 590,
+        "name": "Broom",
+        "textID": "broom"
+    },
+    "591": {
+        "id": 591,
+        "name": "Herding Crook",
+        "textID": "herding_crook"
+    },
+    "592": {
+        "id": 592,
+        "name": "Herding Crook",
+        "textID": "herding_crook_alt"
+    },
+    "593": {
+        "id": 593,
+        "name": "Fish",
+        "textID": "fish"
+    },
+    "594": {
+        "id": 594,
+        "name": "Cooked Fish",
+        "textID": "cooked_fish"
+    },
+    "595": {
+        "id": 595,
+        "name": "Salted Fish",
+        "textID": "salted_fish"
+    },
+    "596": {
+        "id": 596,
+        "name": "Wheat Sack",
+        "textID": "wheat_sack"
+    },
+    "597": {
+        "id": 597,
+        "name": "Wheat Sheaf",
+        "textID": "wheat_sheaf"
+    },
+    "598": {
+        "id": 598,
+        "name": "Flour Sack",
+        "textID": "flour_sack"
+    },
+    "599": {
+        "id": 599,
+        "name": "Bread",
+        "textID": "bread"
+    },
+    "600": {
+        "id": 600,
+        "name": "Beer Cask",
+        "textID": "beer_cask"
+    },
+    "601": {
+        "id": 601,
+        "name": "Beer Jug",
+        "textID": "beer_jug"
+    },
+    "602": {
+        "id": 602,
+        "name": "Grapes",
+        "textID": "grapes"
+    },
+    "603": {
+        "id": 603,
+        "name": "Must Barrel",
+        "textID": "must_barrel"
+    },
+    "604": {
+        "id": 604,
+        "name": "Wine Barrel",
+        "textID": "wine_barrel"
+    },
+    "605": {
+        "id": 605,
+        "name": "Wine Jar",
+        "textID": "wine_jar"
+    },
+    "606": {
+        "id": 606,
+        "name": "Raw Meat",
+        "textID": "raw_meat"
+    },
+    "607": {
+        "id": 607,
+        "name": "Cooked Meat",
+        "textID": "cooked_meat"
+    },
+    "608": {
+        "id": 608,
+        "name": "Salted Meat",
+        "textID": "salted_meat"
+    },
+    "609": {
+        "id": 609,
+        "name": "Meat Pie",
+        "textID": "meat_pie"
+    },
+    "610": {
+        "id": 610,
+        "name": "Red Apple",
+        "textID": "red_apple"
+    },
+    "611": {
+        "id": 611,
+        "name": "Apple Pie",
+        "textID": "apple_pie"
+    },
+    "612": {
+        "id": 612,
+        "name": "Carrot",
+        "textID": "carrot"
+    },
+    "613": {
+        "id": 613,
+        "name": "Salt Sack",
+        "textID": "salt_sack"
+    },
+    "614": {
+        "id": 614,
+        "name": "Salt",
+        "textID": "salt"
+    },
+    "615": {
+        "id": 615,
+        "name": "Surgeon\u2019s Scalpel",
+        "textID": "surgeon_scalpel"
+    },
+    "616": {
+        "id": 616,
+        "name": "Admin Scalpel",
+        "textID": "admin_scalpel"
+    },
+    "617": {
+        "id": 617,
+        "name": "Herb",
+        "textID": "healing_herb"
+    },
+    "618": {
+        "id": 618,
+        "name": "Herb",
+        "textID": "poison_herb"
+    },
+    "619": {
+        "id": 619,
+        "name": "Dagger",
+        "textID": "dagger"
+    },
+    "620": {
+        "id": 620,
+        "name": "Poisoned Dagger",
+        "textID": "poisoned_dagger"
+    },
+    "621": {
+        "id": 621,
+        "name": "Thin Lance",
+        "textID": "thin_lance"
+    },
+    "622": {
+        "id": 622,
+        "name": "Broken Lance",
+        "textID": "broken_lance"
+    },
+    "623": {
+        "id": 623,
+        "name": "Money Bag",
+        "textID": "money_bag"
+    },
+    "624": {
+        "id": 624,
+        "name": "Torch",
+        "textID": "torch"
+    },
+    "625": {
+        "id": 625,
+        "name": "Book of Clothing",
+        "textID": "book_a"
+    },
+    "626": {
+        "id": 626,
+        "name": "Book of Weapons",
+        "textID": "book_b"
+    },
+    "627": {
+        "id": 627,
+        "name": "Book of Armor",
+        "textID": "book_c"
+    },
+    "628": {
+        "id": 628,
+        "name": "Book of Healing",
+        "textID": "book_d"
+    },
+    "629": {
+        "id": 629,
+        "name": "Book",
+        "textID": "book_e"
+    },
+    "630": {
+        "id": 630,
+        "name": "Sacred Book",
+        "textID": "book_f"
+    },
+    "631": {
+        "id": 631,
+        "name": "Sacred Book",
+        "textID": "book_f_open"
+    },
+    "632": {
+        "id": 632,
+        "name": "Lyre",
+        "textID": "lyre"
+    },
+    "633": {
+        "id": 633,
+        "name": "Lute",
+        "textID": "lute"
+    },
+    "634": {
+        "id": 634,
+        "name": "Flute",
+        "textID": "flute"
+    },
+    "635": {
+        "id": 635,
+        "name": "Vielle",
+        "textID": "vielle"
+    },
+    "636": {
+        "id": 636,
+        "name": "Vielle Bow",
+        "textID": "vielle_bow"
+    },
+    "637": {
+        "id": 637,
+        "name": "Warhorn",
+        "textID": "warhorn"
+    },
+    "638": {
+        "id": 638,
+        "name": "Dart",
+        "textID": "dart"
+    },
+    "639": {
+        "id": 639,
+        "name": "Die",
+        "textID": "die"
+    },
+    "640": {
+        "id": 640,
+        "name": "Dragon\u2019s Tongue",
+        "textID": "dragons_tongue"
+    },
+    "641": {
+        "id": 641,
+        "name": "Royal Dagger",
+        "textID": "royal_dagger"
+    },
+    "642": {
+        "id": 642,
+        "name": "Noyan Dagger",
+        "textID": "noyan_dagger"
+    },
+    "643": {
+        "id": 643,
+        "name": "Royal Sword",
+        "textID": "royal_sword"
+    },
+    "644": {
+        "id": 644,
+        "name": "Battle Sceptre",
+        "textID": "battle_sceptre"
+    },
+    "645": {
+        "id": 645,
+        "name": "Royal Bastard Sword",
+        "textID": "royal_bastard_sword"
+    },
+    "646": {
+        "id": 646,
+        "name": "Royal Great Sword",
+        "textID": "royal_great_sword"
+    },
+    "647": {
+        "id": 647,
+        "name": "Katana",
+        "textID": "katana"
+    },
+    "648": {
+        "id": 648,
+        "name": "Wakizashi",
+        "textID": "wakizashi"
+    },
+    "649": {
+        "id": 649,
+        "name": "Silver Ring with Sapphire",
+        "textID": "silver_ring_sapphire"
+    },
+    "650": {
+        "id": 650,
+        "name": "Silver Ring with Ruby",
+        "textID": "silver_ring_ruby"
+    },
+    "651": {
+        "id": 651,
+        "name": "Gold Ring with Sapphire",
+        "textID": "gold_ring_sapphire"
+    },
+    "652": {
+        "id": 652,
+        "name": "Gold Ring with Ruby",
+        "textID": "gold_ring_ruby"
+    },
+    "653": {
+        "id": 653,
+        "name": "Golden Earrings",
+        "textID": "gold_earrings"
+    },
+    "654": {
+        "id": 654,
+        "name": "Opal Earrings",
+        "textID": "opal_earrings"
+    },
+    "655": {
+        "id": 655,
+        "name": "Agate Earrings",
+        "textID": "agate_earrings"
+    },
+    "656": {
+        "id": 656,
+        "name": "Earrings with Yellow Jade",
+        "textID": "yellow_jade_earrings"
+    },
+    "657": {
+        "id": 657,
+        "name": "Amethyst Earrings",
+        "textID": "amethyst_earrings"
+    },
+    "658": {
+        "id": 658,
+        "name": "Golden Earrings",
+        "textID": "gold_earrings_b"
+    },
+    "659": {
+        "id": 659,
+        "name": "Sapphire Earrings",
+        "textID": "sapphire_earrings"
+    },
+    "660": {
+        "id": 660,
+        "name": "Nephrite Earrings",
+        "textID": "nephrite_earrings"
+    },
+    "661": {
+        "id": 661,
+        "name": "Black Pearl Earrings",
+        "textID": "black_pearl_earrings"
+    },
+    "662": {
+        "id": 662,
+        "name": "Ruby Earrings",
+        "textID": "ruby_earrings"
+    },
+    "663": {
+        "id": 663,
+        "name": "Letter",
+        "textID": "letter"
+    },
+    "997": {
+        "id": 997,
+        "name": "Admin Horse",
+        "textID": "admin_horse"
+    },
+    "998": {
+        "id": 998,
+        "name": "Invisible Head",
+        "textID": "invisible_head"
+    },
+    "999": {
+        "id": 999,
+        "name": "Invisible Body",
+        "textID": "invisible_body"
+    },
+    "1000": {
+        "id": 1000,
+        "name": "Invisible Foot",
+        "textID": "invisible_foot"
+    },
+    "1001": {
+        "id": 1001,
+        "name": "Invisible Hand",
+        "textID": "invisible_hand"
+    },
+    "1002": {
+        "id": 1002,
+        "name": "Invisible Sword",
+        "textID": "invisible_sword"
+    },
+    "1003": {
+        "id": 1003,
+        "name": "Admin Shield",
+        "textID": "riotshield"
+    },
+    "1004": {
+        "id": 1004,
+        "name": "Baton",
+        "textID": "baton"
+    }
+}
