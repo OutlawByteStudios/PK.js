@@ -1,9 +1,5 @@
 import React from 'react';
 
-import {
-  Modal
-} from "reactstrap";
-
 class AdvancedModal extends React.Component {
   state = {
     isOpen: true
@@ -11,7 +7,12 @@ class AdvancedModal extends React.Component {
 
   constructor(){
     super();
+    this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+  }
+
+  open(){
+    this.setState({ isOpen: true });
   }
 
   close(){
@@ -20,10 +21,16 @@ class AdvancedModal extends React.Component {
 
   render(){
     return (
-      <Modal isOpen={this.state.isOpen} {...this.props}>
-        {this.props.children(this.close)}
-      </Modal>
-    )
+      <>
+        {
+          this.props.children({
+            isOpen: this.state.isOpen,
+            open: this.open,
+            close: this.close
+          })
+        }
+      </>
+    );
   }
 }
 

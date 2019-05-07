@@ -10729,40 +10729,30 @@ textarea[resize="horizontal"] {
   .icon i, .icon svg {
     font-size: 2.25rem; }
   .icon + .icon-text {
-    padding-left: 1rem; }
+    padding-left: 1rem;
+    width: calc(100% - 3rem - 1); }
 
 .icon-xl {
   width: 5rem;
-  height: 5rem;
-  /*
-    + .icon-text {
-    	width: calc(100% - $icon-size-xl - 1);
-    }
-    */ }
+  height: 5rem; }
   .icon-xl i, .icon-xl svg {
     font-size: 4.25rem; }
+  .icon-xl + .icon-text {
+    width: calc(100% - 5rem - 1); }
 
 .icon-lg {
   width: 4rem;
-  height: 4rem;
-  /*
-    + .icon-text {
-    	// width: calc(100% - $icon-size-lg - 1);
-    }
-    */ }
+  height: 4rem; }
   .icon-lg i, .icon-lg svg {
-    font-size: 3.25rem; }
+    font-size: 4rem - 0.75; }
 
 .icon-sm {
   width: 2rem;
-  height: 2rem;
-  /*
-    + .icon-text {
-    	// width: calc(100% - $icon-size-sm - 1);
-    }
-    */ }
+  height: 2rem; }
   .icon-sm i, .icon-sm svg {
     font-size: 1.25rem; }
+  .icon-sm + .icon-text {
+    width: calc(100% - 2rem - 1); }
 
 .icon-shape {
   padding: 12px;

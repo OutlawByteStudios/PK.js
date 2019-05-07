@@ -14,12 +14,16 @@ import {
   InputGroup,
   InputGroupAddon,
   Media,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
   NavLink,
   Row,
   Table
 } from 'reactstrap';
 
-import Modal from '../../../misc/modal';
+import AdvancedModal from '../../../misc/advanced-modal';
 
 import query from './query';
 
@@ -138,24 +142,25 @@ class PlayerInfo extends React.Component {
                               <>
                                 {
                                   error &&
-                                  <Modal
-                                    className="modal-dialog-centered modal-danger"
-                                    contentClassName="bg-gradient-danger"
-                                  >
-                                    {(closeModal) =>  (
-                                      <>
-                                        <div className="modal-header">
+                                  <AdvancedModal>
+                                    {(modal) =>  (
+                                      <Modal
+                                        className="modal-dialog-centered modal-danger"
+                                        contentClassName="bg-gradient-danger"
+                                        isOpen={modal.isOpen}
+                                      >
+                                        <ModalHeader>
                                           <button
                                             aria-label="Close"
                                             className="close"
                                             data-dismiss="modal"
                                             type="button"
-                                            onClick={closeModal}
+                                            onClick={modal.close}
                                           >
                                             <span aria-hidden={true}>×</span>
                                           </button>
-                                        </div>
-                                        <div className="modal-body">
+                                        </ModalHeader>
+                                        <ModalBody>
                                           <div className="py-3 text-center">
                                             <i className="fas fa-exclamation-triangle fa-4x" />
                                             <h4 className="heading mt-4">Error!</h4>
@@ -165,21 +170,21 @@ class PlayerInfo extends React.Component {
                                               ))
                                             }
                                           </div>
-                                        </div>
-                                        <div className="modal-footer">
+                                        </ModalBody>
+                                        <ModalFooter>
                                           <Button
                                             className="text-white ml-auto"
                                             color="link"
                                             data-dismiss="modal"
                                             type="button"
-                                            onClick={closeModal}
+                                            onClick={modal.close}
                                           >
                                             Close
                                           </Button>
-                                        </div>
-                                      </>
+                                        </ModalFooter>
+                                      </Modal>
                                     )}
-                                  </Modal>
+                                  </AdvancedModal>
                                 }
                                 <Button
                                   color="danger"

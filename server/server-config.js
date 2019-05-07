@@ -4,10 +4,10 @@ const baseConfig = {
 
   mongoDB: 'mongodb://localhost:27017/pk-js',
 
-  steamAPIKey: '58FAA11EC2CF3CFDE0F077108F68AD4A',
+  steamAPIKey: '',
 
   jwtAuth: {
-    secret: 'nIn9tFmxP2X-JW4t-OzD_HyqLGAvZnmqrGXzA2dMHQk',
+    secret: '',
     algorithm: 'HS256'
   }
 };
