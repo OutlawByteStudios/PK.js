@@ -6,8 +6,8 @@ import { ApolloProvider } from 'react-apollo';
 
 import Auth from './utils/auth';
 
-import indexRoutes from './components/public';
-import adminRoutes from './components/admin';
+import indexRoutes from './views/public';
+import adminRoutes from './views/admin';
 
 const client = new ApolloClient({
   request: async (operation) => {
