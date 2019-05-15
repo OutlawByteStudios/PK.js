@@ -10,15 +10,20 @@ import {
   Row,
   Table
 } from "reactstrap";
+import moment from "moment";
 
 const QUERY = gql`
   query PlayerInfo($serverID: Int!, $guid: String!){
     server(id: $serverID){ 
       player(guid: $guid){
         guid
+        online
+        lastSeen
+        
         pouchGold
         bankGold
         bankLimit
+        
         headArmour {
           name
         }
@@ -43,9 +48,12 @@ const QUERY = gql`
         forthItem {
           name
         }
+        
         horse {
           name
         }
+        horseHealth
+        
         health
         food
         poison       
@@ -134,17 +142,33 @@ class Player extends React.Component {
                 <thead className="thead-light">
                 <tr>
                   <th>GUID</th>
-                  <th>Pouch</th>
-                  <th>Bank</th>
-                  <th>Bank Limit</th>
+                  <th>Online</th>
+                  <th>Last Seen</th>
+                  <th>{null}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                   <th>{player.guid}</th>
+                  <td>{(player.online > 0) ? 'Online' : 'Offline'}</td>
+                  <td>{moment(player.lastSeen).format('DD/MM/YYYY hh:mm')}</td>
+                  <td>{null}</td>
+                </tr>
+                </tbody>
+                <thead className="thead-light">
+                <tr>
+                  <th>Pouch</th>
+                  <th>Bank</th>
+                  <th>Bank Limit</th>
+                  <th>Horse</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
                   <td>{player.pouchGold}</td>
                   <td>{player.bankGold}</td>
                   <td>{player.bankLimit}</td>
+                  <td>{(player.horse === null) ? 'Empty' : player.horse.name}</td>
                 </tr>
                 </tbody>
                 <thead className="thead-light">
@@ -181,18 +205,18 @@ class Player extends React.Component {
                 </tbody>
                 <thead className="thead-light">
                 <tr>
-                  <th>Horse</th>
                   <th>Health</th>
                   <th>Food</th>
                   <th>Poison</th>
+                  <th>Horse Health</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>{(player.horse === null) ? 'Empty' : player.horse.name}</td>
                   <td>{player.health}</td>
                   <td>{player.food}</td>
                   <td>{player.poison}</td>
+                  <td>{player.horseHealth}</td>
                 </tr>
                 </tbody>
               </Table>
