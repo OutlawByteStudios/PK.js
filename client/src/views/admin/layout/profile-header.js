@@ -14,11 +14,11 @@ class UserHeader extends React.Component {
             backgroundImage:
               "url(" + require("assets/img/theme/cover.png") + ")",
             backgroundSize: "cover",
-            backgroundPosition: "center top"
+            backgroundPosition: "center 20%"
           }}
         >
           {/* Mask */}
-          <span className="mask bg-gradient-default opacity-8" />
+          <span className="mask bg-gradient-default opacity-7" />
           {/* Header container */}
           <Container className="d-flex align-items-center" fluid>
             <Row>

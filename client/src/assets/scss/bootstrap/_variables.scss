@@ -608,7 +608,7 @@ $dropdown-header-color:             $gray-600 !default;
 // Z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components-old dependent on the z-axis and are designed to all work together.
+// of components dependent on the z-axis and are designed to all work together.
 
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
@@ -824,7 +824,7 @@ $modal-transition:                  transform .3s ease-out !default;
 
 $alert-padding-y:                   .75rem !default;
 $alert-padding-x:                   1.25rem !default;
-$alert-margin-bottom:               0rem !default;
+$alert-margin-bottom:               1rem !default;
 $alert-border-radius:               $border-radius !default;
 $alert-link-font-weight:            $font-weight-bold !default;
 $alert-border-width:                $border-width !default;

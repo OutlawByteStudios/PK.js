@@ -28,7 +28,7 @@ class Admins extends React.Component {
           {/* Table */}
           <Row>
             <Col>
-              <AdminList serverID={serverID} />
+              <AdminList serverID={serverID} currentSelectedSteamID={steamID} />
             </Col>
           </Row>
           <Row className="mt-4">

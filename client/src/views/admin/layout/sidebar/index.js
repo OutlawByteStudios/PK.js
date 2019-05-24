@@ -70,7 +70,7 @@ class Sidebar extends React.Component {
             <img
               className="navbar-brand-img"
               alt="..."
-              src={require("assets/img/brand/argon-react.png")}
+              src={require("assets/img/brand/pk-js.png")}
             />
           </NavbarBrand>
           {/* User */}
@@ -111,7 +111,7 @@ class Sidebar extends React.Component {
               <Row>
                   <Col className="collapse-brand" xs="6">
                     <Link to="/admin">
-                      <img alt="..." src={require("assets/img/brand/argon-react.png")} />
+                      <img alt="..." src={require("assets/img/brand/pk-js.png")} />
                     </Link>
                   </Col>
                 <Col className="collapse-close" xs="6">

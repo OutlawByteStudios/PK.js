@@ -19,7 +19,7 @@ const QUERY = gql`
     server(id: $serverID){
       name
       adminPermission(steamID: $steamID){
-        hasViewAdminPermissions
+        viewAdminPermissions
       }
     }
   }
@@ -29,7 +29,7 @@ class ServerLinks extends React.Component {
   createLinks(routes, permissions) {
     return routes.map((route, key) => {
       if(route.displayInSidebar === false) return null;
-      if(route.requiredPermission && !permissions[route.requiredPermission]) return null;
+      if(route.requiredPermission && permissions[route.requiredPermission] === 0) return null;
       return (
         <NavItem key={key}>
           <NavLink

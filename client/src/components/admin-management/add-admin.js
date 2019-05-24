@@ -7,14 +7,10 @@ import {
   Form,
   Input,
   InputGroup,
-  InputGroupAddon,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader
+  InputGroupAddon
 } from 'reactstrap';
 
-import AdvancedModal from '../utils/advanced-modal';
+import GraphQLErrorModal from '../utils/graphql-error-modal';
 
 const MUTATION = gql`
   mutation AddAdminPermission($serverID: Int!, $steamID: String!){
@@ -76,53 +72,7 @@ class AddAdmin extends React.Component {
               Loading...
             </div>
             }
-            {
-              error &&
-              <AdvancedModal>
-                {(modal) =>  (
-                  <Modal
-                    className="modal-dialog-centered modal-danger"
-                    contentClassName="bg-gradient-danger"
-                    isOpen={modal.isOpen}
-                  >
-                    <ModalHeader>
-                      <button
-                        aria-label="Close"
-                        className="close"
-                        data-dismiss="modal"
-                        type="button"
-                        onClick={modal.close}
-                      >
-                        <span aria-hidden={true}>×</span>
-                      </button>
-                    </ModalHeader>
-                    <ModalBody>
-                      <div className="py-3 text-center">
-                        <i className="fas fa-exclamation-triangle fa-4x" />
-                        <h4 className="heading mt-4">Error!</h4>
-                        { console.log(error) }
-                        {
-                          error.graphQLErrors.map((error, key) => (
-                            <p key={key}>{ error.message }</p>
-                          ))
-                        }
-                      </div>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button
-                        className="text-white ml-auto"
-                        color="link"
-                        data-dismiss="modal"
-                        type="button"
-                        onClick={modal.close}
-                      >
-                        Close
-                      </Button>
-                    </ModalFooter>
-                  </Modal>
-                )}
-              </AdvancedModal>
-            }
+            <GraphQLErrorModal error={error} />
           </>
         )}
       </Mutation>

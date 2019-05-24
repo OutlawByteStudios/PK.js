@@ -1,5 +1,6 @@
 // General Routes
 import Home from './pages/home';
+import NewServer from './pages/new-server';
 import Profile from './pages/profile';
 
 // Server Routes
@@ -16,6 +17,14 @@ const generalRoutes = [
     name: "Home",
     icon: "fas fa-home",
     component: Home
+  },
+  {
+    path: pathPrefix + '/new-server',
+    exact: true,
+    name: "Create Server",
+    icon: "fas fa-plus-square",
+    component: NewServer,
+    requiredPermission: 'panelAdmin'
   },
   {
     path: pathPrefix + '/profile/:steamID',
@@ -42,7 +51,7 @@ const serverRoutes = [
     icon: "fas fa-user-shield",
     component: Admins,
     displayInSidebar: false,
-    requiredPermission: 'hasViewAdminPermissions'
+    requiredPermission: 'viewAdminPermissions'
   },
   {
     path: pathPrefix + '/:serverID/admins',
@@ -50,7 +59,7 @@ const serverRoutes = [
     name: "Admins",
     icon: "fas fa-user-shield",
     component: Admins,
-    requiredPermission: 'hasViewAdminPermissions'
+    requiredPermission: 'viewAdminPermissions'
   },
 
   {

@@ -12,6 +12,7 @@ import queriesSteamUser from './queries/steam-user';
 import queriesAdminPermission from './queries/admin-permission';
 
 import mutationsAdminPermission from './mutations/admin-permission';
+import mutationsServer from './mutations/server';
 
 export default [
   queriesScalars,
@@ -24,5 +25,6 @@ export default [
   queriesItem,
   queriesSteamUser,
   queriesAdminPermission,
-  mutationsAdminPermission
+  mutationsAdminPermission,
+  mutationsServer
 ];

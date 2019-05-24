@@ -22,6 +22,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class Names extends React.Component {
   render() {

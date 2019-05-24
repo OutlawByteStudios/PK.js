@@ -53,6 +53,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class Offences extends React.Component {
   state = {

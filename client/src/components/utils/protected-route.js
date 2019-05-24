@@ -6,7 +6,6 @@ import Auth from '../../utils/auth';
 class ProtectedRoute extends React.Component {
   render(){
     let authFunction = this.props.authFunction || function(){
-      console.log(Auth.isLoggedIn);
       return Auth.isLoggedIn;
     };
 

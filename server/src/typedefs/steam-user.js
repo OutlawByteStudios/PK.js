@@ -7,5 +7,7 @@ export default gql`
     avatar: String
     avatarMedium: String
     avatarFull: String
+
+    panelAdmin: Boolean
   }
 `;

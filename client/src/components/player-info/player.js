@@ -61,6 +61,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class Player extends React.Component {
   render() {

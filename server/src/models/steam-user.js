@@ -21,6 +21,12 @@ const SteamUserSchema = new mongoose.Schema(
     avatarFull: {
       type: String,
       require: true
+    },
+
+    panelAdmin: {
+      type: Boolean,
+      require: true,
+      default: false
     }
   },
   {

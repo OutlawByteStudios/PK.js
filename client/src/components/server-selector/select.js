@@ -17,6 +17,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class ServerSelectorSelect extends React.Component {
   constructor(){

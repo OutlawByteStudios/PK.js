@@ -7,13 +7,18 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 const ServerSchema = new mongoose.Schema(
   {
     _id: Number,
-    name: String,
+    name: {
+      type: String,
+      require: true
+    },
     welcomeMessage: {
       type: String,
+      require: true,
       default: 'Welcome to a PK.js powered server.'
     },
     apiKey: {
       type: String,
+      require: true,
       default: () => {
         return crypto.randomBytes(20).toString('hex');
       }

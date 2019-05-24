@@ -62,16 +62,16 @@ new ApolloServer({
   typeDefs: typeDefs,
   resolvers: resolvers,
   context: ({ ctx }) => {
-    try{
+    try {
       return {
         user: jwt.verify(ctx.get('JWT'), serverConfig.jwtAuth.secret, {
           algorithms: [serverConfig.jwtAuth.algorithm]
         }).user.steamID
-      }
+      };
     } catch (err) {
       return {
         user: null
-      }
+      };
     }
   }
 }).applyMiddleware({ app });
@@ -82,6 +82,10 @@ router.use('/serverapi', ServerApi.routes(), ServerApi.allowedMethods());
 if (inProduction) {
   router.get('/manifest.json', async ctx => {
     ctx.body = fs.readFileSync(path.join(clientPath, '/build/manifest.json'));
+  });
+
+  router.get('/favicon.png', async ctx => {
+    ctx.body = fs.readFileSync(path.join(clientPath, '/build/favicon.png'));
   });
 
   router.get('*', async ctx => {

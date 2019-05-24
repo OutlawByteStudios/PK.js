@@ -28,6 +28,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class PlayerSelector extends React.Component {
   state = {

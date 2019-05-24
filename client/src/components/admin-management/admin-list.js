@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { gql } from 'apollo-boost';
-import { Query } from "react-apollo";
+import { Query } from 'react-apollo';
 
 import {
   Button,
@@ -9,10 +9,11 @@ import {
   CardBody,
   CardHeader,
   Col,
-  Media,
-  NavLink, Row,
+  Row,
   Table
-} from "reactstrap";
+} from 'reactstrap';
+
+import SteamUser from '../misc/steam-user';
 
 import AddAdmin from './add-admin';
 import RemoveAdmin from './remove-admin';
@@ -33,6 +34,7 @@ const QUERY = gql`
     }
   }
 `;
+export { QUERY };
 
 class AdminList extends React.Component {
   constructor(){
@@ -78,10 +80,10 @@ class AdminList extends React.Component {
             if (error) return (
               <CardBody>
                 <div className="text-center mt-2 mb-3">
-                  Loading...
+                  Error!
                 </div>
                 <div className="btn-wrapper text-center">
-                  <i className="fas fa-circle-notch fa-spin fa-4x" />
+                  <i className="fas fa-exclamation-triangle fa-4x" />
                 </div>
               </CardBody>
             );
@@ -101,30 +103,14 @@ class AdminList extends React.Component {
                     data.server.adminPermissions.map((adminPermission, key) => (
                       <tr key={key}>
                         <td>
-                          <NavLink
-                            href={"/admin/profile/" + adminPermission.admin.steamID}
-                            target="_blank"
-                          >
-                            <Media className="align-items-center">
-                              <span className="avatar avatar-sm rounded-circle">
-                                <img
-                                  alt="..."
-                                  src={adminPermission.admin.avatar}
-                                />
-                              </span>
-                              <Media className="ml-2">
-                                <span className="mb-0 text-sm font-weight-bold">
-                                  {adminPermission.admin.displayName}
-                                </span>
-                              </Media>
-                            </Media>
-                          </NavLink>
+                          <SteamUser steamUser={adminPermission.admin} />
                         </td>
                         <td>{(adminPermission.player) ? adminPermission.player.guid : 'GUID not set.'}</td>
                         <td>
                           <Button
                             color="primary"
                             size="sm"
+                            className={(this.props.currentSelectedSteamID === adminPermission.admin.steamID) ? 'disabled' : null}
                             onClick={() => { this.editAdminRedirect(adminPermission.admin.steamID); }}
                           >
                             Edit Permission
@@ -133,7 +119,7 @@ class AdminList extends React.Component {
                             serverID={this.props.serverID}
                             steamID={adminPermission.admin.steamID}
                             refetchQueries={[{
-                              QUERY,
+                              query: QUERY,
                               variables: {
                                 serverID: this.props.serverID
                               }
@@ -154,7 +140,7 @@ class AdminList extends React.Component {
                       <AddAdmin
                         serverID={this.props.serverID}
                         refetchQueries={[{
-                          QUERY,
+                          query: QUERY,
                           variables: {
                             serverID: this.props.serverID
                           }

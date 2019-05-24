@@ -1,5 +1,13 @@
 import mongoose from 'mongoose';
 
+const permission = {
+  type: Number,
+  require: true,
+  default: 0,
+  min: 0,
+  max: 2
+};
+
 const AdminPermission = new mongoose.Schema(
   {
     server: {
@@ -12,27 +20,33 @@ const AdminPermission = new mongoose.Schema(
     },
     player: {
       type: String,
-      require: true
+      require: true,
+      default: 'wanker'
     },
 
-    manageAdminAssignPermissions: {
-      type: Boolean,
-      require: true,
-      default: false
-    },
-
-    hasViewAdminPermissions: {
-      type: Boolean,
-      require: true,
-      default: true
-    },
-    assignViewAdminPermissions: {
-      type: Boolean,
-      require: true,
-      default: false
-    }
-
-
+    manageAssignPermissions: permission,
+    viewAdminPermissions: permission,
+    adminTools: permission,
+    adminPanel: permission,
+    adminMute: permission,
+    adminKick: permission,
+    adminTemporaryBan: permission,
+    adminPermanentBan: permission,
+    adminKillFade: permission,
+    adminFreeze: permission,
+    adminSpectate: permission,
+    adminTeleport: permission,
+    adminHealSelf: permission,
+    adminGodlike: permission,
+    adminJoinFactions: permission,
+    adminAnnouncements: permission,
+    adminPolls: permission,
+    adminShips: permission,
+    adminGold: permission,
+    adminItems: permission,
+    adminAllItems: permission,
+    adminFactions: permission,
+    adminAnimals: permission
   },
   {
     timestamps: true

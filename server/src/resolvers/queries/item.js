@@ -5,20 +5,20 @@ export default {
     item: (parent, filter) => {
       return items[filter.id];
     },
-    items: (parent) => {
+    items: parent => {
       return items;
     }
   },
 
   Player: {
-    headArmour: (parent) => items[parent.headArmour],
-    bodyArmour: (parent) => items[parent.bodyArmour],
-    footArmour: (parent) => items[parent.footArmour],
-    handArmour: (parent) => items[parent.handArmour],
-    firstItem: (parent) => items[parent.firstItem],
-    secondItem: (parent) => items[parent.secondItem],
-    thirdItem: (parent) => items[parent.thirdItem],
-    forthItem: (parent) => items[parent.forthItem],
-    horse: (parent) => items[parent.horse]
+    headArmour: parent => items[parent.headArmour],
+    bodyArmour: parent => items[parent.bodyArmour],
+    footArmour: parent => items[parent.footArmour],
+    handArmour: parent => items[parent.handArmour],
+    firstItem: parent => items[parent.firstItem],
+    secondItem: parent => items[parent.secondItem],
+    thirdItem: parent => items[parent.thirdItem],
+    forthItem: parent => items[parent.forthItem],
+    horse: parent => items[parent.horse]
   }
 };

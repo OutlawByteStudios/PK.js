@@ -1,6 +1,11 @@
 import { SteamUser } from '../../models/index';
 
 export default {
+  Query: {
+    steamuser: async (parent, filter) => {
+      return SteamUser.findOne({ steamID: filter.steamID });
+    }
+  },
   Ban: {
     admin: async parent => {
       return SteamUser.findOne({ steamID: parent.admin });
