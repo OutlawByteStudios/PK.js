@@ -1,20 +1,19 @@
-import Server from './server';
+import AdminPermission from './admin-permission';
+import Ban from './ban';
+import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
-import Ban from './ban';
-import Warning from './warning';
-import Note from './note';
-
+import Server from './server';
 import SteamUser from './steam-user';
-import AdminPermission from './admin-permission';
+import Warning from './warning';
 
 export {
-  Server,
+  AdminPermission,
+  Ban,
+  Note,
   Player,
   PlayerName,
-  Ban,
-  Warning,
-  Note,
+  Server,
   SteamUser,
-  AdminPermission
+  Warning
 };

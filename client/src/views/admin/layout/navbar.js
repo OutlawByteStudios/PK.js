@@ -18,7 +18,7 @@ import {
 
 import Auth from '../../../utils/auth';
 
-import ServerSelectorSelect from '../../../components/server-selector/select';
+import { ServerSelectorSelect } from '../../../graphql/components';
 
 
 class AdminNavbar extends React.Component {

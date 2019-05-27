@@ -24,7 +24,7 @@ import Auth from '../../../../utils/auth';
 import GeneralLinks from './general-links';
 import ServerLinks from './server-links';
 
-import ServerSelectorSelect from '../../../../components/server-selector/select';
+import { ServerSelectorSelect } from '../../../../graphql/components';
 
 class Sidebar extends React.Component {
   state = {

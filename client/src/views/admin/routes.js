@@ -1,6 +1,6 @@
 // General Routes
 import Home from './pages/home';
-import NewServer from './pages/new-server';
+import CreateServer from './pages/create-server';
 import Profile from './pages/profile';
 
 // Server Routes
@@ -19,11 +19,11 @@ const generalRoutes = [
     component: Home
   },
   {
-    path: pathPrefix + '/new-server',
+    path: pathPrefix + '/create-server',
     exact: true,
     name: "Create Server",
     icon: "fas fa-plus-square",
-    component: NewServer,
+    component: CreateServer,
     requiredPermission: 'panelAdmin'
   },
   {

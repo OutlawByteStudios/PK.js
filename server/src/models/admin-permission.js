@@ -10,19 +10,9 @@ const permission = {
 
 const AdminPermission = new mongoose.Schema(
   {
-    server: {
-      type: Number,
-      require: true
-    },
-    admin: {
-      type: String,
-      require: true
-    },
-    player: {
-      type: String,
-      require: true,
-      default: 'wanker'
-    },
+    server: { type: Number, require: true },
+    admin: { type: String, require: true },
+    player: { type: String, require: true },
 
     manageAssignPermissions: permission,
     viewAdminPermissions: permission,
@@ -47,9 +37,6 @@ const AdminPermission = new mongoose.Schema(
     adminAllItems: permission,
     adminFactions: permission,
     adminAnimals: permission
-  },
-  {
-    timestamps: true
   }
 );
 

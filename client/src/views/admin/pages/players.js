@@ -10,10 +10,12 @@ import {
 import Header from '../layout/header';
 import Layout from '../layout/layout';
 
-import PlayerSelector from '../../../components/player-selector';
-import Offences from '../../../components/player-info/offences';
-import Player from '../../../components/player-info/player';
-import Names from '../../../components/player-info/names';
+import {
+  PlayerSelector,
+  Player,
+  PlayerNames,
+  PlayerOffences
+} from '../../../graphql/components';
 
 class Players extends React.Component {
   constructor(){
@@ -33,6 +35,7 @@ class Players extends React.Component {
   render() {
     let serverID = parseInt(this.props.match.params.serverID) || null;
     let guid = this.props.match.params.guid || null;
+
     return (
       <Layout
         location={this.props.location}
@@ -47,21 +50,28 @@ class Players extends React.Component {
               <PlayerSelector serverID={serverID} defaultGuid={guid} onChange={this.onPlayerChange} />
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <Offences serverID={serverID} guid={guid} />
-            </Col>
-          </Row>
-          <Row className="mt-4">
-            <Col>
-              <Player serverID={serverID} guid={guid} />
-            </Col>
-          </Row>
-          <Row className="mt-4">
-            <Col className="order-xl-1">
-              <Names serverID={serverID} guid={guid} />
-            </Col>
-          </Row>
+          {
+            guid &&
+            (
+              <>
+                <Row>
+                  <Col>
+                    <PlayerOffences serverID={serverID} guid={guid} />
+                  </Col>
+                </Row>
+                <Row className="mt-4">
+                  <Col>
+                    <Player serverID={serverID} guid={guid} />
+                  </Col>
+                </Row>
+                <Row className="mt-4">
+                  <Col className="order-xl-1">
+                    <PlayerNames serverID={serverID} guid={guid} />
+                  </Col>
+                </Row>
+              </>
+            )
+          }
         </Container>
       </Layout>
     );

@@ -1,68 +1,48 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
-import { Mutation } from 'react-apollo';
-
-import {
-  Button
-} from "reactstrap";
+import { Button } from 'reactstrap';
 
 import Auth from '../../utils/auth';
 
-import GraphQLErrorModal from '../utils/graphql-error-modal';
+import { ErrorModal } from '../index';
 
-const MUTATION = gql`
-  mutation RemoveAdminPermission($serverID: Int!, $steamID: String!){
-    removeAdminPermission(serverID: $serverID, steamID: $steamID) {
-      admin {
-        steamID
-        displayName
-        avatar
-      }
-    }
+class RemoveAdmin extends React.Component{
+  constructor(){
+    super();
+    this.onClick = this.onClick.bind(this);
   }
-`;
 
-class RemoveAdmin extends React.Component {
+  onClick(event){
+    event.preventDefault();
+
+    this.props.action({
+      serverID: this.props.serverID,
+      steamID: this.props.steamID
+    });
+  }
+
   render(){
-    return(
-      <Mutation
-        mutation={MUTATION}
-        onError={this.props.onError || function(){}}
-        { ...this.props }
-      >
-        {(removeAdminPermission, { loading, error }) => {
-          return (
-            <>
-              <GraphQLErrorModal error={error} />
-              <Button
-                color="danger"
-                size="sm"
-                className={(Auth.claim.steamID === this.props.steamID) ? 'disabled' : null}
-                onClick={() => {
-                  if(Auth.claim.steamID === this.props.steamID) return;
-                  removeAdminPermission({
-                    variables: {
-                      serverID: this.props.serverID,
-                      steamID: this.props.steamID
-                    }
-                  });
-                }}
-              >
-                {
-                  (loading) ? (
-                    <>
-                      <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
-                    </>
-                  ) : (
-                    <>Remove Admin</>
-                  )
-                }
-              </Button>
-            </>
-          );
-        }}
-      </Mutation>
+    return (
+      <>
+        <ErrorModal errors={this.props.errors} />
+
+        <Button
+          color="danger"
+          size="sm"
+          className={(Auth.claim.steamID === this.props.steamID) ? 'disabled' : null}
+          onClick={this.onClick}
+        >
+          {
+            (this.props.loading) ? (
+              <>
+                <i className="fas fa-circle-notch fa-spin" />{" "}
+                Loading...
+              </>
+            ) : (
+              <>Remove Admin</>
+            )
+          }
+        </Button>
+      </>
     );
   }
 }

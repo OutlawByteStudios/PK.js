@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 
-import ApolloClient from "apollo-boost";
+import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 import Auth from './utils/auth';
@@ -11,12 +11,18 @@ import adminRoutes from './views/admin';
 
 const client = new ApolloClient({
   request: async (operation) => {
-    operation.setContext({
-      headers: {
-        JWT: Auth.jwtToken
+    operation.setContext({ headers: { JWT: Auth.jwtToken } });
+  },
+  cache: new InMemoryCache({
+    dataIdFromObject: obj => {
+      switch (obj.__typename) {
+        case 'item':
+          return obj.id;
+        default:
+          return obj._id;
       }
-    })
-  }
+    }
+  })
 });
 
 class App extends React.Component {

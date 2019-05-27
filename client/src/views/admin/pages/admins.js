@@ -9,8 +9,7 @@ import {
 import Header from '../layout/header';
 import Layout from '../layout/layout';
 
-import AdminList from '../../../components/admin-management/admin-list';
-import AdminPermission from '../../../components/admin-management/admin-permissions';
+import { AdminList, EditAdminPermissions } from '../../../graphql/components';
 
 class Admins extends React.Component {
   render() {
@@ -33,7 +32,10 @@ class Admins extends React.Component {
           </Row>
           <Row className="mt-4">
             <Col>
-              <AdminPermission serverID={serverID} steamID={steamID} />
+              {
+                steamID &&
+                <EditAdminPermissions serverID={serverID} steamID={steamID} />
+              }
             </Col>
           </Row>
         </Container>

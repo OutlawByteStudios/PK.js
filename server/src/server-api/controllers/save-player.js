@@ -19,7 +19,6 @@ export default async function(ctx) {
   if (ctx.query.alive !== undefined) {
     update = {
       ...update,
-      pouchGold: ctx.query.pouchGold,
       health: ctx.query.health,
       food: ctx.query.food,
       poison: ctx.query.poison,
@@ -39,7 +38,8 @@ export default async function(ctx) {
       horseHealth: ctx.query.horseHealth,
       xPosition: ctx.query.xPosition,
       yPosition: ctx.query.yPosition,
-      zPosition: ctx.query.zPosition
+      zPosition: ctx.query.zPosition,
+      pouchGold: ctx.query.pouchGold
     };
   }
 

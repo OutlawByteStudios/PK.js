@@ -4,41 +4,14 @@ import gameConfig from '../../game-config';
 
 const PlayerSchema = new mongoose.Schema(
   {
-    server: {
-      type: Number,
-      require: true
-    },
+    server: { type: Number, require: true },
+    guid: { type: String, require: true },
 
-    guid: {
-      type: String,
-      require: true
-    },
-
-    online: {
-      type: Number,
-      default: 0
-    },
-    lastSeen: {
-      type: Date,
-      default: new Date()
-    },
+    online: { type: Number, default: 0 },
+    lastSeen: { type: Date, default: new Date() },
 
     factionID: Number,
     classID: Number,
-
-    pouchGold: {
-      type: Number,
-      default: gameConfig.pouchGoldDefault
-    },
-    bankGold: {
-      type: Number,
-      default: gameConfig.bankGoldDefault
-    },
-    bankLimit: {
-      type: Number,
-      default: gameConfig.bankLimit
-    },
-
     health: Number,
     food: Number,
     poison: Number,
@@ -59,10 +32,11 @@ const PlayerSchema = new mongoose.Schema(
 
     xPosition: Number,
     yPosition: Number,
-    zPosition: Number
-  },
-  {
-    timestamps: true
+    zPosition: Number,
+
+    pouchGold: { type: Number, default: gameConfig.pouchGoldDefault },
+    bankGold: { type: Number, default: gameConfig.bankGoldDefault },
+    bankLimit: { type: Number, default: gameConfig.bankLimit }
   }
 );
 

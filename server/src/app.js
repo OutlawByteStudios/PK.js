@@ -14,10 +14,7 @@ import mongoose from 'mongoose';
 
 import { passport, SteamAuth } from './auth';
 
-import { ApolloServer } from 'apollo-server-koa';
-import jwt from 'jsonwebtoken';
-import typeDefs from './typedefs';
-import resolvers from './resolvers';
+import ApolloServer from './graphql-api';
 
 import ServerApi from './server-api';
 
@@ -58,23 +55,7 @@ else app.use(serve(path.join(clientPath, '/public')));
 
 if (inProduction) app.use(views(path.join(path.join(clientPath, '/build'))));
 
-new ApolloServer({
-  typeDefs: typeDefs,
-  resolvers: resolvers,
-  context: ({ ctx }) => {
-    try {
-      return {
-        user: jwt.verify(ctx.get('JWT'), serverConfig.jwtAuth.secret, {
-          algorithms: [serverConfig.jwtAuth.algorithm]
-        }).user.steamID
-      };
-    } catch (err) {
-      return {
-        user: null
-      };
-    }
-  }
-}).applyMiddleware({ app });
+ApolloServer.applyMiddleware({ app });
 
 router.use('/auth', SteamAuth.routes(), SteamAuth.allowedMethods());
 router.use('/serverapi', ServerApi.routes(), ServerApi.allowedMethods());

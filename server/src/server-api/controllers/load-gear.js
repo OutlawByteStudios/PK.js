@@ -3,7 +3,7 @@ import { Server, Player } from '../../models';
 import { LOAD_GEAR } from '../actions';
 
 export default async function(ctx) {
-  const server = await Server.findOne({ _id: ctx.query.server });
+  const server = await Server.findOne({ id: ctx.query.server });
   const player = await Player.findOne({
     server: ctx.query.server,
     guid: ctx.query.guid
