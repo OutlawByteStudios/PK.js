@@ -1,0 +1,6 @@
+## Ignore All Files
+*
+
+## Keep index.js and .gitkeeps
+!.gitkeep
+!index.js
