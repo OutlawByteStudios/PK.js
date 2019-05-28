@@ -1,6 +1,7 @@
 ## Ignore All Files
 *
 
-## Keep index.js and .gitkeeps
+## Keep package.json, index.js and .gitkeeps
+!package.json
 !.gitkeep
 !index.js

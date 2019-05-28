@@ -29,7 +29,8 @@
     "mongoose": "^5.4.20",
     "mongoose-sequence": "^5.0.1",
     "passport-steam": "^1.0.10",
-    "shared": "1.0.0"
+    "shared": "1.0.0",
+    "gameservers": "1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

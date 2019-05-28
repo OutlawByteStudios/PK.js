@@ -1,6 +1,11 @@
 {
   "private": true,
-  "workspaces": ["server", "client", "shared"],
+  "workspaces": [
+    "client",
+    "gameservers",
+    "server",
+    "shared"
+  ],
   "scripts": {
     "start": "cd server && npm run start",
     "build": "cd server && npm run build && cd ../client && npm run build",
