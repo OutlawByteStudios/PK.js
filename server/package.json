@@ -14,6 +14,8 @@
     "apollo-server-koa": "^2.4.8",
     "client": "1.0.0",
     "concurrently": "^4.1.0",
+    "cpr-promise": "^0.2.6",
+    "gameservers": "1.0.0",
     "graphql": "^14.2.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",
@@ -29,8 +31,7 @@
     "mongoose": "^5.4.20",
     "mongoose-sequence": "^5.0.1",
     "passport-steam": "^1.0.10",
-    "shared": "1.0.0",
-    "gameservers": "1.0.0"
+    "shared": "1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

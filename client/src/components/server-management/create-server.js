@@ -62,6 +62,9 @@ class CreateServer extends React.Component{
           <div className="btn-wrapper text-center">
             <i className="fas fa-circle-notch fa-spin fa-4x" />
           </div>
+          <div className="text-center mt-3 mb-3">
+            This may take a few minutes.
+          </div>
         </CardBody>
       </Card>
     );
