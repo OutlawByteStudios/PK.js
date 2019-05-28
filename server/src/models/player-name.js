@@ -1,14 +1,12 @@
 import mongoose from 'mongoose';
 
-const PlayerNameSchema = new mongoose.Schema(
-  {
-    server: { type: Number, require: true },
-    name: { type: String, require: true },
+const PlayerNameSchema = new mongoose.Schema({
+  server: { type: Number, require: true },
+  name: { type: String, require: true },
 
-    player: { type: String, require: true },
+  player: { type: String, require: true },
 
-    lastSeen: { type: Date, default: new Date() }
-  }
-);
+  lastSeen: { type: Date, default: new Date() }
+});
 
 export default mongoose.model('PlayerName', PlayerNameSchema);

@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-koa';
 export default gql`
   type AdminPermission {
     _id: String
-    
+
     server: Server
     admin: SteamUser
     player: Player

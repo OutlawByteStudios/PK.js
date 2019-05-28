@@ -1,4 +1,4 @@
-import { AdminPermission } from '../../../../models'
+import { AdminPermission } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared';
 

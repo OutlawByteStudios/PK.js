@@ -3,12 +3,12 @@ import { gql } from 'apollo-server-koa';
 export default gql`
   type Server {
     _id: String
-    
+
     id: Int
     name: String
-    
+
     apiKey: String
-        
+
     welcomeMessage: String
 
     player(guid: String!): Player

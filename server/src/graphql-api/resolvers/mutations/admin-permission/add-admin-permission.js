@@ -1,6 +1,6 @@
 import { UserInputError } from 'apollo-server-koa';
 
-import { AdminPermission, SteamUser } from '../../../../models'
+import { AdminPermission, SteamUser } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared';
 

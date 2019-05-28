@@ -5,7 +5,7 @@ export default gql`
     _id: String
     server: Int
     player: Player
-    
+
     admin: SteamUser
 
     note: String

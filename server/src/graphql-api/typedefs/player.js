@@ -3,13 +3,13 @@ import { gql } from 'apollo-server-koa';
 export default gql`
   type Player {
     _id: String
-    
+
     server: Int
     guid: String
-    
+
     online: Int
     lastSeen: Date
-    
+
     factionID: Int
     classID: Int
     health: Int
@@ -29,11 +29,11 @@ export default gql`
     forthAmmo: Int
     horse: Item
     horseHealth: Int
-    
+
     xPosition: Float
     yPosition: Float
     zPosition: Float
-    
+
     pouchGold: Int
     bankGold: Int
     bankLimit: Int

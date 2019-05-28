@@ -6,7 +6,7 @@ export default gql`
 
     item(id: Int): Item
     items: [Item]
-    
+
     server(id: Int!): Server
     servers: [Server]
 

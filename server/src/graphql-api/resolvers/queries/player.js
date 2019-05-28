@@ -11,7 +11,8 @@ export default {
 
     players: async (parent, filter) => {
       let query = { server: parent.id };
-      if (filter.guidLike) query.guid = new RegExp('.*' + filter.guidLike + '.*');
+      if (filter.guidLike)
+        query.guid = new RegExp('.*' + filter.guidLike + '.*');
       return Player.find(query);
     }
   },

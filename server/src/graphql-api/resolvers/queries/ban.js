@@ -5,7 +5,7 @@ export default {
     bans: async (parent, filter) => {
       let query = { server: parent.id };
 
-      if(filter.player) query.player = filter.player;
+      if (filter.player) query.player = filter.player;
 
       return Ban.find(query);
     }
@@ -19,4 +19,4 @@ export default {
       });
     }
   }
-}
+};

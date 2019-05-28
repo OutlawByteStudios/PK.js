@@ -11,10 +11,7 @@ export default {
 
     adminPermissions: async (parent, filter) => {
       return AdminPermission.find({
-        $or: [
-          { server: filter.serverID },
-          { admin: filter.steamID }
-        ]
+        $or: [{ server: filter.serverID }, { admin: filter.steamID }]
       });
     }
   },
