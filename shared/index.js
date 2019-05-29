@@ -1,7 +1,7 @@
-const gamePermissions = require('./game-permissions');
-const panelPermissions = require('./panel-permissions');
+const constants = require('./constants');
+const validators = require('./validators');
 
 module.exports = {
-  gamePermissions,
-  panelPermissions
+  constants,
+  validators
 };

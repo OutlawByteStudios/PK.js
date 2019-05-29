@@ -11,7 +11,7 @@ import {
   Row
 } from 'reactstrap';
 
-import { gamePermissions, panelPermissions } from 'shared';
+import { gamePermissions, panelPermissions } from 'shared/constants';
 
 import { AdminPermissionCheckbox, ErrorModal, SteamUser } from '../index';
 

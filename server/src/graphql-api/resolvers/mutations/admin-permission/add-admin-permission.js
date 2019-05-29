@@ -2,7 +2,7 @@ import { UserInputError } from 'apollo-server-koa';
 
 import { AdminPermission, SteamUser } from '../../../../models';
 
-import { gamePermissions, panelPermissions } from 'shared';
+import { gamePermissions, panelPermissions } from 'shared/constants';
 
 export default async (parent, args, context) => {
   if (context.user === null)

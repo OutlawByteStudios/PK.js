@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 
+import { validatorServerName } from 'shared/validators';
+
 import {
   Button,
   Card,
@@ -8,6 +10,7 @@ import {
   CardHeader,
   Col,
   Form,
+  FormFeedback,
   FormGroup,
   Input,
   Row
@@ -17,14 +20,48 @@ import ErrorModal from '../utils/error-modal';
 
 
 class CreateServer extends React.Component{
+  state = {
+    serverName: {
+      validator: validatorServerName,
+      valid: false
+    },
+    welcomeMessage: {
+      valid: true
+    }
+  };
 
   constructor(){
     super();
 
-    this.serverName = React.createRef();
-    this.welcomeMessage = React.createRef();
+    for(let field in this.state) {
+      this.state[field] = {
+        ref: React.createRef(),
+        ...this.state[field]
+      };
+    }
 
+    this.updateField = this.updateField.bind(this);
+    this.isValid = this.isValid.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  updateField(field){
+    this.setState({
+      [field]: {
+        ...this.state[field],
+        valid:
+          (this.state[field].validator) ?
+            this.state[field].validator(this.state[field].ref.current.value) :
+            true
+      }
+    });
+  }
+
+  isValid(){
+    for(let field in this.state){
+      if(!this.state[field].valid) return false;
+    }
+    return true;
   }
 
   onSubmit(event){
@@ -88,19 +125,28 @@ class CreateServer extends React.Component{
           >
             <Row>
               <Col>
-                <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="input-first-name"
-                  >
-                    Server Name
-                  </label>
+                <label
+                  className="form-control-label"
+                  htmlFor="input-first-name"
+                >
+                  Server Name
+                </label>
+                <FormGroup
+                  className={(this.state.serverName.valid) ? null : 'has-danger'}
+                >
                   <Input
                     className="form-control-alternative"
                     placeholder="Server Name"
                     type="text"
-                    innerRef={this.serverName}
+                    innerRef={this.state.serverName.ref}
+                    invalid={!this.state.serverName.valid}
+                    onChange={() => { this.updateField('serverName') }}
                   />
+                  <FormFeedback
+                    valid={this.state.serverName.valid}
+                  >
+                    A server name cannot be blank and must only contain the characters A-Z, a-z, 0-9 or _
+                  </FormFeedback>
                 </FormGroup>
               </Col>
             </Row>
@@ -117,7 +163,8 @@ class CreateServer extends React.Component{
                     className="form-control-alternative"
                     placeholder="Welcome Message"
                     type="text"
-                    innerRef={this.welcomeMessage}
+                    innerRef={this.state.welcomeMessage.ref}
+                    invalid={!this.state.welcomeMessage.valid}
                   />
                 </FormGroup>
               </Col>
@@ -126,6 +173,7 @@ class CreateServer extends React.Component{
               <Col className="text-center">
                 <Button
                   color="primary"
+                  disabled={!this.isValid()}
                 >
                   Create
                 </Button>

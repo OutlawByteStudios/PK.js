@@ -5,7 +5,8 @@ import cprp from 'cpr-promise';
 
 import { Server, AdminPermission, SteamUser } from '../../../../models';
 
-import { panelPermissions, gamePermissions } from 'shared';
+import { validatorServerName } from 'shared/validators';
+import { panelPermissions, gamePermissions } from 'shared/constants';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -21,8 +22,8 @@ export default async (parent, args, context) => {
     throw new Error('You do not have permission to do that.');
 
   /* Create Server Document in DB */
-  if (args.name === '')
-    throw new UserInputError('The server name cannot be blank.');
+  if (validatorServerName(args.name))
+    throw new UserInputError('Invalid Server Name.');
 
   let serverInput = { name: args.name };
 
