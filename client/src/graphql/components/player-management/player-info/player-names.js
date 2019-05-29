@@ -20,7 +20,7 @@ class PlayerNames extends React.Component{
           <PlayerNamesBase
             loading={loading}
             errors={(error) ? error.graphQLErrors : error}
-            names={(data) ? data.player.playerNames : null}
+            names={(data.server) ? data.server.player.playerNames : null}
             {...this.props}
           />
         )}

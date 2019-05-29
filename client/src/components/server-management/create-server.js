@@ -68,12 +68,9 @@ class CreateServer extends React.Component{
     event.preventDefault();
 
     this.props.action({
-      name: this.serverName.current.value,
-      welcomeMessage: this.welcomeMessage.current.value
+      name: this.state.serverName.ref.current.value,
+      welcomeMessage: this.state.welcomeMessage.ref.current.value
     });
-
-    this.serverName.current.value = "";
-    this.welcomeMessage.current.value = "";
   }
 
   render(){
@@ -136,7 +133,6 @@ class CreateServer extends React.Component{
                 >
                   <Input
                     className="form-control-alternative"
-                    placeholder="Server Name"
                     type="text"
                     innerRef={this.state.serverName.ref}
                     invalid={!this.state.serverName.valid}
@@ -161,7 +157,6 @@ class CreateServer extends React.Component{
                   </label>
                   <Input
                     className="form-control-alternative"
-                    placeholder="Welcome Message"
                     type="text"
                     innerRef={this.state.welcomeMessage.ref}
                     invalid={!this.state.welcomeMessage.valid}

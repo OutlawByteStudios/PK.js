@@ -20,7 +20,7 @@ class Player extends React.Component{
           <PlayerBase
             loading={loading}
             errors={(error) ? error.graphQLErrors : error}
-            player={(data) ? data.player : null}
+            player={(data.server) ? data.server.player : null}
             {...this.props}
           />
         )}

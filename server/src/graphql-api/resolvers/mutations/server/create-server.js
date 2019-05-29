@@ -22,7 +22,7 @@ export default async (parent, args, context) => {
     throw new Error('You do not have permission to do that.');
 
   /* Create Server Document in DB */
-  if (validatorServerName(args.name))
+  if (!validatorServerName(args.name))
     throw new UserInputError('Invalid Server Name.');
 
   let serverInput = { name: args.name };

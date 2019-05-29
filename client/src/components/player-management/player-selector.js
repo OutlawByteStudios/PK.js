@@ -32,7 +32,7 @@ class PlayerSelector extends React.Component {
   }
 
   async searchUpdate(search){
-    const data = await this.props.searchUpdate({
+    const { data } = await this.props.searchUpdate({
       serverID: this.props.serverID,
       search
     });

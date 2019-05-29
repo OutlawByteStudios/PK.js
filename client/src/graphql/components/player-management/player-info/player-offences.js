@@ -20,7 +20,7 @@ class PlayerOffences extends React.Component{
           <PlayerOffencesBase
             loading={loading}
             errors={(error) ? error.graphQLErrors : error}
-            player={(data) ? data.player : null}
+            player={(data.server) ? data.server.player : null}
             {...this.props}
           />
         )}
