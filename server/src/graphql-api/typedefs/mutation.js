@@ -3,6 +3,7 @@ import { gql } from 'apollo-server-koa';
 export default gql`
   type Mutation {
     createServer(name: String!, welcomeMessage: String): Server
+    deleteServer(serverID: Int!): Server
 
     addAdminPermission(serverID: Int!, steamID: String!): AdminPermission
     removeAdminPermission(serverID: Int!, steamID: String!): AdminPermission
