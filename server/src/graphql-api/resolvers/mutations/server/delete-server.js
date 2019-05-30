@@ -26,13 +26,12 @@ export default async (parent, args, context) => {
   if (requestingUser === null)
     throw new Error('You do not have permission to do that.');
 
-
   /* Get copy of server */
   const server = await Server.findOne({
     id: args.serverID
   });
 
-  if(server === null) throw new Error('Server not found.');
+  if (server === null) throw new Error('Server not found.');
 
   /* Delete all documents related to server */
   await Promise.all([
@@ -46,9 +45,12 @@ export default async (parent, args, context) => {
   ]);
 
   /* Delete server folder */
-  const currentGameserverPath = path.join(require.resolve('gameservers'), `../${server.id}`);
+  const currentGameserverPath = path.join(
+    require.resolve('gameservers'),
+    `../${server.id}`
+  );
   if (!fs.existsSync(currentGameserverPath)) return server;
   await del([currentGameserverPath], { force: true });
 
   return server;
-}
+};

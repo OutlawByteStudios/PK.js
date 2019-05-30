@@ -10,10 +10,10 @@ export default gql`
     apiKey: String
 
     welcomeMessage: String
-    
-    serverConfigFile(name: String!): ServerConfigFile 
+
+    serverConfigFile(name: String!): ServerConfigFile
     serverConfigFiles: [ServerConfigFile]
-    
+
     adminPermission(steamID: String!): AdminPermission
     adminPermissions: [AdminPermission]
 
