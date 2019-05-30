@@ -13,6 +13,11 @@ export default gql`
         avatar
       }
       
+      player {
+        _id
+        guid
+      }
+      
       ...AdminPermission
     }
   }

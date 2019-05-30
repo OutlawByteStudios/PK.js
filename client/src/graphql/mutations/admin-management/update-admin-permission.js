@@ -65,6 +65,7 @@ export default gql`
       displayName
       avatar
     }
+    
     player {
       _id
       guid

@@ -15,6 +15,7 @@ export default gql`
       
       player {
         _id
+        
         guid
       }
       
