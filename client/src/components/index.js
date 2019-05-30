@@ -13,8 +13,10 @@ import PlayerSelector from './player-management/player-selector';
 
 import ServerSelectorSelect from './server-management/server-selector/select';
 import CreateServer from './server-management/create-server';
+import DeleteServer from './server-management/delete-server';
 
 import AdvancedModal from './utils/advanced-modal';
+import DangerModal from './utils/danger-modal';
 import ErrorModal from './utils/error-modal';
 
 export {
@@ -30,6 +32,8 @@ export {
   PlayerSelector,
   ServerSelectorSelect,
   CreateServer,
+  DeleteServer,
   AdvancedModal,
+  DangerModal,
   ErrorModal
 }

@@ -13,10 +13,12 @@ class AdvancedModal extends React.Component {
 
   open(){
     this.setState({ isOpen: true });
+    if(this.props.onOpen) this.props.onOpen();
   }
 
   close(){
     this.setState({ isOpen: false });
+    if(this.props.onClose) this.props.onClose();
   }
 
   render(){

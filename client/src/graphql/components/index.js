@@ -10,6 +10,7 @@ import PlayerSelector from './player-management/player-selector';
 
 import ServerSelectorSelect from './server-management/server-selector/select';
 import CreateServer from './server-management/create-server';
+import DeleteServer from './server-management/delete-server';
 
 export {
   AddAdmin,
@@ -21,5 +22,6 @@ export {
   PlayerOffences,
   PlayerSelector,
   ServerSelectorSelect,
-  CreateServer
+  CreateServer,
+  DeleteServer
 };
