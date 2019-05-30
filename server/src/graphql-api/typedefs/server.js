@@ -10,6 +10,12 @@ export default gql`
     apiKey: String
 
     welcomeMessage: String
+    
+    serverConfigFile(name: String!): ServerConfigFile 
+    serverConfigFiles: [ServerConfigFile]
+    
+    adminPermission(steamID: String!): AdminPermission
+    adminPermissions: [AdminPermission]
 
     player(guid: String!): Player
     players(guidLike: String): [Player]
@@ -20,8 +26,5 @@ export default gql`
     bans(player: String): [Ban]
     warnings(player: String): [Warning]
     notes(player: String): [Note]
-
-    adminPermission(steamID: String): AdminPermission
-    adminPermissions: [AdminPermission]
   }
 `;

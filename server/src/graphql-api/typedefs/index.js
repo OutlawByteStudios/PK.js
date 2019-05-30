@@ -8,6 +8,7 @@ import PlayerName from './player-name';
 import Query from './query';
 import Scalars from './scalars';
 import Server from './server';
+import ServerConfigFile from './server-config-file';
 import SteamUser from './steam-user';
 import Warning from './warning';
 
@@ -22,6 +23,7 @@ export default [
   Query,
   Scalars,
   Server,
+  ServerConfigFile,
   SteamUser,
   Warning
 ];
