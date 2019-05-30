@@ -1,5 +1,8 @@
 import React from 'react';
-import { Media, NavLink } from 'reactstrap';
+import {
+  Media,
+  NavLink
+} from 'reactstrap';
 
 export default function(props) {
   return (

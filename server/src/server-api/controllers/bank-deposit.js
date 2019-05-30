@@ -24,7 +24,7 @@ export default async function(ctx) {
     ctx.query.playerID,
     amountToDeposit,
     player.bankGold,
-    amount - amountToDeposit, // amount go give back to player
+    amount - amountToDeposit, // amount go give back to player-selector
     'Bank limit reached.' // reason  for above
   ]);
 }

@@ -41,7 +41,7 @@ export default async function(ctx) {
     }
   );
 
-  // If player is already connected to prevent duping
+  // If player-selector is already connected to prevent duping
   if (player.online > 1) {
     ctx.body = encode([LOAD_PLAYER_ALREADY_CONNECTED, playerID]);
     return;

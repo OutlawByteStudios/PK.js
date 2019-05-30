@@ -10,10 +10,10 @@ import {
 import Header from '../layout/header';
 import Layout from '../layout/layout';
 
-import { CreateServer as CreateServerComponent } from '../../../graphql/components';
+import { CreateServer } from '../../../components';
 
 
-class CreateServer extends React.Component {
+class CreateServerPage extends React.Component {
 
   render() {
     return (
@@ -27,7 +27,7 @@ class CreateServer extends React.Component {
         <Container className="mt--7" fluid>
           <Row className="mb-4">
             <Col className="order-xl-1">
-              <CreateServerComponent />
+              <CreateServer />
             </Col>
           </Row>
         </Container>
@@ -36,4 +36,4 @@ class CreateServer extends React.Component {
   }
 }
 
-export default withRouter(CreateServer);
+export default withRouter(CreateServerPage);

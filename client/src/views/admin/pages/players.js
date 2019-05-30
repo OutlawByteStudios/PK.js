@@ -11,11 +11,11 @@ import Header from '../layout/header';
 import Layout from '../layout/layout';
 
 import {
-  PlayerSelector,
   Player,
+  PlayerOffences,
   PlayerNames,
-  PlayerOffences
-} from '../../../graphql/components';
+  PlayerSelector
+} from '../../../components';
 
 class Players extends React.Component {
   constructor(){

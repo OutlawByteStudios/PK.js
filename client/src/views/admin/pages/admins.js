@@ -9,7 +9,10 @@ import {
 import Header from '../layout/header';
 import Layout from '../layout/layout';
 
-import { AdminList, EditAdminPermissions } from '../../../graphql/components';
+import {
+  AdminList,
+  EditAdminPermissions
+} from '../../../components';
 
 class Admins extends React.Component {
   render() {
