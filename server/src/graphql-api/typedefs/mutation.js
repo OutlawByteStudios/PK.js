@@ -4,6 +4,7 @@ export default gql`
   type Mutation {
     createServer(name: String!, welcomeMessage: String): Server
     deleteServer(serverID: Int!): Server
+    saveServerConfig(serverID: Int!, name: String!, config: String!): ServerConfigFile
 
     addAdminPermission(serverID: Int!, steamID: String!): AdminPermission
     removeAdminPermission(serverID: Int!, steamID: String!): AdminPermission

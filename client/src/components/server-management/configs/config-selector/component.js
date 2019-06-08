@@ -31,6 +31,10 @@ class Component extends React.Component{
             </option>
           ))
         }
+        {
+          this.props.newConfig &&
+          <option className="text-default" value={"new"}>Create New Config File...</option>
+        }
       </Input>
     );
   }

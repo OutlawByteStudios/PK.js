@@ -6,7 +6,7 @@ import { SERVER_CONFIG } from '../../../../graphql/queries';
 import Loader from './loader';
 import Component from './component';
 
-class ConfigSelector extends React.Component{
+class ConfigEditor extends React.Component{
   render(){
     return (
       <Query
@@ -23,8 +23,10 @@ class ConfigSelector extends React.Component{
 
           return (
             <Component
-              config={data.server.serverConfigFile.config}
-              key={data.server.serverConfigFile.name}
+              serverID={this.props.serverID}
+              name={this.props.config}
+              config={(data.server.serverConfigFile !== null) ? data.server.serverConfigFile.config : ''}
+              key={this.props.config}
             />
           );
         }}
@@ -33,4 +35,4 @@ class ConfigSelector extends React.Component{
   }
 }
 
-export default ConfigSelector;
+export default ConfigEditor;

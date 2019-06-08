@@ -4,6 +4,7 @@ import UPDATE_ADMIN_PERMISSION from './admin-management/update-admin-permission'
 
 import CREATE_SERVER from './server-management/create-server';
 import DELETE_SERVER from './server-management/delete-server';
+import SAVE_SERVER_CONFIG from './server-management/save-server-config'
 
 
 export {
@@ -11,5 +12,6 @@ export {
   REMOVE_ADMIN_PERMISSION,
   UPDATE_ADMIN_PERMISSION,
   CREATE_SERVER,
-  DELETE_SERVER
+  DELETE_SERVER,
+  SAVE_SERVER_CONFIG
 }

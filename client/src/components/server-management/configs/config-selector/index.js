@@ -25,6 +25,7 @@ class ConfigSelector extends React.Component{
               configs={data.server.serverConfigFiles}
               selectedConfig={this.props.selectedConfig}
               onChange={this.props.onChange}
+              newConfig={this.props.newConfig}
             />
           );
         }}

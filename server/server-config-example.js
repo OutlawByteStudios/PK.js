@@ -9,7 +9,9 @@ const baseConfig = {
   jwtAuth: {
     secret: '',
     algorithm: 'HS256'
-  }
+  },
+
+  gameserverPortStart: 7240
 };
 
 const serverConfig = {
