@@ -1,12 +1,13 @@
 import React from 'react';
 
 class AdvancedModal extends React.Component {
-  state = {
-    isOpen: true
-  };
-
-  constructor(){
+  constructor(props){
     super();
+
+    this.state = {
+      isOpen: (props.isOpen !== undefined ) ? props.isOpen : true
+    };
+
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
   }
