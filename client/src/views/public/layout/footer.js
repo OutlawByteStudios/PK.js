@@ -22,6 +22,7 @@ class Footer extends React.Component {
                     className="font-weight-bold ml-1"
                     href="https://github.com/SmartPhoenix"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     MB-Kingdoms Team
                   </a>
@@ -33,6 +34,7 @@ class Footer extends React.Component {
                     <NavLink
                       href="https://github.com/SmartPhoenix/Persistent-Kingdoms"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-github"/>{" "}
                       Persistent Kingdoms GitHub
@@ -42,6 +44,7 @@ class Footer extends React.Component {
                     <NavLink
                       href="https://github.com/SmartPhoenix/PK.js"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-github"/>{" "}
                       PK.js GitHub
