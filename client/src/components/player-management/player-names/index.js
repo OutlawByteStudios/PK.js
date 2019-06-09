@@ -24,6 +24,8 @@ class Player extends React.Component{
 
           return (
             <Component
+              serverID={this.props.serverID}
+              guid={this.props.guid}
               names={data.server.player.playerNames}
             />
           );

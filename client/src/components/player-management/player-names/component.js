@@ -3,16 +3,19 @@ import moment from 'moment';
 
 import {
   Badge,
+  Button,
   Card,
   CardBody,
   CardHeader,
   Col,
   Modal,
   ModalBody,
+  ModalFooter,
   Row
 } from "reactstrap";
 
 import AdvancedModal from '../../misc/modals/advanced-modal';
+import WipeName from './wipe-name';
 
 class Component extends React.Component {
   state = {
@@ -84,6 +87,21 @@ class Component extends React.Component {
                           <p><strong>Last Seen:</strong> {moment(name.lastSeen).format('DD/MM/YYYY hh:mm')}</p>
                         </div>
                       </ModalBody>
+                      <ModalFooter>
+                        <WipeName
+                          serverID={this.props.serverID}
+                          guid={this.props.guid}
+                          name={name.name}
+                        />
+                        <Button
+                          className="text-white ml-auto"
+                          color="link"
+                          data-dismiss="modal"
+                          onClick={modal.close}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
                     </Modal>
                   </>
                 )}

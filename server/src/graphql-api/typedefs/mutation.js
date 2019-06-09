@@ -36,5 +36,7 @@ export default gql`
       adminFactions: Int
       adminAnimals: Int
     ): AdminPermission
+    
+    wipePlayerName(serverID: Int!, name: String!): PlayerName
   }
 `;
