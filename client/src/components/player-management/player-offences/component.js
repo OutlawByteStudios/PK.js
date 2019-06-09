@@ -7,12 +7,13 @@ import {
   CardBody,
   CardHeader,
   Col,
-  Media,
-  NavLink,
   Row,
   Table
 } from 'reactstrap';
 
+import SteamUser from '../../misc/steam-user';
+
+import AddBan from './add-ban';
 import AddWarning from './add-warning';
 import AddNote from './add-note';
 
@@ -87,26 +88,9 @@ class Component extends React.Component {
                     <th scope="row">{ban.privateReason}</th>
                     <td>{ban.publicReason}</td>
                     <td>{moment(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
-                    <td>{moment(ban.endDate).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>{(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
-                      <NavLink
-                        href={"/admin/profile/" + ban.admin.steamID}
-                        target="_blank"
-                      >
-                        <Media className="align-items-center">
-                        <span className="avatar avatar-sm rounded-circle">
-                          <img
-                            alt="..."
-                            src={ban.admin.avatar}
-                          />
-                        </span>
-                          <Media className="ml-2">
-                          <span className="mb-0 text-sm font-weight-bold">
-                            {ban.admin.displayName}
-                          </span>
-                          </Media>
-                        </Media>
-                      </NavLink>
+                      <SteamUser steamUser={ban.admin} />
                     </td>
                   </tr>
                 ))
@@ -114,11 +98,10 @@ class Component extends React.Component {
               </tbody>
             </Table>
             <CardBody className="text-center">
-              <Button
-                color="primary"
-              >
-                Add Ban
-              </Button>
+              <AddBan
+                serverID={this.props.serverID}
+                guid={player.guid}
+              />
             </CardBody>
           </>
         ) : null}
@@ -141,24 +124,7 @@ class Component extends React.Component {
                     <td>{warning.publicReason}</td>
                     <td>{moment(warning.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
-                      <NavLink
-                        href={"/admin/profile/" + warning.admin.steamID}
-                        target="_blank"
-                      >
-                        <Media className="align-items-center">
-                        <span className="avatar avatar-sm rounded-circle">
-                          <img
-                            alt="..."
-                            src={warning.admin.avatar}
-                          />
-                        </span>
-                          <Media className="ml-2 d-none d-lg-block">
-                          <span className="mb-0 text-sm font-weight-bold">
-                            {warning.admin.displayName}
-                          </span>
-                          </Media>
-                        </Media>
-                      </NavLink>
+                      <SteamUser steamUser={warning.admin} />
                     </td>
                   </tr>
                 ))
@@ -190,24 +156,7 @@ class Component extends React.Component {
                     <th scope="row">{note.note}</th>
                     <td>{moment(note.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
-                      <NavLink
-                        href={"/admin/profile/" + note.admin.steamID}
-                        target="_blank"
-                      >
-                        <Media className="align-items-center">
-                        <span className="avatar avatar-sm rounded-circle">
-                          <img
-                            alt="..."
-                            src={note.admin.avatar}
-                          />
-                        </span>
-                          <Media className="ml-2 d-none d-lg-block">
-                          <span className="mb-0 text-sm font-weight-bold">
-                            {note.admin.displayName}
-                          </span>
-                          </Media>
-                        </Media>
-                      </NavLink>
+                      <SteamUser steamUser={note.admin} />
                     </td>
                   </tr>
                 ))

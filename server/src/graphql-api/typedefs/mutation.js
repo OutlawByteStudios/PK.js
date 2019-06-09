@@ -37,6 +37,7 @@ export default gql`
       adminAnimals: Int
     ): AdminPermission
     
+    addBan(serverID: Int!, guid: String!, publicReason: String!, privateReason: String!, length: Int!): Ban
     addWarning(serverID: Int!, guid: String!, publicReason: String!, privateReason: String!): Warning
     addNote(serverID: Int!, guid: String!, note: String!): Note
     
