@@ -49,7 +49,7 @@ class Component extends React.Component {
           <tr>
             <th>{player.guid}</th>
             <td>{(player.online > 0) ? 'Online' : 'Offline'}</td>
-            <td>{moment(player.lastSeen).format('DD/MM/YYYY hh:mm')}</td>
+            <td>{moment(player.lastSeen).format('DD/MM/YYYY HH:mm')}</td>
             <td>{null}</td>
           </tr>
           </tbody>

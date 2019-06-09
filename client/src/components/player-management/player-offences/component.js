@@ -13,6 +13,8 @@ import {
   Table
 } from 'reactstrap';
 
+import AddNote from './add-note';
+
 class Component extends React.Component {
   state = {
     tab: 'Bans'
@@ -83,8 +85,8 @@ class Component extends React.Component {
                   <tr key={key}>
                     <th scope="row">{ban.privateReason}</th>
                     <td>{ban.publicReason}</td>
-                    <td>{moment(ban.startDate).format('DD/MM/YYYY hh:mm')}</td>
-                    <td>{moment(ban.endDate).format('DD/MM/YYYY hh:mm')}</td>
+                    <td>{moment(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>{moment(ban.endDate).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <NavLink
                         href={"/admin/profile/" + ban.admin.steamID}
@@ -136,7 +138,7 @@ class Component extends React.Component {
                   <tr key={key}>
                     <th scope="row">{warning.privateReason}</th>
                     <td>{warning.publicReason}</td>
-                    <td>{moment(warning.date).format('DD/MM/YYYY hh:mm')}</td>
+                    <td>{moment(warning.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <NavLink
                         href={"/admin/profile/" + warning.admin.steamID}
@@ -186,7 +188,7 @@ class Component extends React.Component {
                 player.notes.map((note, key) => (
                   <tr key={key}>
                     <th scope="row">{note.note}</th>
-                    <td>{moment(note.date).format('DD/MM/YYYY hh:mm')}</td>
+                    <td>{moment(note.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <NavLink
                         href={"/admin/profile/" + note.admin.steamID}
@@ -213,11 +215,10 @@ class Component extends React.Component {
               </tbody>
             </Table>
             <CardBody className="text-center">
-              <Button
-                color="primary"
-              >
-                Add Note
-              </Button>
+              <AddNote
+                serverID={this.props.serverID}
+                guid={player.guid}
+              />
             </CardBody>
           </>
         ) : null}

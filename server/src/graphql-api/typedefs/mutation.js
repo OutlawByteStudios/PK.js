@@ -37,6 +37,8 @@ export default gql`
       adminAnimals: Int
     ): AdminPermission
     
+    addNote(serverID: Int!, guid: String!, note: String!): Note
+    
     wipePlayerName(serverID: Int!, name: String!): PlayerName
   }
 `;

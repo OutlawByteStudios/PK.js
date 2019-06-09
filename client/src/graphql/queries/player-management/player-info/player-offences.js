@@ -9,6 +9,8 @@ export default gql`
       
       player(guid: $guid){
         _id
+        
+        guid
             
         bans {
           _id
