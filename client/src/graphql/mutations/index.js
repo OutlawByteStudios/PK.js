@@ -3,6 +3,7 @@ import REMOVE_ADMIN_PERMISSION from './admin-management/remove-admin-permission'
 import UPDATE_ADMIN_PERMISSION from './admin-management/update-admin-permission';
 
 import ADD_NOTE from './player-management/add-note';
+import ADD_WARNING from './player-management/add-warning';
 import WIPE_PLAYER_NAME from './player-management/wipe-player-name';
 
 import CREATE_SERVER from './server-management/create-server';
@@ -16,6 +17,7 @@ export {
   UPDATE_ADMIN_PERMISSION,
 
   ADD_NOTE,
+  ADD_WARNING,
   WIPE_PLAYER_NAME,
 
   CREATE_SERVER,

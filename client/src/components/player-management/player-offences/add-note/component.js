@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import {
   Button,
@@ -76,7 +77,7 @@ class Component extends React.Component{
                         </FormFeedback>
                       </FormGroup>
                       <Button
-                        className="mt-2"
+                        className={classNames('mt-2', { disabled: this.state.note === ''})}
                         color="primary"
                       >
                         Add Note

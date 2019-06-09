@@ -13,6 +13,7 @@ import {
   Table
 } from 'reactstrap';
 
+import AddWarning from './add-warning';
 import AddNote from './add-note';
 
 class Component extends React.Component {
@@ -165,11 +166,10 @@ class Component extends React.Component {
               </tbody>
             </Table>
             <CardBody className="text-center">
-              <Button
-                color="primary"
-              >
-                Add Warning
-              </Button>
+              <AddWarning
+                serverID={this.props.serverID}
+                guid={player.guid}
+              />
             </CardBody>
           </>
         ) : null}

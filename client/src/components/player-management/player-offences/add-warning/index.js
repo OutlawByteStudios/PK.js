@@ -2,18 +2,18 @@ import React from 'react';
 import { Mutation } from 'react-apollo';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
-import { ADD_NOTE } from '../../../../graphql/mutations';
+import { ADD_WARNING } from '../../../../graphql/mutations';
 
 import Loader from './loader';
 import ErrorModal from '../../../misc/modals/error-modal';
 import Component from './component';
 
-class AddNote extends React.Component {
+class AddWarning extends React.Component {
   render() {
     return (
       <Mutation
-        mutation={ADD_NOTE}
-        update={(cache, { data: { addNote }}) => {
+        mutation={ADD_WARNING}
+        update={(cache, { data: { addWarning }}) => {
           let data = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
@@ -22,7 +22,7 @@ class AddNote extends React.Component {
             }
           });
 
-          data.server.player.notes = data.server.player.notes.concat([addNote]);
+          data.server.player.warnings = data.server.player.warnings.concat([addWarning]);
 
           cache.writeQuery({
             query: PLAYER_OFFENCES,
@@ -63,4 +63,4 @@ class AddNote extends React.Component {
   }
 }
 
-export default AddNote;
+export default AddWarning;

@@ -9,8 +9,8 @@ export default gql`
 
     admin: SteamUser
 
-    privateReason: String
     publicReason: String
+    privateReason: String
 
     date: Date
   }

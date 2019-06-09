@@ -37,6 +37,7 @@ export default gql`
       adminAnimals: Int
     ): AdminPermission
     
+    addWarning(serverID: Int!, guid: String!, publicReason: String!, privateReason: String!): Warning
     addNote(serverID: Int!, guid: String!, note: String!): Note
     
     wipePlayerName(serverID: Int!, name: String!): PlayerName
