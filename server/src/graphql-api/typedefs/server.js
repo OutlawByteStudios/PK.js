@@ -26,5 +26,7 @@ export default gql`
     bans(player: String): [Ban]
     warnings(player: String): [Warning]
     notes(player: String): [Note]
+    
+    logSearch(search: String): String
   }
 `;
