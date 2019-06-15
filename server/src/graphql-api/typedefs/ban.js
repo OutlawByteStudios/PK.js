@@ -13,5 +13,6 @@ export default gql`
 
     startDate: Date
     endDate: Date
+    unbannedDate: Date
   }
 `;

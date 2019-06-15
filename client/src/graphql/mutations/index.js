@@ -9,6 +9,7 @@ import ADD_WARNING from './player-management/add-warning';
 import DELETE_BAN from './player-management/delete-ban';
 import DELETE_NOTE from './player-management/delete-note';
 import DELETE_WARNING from './player-management/delete-warning';
+import UN_BAN from './player-management/un-ban';
 
 import WIPE_PLAYER_NAME from './player-management/wipe-player-name';
 
@@ -25,6 +26,7 @@ export {
   ADD_BAN,
   ADD_NOTE,
   ADD_WARNING,
+  UN_BAN,
 
   DELETE_BAN,
   DELETE_NOTE,

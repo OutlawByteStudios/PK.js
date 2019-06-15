@@ -10,7 +10,8 @@ const BanSchema = new mongoose.Schema({
   publicReason: { type: String, require: true },
 
   startDate: { type: Date, require: true, default: Date.now },
-  endDate: { type: Date, require: true }
+  endDate: { type: Date, require: true },
+  unbannedDate: { type: Date, default: null }
 });
 
 export default mongoose.model('Ban', BanSchema);

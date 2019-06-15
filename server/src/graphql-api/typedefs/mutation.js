@@ -41,6 +41,7 @@ export default gql`
     addWarning(serverID: Int!, guid: String!, publicReason: String!, privateReason: String!): Warning
     addNote(serverID: Int!, guid: String!, note: String!): Note
     
+    unBan(banID: String!): Ban
     deleteBan(banID: String!): Ban
     deleteWarning(warningID: String!): Warning
     deleteNote(noteID: String!): Note

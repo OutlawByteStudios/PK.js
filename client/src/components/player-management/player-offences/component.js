@@ -17,6 +17,7 @@ import AddBan from './add-ban';
 import AddWarning from './add-warning';
 import AddNote from './add-note';
 
+import UnBan from './un-ban';
 import DeleteBan from './delete-ban';
 import DeleteWarning from './delete-warning';
 import DeleteNote from './delete-note';
@@ -93,11 +94,24 @@ class Component extends React.Component {
                     <th scope="row">{ban.privateReason}</th>
                     <td>{ban.publicReason}</td>
                     <td>{moment(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
-                    <td>{(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>
+                      {(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}
+                      <br />
+                      {(ban.unbannedDate !==  null) ? `(Unbanned at: ${moment(ban.unbannedDate).format('DD/MM/YYYY HH:mm')})` : ''}
+                    </td>
                     <td>
                       <SteamUser steamUser={ban.admin} />
                     </td>
                     <td>
+                      {
+                        (ban.endDate === null || ban.endDate > Date.now()) &&
+                        ban.unbannedDate === null &&
+                        (
+                          <UnBan
+                            banID={ban._id}
+                          />
+                        )
+                      }
                       <DeleteBan
                         serverID={this.props.serverID}
                         guid={player.guid}

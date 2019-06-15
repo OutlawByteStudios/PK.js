@@ -23,6 +23,7 @@ export default gql`
           publicReason
           startDate
           endDate
+          unbannedDate
         }
         
         warnings {
