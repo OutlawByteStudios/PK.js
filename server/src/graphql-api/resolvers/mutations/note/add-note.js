@@ -11,6 +11,8 @@ export default async (parent, args, context) => {
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
 
+  if(args.publicReason === '') throw new Error('Note cannot be blank.');
+
   const player = await Player.findOne({
     server: args.serverID,
     guid: args.guid
