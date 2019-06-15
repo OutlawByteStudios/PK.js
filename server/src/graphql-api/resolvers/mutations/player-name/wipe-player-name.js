@@ -1,4 +1,4 @@
-import { AdminPermission, PlayerName } from '../../../../models';
+import { AdminPermission, PlayerName, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -18,5 +18,15 @@ export default async (parent, args, context) => {
   if (playerName === null) throw new Error('Player Name not found.');
 
   await playerName.delete();
+
+  await new AdminLog({
+    server: playerName.server,
+    admin: context.user,
+
+    type: 'wipe_player_name',
+    targetPlayer: playerName.player,
+    name: playerName.name
+  }).save();
+
   return playerName;
 };

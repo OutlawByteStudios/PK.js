@@ -11,6 +11,12 @@ export default {
     }
   },
 
+  AdminLog: {
+    server: async parent => {
+      return Server.findOne({ id: parent.server });
+    }
+  },
+
   AdminPermission: {
     server: async parent => {
       return Server.findOne({ id: parent.server });

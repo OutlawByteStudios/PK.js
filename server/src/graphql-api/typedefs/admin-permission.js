@@ -31,5 +31,7 @@ export default gql`
     adminAllItems: Int
     adminFactions: Int
     adminAnimals: Int
+    
+    adminLogs: [AdminLog]
   }
 `;

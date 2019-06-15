@@ -1,4 +1,4 @@
-import { AdminPermission, Ban } from '../../../../models';
+import { AdminPermission, Ban, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -17,5 +17,15 @@ export default async (parent, args, context) => {
     throw new Error('You do not have permission to do that.');
 
   await ban.delete();
+
+  await new AdminLog({
+    server: ban.server,
+    admin: ban.admin,
+
+    type: 'delete_ban',
+    targetPlayer: ban.player,
+    reason: args.reason
+  }).save();
+
   return ban;
 };

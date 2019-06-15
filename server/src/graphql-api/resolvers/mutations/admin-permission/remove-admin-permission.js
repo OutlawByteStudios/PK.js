@@ -1,4 +1,4 @@
-import { AdminPermission } from '../../../../models';
+import { AdminPermission, AdminLog } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared/constants';
 
@@ -39,5 +39,14 @@ export default async (parent, args, context) => {
   }
 
   await selectedAdmin.delete();
+
+  await new AdminLog({
+    server: selectedAdmin.serverID,
+    admin: currentAdmin.steamID,
+
+    type: 'remove_admin_permission',
+    targetAdmin: selectedAdmin.steamID
+  }).save();
+
   return selectedAdmin;
 };

@@ -49,6 +49,14 @@ export default {
       });
     }
   },
+  AdminLog: {
+    targetPlayer: async parent => {
+      return Player.findOne({
+        server: parent.server,
+        guid: parent.targetPlayer
+      });
+    }
+  },
   AdminPermission: {
     player: async parent => {
       return Player.findOne({

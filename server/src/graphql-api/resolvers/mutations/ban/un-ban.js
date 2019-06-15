@@ -1,4 +1,4 @@
-import { AdminPermission, Ban } from '../../../../models';
+import { AdminPermission, Ban, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -24,5 +24,15 @@ export default async (parent, args, context) => {
 
   ban.unbannedDate = Date.now();
   await ban.save();
+
+  await new AdminLog({
+    server: ban.server,
+    admin: ban.admin,
+
+    type: 'un_ban',
+    targetPlayer: ban.player,
+    reason: args.reason
+  }).save();
+
   return ban;
 };

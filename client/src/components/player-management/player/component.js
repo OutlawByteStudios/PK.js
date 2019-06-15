@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 
 import {
-  Button,
   Card,
   CardHeader,
   Col,
@@ -11,6 +10,7 @@ import {
 } from 'reactstrap';
 
 import AdjustGold from './adjust-gold';
+import StripPlayer from './strip-player';
 
 class Component extends React.Component {
   render() {
@@ -23,12 +23,10 @@ class Component extends React.Component {
               <h3 className="mb-0">Player Info</h3>
             </Col>
             <Col className="col text-right">
-              <Button
-                color="primary"
-                size="sm"
-              >
-                Strip Gear
-              </Button>
+              <StripPlayer
+                serverID={this.props.serverID}
+                guid={player.guid}
+              />
               <AdjustGold
                 serverID={this.props.serverID}
                 guid={player.guid}

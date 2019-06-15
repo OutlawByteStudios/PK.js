@@ -1,4 +1,4 @@
-import { AdminPermission, Player, Note } from '../../../../models';
+import { AdminPermission, Player, Note, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -29,5 +29,15 @@ export default async (parent, args, context) => {
   });
 
   await note.save();
+
+  await new AdminLog({
+    server: note.server,
+    admin: note.admin,
+
+    type: 'add_note',
+    targetPlayer: note.player,
+    reason: note.note
+  }).save();
+
   return note;
 };

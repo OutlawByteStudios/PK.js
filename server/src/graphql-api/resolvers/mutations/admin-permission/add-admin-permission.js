@@ -1,6 +1,6 @@
 import { UserInputError } from 'apollo-server-koa';
 
-import { AdminPermission, SteamUser } from '../../../../models';
+import { AdminPermission, SteamUser, AdminLog } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared/constants';
 
@@ -37,6 +37,14 @@ export default async (parent, args, context) => {
     throw new UserInputError(
       'Unknown Steam ID. Please ensure they have logged in first.'
     );
+
+  await new AdminLog({
+    server: selectedAdmin.serverID,
+    admin: currentAdmin.steamID,
+
+    type: 'add_admin_permission',
+    targetAdmin: selectedAdmin.steamID
+  }).save();
 
   return AdminPermission.findOneAndUpdate(
     {

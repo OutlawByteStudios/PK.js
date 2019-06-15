@@ -1,4 +1,4 @@
-import { Player, AdminPermission } from '../../../../models';
+import { Player, AdminPermission, AdminLog } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared/constants';
 
@@ -60,5 +60,14 @@ export default async (parent, args, context) => {
   }
 
   await selectedAdmin.save();
+
+  await new AdminLog({
+    server: selectedAdmin.serverID,
+    admin: currentAdmin.steamID,
+
+    type: 'update_admin_permission',
+    targetAdmin: selectedAdmin.steamID
+  }).save();
+
   return selectedAdmin;
 };

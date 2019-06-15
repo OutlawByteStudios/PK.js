@@ -1,4 +1,4 @@
-import { AdminPermission, Warning } from '../../../../models';
+import { AdminPermission, Warning, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -17,5 +17,15 @@ export default async (parent, args, context) => {
     throw new Error('You do not have permission to do that.');
 
   await warning.delete();
+
+  await new AdminLog({
+    server: warning.server,
+    admin: warning.admin,
+
+    type: 'delete_warning',
+    targetPlayer: warning.player,
+    reason: args.reason
+  }).save();
+
   return warning;
 };

@@ -1,4 +1,4 @@
-import { AdminPermission, Player, Ban } from '../../../../models';
+import { AdminPermission, Player, Ban, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -37,5 +37,16 @@ export default async (parent, args, context) => {
   });
 
   await ban.save();
+
+  await new AdminLog({
+    server: ban.server,
+    admin: ban.admin,
+
+    type: 'add_ban',
+    targetPlayer: ban.player,
+    reason: ban.privateReason,
+    length: args.length
+  }).save();
+
   return ban;
 };

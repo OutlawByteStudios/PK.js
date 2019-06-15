@@ -1,4 +1,4 @@
-import { AdminPermission, Note } from '../../../../models';
+import { AdminPermission, Note, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -17,5 +17,15 @@ export default async (parent, args, context) => {
     throw new Error('You do not have permission to do that.');
 
   await note.delete();
+
+  await new AdminLog({
+    server: note.server,
+    admin: note.admin,
+
+    type: 'delete_note',
+    targetPlayer: note.player,
+    reason: args.reason
+  }).save();
+
   return note;
 };

@@ -1,4 +1,4 @@
-import { AdminPermission, Player } from '../../../../models';
+import { AdminPermission, Player, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -13,14 +13,29 @@ export default async (parent, args, context) => {
 
   const player = await Player.findOne({
     server: args.serverID,
-    name: args.name
+    guid: args.guid
   });
   if (player === null) throw new Error('Player not found.');
 
-  player[args.pouch === true ? 'pouchGold' : 'bankGold'] += args.amount * (args.remove !== true ? 1 : -1);
+  const amount = args.amount * (args.remove !== true ? 1 : -1);
+
+  player[args.pouch === true ? 'pouchGold' : 'bankGold'] += amount;
 
   player.pouchGold = Math.max(player.pouchGold, 0);
 
   await player.save();
+
+  await new AdminLog({
+    server: player.server,
+    admin: context.user,
+
+    type: 'adjust_gold',
+    targetPlayer: player.guid,
+    reason: args.reason,
+
+    amount: amount,
+    from: args.pouch === true ? 'pouchGold' : 'bankGold'
+  }).save();
+
   return player;
 };

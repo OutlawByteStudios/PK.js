@@ -25,6 +25,7 @@ export default async function(ctx) {
         secondAmmo: 1,
         thirdAmmo: 1,
         forthAmmo: 1,
+        horse: 1,
         horseHealth: 1,
         xPosition: 1,
         yPosition: 1,

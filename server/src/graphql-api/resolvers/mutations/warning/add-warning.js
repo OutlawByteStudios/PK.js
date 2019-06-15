@@ -1,4 +1,4 @@
-import { AdminPermission, Player, Warning } from '../../../../models';
+import { AdminPermission, Player, Warning, AdminLog } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -33,5 +33,15 @@ export default async (parent, args, context) => {
   });
 
   await warning.save();
+
+  await new AdminLog({
+    server: warning.server,
+    admin: warning.admin,
+
+    type: 'add_warning',
+    targetPlayer: warning.player,
+    reason: warning.privateReason
+  }).save();
+
   return warning;
 };
