@@ -24,6 +24,7 @@ class Player extends React.Component{
 
           return (
             <Component
+              serverID={this.props.serverID}
               player={data.server.player}
             />
           );

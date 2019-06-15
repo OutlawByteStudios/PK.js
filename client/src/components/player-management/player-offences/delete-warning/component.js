@@ -31,7 +31,7 @@ class Component extends React.Component{
   onSubmit(event) {
     event.preventDefault();
 
-    if(this.state.warning === '') return;
+    if(this.state.reason === '') return;
 
     this.props.action(this.state);
   }

@@ -60,6 +60,8 @@ export default gql`
     deleteBan(banID: String!): Ban
     deleteWarning(warningID: String!): Warning
     deleteNote(noteID: String!): Note
+    
+    adjustGold(serverID: Int!, guid: String!, pouch: Boolean, amount: Int!, remove: Boolean, reason: String!): Player
 
     wipePlayerName(serverID: Int!, name: String!): PlayerName
   }

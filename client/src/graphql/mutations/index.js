@@ -6,6 +6,8 @@ import ADD_BAN from './player-management/add-ban';
 import ADD_NOTE from './player-management/add-note';
 import ADD_WARNING from './player-management/add-warning';
 
+import ADJUST_GOLD from './player-management/adjust-gold';
+
 import DELETE_BAN from './player-management/delete-ban';
 import DELETE_NOTE from './player-management/delete-note';
 import DELETE_WARNING from './player-management/delete-warning';
@@ -26,11 +28,13 @@ export {
   ADD_BAN,
   ADD_NOTE,
   ADD_WARNING,
-  UN_BAN,
+
+  ADJUST_GOLD,
 
   DELETE_BAN,
   DELETE_NOTE,
   DELETE_WARNING,
+  UN_BAN,
 
   WIPE_PLAYER_NAME,
 
