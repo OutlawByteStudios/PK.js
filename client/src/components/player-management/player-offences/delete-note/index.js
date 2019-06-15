@@ -2,18 +2,18 @@ import React from 'react';
 import { Mutation } from 'react-apollo';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
-import { ADD_BAN } from '../../../../graphql/mutations';
+import { DELETE_NOTE } from '../../../../graphql/mutations';
 
 import Loader from './loader';
 import ErrorModal from '../../../misc/modals/error-modal';
 import Component from './component';
 
-class AddBan extends React.Component {
+class DeleteNote extends React.Component {
   render() {
     return (
       <Mutation
-        mutation={ADD_BAN}
-        update={(cache, { data: { addBan }}) => {
+        mutation={DELETE_NOTE}
+        update={(cache, { data: { deleteNote }}) => {
           let data = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
@@ -22,7 +22,9 @@ class AddBan extends React.Component {
             }
           });
 
-          data.server.player.bans = data.server.player.bans.concat([addBan]);
+          data.server.player.notes = data.server.player.notes.filter(
+            note => note._id !== deleteNote._id
+          );
 
           cache.writeQuery({
             query: PLAYER_OFFENCES,
@@ -35,7 +37,7 @@ class AddBan extends React.Component {
         }}
         onError={() => {}}
       >
-        {(addBan, { loading, error }) => {
+        {(deleteNote, { loading, error }) => {
           if (loading) return <Loader/>;
 
           return (
@@ -46,11 +48,10 @@ class AddBan extends React.Component {
               }
               <Component
                 action={variables => {
-                  addBan({
+                  deleteNote({
                     variables: {
                       ...variables,
-                      serverID: this.props.serverID,
-                      guid: this.props.guid
+                      noteID: this.props.noteID
                     }
                   });
                 }}
@@ -63,4 +64,4 @@ class AddBan extends React.Component {
   }
 }
 
-export default AddBan;
+export default DeleteNote;

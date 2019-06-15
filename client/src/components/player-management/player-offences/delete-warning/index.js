@@ -2,18 +2,18 @@ import React from 'react';
 import { Mutation } from 'react-apollo';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
-import { ADD_BAN } from '../../../../graphql/mutations';
+import { DELETE_WARNING } from '../../../../graphql/mutations';
 
 import Loader from './loader';
 import ErrorModal from '../../../misc/modals/error-modal';
 import Component from './component';
 
-class AddBan extends React.Component {
+class DeleteWarning extends React.Component {
   render() {
     return (
       <Mutation
-        mutation={ADD_BAN}
-        update={(cache, { data: { addBan }}) => {
+        mutation={DELETE_WARNING}
+        update={(cache, { data: { deleteWarning }}) => {
           let data = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
@@ -22,7 +22,9 @@ class AddBan extends React.Component {
             }
           });
 
-          data.server.player.bans = data.server.player.bans.concat([addBan]);
+          data.server.player.warnings = data.server.player.warnings.filter(
+            warning => warning._id !== deleteWarning._id
+          );
 
           cache.writeQuery({
             query: PLAYER_OFFENCES,
@@ -35,7 +37,7 @@ class AddBan extends React.Component {
         }}
         onError={() => {}}
       >
-        {(addBan, { loading, error }) => {
+        {(deleteWarning, { loading, error }) => {
           if (loading) return <Loader/>;
 
           return (
@@ -46,11 +48,10 @@ class AddBan extends React.Component {
               }
               <Component
                 action={variables => {
-                  addBan({
+                  deleteWarning({
                     variables: {
                       ...variables,
-                      serverID: this.props.serverID,
-                      guid: this.props.guid
+                      warningID: this.props.warningID
                     }
                   });
                 }}
@@ -63,4 +64,4 @@ class AddBan extends React.Component {
   }
 }
 
-export default AddBan;
+export default DeleteWarning;

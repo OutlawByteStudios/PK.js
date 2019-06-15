@@ -35,7 +35,7 @@ class AddWarning extends React.Component {
         }}
         onError={() => {}}
       >
-        {(addNote, { loading, error }) => {
+        {(addWarning, { loading, error }) => {
           if (loading) return <Loader/>;
 
           return (
@@ -46,7 +46,7 @@ class AddWarning extends React.Component {
               }
               <Component
                 action={variables => {
-                  addNote({
+                  addWarning({
                     variables: {
                       ...variables,
                       serverID: this.props.serverID,

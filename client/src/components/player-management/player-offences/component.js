@@ -17,6 +17,10 @@ import AddBan from './add-ban';
 import AddWarning from './add-warning';
 import AddNote from './add-note';
 
+import DeleteBan from './delete-ban';
+import DeleteWarning from './delete-warning';
+import DeleteNote from './delete-note';
+
 class Component extends React.Component {
   state = {
     tab: 'Bans'
@@ -79,6 +83,7 @@ class Component extends React.Component {
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
                 <th scope="col">Admin</th>
+                <th scope="col">Actions</th>
               </tr>
               </thead>
               <tbody>
@@ -91,6 +96,13 @@ class Component extends React.Component {
                     <td>{(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <SteamUser steamUser={ban.admin} />
+                    </td>
+                    <td>
+                      <DeleteBan
+                        serverID={this.props.serverID}
+                        guid={player.guid}
+                        banID={ban._id}
+                      />
                     </td>
                   </tr>
                 ))
@@ -114,6 +126,7 @@ class Component extends React.Component {
                 <th scope="col">Public Reason</th>
                 <th scope="col">Date</th>
                 <th scope="col">Admin</th>
+                <th scope="col">Actions</th>
               </tr>
               </thead>
               <tbody>
@@ -125,6 +138,13 @@ class Component extends React.Component {
                     <td>{moment(warning.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <SteamUser steamUser={warning.admin} />
+                    </td>
+                    <td>
+                      <DeleteWarning
+                        serverID={this.props.serverID}
+                        guid={player.guid}
+                        warningID={warning._id}
+                      />
                     </td>
                   </tr>
                 ))
@@ -147,6 +167,7 @@ class Component extends React.Component {
                 <th scope="col">Note</th>
                 <th scope="col">Date</th>
                 <th scope="col">Admin</th>
+                <th scope="col">Actions</th>
               </tr>
               </thead>
               <tbody>
@@ -157,6 +178,13 @@ class Component extends React.Component {
                     <td>{moment(note.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <SteamUser steamUser={note.admin} />
+                    </td>
+                    <td>
+                      <DeleteNote
+                        serverID={this.props.serverID}
+                        guid={player.guid}
+                        noteID={note._id}
+                      />
                     </td>
                   </tr>
                 ))
