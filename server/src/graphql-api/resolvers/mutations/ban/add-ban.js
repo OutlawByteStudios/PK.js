@@ -11,8 +11,10 @@ export default async (parent, args, context) => {
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
 
-  if(args.publicReason === '') throw new Error('Ban must have a public reason.');
-  if(args.privateReason === '') throw new Error('Ban must have a private reason.');
+  if (args.publicReason === '')
+    throw new Error('Ban must have a public reason.');
+  if (args.privateReason === '')
+    throw new Error('Ban must have a private reason.');
 
   const player = await Player.findOne({
     server: args.serverID,
@@ -28,7 +30,10 @@ export default async (parent, args, context) => {
     publicReason: args.publicReason,
     privateReason: args.privateReason,
     startDate: new Date(),
-    endDate: (args.length === -1) ? null : new Date().setDate(new Date().getDate() + args.length)
+    endDate:
+      args.length === -1
+        ? null
+        : new Date().setDate(new Date().getDate() + args.length)
   });
 
   await ban.save();

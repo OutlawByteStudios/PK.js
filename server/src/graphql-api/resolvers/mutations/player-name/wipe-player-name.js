@@ -17,7 +17,6 @@ export default async (parent, args, context) => {
   });
   if (playerName === null) throw new Error('Player Name not found.');
 
-
   await playerName.delete();
   return playerName;
 };

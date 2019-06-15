@@ -2,7 +2,10 @@ import fs from 'fs';
 import path from 'path';
 
 import { AdminPermission, Server } from '../../../../models';
-import { parseConfig, buildConfig } from '../../../../utils/server-config-parser';
+import {
+  parseConfig,
+  buildConfig
+} from '../../../../utils/server-config-parser';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -11,7 +14,7 @@ export default async (parent, args, context) => {
 
   const requestingAdmin = await AdminPermission.findOne({
     server: args.serverID,
-    admin: context.user,
+    admin: context.user
   });
 
   if (requestingAdmin === null)

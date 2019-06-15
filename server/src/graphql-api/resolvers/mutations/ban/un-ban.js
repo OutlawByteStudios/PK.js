@@ -16,10 +16,11 @@ export default async (parent, args, context) => {
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
 
-  if(
+  if (
     (ban.endDate !== null && ban.endDate <= Date.now()) ||
-      ban.unbannedDate !== null
-    ) throw new Error('Ban already expired.');
+    ban.unbannedDate !== null
+  )
+    throw new Error('Ban already expired.');
 
   ban.unbannedDate = Date.now();
   await ban.save();
