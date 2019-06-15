@@ -12,10 +12,11 @@ import views from 'koa-views';
 
 import mongoose from 'mongoose';
 
+import cronJobs from './jobs';
+
 import { passport, SteamAuth } from './auth';
 
 import ApolloServer from './graphql-api';
-
 import ServerApi from './server-api';
 
 import serverConfig from '../server-config';
@@ -25,6 +26,8 @@ mongoose.connect(serverConfig.mongoDB, {
   useNewUrlParser: true,
   useCreateIndex: true
 });
+
+cronJobs();
 
 const app = new Koa();
 const router = new Router();

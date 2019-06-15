@@ -31,6 +31,7 @@
     "mb-warband-parser": "^2.0.0",
     "mongoose": "^5.4.20",
     "mongoose-sequence": "^5.0.1",
+    "node-schedule": "^1.3.2",
     "passport-steam": "^1.0.10",
     "shared": "1.0.0"
   },

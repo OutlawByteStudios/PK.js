@@ -16,6 +16,7 @@ const parseConfig = config => {
         case 'set_steam_port':
         case 'set_add_to_game_servers_list':
         case 'set_server_log_folder':
+        case 'set_server_ban_list_file':
         case 'start':
           return undefined;
         default:
@@ -35,6 +36,7 @@ const buildConfig = (server, config) => {
       1}\r\n` +
     `set_add_to_game_servers_list 1\r\n` +
     `set_server_log_folder logs\r\n` +
+    `set_server_ban_list_file bans.txt\r\n` +
     `${parseConfig(config)}\r\n` +
     'start'
   );
