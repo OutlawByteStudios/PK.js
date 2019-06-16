@@ -7,6 +7,7 @@ import Profile from './pages/profile';
 import Dashboard from './pages/dashboard';
 import ServerManagement from './pages/server-management';
 import Admins from './pages/admins';
+import AdminLogs from './pages/admin-logs';
 import Players from './pages/players';
 
 const pathPrefix = '/admin';
@@ -69,6 +70,14 @@ const serverRoutes = [
     icon: "fas fa-user-shield",
     component: Admins,
     requiredPermission: 'viewAdminPermissions'
+  },
+
+  {
+    path: pathPrefix + '/:serverID/admin-logs',
+    exact: false,
+    name: "Admin Logs",
+    icon: "fas fa-clipboard-list",
+    component: AdminLogs,
   },
 
   {

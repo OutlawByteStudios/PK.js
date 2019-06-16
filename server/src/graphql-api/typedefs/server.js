@@ -16,7 +16,8 @@ export default gql`
 
     adminPermission(steamID: String!): AdminPermission
     adminPermissions: [AdminPermission]
-    adminLogs(admin: String): [AdminLog]
+    
+    adminLogs(admin: String, filter: [String], page: Boolean, startingAfter: String, endingBefore: String): [AdminLog]
 
     player(guid: String!): Player
     players(guidLike: String): [Player]

@@ -3,6 +3,7 @@ import { gql } from 'apollo-server-koa';
 export default gql`
   type AdminLog {
     _id: String
+    hasMore: Boolean
 
     server: Server
     admin: SteamUser

@@ -1,3 +1,4 @@
+import ADMIN_LOGS from './admin-management/admin-logs';
 import ADMIN_PERMISSIONS from './admin-management/admin-permissions';
 import EDIT_ADMIN_PERMISSION from './admin-management/edit-admin-permission';
 import PLAYER from './player-management/player-info/player';
@@ -9,6 +10,7 @@ import SERVER_CONFIGS from './server-management/server-configs';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
 
 export {
+  ADMIN_LOGS,
   ADMIN_PERMISSIONS,
   EDIT_ADMIN_PERMISSION,
   PLAYER,

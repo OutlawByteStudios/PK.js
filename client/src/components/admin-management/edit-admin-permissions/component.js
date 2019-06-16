@@ -5,7 +5,6 @@ import {
   CardBody,
   CardHeader,
   Col,
-  Form,
   FormGroup,
   Input,
   Row
@@ -92,59 +91,57 @@ class Component extends React.Component{
           </Row>
         </CardHeader>
         <CardBody>
-          <Form>
-            <h6 className="heading-small text-muted mb-4">Panel Permissions</h6>
-            <div className="pl-lg-4">
-              <Row>
-                {
-                  panelPermissions.map((permission, key) => (
-                    <PermissionCheckbox
-                      permission={permission.permission}
-                      label={permission.label}
-                      selectedAdmin={selectedAdmin}
-                      currentAdmin={currentAdmin}
-                      onChange={this.updatePermission}
-                      key={key}
-                    />
-                  ))
-                }
-              </Row>
-            </div>
-            <hr className="my-4" />
-            <h6 className="heading-small text-muted mb-4">In-Game Permissions</h6>
-            <div className="pl-lg-4">
-              <Row>
-                <Col md="6" lg="6" xl="4">
-                  <FormGroup>
-                    <label
-                      className="form-control-label"
-                    >
-                      GUID
-                    </label>
-                    <Input
-                      className="form-control-alternative"
-                      type="text"
-                      placeholder="GUID"
-                      value={this.state.guid}
-                      onChange={event => this.setState({ guid: event.target.value })}
-                    />
-                  </FormGroup>
-                </Col>
-                {
-                  gamePermissions.map((permission, key) => (
-                    <PermissionCheckbox
-                      permission={permission.permission}
-                      label={permission.label}
-                      selectedAdmin={selectedAdmin}
-                      currentAdmin={currentAdmin}
-                      onChange={this.updatePermission}
-                      key={key}
-                    />
-                  ))
-                }
-              </Row>
-            </div>
-          </Form>
+          <h6 className="heading-small text-muted mb-4">Panel Permissions</h6>
+          <div className="pl-lg-4">
+            <Row>
+              {
+                panelPermissions.map((permission, key) => (
+                  <PermissionCheckbox
+                    permission={permission.permission}
+                    label={permission.label}
+                    selectedAdmin={selectedAdmin}
+                    currentAdmin={currentAdmin}
+                    onChange={this.updatePermission}
+                    key={key}
+                  />
+                ))
+              }
+            </Row>
+          </div>
+          <hr className="my-4" />
+          <h6 className="heading-small text-muted mb-4">In-Game Permissions</h6>
+          <div className="pl-lg-4">
+            <Row>
+              <Col md="6" lg="6" xl="4">
+                <FormGroup>
+                  <label
+                    className="form-control-label"
+                  >
+                    GUID
+                  </label>
+                  <Input
+                    className="form-control-alternative"
+                    type="text"
+                    placeholder="GUID"
+                    value={this.state.guid}
+                    onChange={event => this.setState({ guid: event.target.value })}
+                  />
+                </FormGroup>
+              </Col>
+              {
+                gamePermissions.map((permission, key) => (
+                  <PermissionCheckbox
+                    permission={permission.permission}
+                    label={permission.label}
+                    selectedAdmin={selectedAdmin}
+                    currentAdmin={currentAdmin}
+                    onChange={this.updatePermission}
+                    key={key}
+                  />
+                ))
+              }
+            </Row>
+          </div>
         </CardBody>
       </Card>
     );

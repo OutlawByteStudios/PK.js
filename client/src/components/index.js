@@ -1,4 +1,5 @@
 import AdminList from './admin-management/admin-list';
+import AdminLogs from './admin-management/admin-logs';
 import EditAdminPermissions from './admin-management/edit-admin-permissions';
 import Player from './player-management/player';
 import PlayerNames from './player-management/player-names';
@@ -11,6 +12,7 @@ import ServerSelectorSelect from './server-management/server-selector';
 
 export {
   AdminList,
+  AdminLogs,
   EditAdminPermissions,
   Player,
   PlayerNames,

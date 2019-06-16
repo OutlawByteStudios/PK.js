@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import paginate from 'mongoose-cursor-pagination';
 
 const AdminLog = new mongoose.Schema({
   server: { type: Number, require: true },
@@ -19,5 +20,7 @@ const AdminLog = new mongoose.Schema({
 
   name: String
 });
+
+AdminLog.plugin(paginate);
 
 export default mongoose.model('AdminLog', AdminLog);
