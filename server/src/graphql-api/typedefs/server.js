@@ -16,8 +16,14 @@ export default gql`
 
     adminPermission(steamID: String!): AdminPermission
     adminPermissions: [AdminPermission]
-    
-    adminLogs(admin: String, filter: [String], page: Boolean, startingAfter: String, endingBefore: String): [AdminLog]
+
+    adminLogs(
+      admin: String
+      filter: [String]
+      page: Boolean
+      startingAfter: String
+      endingBefore: String
+    ): [AdminLog]
 
     player(guid: String!): Player
     players(guidLike: String): [Player]
@@ -28,7 +34,7 @@ export default gql`
     bans(player: String): [Ban]
     warnings(player: String): [Warning]
     notes(player: String): [Note]
-    
+
     logSearch(search: String): String
   }
 `;

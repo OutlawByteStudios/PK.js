@@ -6,4 +6,12 @@ import PlayerName from './player-name';
 import Server from './server';
 import Warning from './warning';
 
-export default [AdminPermission, Ban, Note, Player, PlayerName, Server, Warning];
+export default [
+  AdminPermission,
+  Ban,
+  Note,
+  Player,
+  PlayerName,
+  Server,
+  Warning
+];

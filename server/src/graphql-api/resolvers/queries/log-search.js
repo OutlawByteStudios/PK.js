@@ -21,4 +21,4 @@ export default {
       // return exec(`./log-engine --some-param ${varStoringParamValue}`);
     }
   }
-}
+};

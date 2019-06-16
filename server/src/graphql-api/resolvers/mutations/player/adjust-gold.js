@@ -1,4 +1,4 @@
-import { AdminLog, AdminPermission, Player } from "../../../../models";
+import { AdminLog, AdminPermission, Player } from '../../../../models';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -17,7 +17,8 @@ export default async (parent, args, context) => {
   });
   if (player === null) throw new Error('Player not found.');
 
-  player[args.pouch === true ? 'pouchGold' : 'bankGold'] += args.amount * (args.remove !== true ? 1 : -1);
+  player[args.pouch === true ? 'pouchGold' : 'bankGold'] +=
+    args.amount * (args.remove !== true ? 1 : -1);
 
   player.pouchGold = Math.max(player.pouchGold, 0);
 

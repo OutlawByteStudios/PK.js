@@ -7,20 +7,20 @@ export default gql`
 
     server: Server
     admin: SteamUser
-    
+
     type: String
     date: Date
-    
+
     targetPlayer: Player
     targetAdmin: SteamUser
-    
+
     reason: String
-    
+
     length: Int
-    
+
     amount: Int
     from: String
-    
+
     name: String
   }
 `;

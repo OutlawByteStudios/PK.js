@@ -54,7 +54,7 @@ export default async (parent, args, context) => {
 
     type: 'strip_player',
     targetPlayer: player.guid,
-    reason: args.reason,
+    reason: args.reason
   }).save();
 
   return player;

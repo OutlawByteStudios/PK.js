@@ -31,7 +31,13 @@ export default gql`
     adminAllItems: Int
     adminFactions: Int
     adminAnimals: Int
-    
-    adminLogs(admin: String, filter: [String], page: Boolean, startingAfter: String, endingBefore: String): [AdminLog]
+
+    adminLogs(
+      admin: String
+      filter: [String]
+      page: Boolean
+      startingAfter: String
+      endingBefore: String
+    ): [AdminLog]
   }
 `;
