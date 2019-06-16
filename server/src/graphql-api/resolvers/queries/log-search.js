@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import exec from '../../../utils/exec-shell-command';
+// import exec from '../../../utils/exec-shell-command';
 
 export default {
   Server: {
