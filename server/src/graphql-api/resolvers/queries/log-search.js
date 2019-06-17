@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-// import exec from '../../../utils/exec-shell-command';
+
+import { spawn } from 'child_process';
 
 export default {
   Server: {
@@ -16,9 +17,22 @@ export default {
       if (!fs.existsSync(logFolderPath))
         throw new Error('Logs folder does not exist!');
 
-      return 'temp';
+      const inputArgs = {};
 
-      // return exec(`./log-engine --some-param ${varStoringParamValue}`);
+      const child = spawn('../../../../log-engine/log_engine', []);
+      child.stdin.setEncoding = 'utf-8';
+      child.stdin.write(JSON.stringify(inputArgs));
+      child.stdin.end();
+
+      return new Promise((resolve, reject) => {
+        child.stdout.on('data', data => {
+          resolve(data);
+        });
+
+        child.stderr.on('data', data => {
+          reject(data);
+        })
+      });
     }
   }
 };
