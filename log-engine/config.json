@@ -1,0 +1,16 @@
+{
+  "core": {
+    "version": "0.6",
+    "logPath": "/home/bt/checkout/log-engine/resources"
+  },
+  "adapters": {
+    "TextSearch": {
+      "maxRequestLines": 500,
+      "maxOutputLines": 500
+    },
+    "Categorization": {
+      "maxCategorisations": 250,
+      "maxCategorisationTimeMS": 10000
+    }
+  }
+}

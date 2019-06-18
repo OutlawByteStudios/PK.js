@@ -35,6 +35,6 @@ export default gql`
     warnings(player: String): [Warning]
     notes(player: String): [Note]
 
-    logSearch(search: String): String
+    logSearch(search: [String], date: Date): String
   }
 `;

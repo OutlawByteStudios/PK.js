@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-
 import { spawn } from 'child_process';
+
+import moment from 'moment';
 
 export default {
   Server: {
@@ -17,9 +18,22 @@ export default {
       if (!fs.existsSync(logFolderPath))
         throw new Error('Logs folder does not exist!');
 
-      const inputArgs = {};
+      const date = moment(filter.date);
 
-      const child = spawn('../../../../log-engine/log_engine', []);
+      const logFilePath = path.join(logFolderPath, `server_log_${date.format('DD_MM_YY')}.txt`);
+      if(!fs.existsSync(logFilePath)) throw new Error('Log file does not exist!');
+
+      const logEnginePath = require.resolve('log-engine');
+
+      const inputArgs = {
+        serverLogFile: logFilePath,
+        payload: JSON.stringify(filter.search),
+        configFile: path.join(logEnginePath, '/config.json'),
+        function: 0,
+        prettyPrinting: false
+      };
+
+      const child = spawn(path.join(logEnginePath, '/log_engine'));
       child.stdin.setEncoding = 'utf-8';
       child.stdin.write(JSON.stringify(inputArgs));
       child.stdin.end();

@@ -3,6 +3,7 @@
   "workspaces": [
     "client",
     "gameservers",
+    "log-engine",
     "server",
     "shared"
   ],

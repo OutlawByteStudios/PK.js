@@ -28,6 +28,7 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "log-engine": "1.0.0",
     "mb-warband-parser": "^2.0.0",
     "mongoose": "^5.4.20",
     "mongoose-cursor-pagination": "^1.0.1",
