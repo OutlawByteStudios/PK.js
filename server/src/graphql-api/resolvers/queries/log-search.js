@@ -20,10 +20,12 @@ export default {
 
       const date = moment(filter.date);
 
-      const logFilePath = path.join(logFolderPath, `server_log_${date.format('DD_MM_YY')}.txt`);
+      const logFilePath = path.join(logFolderPath, `server_log_${date.format('MM_DD_YY')}.txt`);
+      //const logFilePath = path.join(logFolderPath, `server_log_06_16_19.txt`);
+
       if(!fs.existsSync(logFilePath)) throw new Error('Log file does not exist!');
 
-      const logEnginePath = require.resolve('log-engine');
+      const logEnginePath = path.join(require.resolve('log-engine'), '..');
 
       const inputArgs = {
         serverLogFile: logFilePath,
