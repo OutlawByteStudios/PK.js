@@ -20,8 +20,8 @@ export default {
 
       const date = moment(filter.date);
 
-      const logFilePath = path.join(logFolderPath, `server_log_${date.format('MM_DD_YY')}.txt`);
-      //const logFilePath = path.join(logFolderPath, `server_log_06_16_19.txt`);
+      //const logFilePath = path.join(logFolderPath, `server_log_${date.format('MM_DD_YY')}.txt`);
+      const logFilePath = path.join(logFolderPath, `server_log_06_16_19.txt`);
 
       if(!fs.existsSync(logFilePath)) throw new Error('Log file does not exist!');
 
@@ -29,7 +29,9 @@ export default {
 
       const inputArgs = {
         serverLogFile: logFilePath,
-        payload: JSON.stringify(filter.search),
+        payload: JSON.stringify({
+          searchTerms: filter.search
+        }),
         configFile: path.join(logEnginePath, '/config.json'),
         function: 0,
         prettyPrinting: false
@@ -40,14 +42,22 @@ export default {
       child.stdin.write(JSON.stringify(inputArgs));
       child.stdin.end();
 
+      let result = '';
+      let error = '';
+
       return new Promise((resolve, reject) => {
         child.stdout.on('data', data => {
-          resolve(data);
+          result += data.toString();
         });
 
         child.stderr.on('data', data => {
-          reject(data);
-        })
+          error += data.toString();
+        });
+
+        child.on('close', code => {
+          if(error !== '') reject(error);
+          else resolve(result);
+        });
       });
     }
   }

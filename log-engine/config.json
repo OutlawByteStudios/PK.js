@@ -1,7 +1,7 @@
 {
   "core": {
     "version": "0.6",
-    "logPath": "/home/bt/checkout/log-engine/resources"
+    "logPath": "logs"
   },
   "adapters": {
     "TextSearch": {
