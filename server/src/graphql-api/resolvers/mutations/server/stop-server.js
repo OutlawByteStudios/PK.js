@@ -21,10 +21,10 @@ export default async (parent, args, context) => {
   if (server === null) throw new Error('Server not found.');
 
   if (!serverConfig.gameserverDevDryRun) {
-    execSync(`screen -m -d -S serverscreen${server.id} -X quit`);
+    execSync(`screen -S serverscreen${server.id} -X quit`);
   } else {
     console.log(
-      `Gameserver Dry Run Exec: screen -m -d -S serverscreen${server.id} -X quit`
+      `Gameserver Dry Run Exec: screen -S serverscreen${server.id} -X quit`
     );
   }
 

@@ -5,12 +5,7 @@ import serverConfig from '../../../../server-config';
 
 function serverOnline(server) {
   if (!serverConfig.gameserverDevDryRun) {
-    try {
-      execSync(`screen -S serverscreen${server.id} -Q select . ; echo $?`);
-      return true;
-    } catch (err) {
-      return false;
-    }
+    return !execSync(`screen -S serverscreen${server.id} -Q select . ; echo $?`).toString().includes('No screen session found.');
   } else {
     return serverConfig.gameserverDevDryRunOnline;
   }
