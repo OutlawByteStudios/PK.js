@@ -8,6 +8,7 @@ import PlayerSelector from './player-management/player-selector';
 import ConfigManager from './server-management/configs/config-manager';
 import CreateServer from './server-management/create-server';
 import DeleteServer from './server-management/delete-server';
+import ServerController from './server-management/server-controller';
 import ServerSelectorSelect from './server-management/server-selector';
 
 export {
@@ -21,5 +22,6 @@ export {
   ConfigManager,
   CreateServer,
   DeleteServer,
+  ServerController,
   ServerSelectorSelect
 }

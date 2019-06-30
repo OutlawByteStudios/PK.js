@@ -11,7 +11,17 @@ const baseConfig = {
     algorithm: 'HS256'
   },
 
-  gameserverPortStart: 7240
+  // disable cron jobs for testing
+  disableCronJobs: false,
+
+  gameserverPortStart: 7240,
+  gameserverRestartCron: '0 6 * * *',
+
+  // turn to true to prevent server boot and to fake online status
+  // useful for testing on Windows
+  gameserverDevDryRun: false,
+  // if dry run enabled does the server show as online?
+  gameserverDevDryRunOnline: false
 };
 
 const serverConfig = {

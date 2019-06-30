@@ -11,8 +11,14 @@ export default gql`
 
     welcomeMessage: String
 
+    gameserverOnline: Boolean
+    gameserverLastModule: String
+    gameserverLastConfig: String
+
     serverConfigFile(name: String!): ServerConfigFile
     serverConfigFiles: [ServerConfigFile]
+
+    modules: [String]
 
     adminPermission(steamID: String!): AdminPermission
     adminPermissions: [AdminPermission]

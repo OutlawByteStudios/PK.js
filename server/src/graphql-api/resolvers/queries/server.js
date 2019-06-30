@@ -1,25 +1,49 @@
+import { execSync } from 'child_process';
 import { Server } from '../../../models';
+
+import serverConfig from '../../../../server-config';
+
+function serverOnline(server) {
+  if (!serverConfig.gameserverDevDryRun) {
+    try {
+      execSync(`screen -S serverscreen${server.id} -Q select . ; echo $?`);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  } else {
+    return serverConfig.gameserverDevDryRunOnline;
+  }
+}
 
 export default {
   Query: {
     server: async (parent, filter) => {
-      return Server.findOne({ id: filter.id });
+      const server = await Server.findOne({ id: filter.id });
+      server.gameserverOnline = serverOnline(server);
+      return server;
     },
 
     servers: async () => {
-      return Server.find();
+      const server = await Server.find();
+      server.gameserverOnline = serverOnline(server);
+      return server;
     }
   },
 
   AdminLog: {
     server: async parent => {
-      return Server.findOne({ id: parent.server });
+      const server = await Server.findOne({ id: parent.server });
+      server.gameserverOnline = serverOnline(server);
+      return server;
     }
   },
 
   AdminPermission: {
     server: async parent => {
-      return Server.findOne({ id: parent.server });
+      const server = await Server.findOne({ id: parent.server });
+      server.gameserverOnline = serverOnline(server);
+      return server;
     }
   }
 };

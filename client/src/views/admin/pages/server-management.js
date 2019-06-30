@@ -1,7 +1,10 @@
 import React from 'react';
 
 import {
-  Card, CardBody, CardHeader, Col,
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
   Container,
   Row
 } from "reactstrap";
@@ -11,7 +14,8 @@ import Layout from '../layout/layout';
 
 import {
   ConfigManager,
-  DeleteServer
+  DeleteServer,
+  ServerController
 } from '../../../components';
 
 class ServerManagement extends React.Component {
@@ -31,6 +35,11 @@ class ServerManagement extends React.Component {
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>
+            <Col>
+              <ServerController serverID={serverID} />
+            </Col>
+          </Row>
+          <Row className="mt-4">
             <Col>
               <ConfigManager serverID={serverID} />
             </Col>

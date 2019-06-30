@@ -13,29 +13,26 @@ class Component extends React.Component{
   }
 
   render(){
+    console.log(this.props);
     return (
       <Input
         type="select"
         className={this.props.className}
-        value={this.props.selectedConfig || undefined}
+        value={this.props.selectedModule || undefined}
         onChange={this.onChange}
         disabled={this.props.disabled}
       >
-        <option className="text-default" value={null}>Select a Config...</option>
+        <option className="text-default" value={null}>Select a Module...</option>
         {
-          this.props.configs.map((config, key) => (
+          this.props.modules.map((module, key) => (
             <option
               className="text-default"
-              value={config.name}
+              value={module}
               key={key}
             >
-              {config.name}
+              {module}
             </option>
           ))
-        }
-        {
-          this.props.newConfig &&
-          <option className="text-default" value={"new"}>Create New Config File...</option>
         }
       </Input>
     );

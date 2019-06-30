@@ -23,10 +23,11 @@ export default async (parent, args, context) => {
   const server = await Server.findOne({
     id: args.serverID
   });
+  if (server === null) throw new Error('Server not found.');
 
   const currentGameserverPath = path.join(
     require.resolve('gameservers'),
-    `../${args.serverID}`
+    `../${server.id}`
   );
   if (!fs.existsSync(currentGameserverPath))
     throw new Error('Server folder does not exist!');
@@ -34,8 +35,6 @@ export default async (parent, args, context) => {
   const configFolderPath = path.join(currentGameserverPath, '/Configs');
   if (!fs.existsSync(currentGameserverPath))
     throw new Error('Configs folder does not exist!');
-
-  console.log(args.config.length);
 
   const config = buildConfig(server, args.config);
 

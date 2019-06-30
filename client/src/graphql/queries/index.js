@@ -7,6 +7,8 @@ import PLAYER_OFFENCES from './player-management/player-info/player-offences';
 import PLAYER_SEARCH from './player-management/player-search';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
+import SERVER_CONTROLLER from './server-management/server-controller';
+import SERVER_MODULES from './server-management/server-modules';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
 
 export {
@@ -19,5 +21,7 @@ export {
   PLAYER_SEARCH,
   SERVER_CONFIG,
   SERVER_CONFIGS,
+  SERVER_CONTROLLER,
+  SERVER_MODULES,
   OWN_ADMIN_PERMISSIONS
 }

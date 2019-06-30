@@ -63,17 +63,10 @@ export default async (parent, args, context) => {
   const pkPath = path.join(newGameserverPath, '/Modules/Persistent Kingdoms');
   if (!fs.existsSync(pkPath)) return server;
 
-  let file = await fs.promises.readFile(
-    path.join(pkPath, '/quick_strings.txt'),
-    'utf8'
-  );
+  let file = fs.readFileSync(path.join(pkPath, '/quick_strings.txt'), 'utf8');
   file = file.replace(/SERVER_ID/g, server.id);
   file = file.replace(/SERVER_API_KEY/g, server.apiKey);
-  await fs.promises.writeFile(
-    path.join(pkPath, '/quick_strings.txt'),
-    file,
-    'utf8'
-  );
+  await fs.writeFileSync(path.join(pkPath, '/quick_strings.txt'), file, 'utf8');
 
   return server;
 };

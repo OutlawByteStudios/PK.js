@@ -16,7 +16,7 @@ import RemoveAdmin from '../remove-admin';
 import AddAdmin from '../add-admin';
 
 
-class AdminList extends React.Component{
+class Component extends React.Component{
   constructor(){
     super();
     this.editAdminRedirect = this.editAdminRedirect.bind(this);
@@ -81,4 +81,4 @@ class AdminList extends React.Component{
   }
 }
 
-export default withRouter(AdminList);
+export default withRouter(Component);

@@ -3,6 +3,7 @@ import AdminPermission from './admin-permission';
 import Ban from './ban';
 import Item from './item';
 import LogSearch from './log-search';
+import Modules from './modules';
 import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
@@ -18,6 +19,7 @@ export default [
   Ban,
   Item,
   LogSearch,
+  Modules,
   Note,
   Player,
   PlayerName,

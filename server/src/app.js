@@ -27,7 +27,7 @@ mongoose.connect(serverConfig.mongoDB, {
   useCreateIndex: true
 });
 
-cronJobs();
+if (!serverConfig.disableCronJobs) cronJobs();
 
 const app = new Koa();
 const router = new Router();

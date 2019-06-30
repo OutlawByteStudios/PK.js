@@ -1,16 +1,17 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { SERVER_CONFIGS } from '../../../../graphql/queries';
+import { SERVER_CONTROLLER } from '../../../graphql/queries';
 
 import Loader from './loader';
+import Error from './error';
 import Component from './component';
 
-class ConfigSelector extends React.Component{
+class ServerController extends React.Component{
   render(){
     return (
       <Query
-        query={SERVER_CONFIGS}
+        query={SERVER_CONTROLLER}
         variables={{
           serverID: this.props.serverID
         }}
@@ -18,15 +19,14 @@ class ConfigSelector extends React.Component{
       >
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
-          if(error) return <p>Error</p>;
+          if(error) return <Error />;
 
           return (
             <Component
-              configs={data.server.serverConfigFiles}
-              selectedConfig={this.props.selectedConfig}
-              onChange={this.props.onChange}
-              newConfig={this.props.newConfig}
-              disabled={this.props.disabled}
+              serverID={this.props.serverID}
+              online={data.server.gameserverOnline}
+              lastModule={data.server.gameserverLastModule}
+              lastConfig={data.server.gameserverLastConfig}
             />
           );
         }}
@@ -35,4 +35,4 @@ class ConfigSelector extends React.Component{
   }
 }
 
-export default ConfigSelector;
+export default ServerController;
