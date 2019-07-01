@@ -10,6 +10,7 @@ import PlayerName from './player-name';
 import Scalars from './scalars';
 import Server from './server';
 import ServerConfigFile from './server-config-file';
+import ServerOnline from './server-online';
 import SteamUser from './steam-user';
 import Warning from './warning';
 
@@ -26,6 +27,7 @@ export default [
   Scalars,
   Server,
   ServerConfigFile,
+  ServerOnline,
   SteamUser,
   Warning
 ];
