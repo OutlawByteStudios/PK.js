@@ -1,5 +1,11 @@
 import serverConfig from '../../server-config';
 
+const assignPorts = serverID => {
+  const port = serverConfig.gameserverPortStart + (serverID - 1) * 2;
+  const steamPort = port + 1;
+  return { port, steamPort };
+};
+
 const parseConfig = config => {
   return config
     .split('\r\n')
@@ -30,10 +36,8 @@ const parseConfig = config => {
 const buildConfig = (server, config) => {
   return (
     `set_server_name ${server.name}\r\n` +
-    `set_port ${serverConfig.gameserverPortStart + (server.id - 1) * 2}\r\n` +
-    `set_steam_port ${serverConfig.gameserverPortStart +
-      (server.id - 1) * 2 +
-      1}\r\n` +
+    `set_port ${assignPorts(server.id).port}\r\n` +
+    `set_steam_port ${assignPorts(server.id).steamPort}\r\n` +
     `set_add_to_game_servers_list 1\r\n` +
     `set_server_log_folder logs\r\n` +
     `set_server_ban_list_file bans.txt\r\n` +
@@ -42,4 +46,4 @@ const buildConfig = (server, config) => {
   );
 };
 
-export { parseConfig, buildConfig };
+export { assignPorts, parseConfig, buildConfig };

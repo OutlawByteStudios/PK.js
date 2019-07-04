@@ -14,23 +14,14 @@ export default gql`
     gameserverOnline: Boolean
     gameserverLastModule: String
     gameserverLastConfig: String
+    
+    serverStatus: ServerStatus
 
     serverConfigFile(name: String!): ServerConfigFile
     serverConfigFiles: [ServerConfigFile]
-
+    
     modules: [String]
-
-    adminPermission(steamID: String!): AdminPermission
-    adminPermissions: [AdminPermission]
-
-    adminLogs(
-      admin: String
-      filter: [String]
-      page: Boolean
-      startingAfter: String
-      endingBefore: String
-    ): [AdminLog]
-
+    
     player(guid: String!): Player
     players(guidLike: String): [Player]
 
@@ -42,5 +33,16 @@ export default gql`
     notes(player: String): [Note]
 
     logSearch(search: [String]!, date: Date!): String
+
+    adminPermission(steamID: String!): AdminPermission
+    adminPermissions: [AdminPermission]
+
+    adminLogs(
+      admin: String
+      filter: [String]
+      page: Boolean
+      startingAfter: String
+      endingBefore: String
+    ): [AdminLog]
   }
 `;
