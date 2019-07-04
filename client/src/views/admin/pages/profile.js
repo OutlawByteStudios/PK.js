@@ -19,7 +19,7 @@ class Profile extends React.Component {
         match={this.props.match}
         serverID={null}
       >
-        {(this.props.match.params.steamID === Auth.claim.steamID) ? <OwnProfileHeader /> : <Header />}
+        {(this.props.match.params.steamID === Auth.claim.steamID) ? <OwnProfileHeader /> : <Header serverID={null}/>}
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>

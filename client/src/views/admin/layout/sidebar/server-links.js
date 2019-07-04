@@ -17,8 +17,10 @@ import { serverRoutes } from '../../routes';
 const QUERY = gql`
   query ServerLinks($serverID: Int!, $steamID: String!){
     server(id: $serverID){
+      _id
       name
       adminPermission(steamID: $steamID){
+        _id
         viewAdminPermissions
       }
     }

@@ -5,6 +5,7 @@ import Player from './player-management/player';
 import PlayerNames from './player-management/player-names';
 import PlayerOffences from './player-management/player-offences';
 import PlayerSelector from './player-management/player-selector';
+import ServerInfo from './server-info/server-status';
 import ConfigManager from './server-management/configs/config-manager';
 import CreateServer from './server-management/create-server';
 import DeleteServer from './server-management/delete-server';
@@ -19,6 +20,7 @@ export {
   PlayerNames,
   PlayerOffences,
   PlayerSelector,
+  ServerInfo,
   ConfigManager,
   CreateServer,
   DeleteServer,

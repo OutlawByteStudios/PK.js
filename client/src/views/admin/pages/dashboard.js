@@ -17,7 +17,9 @@ class Dashboard extends React.Component {
         match={this.props.match}
         serverID={serverID}
       >
-        <Header />
+        <Header
+          serverID={serverID}
+        />
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>

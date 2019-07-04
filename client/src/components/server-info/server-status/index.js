@@ -1,32 +1,29 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { SERVER_MODULES } from '../../../graphql/queries';
+import { SERVER_STATUS } from '../../../graphql/queries';
 
 import Loader from './loader';
+import Error from './error';
 import Component from './component';
 
-class ModuleSelector extends React.Component{
+class ServerInfo extends React.Component{
   render(){
     return (
       <Query
-        query={SERVER_MODULES}
+        query={SERVER_STATUS}
         variables={{
           serverID: this.props.serverID
         }}
-        fetchPolicy="cache-and-network"
         onError={() => {}}
       >
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
-          if(error) return <p>Error</p>;
+          if(error) return <Error />;
 
           return (
             <Component
-              modules={data.server.modules}
-              selectedModule={this.props.selectedModule}
-              onChange={this.props.onChange}
-              disabled={this.props.disabled}
+              serverStatus={data.server.serverStatus}
             />
           );
         }}
@@ -35,4 +32,4 @@ class ModuleSelector extends React.Component{
   }
 }
 
-export default ModuleSelector;
+export default ServerInfo;

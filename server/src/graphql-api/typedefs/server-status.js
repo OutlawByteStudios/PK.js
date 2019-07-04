@@ -2,6 +2,7 @@ import { gql } from 'apollo-server-koa';
 
 export default gql`
   type ServerStatus {
+    _id: String
     
     Name: String
     ModuleName: String

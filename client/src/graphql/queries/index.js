@@ -5,6 +5,7 @@ import PLAYER from './player-management/player-info/player';
 import PLAYER_NAMES from './player-management/player-info/player-names';
 import PLAYER_OFFENCES from './player-management/player-info/player-offences';
 import PLAYER_SEARCH from './player-management/player-search';
+import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
 import SERVER_CONTROLLER from './server-management/server-controller';
@@ -19,6 +20,7 @@ export {
   PLAYER_NAMES,
   PLAYER_OFFENCES,
   PLAYER_SEARCH,
+  SERVER_STATUS,
   SERVER_CONFIG,
   SERVER_CONFIGS,
   SERVER_CONTROLLER,

@@ -27,6 +27,7 @@ class EditAdminPermissions extends React.Component{
         onError={() => {}}
       >
         {({ data, loading, error}) => {
+          console.log(error);
 
           if (loading) return <Loader />;
           if (error) return <Error />;

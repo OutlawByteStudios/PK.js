@@ -70,6 +70,7 @@ export default {
       let status;
       try {
          status = getStatus('localhost', ports.port);
+         status._id = `localhost:${ports.port}`
       } catch(err){
         status = null;
       }

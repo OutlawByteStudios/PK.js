@@ -15,6 +15,7 @@ import Auth from "../../../../utils/auth";
 const QUERY = gql`
 query GeneralLinks($steamID: String!){
   steamuser(steamID: $steamID){
+    _id
     panelAdmin
   }
 }

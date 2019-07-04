@@ -22,7 +22,9 @@ class CreateServerPage extends React.Component {
         match={this.props.match}
         serverID={null}
       >
-        <Header />
+        <Header
+          serverID={null}
+        />
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row className="mb-4">

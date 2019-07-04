@@ -16,9 +16,11 @@ class AdminLogs extends React.Component {
       <Layout
         location={this.props.location}
         match={this.props.match}
-        serverID={parseInt(serverID)}
+        serverID={serverID}
       >
-        <Header />
+        <Header
+          serverID={serverID}
+        />
         {/* Page content */}
         <Container className="mt--7" fluid>
           <AdminLogsComponent serverID={serverID} />
