@@ -14,14 +14,14 @@ export default gql`
     gameserverOnline: Boolean
     gameserverLastModule: String
     gameserverLastConfig: String
-    
+
     serverStatus: ServerStatus
 
     serverConfigFile(name: String!): ServerConfigFile
     serverConfigFiles: [ServerConfigFile]
-    
+
     modules: [String]
-    
+
     player(guid: String!): Player
     players(guidLike: String): [Player]
 

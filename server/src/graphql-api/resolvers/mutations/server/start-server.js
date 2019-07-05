@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import { AdminPermission, Server } from '../../../../models';
+import gameserverStatusCache from '../../../../utils/gameserver-status-cache';
 
 import serverConfig from '../../../../../server-config';
 
@@ -76,7 +77,7 @@ export default async (parent, args, context) => {
   server.gameserverDisableWSE = !!args.disableWSE;
   await server.save();
 
-  server.gameserverOnline = true;
+  gameserverStatusCache.fetchGameserverOnline(server.id);
 
   return server;
 };

@@ -15,6 +15,7 @@ class ServerInfo extends React.Component{
         variables={{
           serverID: this.props.serverID
         }}
+        pollInterval={30000}
         onError={() => {}}
       >
         {({ loading, error, data }) => {

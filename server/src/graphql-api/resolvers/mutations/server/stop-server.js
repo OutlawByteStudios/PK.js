@@ -1,6 +1,7 @@
 import { AdminPermission, Server } from '../../../../models';
 import serverConfig from '../../../../../server-config';
 import { execSync } from 'child_process';
+import gameserverStatusCache from '../../../../utils/gameserver-status-cache';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -28,7 +29,7 @@ export default async (parent, args, context) => {
     );
   }
 
-  server.gameserverOnline = false;
+  gameserverStatusCache.fetchGameserverOnline(server.id);
 
   return server;
 };

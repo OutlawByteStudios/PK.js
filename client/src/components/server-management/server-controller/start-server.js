@@ -27,6 +27,7 @@ class StartServer extends React.Component{
             ...server,
             ...startServer
           };
+
           cache.writeQuery({
             query: SERVER_CONTROLLER,
             variables: {
