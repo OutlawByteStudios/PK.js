@@ -17,41 +17,11 @@ export default gql`
       config: String!
       disableWSE: Boolean
     ): Server
-
     stopServer(serverID: Int!): Server
-
     restartServer(serverID: Int!): Server
+    
+    clearPlayerLocations(serverID: Int!): [Player]
 
-    addAdminPermission(serverID: Int!, steamID: String!): AdminPermission
-    removeAdminPermission(serverID: Int!, steamID: String!): AdminPermission
-    updateAdminPermission(
-      serverID: Int!
-      steamID: String!
-      guid: String
-      manageAssignPermissions: Int
-      viewAdminPermissions: Int
-      adminTools: Int
-      adminPanel: Int
-      adminMute: Int
-      adminKick: Int
-      adminTemporaryBan: Int
-      adminPermanentBan: Int
-      adminKillFade: Int
-      adminFreeze: Int
-      adminSpectate: Int
-      adminTeleport: Int
-      adminHealSelf: Int
-      adminGodlike: Int
-      adminJoinFactions: Int
-      adminAnnouncements: Int
-      adminPolls: Int
-      adminShips: Int
-      adminGold: Int
-      adminItems: Int
-      adminAllItems: Int
-      adminFactions: Int
-      adminAnimals: Int
-    ): AdminPermission
 
     addBan(
       serverID: Int!
@@ -84,5 +54,36 @@ export default gql`
     stripPlayer(serverID: Int!, guid: String!, reason: String!): Player
 
     wipePlayerName(serverID: Int!, name: String!): PlayerName
+    
+    addAdminPermission(serverID: Int!, steamID: String!): AdminPermission
+    removeAdminPermission(serverID: Int!, steamID: String!): AdminPermission
+    updateAdminPermission(
+      serverID: Int!
+      steamID: String!
+      guid: String
+      manageAssignPermissions: Int
+      viewAdminPermissions: Int
+      adminTools: Int
+      adminPanel: Int
+      adminMute: Int
+      adminKick: Int
+      adminTemporaryBan: Int
+      adminPermanentBan: Int
+      adminKillFade: Int
+      adminFreeze: Int
+      adminSpectate: Int
+      adminTeleport: Int
+      adminHealSelf: Int
+      adminGodlike: Int
+      adminJoinFactions: Int
+      adminAnnouncements: Int
+      adminPolls: Int
+      adminShips: Int
+      adminGold: Int
+      adminItems: Int
+      adminAllItems: Int
+      adminFactions: Int
+      adminAnimals: Int
+    ): AdminPermission
   }
 `;

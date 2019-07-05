@@ -41,7 +41,8 @@ class DeleteServer extends React.Component{
             <Button
               color="danger"
             >
-              Delete Server
+              <i className="fas fa-circle-notch fa-spin" />{" "}
+              Loading...
             </Button>
           );
 

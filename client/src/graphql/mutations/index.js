@@ -14,6 +14,7 @@ import UN_BAN from './player-management/un-ban';
 
 import WIPE_PLAYER_NAME from './player-management/wipe-player-name';
 
+import CLEAR_PLAYER_LOCATIONS from './server-management/clear-player-locations';
 import CREATE_SERVER from './server-management/create-server';
 import DELETE_SERVER from './server-management/delete-server';
 import RESTART_SERVER from './server-management/restart-server';
@@ -37,8 +38,10 @@ export {
   DELETE_WARNING,
   STRIP_PLAYER,
   UN_BAN,
+
   WIPE_PLAYER_NAME,
 
+  CLEAR_PLAYER_LOCATIONS,
   CREATE_SERVER,
   DELETE_SERVER,
   RESTART_SERVER,

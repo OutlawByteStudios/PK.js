@@ -13,6 +13,7 @@ import Header from '../layout/header';
 import Layout from '../layout/layout';
 
 import {
+  ClearPlayerLocations,
   ConfigManager,
   DeleteServer,
   ServerController
@@ -60,6 +61,7 @@ class ServerManagement extends React.Component {
                   </Row>
                 </CardHeader>
                 <CardBody>
+                  <ClearPlayerLocations serverID={serverID} />
                   <DeleteServer serverID={serverID}/>
                 </CardBody>
               </Card>
