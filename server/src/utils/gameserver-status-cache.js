@@ -4,7 +4,6 @@ import getServerStatus from './get-gameserver-status';
 
 import serverConfig from '../../server-config';
 
-
 // every minute check screen is still alive
 const GAMESERVER_ONLINE_CACHE_TIME = 60 * 1000;
 
@@ -50,12 +49,12 @@ class GameserverStatusCache {
     return this.gameserverOnlineCache[serverID].gameserverOnline;
   }
 
-  async fetchGameserverStatus(host, port){
+  async fetchGameserverStatus(host, port) {
     let gameserverStatus = await getServerStatus(host, port);
     this.gameserverStatusCache[`${host}:${port}`] = {
       gameserverStatus,
       lastFetched: Date.now()
-    }
+    };
   }
 
   async gameserverStatus(host, port) {
@@ -63,7 +62,7 @@ class GameserverStatusCache {
       DISABLE_CACHE ||
       !this.gameserverStatusCache[`${host}:${port}`] ||
       this.gameserverStatusCache[`${host}:${port}`].lastFetched <
-      Date.now() - GAMESERVER_STATUS_CACHE_TIME
+        Date.now() - GAMESERVER_STATUS_CACHE_TIME
     )
       await this.fetchGameserverStatus(host, port);
 

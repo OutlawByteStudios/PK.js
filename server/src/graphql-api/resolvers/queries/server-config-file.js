@@ -44,7 +44,7 @@ export default {
       if (!fs.existsSync(currentGameserverPath))
         throw new Error('Configs folder does not exist!');
 
-      let files = await fs.readdirSync(configFolderPath, {
+      let files = fs.readdirSync(configFolderPath, {
         withFileTypes: true
       });
 

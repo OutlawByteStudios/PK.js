@@ -10,6 +10,7 @@ import ClearPlayerLocations from './server-management/clear-player-locations';
 import ConfigManager from './server-management/configs/config-manager';
 import CreateServer from './server-management/create-server';
 import DeleteServer from './server-management/delete-server';
+import RenameServer from './server-management/rename-server';
 import ServerController from './server-management/server-controller';
 import ServerSelectorSelect from './server-management/server-selector';
 
@@ -26,6 +27,7 @@ export {
   ConfigManager,
   CreateServer,
   DeleteServer,
+  RenameServer,
   ServerController,
   ServerSelectorSelect
 }
