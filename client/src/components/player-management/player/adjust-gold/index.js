@@ -14,7 +14,7 @@ class AdjustGold extends React.Component {
         mutation={ADJUST_GOLD}
         onError={() => {}}
       >
-        {(deleteBan, { loading, error }) => {
+        {(adjustGold, { loading, error }) => {
           if (loading) return <Loader/>;
 
           return (
@@ -25,7 +25,7 @@ class AdjustGold extends React.Component {
               }
               <Component
                 action={variables => {
-                  deleteBan({
+                  adjustGold({
                     variables: {
                       ...variables,
                       serverID: this.props.serverID,

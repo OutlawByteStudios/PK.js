@@ -39,11 +39,11 @@ export default async (parent, args, context) => {
     );
 
   await new AdminLog({
-    server: selectedAdmin.serverID,
+    server: args.serverID,
     admin: currentAdmin.steamID,
 
     type: 'add_admin_permission',
-    targetAdmin: selectedAdmin.steamID
+    targetAdmin: args.steamID
   }).save();
 
   return AdminPermission.findOneAndUpdate(

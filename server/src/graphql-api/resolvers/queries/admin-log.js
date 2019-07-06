@@ -11,7 +11,7 @@ export default {
       if (filter.page) {
         const adminLogs = await AdminLog.paginate(query, {
           sort: { _id: -1 },
-          limit: 4,
+          limit: 30,
           startingAfter: filter.startingAfter,
           endingBefore: filter.endingBefore
         });

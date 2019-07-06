@@ -37,7 +37,6 @@ class Component extends React.Component {
   }
 
   render() {
-
     const { player } = this.props;
     return (
       <Card className="shadow">
