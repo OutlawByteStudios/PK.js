@@ -1,12 +1,10 @@
 import mongoose from 'mongoose';
 
-import gameConfig from '../../game-config';
-
 const PlayerSchema = new mongoose.Schema({
   server: { type: Number, require: true },
   guid: { type: String, require: true },
 
-  online: { type: Number, default: 0 },
+  online: { type: Number, require: true, default: 0 },
   lastSeen: { type: Date, default: new Date() },
 
   factionID: Number,
@@ -33,9 +31,9 @@ const PlayerSchema = new mongoose.Schema({
   yPosition: Number,
   zPosition: Number,
 
-  pouchGold: { type: Number, default: gameConfig.pouchGoldDefault },
-  bankGold: { type: Number, default: gameConfig.bankGoldDefault },
-  bankLimit: { type: Number, default: gameConfig.bankLimit }
+  pouchGold: { type: Number, require: true },
+  bankGold: { type: Number, require: true },
+  bankLimit: { type: Number, require: true }
 });
 
 export default mongoose.model('Player', PlayerSchema);

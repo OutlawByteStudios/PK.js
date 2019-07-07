@@ -5,7 +5,7 @@ import { ACCESS_DENIED } from './actions';
 
 export default async (ctx, next) => {
   const servers = await Server.find({
-    id: ctx.query.server,
+    id: ctx.query.serverID,
     apiKey: ctx.query.apiKey
   });
 

@@ -18,7 +18,10 @@ import { validatorServerName } from 'shared/validators';
 class Component extends React.Component{
   state = {
     name: '',
-    welcomeMessage: 'Welcome to a PK.js powered server!'
+    welcomeMessage: 'Welcome to a PK.js powered server!',
+    defaultBankGold: 150000,
+    defaultPouchGold: 10000,
+    defaultBankLimit: 1000000
   };
   
   constructor(){
@@ -30,7 +33,7 @@ class Component extends React.Component{
   }
   
   isValid(){
-    return validatorServerName(this.state.serverName);
+    return validatorServerName(this.state.name);
   }
 
   onSubmit(event) {
@@ -88,6 +91,56 @@ class Component extends React.Component{
                     type="text"
                     value={this.state.welcomeMessage}
                     onChange={event => this.setState({ welcomeMessage: event.target.value })}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col md="4">
+                <FormGroup>
+                  <label
+                    className="form-control-label"
+                    htmlFor="input-first-name"
+                  >
+                    Default Gold in Bank
+                  </label>
+                  <Input
+                    className="form-control-alternative"
+                    type="number"
+                    value={this.state.defaultBankGold}
+                    onChange={event => this.setState({ defaultBankGold: parseInt(event.target.value) })}
+                  />
+                </FormGroup>
+              </Col>
+              <Col  md="4">
+                <FormGroup>
+                  <label
+                    className="form-control-label"
+                    htmlFor="input-first-name"
+                  >
+                    Default Gold in Pouch
+                  </label>
+                  <Input
+                    className="form-control-alternative"
+                    type="number"
+                    value={this.state.defaultPouchGold}
+                    onChange={event => this.setState({ defaultPouchGold: parseInt(event.target.value) })}
+                  />
+                </FormGroup>
+              </Col>
+              <Col  md="4">
+                <FormGroup>
+                  <label
+                    className="form-control-label"
+                    htmlFor="input-first-name"
+                  >
+                    Default Bank Limit
+                  </label>
+                  <Input
+                    className="form-control-alternative"
+                    type="number"
+                    value={this.state.defaultBankLimit}
+                    onChange={event => this.setState({ defaultBankLimit: parseInt(event.target.value) })}
                   />
                 </FormGroup>
               </Col>

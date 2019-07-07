@@ -5,7 +5,7 @@ import { STRIP_GEAR } from '../actions';
 export default async function(ctx) {
   await Player.updateOne(
     {
-      server: ctx.query.server,
+      server: ctx.query.serverID,
       guid: ctx.query.guid
     },
     {
@@ -32,10 +32,6 @@ export default async function(ctx) {
         zPosition: 1
       },
       pouchGold: ctx.query.pouchGold
-    },
-    {
-      upsert: true,
-      setDefaultsOnInsert: true
     }
   );
 

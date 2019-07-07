@@ -2,7 +2,13 @@ import { gql } from 'apollo-server-koa';
 
 export default gql`
   type Mutation {
-    createServer(name: String!, welcomeMessage: String): Server
+    createServer(
+      name: String!
+      welcomeMessage: String
+      defaultBankGold: Int
+      defaultPouchGold: Int
+      defaultBankLimit: Int
+    ): Server
     renameServer(serverID: Int!, name: String!): Server
     deleteServer(serverID: Int!): Server
 

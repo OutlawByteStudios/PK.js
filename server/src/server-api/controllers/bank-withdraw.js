@@ -4,7 +4,7 @@ import { BANK_WITHDRAW } from '../actions';
 
 export default async function(ctx) {
   const player = await Player.findOne({
-    server: ctx.query.server,
+    server: ctx.query.serverID,
     guid: ctx.query.guid
   });
 

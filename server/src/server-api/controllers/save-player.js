@@ -3,58 +3,45 @@ import { Player, PlayerName } from '../../models';
 import { SAVE_PLAYER_AND_GEAR } from '../actions';
 
 export default async function(ctx) {
-  const server = ctx.query.server;
-  const guid = ctx.query.guid;
-  const name = ctx.query.name;
-
   let update = {
-    server,
-    guid,
     $inc: { online: -1 },
-    lastSeen: new Date(),
+    lastSeen: Date.now(),
     factionID: ctx.query.factionID,
     classID: ctx.query.classID
   };
 
   if (ctx.query.alive !== undefined) {
-    update = {
-      ...update,
-      health: ctx.query.health,
-      food: ctx.query.food,
-      poison: ctx.query.poison,
-      headArmour: ctx.query.headArmour,
-      bodyArmour: ctx.query.bodyArmour,
-      footArmour: ctx.query.footArmour,
-      handArmour: ctx.query.handArmour,
-      firstItem: ctx.query.firstItem,
-      secondItem: ctx.query.secondItem,
-      thirdItem: ctx.query.thirdItem,
-      forthItem: ctx.query.forthItem,
-      firstAmmo: ctx.query.firstAmmo,
-      secondAmmo: ctx.query.secondAmmo,
-      thirdAmmo: ctx.query.thirdAmmo,
-      forthAmmo: ctx.query.forthAmmo,
-      horse: ctx.query.horse,
-      horseHealth: ctx.query.horseHealth,
-      xPosition: ctx.query.xPosition,
-      yPosition: ctx.query.yPosition,
-      zPosition: ctx.query.zPosition,
-      pouchGold: ctx.query.pouchGold
-    };
+    update.health = ctx.query.health;
+    update.food = ctx.query.food;
+    update.poison = ctx.query.poison;
+    update.headArmour = ctx.query.headArmour;
+    update.bodyArmour = ctx.query.bodyArmour;
+    update.footArmour = ctx.query.footArmour;
+    update.handArmour = ctx.query.handArmour;
+    update.firstItem = ctx.query.firstItem;
+    update.secondItem = ctx.query.secondItem;
+    update.thirdItem = ctx.query.thirdItem;
+    update.forthItem = ctx.query.forthItem;
+    update.firstAmmo = ctx.query.firstAmmo;
+    update.secondAmmo = ctx.query.secondAmmo;
+    update.thirdAmmo = ctx.query.thirdAmmo;
+    update.forthAmmo = ctx.query.forthAmmo;
+    update.horse = ctx.query.horse;
+    update.horseHealth = ctx.query.horseHealth;
+    update.xPosition = ctx.query.xPosition;
+    update.yPosition = ctx.query.yPosition;
+    update.zPosition = ctx.query.zPosition;
+    update.pouchGold = ctx.query.pouchGold;
   }
 
-  await Player.findOneAndUpdate({ server, guid }, update, {
-    upsert: true,
-    setDefaultsOnInsert: true
-  });
+  await Player.updateOne(
+    { server: ctx.query.serverID, guid: ctx.query.guid },
+    update
+  );
 
-  await PlayerName.findOneAndUpdate(
-    { server, name },
-    { server, name, lastSeen: new Date() },
-    {
-      upsert: true,
-      setDefaultsOnInsert: true
-    }
+  await PlayerName.updateOne(
+    { server: ctx.query.serverID, name: ctx.query.name },
+    { lastSeen: Date.now() }
   );
 
   ctx.body = encode([SAVE_PLAYER_AND_GEAR]);

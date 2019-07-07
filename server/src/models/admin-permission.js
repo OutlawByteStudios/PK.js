@@ -15,6 +15,7 @@ const AdminPermission = new mongoose.Schema({
 
   manageAssignPermissions: permission,
   viewAdminPermissions: permission,
+
   adminTools: permission,
   adminPanel: permission,
   adminMute: permission,

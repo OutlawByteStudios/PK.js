@@ -7,9 +7,13 @@ export default gql`
     id: Int
     name: String
 
-    apiKey: String
+    defaultBankGold: Int
+    defaultPouchGold: Int
+    defaultBankLimit: Int
 
     welcomeMessage: String
+
+    apiKey: String
 
     gameserverOnline: Boolean
     gameserverLastModule: String

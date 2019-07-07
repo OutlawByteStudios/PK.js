@@ -9,16 +9,32 @@ const ServerSchema = new mongoose.Schema({
   id: { type: Number, require: true },
   name: { type: String, require: true },
 
-  apiKey: {
-    type: String,
-    require: true,
-    default: () => crypto.randomBytes(20).toString('hex')
-  },
-
   welcomeMessage: {
     type: String,
     require: true,
     default: 'Welcome to a PK.js powered server.'
+  },
+
+  defaultBankGold: {
+    type: Number,
+    require: true,
+    default: 150000
+  },
+  defaultPouchGold: {
+    type: Number,
+    require: true,
+    default: 10000
+  },
+  defaultBankLimit: {
+    type: Number,
+    require: true,
+    default: 1000000
+  },
+
+  apiKey: {
+    type: String,
+    require: true,
+    default: () => crypto.randomBytes(20).toString('hex')
   },
 
   gameserverLastModule: String,
@@ -34,6 +50,6 @@ const ServerSchema = new mongoose.Schema({
     default: serverConfig.gameserverRestartCron
   }
 });
-ServerSchema.plugin(AutoIncrement, { inc_field: 'id' });
+ServerSchema.plugin(AutoIncrement, { inc_field: 'id', id: 'serverID' });
 
 export default mongoose.model('Server', ServerSchema);
