@@ -49,6 +49,16 @@ export default {
       });
     }
   },
+
+  IPRecord: {
+    player: async parent => {
+      return Player.findOne({
+        server: parent.server,
+        guid: parent.player
+      });
+    }
+  },
+
   AdminLog: {
     targetPlayer: async parent => {
       return Player.findOne({

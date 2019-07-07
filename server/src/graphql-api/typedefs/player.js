@@ -43,5 +43,7 @@ export default gql`
     bans: [Ban]
     warnings: [Warning]
     notes: [Note]
+    
+    ips: [IPRecord]
   }
 `;

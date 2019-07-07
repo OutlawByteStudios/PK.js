@@ -6,7 +6,6 @@ import {
   CardHeader,
   Col,
   FormGroup,
-  Input,
   Row
 } from 'reactstrap';
 
@@ -15,6 +14,7 @@ import { gamePermissions, panelPermissions } from 'shared/constants';
 import SteamUser from '../../misc/steam-user';
 import PermissionCheckbox from './permission-checkbox';
 import SaveChange from './save-changes';
+import PlayerSelector from '../../player-management/player-selector';
 
 class Component extends React.Component{
   constructor(props){
@@ -117,14 +117,13 @@ class Component extends React.Component{
                   <label
                     className="form-control-label"
                   >
-                    GUID
+                    Player
                   </label>
-                  <Input
-                    className="form-control-alternative"
-                    type="text"
-                    placeholder="GUID"
-                    value={this.state.guid}
-                    onChange={event => this.setState({ guid: event.target.value })}
+                  <PlayerSelector
+                    serverID={this.props.serverID}
+                    player={this.state.guid}
+                    allowNone={true}
+                    onChange={guid => this.setState({ guid })}
                   />
                 </FormGroup>
               </Col>

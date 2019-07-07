@@ -2,7 +2,7 @@ import AdminLog from './admin-log';
 import AdminPermission from './admin-permission';
 import Ban from './ban';
 import IPMask from './ip-mask';
-import IPTracker from './ip-tracker';
+import IPRecord from './ip-record';
 import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
@@ -15,7 +15,7 @@ export {
   AdminPermission,
   Ban,
   IPMask,
-  IPTracker,
+  IPRecord,
   Note,
   Player,
   PlayerName,

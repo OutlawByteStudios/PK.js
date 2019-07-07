@@ -1,7 +1,7 @@
 import { encode } from 'mb-warband-parser';
 import {
   IPMask,
-  IPTracker,
+  IPRecord,
   PlayerName,
   Server,
   Player,
@@ -17,7 +17,7 @@ import {
   LOAD_FAIL_KICK
 } from '../actions';
 
-const recordIP = async (ip, guid) => {
+const recordIP = async (ip, serverID, guid) => {
   // oddly the autoincrement package doesn't seem to work on findOneAndUpdate
   // so we're going to use create instead. Probably should revisit this at some
   // point and possibly make an issue / PR on the package repo
@@ -28,13 +28,15 @@ const recordIP = async (ip, guid) => {
     ipMask = ipMask[0];
   }
 
-  await IPTracker.update(
+  await IPRecord.update(
     {
       ipMask: ipMask.id,
+      server: serverID,
       player: guid
     },
     {
       ipMask: ipMask.id,
+      server: serverID,
       player: guid,
       lastSeen: Date.now()
     },
@@ -47,7 +49,7 @@ const recordIP = async (ip, guid) => {
 export default async ctx => {
   /* Record IP details in background as we want to know who is
    using what GUID regardless of whether they can connect. */
-  recordIP(ctx.query.ip, ctx.query.guid);
+  recordIP(ctx.query.ip, ctx.query.serverID, ctx.query.guid);
 
   // start now promise to load player, store this in the promise store
   // so we can wait for it to resolve in load gear

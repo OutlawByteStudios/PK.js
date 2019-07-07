@@ -11,6 +11,12 @@ export default {
     }
   },
 
+  IPRecord: {
+    server: async parent => {
+      return Server.findOne({ id: parent.server });
+    }
+  },
+
   AdminLog: {
     server: async parent => {
       return Server.findOne({ id: parent.server });

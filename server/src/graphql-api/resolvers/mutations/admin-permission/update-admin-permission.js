@@ -19,16 +19,7 @@ export default async (parent, args, context) => {
   });
   if (selectedAdmin === null) throw new Error('Admin not found.');
 
-  if (args.guid !== undefined && args.guid !== '') {
-    const player = await Player.findOne({
-      server: args.serverID,
-      guid: args.guid
-    });
-
-    if (player === null) throw new Error('Player GUID not found.');
-
-    selectedAdmin.player = player.guid;
-  }
+  selectedAdmin.player = args.guid;
 
   for (let permission of panelPermissions.concat(gamePermissions)) {
     // don't allow admin to change own perms, but guid is fine

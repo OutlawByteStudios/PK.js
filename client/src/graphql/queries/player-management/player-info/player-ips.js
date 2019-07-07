@@ -1,16 +1,21 @@
 import { gql } from 'apollo-boost';
 
 export default gql`
-  query PlayerNames($serverID: Int!, $guid: String!){
+  query PlayerIPs($serverID: Int!, $guid: String!){
     server(id: $serverID){
       _id
       
       player(guid: $guid){
         _id
         
-        playerNames {
+        ips {
           _id
-          name
+          
+          ipMask {
+            id
+            ip
+          }
+          
           lastSeen
         }
       }

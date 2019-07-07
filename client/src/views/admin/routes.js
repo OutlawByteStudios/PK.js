@@ -9,6 +9,7 @@ import ServerManagement from './pages/server-management';
 import Admins from './pages/admins';
 import AdminLogs from './pages/admin-logs';
 import Players from './pages/players';
+import PlayersByIP from './pages/players-by-ip';
 
 const pathPrefix = '/admin';
 
@@ -94,6 +95,22 @@ const serverRoutes = [
     name: "Players",
     icon: "fas fa-users",
     component: Players
+  },
+
+  {
+    path: pathPrefix + '/:serverID/playersbyip/:id',
+    exact: true,
+    name: "Players by IP",
+    icon: "fas fa-users",
+    component: PlayersByIP,
+    displayInSidebar: false
+  },
+  {
+    path: pathPrefix + '/:serverID/playersbyip',
+    exact: true,
+    name: "Players by IP",
+    icon: "fas fa-users",
+    component: PlayersByIP
   }
 ];
 

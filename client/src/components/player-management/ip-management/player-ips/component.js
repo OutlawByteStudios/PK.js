@@ -14,8 +14,7 @@ import {
   Row
 } from "reactstrap";
 
-import AdvancedModal from '../../misc/modals/advanced-modal';
-import WipeName from './wipe-name';
+import AdvancedModal from '../../../misc/modals/advanced-modal';
 
 class Component extends React.Component {
   render() {
@@ -24,13 +23,13 @@ class Component extends React.Component {
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Player Names</h3>
+              <h3 className="mb-0">Player IPs</h3>
             </Col>
           </Row>
         </CardHeader>
         <CardBody>
           {
-            this.props.names.map((name, key) => (
+            this.props.ips.map((ip, key) => (
               <AdvancedModal
                 isOpen={false}
                 key={key}
@@ -44,7 +43,7 @@ class Component extends React.Component {
                         cursor: 'pointer'
                       }}
                     >
-                      {name.name}
+                      #{ip.ipMask.id.toString().padStart(6, '0')}
                     </Badge>
 
                     <Modal
@@ -55,7 +54,7 @@ class Component extends React.Component {
                     >
                       <div className="modal-header">
                         <h6 className="modal-title">
-                          Player Name Info
+                          Player IP Info
                         </h6>
                         <button
                           aria-label="Close"
@@ -70,16 +69,14 @@ class Component extends React.Component {
                       <ModalBody>
                         <div className="py-3 text-center">
                           <i className="fas fa-info-circle fa-4x" />
-                          <h4 className="heading mt-4">{name.name}</h4>
-                          <p><strong>Last Seen:</strong> {moment(name.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <h4 className="heading mt-4">
+                            #{ip.ipMask.id.toString().padStart(6, '0')}
+                          </h4>
+                          <p><strong>IP Address:</strong> {(ip.ipMask.ip) ? ip.ipMask.ip : '***.***.***.***'}</p>
+                          <p><strong>Last Seen:</strong> {moment(ip.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>
-                        <WipeName
-                          serverID={this.props.serverID}
-                          guid={this.props.guid}
-                          name={name.name}
-                        />
                         <Button
                           className="text-white ml-auto"
                           color="link"
