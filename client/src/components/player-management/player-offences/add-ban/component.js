@@ -22,7 +22,8 @@ class Component extends React.Component{
     publicReason: '',
     privateReason: '',
     length: 1,
-    perm: false
+    perm: false,
+    ipBan: false
   };
   
   constructor(){
@@ -46,7 +47,8 @@ class Component extends React.Component{
     this.props.action({
       publicReason: this.state.publicReason,
       privateReason: this.state.privateReason,
-      length: (this.state.perm) ? -1 : parseInt(this.state.length)
+      length: (this.state.perm) ? -1 : parseInt(this.state.length),
+      ipBan: this.state.ipBan
     });
   }
 
@@ -144,6 +146,21 @@ class Component extends React.Component{
                             />
                             <label className="custom-control-label" htmlFor="perm-ban">
                               Permanent Ban
+                            </label>
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <div className="custom-control custom-checkbox my-4">
+                            <input
+                              className="custom-control-input"
+                              type="checkbox"
+                              onChange={event => this.setState({ ipBan: event.target.checked })}
+                              id="ip-ban"
+                            />
+                            <label className="custom-control-label" htmlFor="ip-ban">
+                              IP Ban
                             </label>
                           </div>
                         </Col>

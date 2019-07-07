@@ -38,6 +38,7 @@ class Component extends React.Component {
 
   render() {
     const { player } = this.props;
+    console.log(player);
     return (
       <Card className="shadow">
         <CardHeader className="border-0">
@@ -82,6 +83,7 @@ class Component extends React.Component {
                 <th scope="col">Public Reason</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
+                <th scope="col">IP Ban?</th>
                 <th scope="col">Admin</th>
                 <th scope="col">Actions</th>
               </tr>
@@ -97,6 +99,9 @@ class Component extends React.Component {
                       {(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}
                       <br />
                       {(ban.unbannedDate !==  null) ? `(Unbanned at: ${moment(ban.unbannedDate).format('DD/MM/YYYY HH:mm')})` : ''}
+                    </td>
+                    <td>
+                      {(ban.ipBan) ? 'Yes' : 'No'}
                     </td>
                     <td>
                       <SteamUser steamUser={ban.admin} />

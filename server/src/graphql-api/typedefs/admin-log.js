@@ -17,6 +17,7 @@ export default gql`
     reason: String
 
     length: Int
+    ipBanned: Boolean
 
     amount: Int
     from: String

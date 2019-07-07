@@ -11,7 +11,9 @@ const BanSchema = new mongoose.Schema({
 
   startDate: { type: Date, require: true, default: Date.now },
   endDate: { type: Date, require: true },
-  unbannedDate: { type: Date, default: null }
+  unbannedDate: { type: Date, default: null },
+
+  ipBan: { type: Boolean, require: true, default: false }
 });
 
 export default mongoose.model('Ban', BanSchema);

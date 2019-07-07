@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Server, Ban } from '../models';
+import { Server, Ban, IPRecord } from '../models';
 
 async function updateBanList(server) {
   const currentGameserverPath = path.join(
@@ -10,7 +10,7 @@ async function updateBanList(server) {
   if (!fs.existsSync(currentGameserverPath)) return;
   const banListFile = path.join(currentGameserverPath, '/bans.txt');
 
-  const bannedPlayers = await Ban.distinct('player', {
+  let bannedPlayers = await Ban.distinct('player', {
     $or: [
       {
         unbannedDate: null,
@@ -23,6 +23,30 @@ async function updateBanList(server) {
         endDate: { $gt: Date.now() }
       }
     ]
+  });
+
+  const ipBannedPlayers = await Ban.distinct('player', {
+    $or: [
+      {
+        unbannedDate: null,
+        startDate: { $lte: Date.now() },
+        endDate: null,
+        ipBan: true
+      },
+      {
+        unbannedDate: null,
+        startDate: { $lte: Date.now() },
+        endDate: { $gt: Date.now() },
+        ipBan: true
+      }
+    ]
+  });
+
+  const bannedIPs = await IPRecord.distinct('ip', { player: { $in: ipBannedPlayers } });
+  let ipBannedGUIDs = await IPRecord.distinct('player', { ip: { $in: bannedIPs } });
+
+  ipBannedGUIDs.forEach(guid => {
+    if(!bannedPlayers.includes(guid)) bannedPlayers.push(guid);
   });
 
   fs.writeFileSync(banListFile, bannedPlayers.join('\r\n'), 'utf8');

@@ -35,6 +35,7 @@ export default gql`
       publicReason: String!
       privateReason: String!
       length: Int!
+      ipBan: Boolean
     ): Ban
     addWarning(
       serverID: Int!

@@ -27,6 +27,7 @@ export default gql`
         reason
         
         length
+        ipBanned
         
         amount
         from

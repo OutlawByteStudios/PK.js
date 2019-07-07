@@ -16,45 +16,72 @@ import {
   LOAD_ADMIN,
   LOAD_FAIL_KICK
 } from '../actions';
-
-const recordIP = async (ip, serverID, guid) => {
-  // oddly the autoincrement package doesn't seem to work on findOneAndUpdate
-  // so we're going to use create instead. Probably should revisit this at some
-  // point and possibly make an issue / PR on the package repo
-  let ipMask = await IPMask.findOne({ ip });
-
-  if (ipMask === null) {
-    ipMask = await IPMask.create([{ ip }], { setDefaultsOnInsert: true });
-    ipMask = ipMask[0];
-  }
-
-  await IPRecord.update(
-    {
-      ip,
-      ipMask: ipMask.id,
-      server: serverID,
-      player: guid
-    },
-    {
-      ipMask: ipMask.id,
-      server: serverID,
-      player: guid,
-      lastSeen: Date.now()
-    },
-    {
-      upsert: true
-    }
-  );
-};
+import Ban from "../../models/ban";
 
 export default async ctx => {
-  /* Record IP details in background as we want to know who is
-   using what GUID regardless of whether they can connect. */
-  recordIP(ctx.query.ip, ctx.query.serverID, ctx.query.guid);
-
   // start now promise to load player, store this in the promise store
   // so we can wait for it to resolve in load gear
   PromiseStore[`load-player-${ctx.query.guid}`] = new Promise(async resolve => {
+    // oddly the autoincrement package doesn't seem to work on findOneAndUpdate
+    // so we're going to use create instead. Probably should revisit this at some
+    // point and possibly make an issue / PR on the package repo
+    let ipMask = await IPMask.findOne({ ip: ctx.query.ip });
+
+    if (ipMask === null) {
+      ipMask = await IPMask.create([{ ip: ctx.query.ip }], { setDefaultsOnInsert: true });
+      ipMask = ipMask[0];
+    }
+
+    let checkIPBans = await new Promise(resolve => {
+      IPRecord.update(
+        {
+          ip: ctx.query.ip,
+          ipMask: ipMask.id,
+          server: ctx.query.serverID,
+          player: ctx.query.guid
+        },
+        {
+          ipMask: ipMask.id,
+          server: ctx.query.serverID,
+          player: ctx.query.guid,
+          lastSeen: Date.now()
+        },
+        {
+          upsert: true
+        },
+        (err, raw) =>{
+          resolve(raw.upserted.length > 0)
+        }
+      );
+    });
+
+    // if guid-ip relation new check if it should be banned
+    if(checkIPBans){
+      /* Check player is not IP banned */
+      let guids = await IPRecord.find({ ip: ctx.query.ip });
+      guids = guids.map(record => record.player);
+      const bans = await Ban.count({
+        $or: [
+          {
+            unbannedDate: null,
+            startDate: { $lte: Date.now() },
+            endDate: null,
+            ipBan: true,
+            player: { $in: guids }
+          },
+          {
+            unbannedDate: null,
+            startDate: { $lte: Date.now() },
+            endDate: { $gt: Date.now() },
+            ipBan: true,
+            player: { $in: guids }
+          }
+        ]
+      });
+      if(bans > 0) return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
+    }
+
+
     /* Check Player Name is not already in use */
     const playerName = await PlayerName.findOne({
       server: ctx.query.serverID,

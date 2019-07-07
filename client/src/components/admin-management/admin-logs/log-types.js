@@ -17,7 +17,7 @@ export default [
   {
     type: 'add_ban',
     name: 'Add Ban',
-    toString: adminLog => `Banned ${adminLog.targetPlayer.guid} ${adminLog.length === -1 ? 'permanently.' : `for ${adminLog.length} ${adminLog.length > 1 ? 'days' : 'day'}`} with reason: ${adminLog.reason}`
+    toString: adminLog => `${adminLog.ipBanned ? 'IP' : ''} Banned ${adminLog.targetPlayer.guid} ${adminLog.length === -1 ? 'permanently.' : `for ${adminLog.length} ${adminLog.length > 1 ? 'days' : 'day'}`} with reason: ${adminLog.reason}`
   },
   {
     type: 'un_ban',

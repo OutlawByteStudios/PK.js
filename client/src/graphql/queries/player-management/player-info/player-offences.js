@@ -24,6 +24,8 @@ export default gql`
           startDate
           endDate
           unbannedDate
+          
+          ipBan
         }
         
         warnings {

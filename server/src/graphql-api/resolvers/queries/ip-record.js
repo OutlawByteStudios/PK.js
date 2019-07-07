@@ -10,8 +10,18 @@ export default {
   Server: {
     ipRecords: async (parent, filter) => {
       let query = {};
+
+      if(filter.ipLike) query.$where = `function(){ return this.ip.includes('${filter.ipLike}') || this.id.toString().includes('${filter.ipLike}'); }`;
+
       if(filter.ipMask) query.ipMask = filter.ipMask;
-      return IPRecord.find(query);
+
+      let ipRecords = await IPRecord.find(query);
+
+      if(filter.ipLike){
+        ipRecords = ipRecords.filter((record, index, self) => self.findIndex(r => r.ipMask === record.ipMask) === index);
+      }
+
+      return ipRecords;
     }
 
   }

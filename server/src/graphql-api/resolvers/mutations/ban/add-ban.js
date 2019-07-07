@@ -33,8 +33,11 @@ export default async (parent, args, context) => {
     endDate:
       args.length === -1
         ? null
-        : new Date().setDate(new Date().getDate() + args.length)
+        : new Date().setDate(new Date().getDate() + args.length),
+    ipBan: !!args.ipBan
   });
+
+  console.log(ban);
 
   await ban.save();
 
@@ -45,7 +48,8 @@ export default async (parent, args, context) => {
     type: 'add_ban',
     targetPlayer: ban.player,
     reason: ban.privateReason,
-    length: args.length
+    length: args.length,
+    ipBanned: !!args.ipBan
   }).save();
 
   return ban;
