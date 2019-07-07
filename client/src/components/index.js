@@ -3,6 +3,8 @@ import AdminLogs from './admin-management/admin-logs';
 import EditAdminPermissions from './admin-management/edit-admin-permissions';
 import Player from './player-management/player';
 import PlayerIPs from './player-management/ip-management/player-ips';
+import PlayersOnIP from './player-management/ip-management/players-on-ip';
+import IPSelector from './player-management/ip-management/ip-selector';
 import PlayerNames from './player-management/player-names';
 import PlayerOffences from './player-management/player-offences';
 import PlayerSelector from './player-management/player-selector';
@@ -21,6 +23,8 @@ export {
   EditAdminPermissions,
   Player,
   PlayerIPs,
+  PlayersOnIP,
+  IPSelector,
   PlayerNames,
   PlayerOffences,
   PlayerSelector,

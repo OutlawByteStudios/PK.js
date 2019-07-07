@@ -8,14 +8,11 @@ export default gql`
       player(guid: $guid){
         _id
         
-        ips {
+        ipRecords {
           _id
           
-          ipMask {
-            id
-            ip
-          }
-          
+          ip
+          ipMask
           lastSeen
         }
       }

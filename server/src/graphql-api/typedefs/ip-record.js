@@ -4,7 +4,8 @@ export default gql`
   type IPRecord {
     _id: String
     
-    ipMask: IPMask
+    ip: String
+    ipMask: Int
     
     server: Server
     player: Player

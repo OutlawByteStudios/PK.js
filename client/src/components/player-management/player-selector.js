@@ -1,4 +1,7 @@
 import React from 'react';
+import { withApollo } from 'react-apollo';
+
+import { PLAYER_SEARCH } from '../../graphql/queries';
 
 import AsyncSelect from 'react-select/lib/Async';
 
@@ -9,9 +12,12 @@ class PlayerSelector extends React.Component {
   }
 
   async searchUpdate(search){
-    const { data } = await this.props.searchUpdate({
-      serverID: this.props.serverID,
-      search
+    const { data } = await this.props.client.query({
+      query: PLAYER_SEARCH,
+      variables: {
+        serverID: this.props.serverID,
+        search
+      }
     });
 
     const options = [];
@@ -64,4 +70,4 @@ class PlayerSelector extends React.Component {
   }
 }
 
-export default PlayerSelector;
+export default withApollo(PlayerSelector);

@@ -44,6 +44,6 @@ export default gql`
     warnings: [Warning]
     notes: [Note]
     
-    ips: [IPRecord]
+    ipRecords: [IPRecord]
   }
 `;

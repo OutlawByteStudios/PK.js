@@ -30,6 +30,7 @@ const recordIP = async (ip, serverID, guid) => {
 
   await IPRecord.update(
     {
+      ip,
       ipMask: ipMask.id,
       server: serverID,
       player: guid

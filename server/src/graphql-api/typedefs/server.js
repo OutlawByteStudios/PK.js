@@ -28,6 +28,8 @@ export default gql`
 
     player(guid: String!): Player
     players(guidLike: String): [Player]
+    
+    ipRecords(ipMask: Int, ipLike: String): [IPRecord]
 
     playerName(name: String!): PlayerName
     playerNames(nameLike: String): [PlayerName]

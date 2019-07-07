@@ -7,7 +7,7 @@ import Loader from './loader';
 import Error from './error';
 import Component from './component';
 
-class Player extends React.Component{
+class PlayerIPs extends React.Component{
   render(){
     return (
       <Query
@@ -24,7 +24,7 @@ class Player extends React.Component{
 
           return (
             <Component
-              ips={data.server.player.ips}
+              ipRecords={data.server.player.ipRecords}
             />
           );
         }}
@@ -33,4 +33,4 @@ class Player extends React.Component{
   }
 }
 
-export default Player;
+export default PlayerIPs;

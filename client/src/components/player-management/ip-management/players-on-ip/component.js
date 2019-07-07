@@ -20,16 +20,16 @@ import AdvancedModal from '../../../misc/modals/advanced-modal';
 class Component extends React.Component {
   constructor(){
     super();
-    this.viewIPPage = this.viewIPPage.bind(this);
+    this.viewPlayerPage = this.viewPlayerPage.bind(this);
   }
 
-  viewIPPage(ipMaskID){
+  viewPlayerPage(guid){
     this.props.history.push(
       this.props.match.path
         .replace(':serverID', this.props.match.params.serverID)
-        .replace('players', 'playersbyip')
-        .replace('/:guid', '')
-      + '/' + ipMaskID
+        .replace('playersbyip', 'players')
+        .replace('/:ipMask', '')
+      + '/' + guid
     );
   }
 
@@ -59,7 +59,7 @@ class Component extends React.Component {
                         cursor: 'pointer'
                       }}
                     >
-                      #{record.ipMask.toString().padStart(6, '0')}
+                      {record.player.guid}
                     </Badge>
 
                     <Modal
@@ -86,19 +86,18 @@ class Component extends React.Component {
                         <div className="py-3 text-center">
                           <i className="fas fa-info-circle fa-4x" />
                           <h4 className="heading mt-4">
-                            #{record.ipMask.toString().padStart(6, '0')}
+                            {record.player.guid}
                           </h4>
-                          <p><strong>IP Address:</strong> {(record.ip) ? record.ip : '***.***.***.***'}</p>
-                          <p><strong>Last Seen:</strong> {moment(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>Last Seen on IP:</strong> {moment(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>
                         <Button
                           color="default"
                           className="btn-white"
-                          onClick={() => this.viewIPPage(record.ipMask)}
+                          onClick={() => this.viewPlayerPage(record.player.guid)}
                         >
-                          View IP Page
+                          View Player Page
                         </Button>
                         <Button
                           className="text-white ml-auto"

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { PLAYER_NAMES } from '../../../graphql/queries';
+import { PLAYERS_ON_IP } from '../../../../graphql/queries/index';
 
 import Loader from './loader';
 import Error from './error';
 import Component from './component';
 
-class PlayerNames extends React.Component{
+class Player extends React.Component{
   render(){
     return (
       <Query
-        query={PLAYER_NAMES}
+        query={PLAYERS_ON_IP}
         variables={{
           serverID: this.props.serverID,
-          guid: this.props.guid
+          ipMask: this.props.ipMask
         }}
         onError={() => {}}
       >
@@ -24,9 +24,7 @@ class PlayerNames extends React.Component{
 
           return (
             <Component
-              serverID={this.props.serverID}
-              guid={this.props.guid}
-              names={data.server.player.playerNames}
+              ipRecords={data.server.ipRecords}
             />
           );
         }}
@@ -35,4 +33,4 @@ class PlayerNames extends React.Component{
   }
 }
 
-export default PlayerNames;
+export default Player;

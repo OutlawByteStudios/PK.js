@@ -98,7 +98,7 @@ const serverRoutes = [
   },
 
   {
-    path: pathPrefix + '/:serverID/playersbyip/:id',
+    path: pathPrefix + '/:serverID/playersbyip/:ipMask',
     exact: true,
     name: "Players by IP",
     icon: "fas fa-users",
@@ -107,7 +107,7 @@ const serverRoutes = [
   },
   {
     path: pathPrefix + '/:serverID/playersbyip',
-    exact: true,
+    exact: false,
     name: "Players by IP",
     icon: "fas fa-users",
     component: PlayersByIP

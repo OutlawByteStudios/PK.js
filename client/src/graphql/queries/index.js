@@ -5,7 +5,9 @@ import PLAYER from './player-management/player-info/player';
 import PLAYER_IPS from './player-management/player-info/player-ips';
 import PLAYER_NAMES from './player-management/player-info/player-names';
 import PLAYER_OFFENCES from './player-management/player-info/player-offences';
+import IP_SEARCH from './player-management/ip-search';
 import PLAYER_SEARCH from './player-management/player-search';
+import PLAYERS_ON_IP from './player-management/players-on-ip';
 import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
@@ -21,7 +23,9 @@ export {
   PLAYER_IPS,
   PLAYER_NAMES,
   PLAYER_OFFENCES,
+  IP_SEARCH,
   PLAYER_SEARCH,
+  PLAYERS_ON_IP,
   SERVER_STATUS,
   SERVER_CONFIG,
   SERVER_CONFIGS,
