@@ -12,6 +12,8 @@ import {
   parseConfig
 } from '../../../../utils/server-config-parser';
 
+import serverConfig from '../../../../../server-config';
+
 export default async (parent, args, context) => {
   /* Check for Permissions */
   if (context.user === null)
@@ -92,10 +94,16 @@ export default async (parent, args, context) => {
   const pkPath = path.join(newGameserverPath, '/Modules/Persistent Kingdoms');
   if (!fs.existsSync(pkPath)) return server;
 
-  let file = fs.readFileSync(path.join(pkPath, '/quick_strings.txt'), 'utf8');
-  file = file.replace(/SERVER_ID/g, server.id);
-  file = file.replace(/SERVER_API_KEY/g, server.apiKey);
-  await fs.writeFileSync(path.join(pkPath, '/quick_strings.txt'), file, 'utf8');
+  let input = fs.readFileSync(path.join(pkPath, '/quick_strings.txt'), 'utf8').split('\n');
+  let output = [];
+  for(let line of input){
+    let split = line.split(' ');
+    if(split.length === 2){
+      split[1] = split[1].replace(/SERVER_ADDRESS/g, serverConfig.gameserverAPIAddress).replace(/SERVER_ID/g, server.id).replace(/SERVER_API_KEY/g, server.apiKey);
+    }
+    output.push(split.join(' '));
+  }
+  await fs.writeFileSync(path.join(pkPath, '/quick_strings.txt'), output.join('\n'), 'utf8');
 
   return server;
 };

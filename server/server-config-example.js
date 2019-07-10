@@ -17,6 +17,9 @@ const baseConfig = {
   gameserverPortStart: 7240,
   gameserverRestartCron: '0 6 * * *',
 
+  // only needs to be changed if using redirector such as nginx
+  gameserverAPIAddress: 'http://localhost',
+
   // turn to true to prevent server boot and to fake online status
   // useful for testing on Windows
   gameserverDevDryRun: false,
