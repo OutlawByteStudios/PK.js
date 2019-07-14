@@ -5,6 +5,8 @@ import cprp from 'cpr-promise';
 
 import { Server, AdminPermission, SteamUser } from '../../../../models';
 
+import jobContainer from '../../../../jobs';
+
 import { validatorServerName } from 'shared/validators';
 import { panelPermissions, gamePermissions } from 'shared/constants';
 import {
@@ -13,6 +15,10 @@ import {
 } from '../../../../utils/server-config-parser';
 
 import serverConfig from '../../../../../server-config';
+import {
+  isServerOnline,
+  restartServer
+} from '../../../../utils/gameserver-instance-tools';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -39,6 +45,9 @@ export default async (parent, args, context) => {
     serverInput.defaultPouchGold = args.defaultPouchGold;
   if (args.defaultBankLimit)
     serverInput.defaultBankLimit = args.defaultBankLimit;
+
+  if (args.gameserverRestartCron)
+    serverInput.gameserverRestartCron = args.gameserverRestartCron;
 
   let server = await Server.create([serverInput], {
     setDefaultsOnInsert: true
@@ -112,6 +121,20 @@ export default async (parent, args, context) => {
     path.join(pkPath, '/quick_strings.txt'),
     output.join('\n'),
     'utf8'
+  );
+
+  jobContainer.addJob(
+    `restart-server-${server.id}`,
+    server.gameserverRestartCron,
+    async () => {
+      console.log(
+        `Checking if restarted need for instance for server: ${server.id}`
+      );
+      if (await isServerOnline(server.id)) {
+        console.log(`Restarting server instance for server: ${server.id}`);
+        await restartServer(server.id);
+      }
+    }
   );
 
   return server;

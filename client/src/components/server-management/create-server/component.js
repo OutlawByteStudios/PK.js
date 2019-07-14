@@ -21,7 +21,8 @@ class Component extends React.Component{
     welcomeMessage: 'Welcome to a PK.js powered server!',
     defaultBankGold: 150000,
     defaultPouchGold: 10000,
-    defaultBankLimit: 1000000
+    defaultBankLimit: 1000000,
+    gameserverRestartCron: '0 6 * * *'
   };
   
   constructor(){
@@ -141,6 +142,24 @@ class Component extends React.Component{
                     type="number"
                     value={this.state.defaultBankLimit}
                     onChange={event => this.setState({ defaultBankLimit: parseInt(event.target.value) })}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <FormGroup>
+                  <label
+                    className="form-control-label"
+                    htmlFor="input-first-name"
+                  >
+                    Restart Cron
+                  </label>
+                  <Input
+                    className="form-control-alternative"
+                    type="text"
+                    value={this.state.gameserverRestartCron}
+                    onChange={event => this.setState({ gameserverRestartCron: event.target.value })}
                   />
                 </FormGroup>
               </Col>

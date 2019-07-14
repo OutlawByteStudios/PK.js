@@ -8,6 +8,7 @@ export default gql`
       defaultBankGold: Int
       defaultPouchGold: Int
       defaultBankLimit: Int
+      gameserverRestartCron: String
     ): Server
     renameServer(serverID: Int!, name: String!): Server
     deleteServer(serverID: Int!): Server
@@ -18,12 +19,8 @@ export default gql`
       config: String!
     ): ServerConfigFile
 
-    startServer(
-      serverID: Int!
-      module: String!
-      config: String!
-      disableWSE: Boolean
-    ): Server
+    startServer(serverID: Int!, module: String!, config: String!): Server
+
     stopServer(serverID: Int!): Server
     restartServer(serverID: Int!): Server
 

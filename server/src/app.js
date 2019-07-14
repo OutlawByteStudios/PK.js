@@ -12,7 +12,7 @@ import views from 'koa-views';
 
 import mongoose from 'mongoose';
 
-import cronJobs from './jobs';
+import jobContainer from './jobs';
 
 import { passport, SteamAuth } from './auth';
 
@@ -27,10 +27,11 @@ mongoose.connect(serverConfig.mongoDB, {
   useCreateIndex: true
 });
 
-if (!serverConfig.disableCronJobs) cronJobs();
-
 const app = new Koa();
 const router = new Router();
+
+jobContainer.initContainer();
+app.jobContainer = jobContainer;
 
 app.use(Helmet());
 app.use(Cors());

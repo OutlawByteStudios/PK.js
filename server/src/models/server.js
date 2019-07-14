@@ -40,11 +40,6 @@ const ServerSchema = new mongoose.Schema({
   gameserverLastModule: String,
   gameserverLastConfig: String,
 
-  gameserverDisableWSE: {
-    type: Boolean,
-    default: false
-  },
-
   gameserverRestartCron: {
     type: String,
     default: serverConfig.gameserverRestartCron

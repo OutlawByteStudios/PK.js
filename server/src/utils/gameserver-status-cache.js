@@ -1,8 +1,5 @@
-import { execSync } from 'child_process';
-
+import { isServerOnline } from './gameserver-instance-tools';
 import getServerStatus from './get-gameserver-status';
-
-import serverConfig from '../../server-config';
 
 // every minute check screen is still alive
 const GAMESERVER_ONLINE_CACHE_TIME = 60 * 1000;
@@ -18,16 +15,7 @@ class GameserverStatusCache {
   gameserverStatusCache = {};
 
   fetchGameserverOnline(serverID) {
-    let gameserverOnline;
-
-    if (serverConfig.gameserverDevDryRun)
-      gameserverOnline = serverConfig.gameserverDevDryRunOnline;
-    else
-      gameserverOnline = !execSync(
-        `screen -S serverscreen${serverID} -Q select . ; echo $?`
-      )
-        .toString()
-        .includes('No screen session found.');
+    let gameserverOnline = isServerOnline(serverID);
 
     this.gameserverOnlineCache[serverID] = {
       gameserverOnline,

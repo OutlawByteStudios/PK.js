@@ -8,7 +8,8 @@ export default gql`
     $welcomeMessage: String,
     $defaultBankGold: Int,
     $defaultPouchGold: Int,
-    $defaultBankLimit: Int
+    $defaultBankLimit: Int,
+    $gameserverRestartCron: String,
     $steamID: String!
   ){
     createServer(
@@ -16,7 +17,8 @@ export default gql`
       welcomeMessage: $welcomeMessage,
       defaultBankGold: $defaultBankGold,
       defaultPouchGold: $defaultPouchGold,
-      defaultBankLimit: $defaultBankLimit
+      defaultBankLimit: $defaultBankLimit,
+      gameserverRestartCron: $gameserverRestartCron
     ){
       ...Server
       

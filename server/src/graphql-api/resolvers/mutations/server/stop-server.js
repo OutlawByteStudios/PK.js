@@ -1,7 +1,6 @@
 import { AdminPermission, Server } from '../../../../models';
-import serverConfig from '../../../../../server-config';
-import { execSync } from 'child_process';
-import gameserverStatusCache from '../../../../utils/gameserver-status-cache';
+
+import { stopServer } from '../../../../utils/gameserver-instance-tools';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -22,15 +21,7 @@ export default async (parent, args, context) => {
   });
   if (server === null) throw new Error('Server not found.');
 
-  if (!serverConfig.gameserverDevDryRun) {
-    execSync(`screen -S serverscreen${server.id} -X quit`);
-  } else {
-    console.log(
-      `Gameserver Dry Run Exec: screen -S serverscreen${server.id} -X quit`
-    );
-  }
-
-  gameserverStatusCache.fetchGameserverOnline(server.id);
+  await stopServer(args.serverID);
 
   return server;
 };

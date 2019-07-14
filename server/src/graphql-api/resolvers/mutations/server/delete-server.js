@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import del from 'del';
 
+import jobContainer from '../../../../jobs';
+
 import {
   SteamUser,
   Server,
@@ -51,6 +53,8 @@ export default async (parent, args, context) => {
   );
   if (!fs.existsSync(currentGameserverPath)) return server;
   await del([currentGameserverPath], { force: true });
+
+  jobContainer.deleteJob(`restart-server-${server.id}`);
 
   return server;
 };

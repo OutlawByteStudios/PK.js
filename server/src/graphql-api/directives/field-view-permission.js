@@ -35,21 +35,18 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
       const field = fields[fieldName];
       const { resolve = defaultFieldResolver } = field;
 
-      field.resolve = async function(parent, args, context, info) {
-        const query = { server: parent[serverIDField], admin: context.user };
-        if (
-          field._requiresAdminPermission ||
-          objectType._requiresAdminPermission
-        ) {
-          const requires =
-            field._requiresAdminPermission ||
-            objectType._requiresAdminPermission;
-          query[requires] = { $gt: 0 };
-        }
-        const adminPermission = await AdminPermission.findOne(query);
+      const requires = field._requiresAdminPermission || objectType._requiresAdminPermission;
 
-        if (adminPermission !== null)
-          return resolve.apply(this, [parent, args, context, info]);
+      field.resolve = async function(parent, args, context, info) {
+        if(!requires) return resolve.apply(this, [parent, args, context, info]);
+
+        const adminPermission = await AdminPermission.findOne({
+          server: parent[serverIDField],
+          admin: context.user,
+          requires: { $gt: 0 }
+        });
+
+        if (adminPermission !== null) return resolve.apply(this, [parent, args, context, info]);
         else return null;
       };
     });
