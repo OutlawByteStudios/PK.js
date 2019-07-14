@@ -1,7 +1,11 @@
 import { gql } from 'apollo-server-koa';
 
 export default gql`
-  type Warning {
+  type Warning
+    @fieldViewPermission(
+      requiresAdminPermission: "viewWarnings"
+      viewIfPlayer: true
+    ) {
     _id: String
 
     server: Int
@@ -11,6 +15,7 @@ export default gql`
 
     publicReason: String
     privateReason: String
+      @fieldViewPermission(requiresAdminPermission: "viewWarnings")
 
     date: Date
   }

@@ -12,8 +12,11 @@ import Filter from './filter';
 
 import { ADMIN_LOGS } from '../../../graphql/queries';
 
+import Auth from '../../../utils/auth';
+
 import Loader from './loader';
 import Error from './error';
+import NoPermission from './no-permission';
 import Component from './component';
 
 class AdminLogs extends React.Component{
@@ -63,6 +66,7 @@ class AdminLogs extends React.Component{
               query={ADMIN_LOGS}
               variables={{
                 serverID: this.props.serverID,
+                steamID: Auth.claim.steamID,
                 admin: this.state.selectedAdmin,
                 filter: Object.keys(this.state.filter).filter(key => this.state.filter[key]),
                 startingAfter: this.state.startingAfter,
@@ -73,6 +77,10 @@ class AdminLogs extends React.Component{
               {({ loading, error, data }) => {
                 if(loading) return <Loader />;
                 if(error) return <Error />;
+
+                console.log(data);
+
+                if(data.adminPermission.viewAdminLogs === 0) return <NoPermission/>;
 
                 return (
                   <Component

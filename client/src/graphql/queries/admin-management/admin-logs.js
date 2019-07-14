@@ -3,7 +3,7 @@ import { gql } from 'apollo-boost';
 import Fragments from '../../fragments';
 
 export default gql`
-  query AdminLogs($serverID: Int!, $admin: String, $filter: [String], $startingAfter: String, $endingBefore: String){
+  query AdminLogs($serverID: Int!, $steamID: String!, $admin: String, $filter: [String], $startingAfter: String, $endingBefore: String){
     server(id: $serverID){
       _id
       adminLogs(admin: $admin, filter: $filter, page: true, startingAfter: $startingAfter, endingBefore: $endingBefore){
@@ -34,6 +34,10 @@ export default gql`
         
         name
       }
+    }
+    
+    adminPermission(serverID: $serverID, steamID: $steamID){
+      viewAdminLogs
     }
   }
   

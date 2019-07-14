@@ -3,7 +3,10 @@ import { Query } from 'react-apollo';
 
 import { SERVER_CONFIGS } from '../../../../graphql/queries';
 
+import Auth from '../../../../utils/auth';
+
 import Loader from './loader';
+import NoPermission from './no-permission';
 import Component from './component';
 
 class ConfigSelector extends React.Component{
@@ -12,13 +15,16 @@ class ConfigSelector extends React.Component{
       <Query
         query={SERVER_CONFIGS}
         variables={{
-          serverID: this.props.serverID
+          serverID: this.props.serverID,
+          steamID: Auth.claim.steamID
         }}
         onError={() => {}}
       >
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
           if(error) return <p>Error</p>;
+
+          if(data.adminPermission.viewServerFiles === 0) return <NoPermission/>;
 
           return (
             <Component

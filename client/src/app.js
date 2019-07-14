@@ -27,6 +27,18 @@ const client = new ApolloClient({
   })
 });
 
+client.defaultOptions = {
+  watchQuery: {
+    errorPolicy: 'all',
+  },
+  query: {
+    errorPolicy: 'all',
+  },
+  mutate: {
+    errorPolicy: 'all',
+  }
+};
+
 class App extends React.Component {
   state = {
     initialSetup: false

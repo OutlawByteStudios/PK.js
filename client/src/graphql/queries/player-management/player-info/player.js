@@ -3,7 +3,7 @@ import { gql } from 'apollo-boost';
 import Fragments from '../../../fragments';
 
 export default gql`
-  query Player($serverID: Int!, $guid: String!){
+  query Player($serverID: Int!, $steamID: String!, $guid: String!){
     server(id: $serverID){
       _id
     
@@ -52,6 +52,10 @@ export default gql`
         food
         poison       
       }
+    }
+    
+    adminPermission(serverID: $serverID, steamID: $steamID){
+      viewPlayerInfo
     }
   }
  

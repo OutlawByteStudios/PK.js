@@ -13,32 +13,49 @@ export default gql`
 
     welcomeMessage: String
 
-    apiKey: String
-
     gameserverOnline: Boolean
-    gameserverLastModule: String
-    gameserverLastConfig: String
-
     serverStatus: ServerStatus
+    gameserverLastModule: String
+      @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
+    gameserverLastConfig: String
+      @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
+
+    apiKey: String @fieldViewPermission(requiresAdminPermission: "viewAPIKey")
 
     serverConfigFile(name: String!): ServerConfigFile
+      @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
     serverConfigFiles: [ServerConfigFile]
-
+      @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
     modules: [String]
+      @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
 
     player(guid: String!): Player
     players(guidLike: String): [Player]
-    
-    ipRecords(ipMask: Int, ipLike: String): [IPRecord]
 
     playerName(name: String!): PlayerName
     playerNames(nameLike: String): [PlayerName]
 
+    ipRecords(ipMask: Int, ipLike: String): [IPRecord]
+      @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
+
     bans(player: String): [Ban]
+      @fieldViewPermission(
+        requiresAdminPermission: "viewBans"
+        viewIfPlayer: true
+      )
     warnings(player: String): [Warning]
+      @fieldViewPermission(
+        requiresAdminPermission: "viewWarnings"
+        viewIfPlayer: true
+      )
     notes(player: String): [Note]
+      @fieldViewPermission(
+        requiresAdminPermission: "viewNotes"
+        viewIfPlayer: true
+      )
 
     logSearch(search: [String]!, date: Date!): String
+      @fieldViewPermission(requiresAdminPermission: "viewServerLogs")
 
     adminPermission(steamID: String!): AdminPermission
     adminPermissions: [AdminPermission]
@@ -49,6 +66,6 @@ export default gql`
       page: Boolean
       startingAfter: String
       endingBefore: String
-    ): [AdminLog]
+    ): [AdminLog] @fieldViewPermission(requiresAdminPermission: "viewAdminLogs")
   }
 `;

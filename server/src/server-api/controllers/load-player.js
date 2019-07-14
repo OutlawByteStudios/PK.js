@@ -16,7 +16,7 @@ import {
   LOAD_ADMIN,
   LOAD_FAIL_KICK
 } from '../actions';
-import Ban from "../../models/ban";
+import Ban from '../../models/ban';
 
 export default async ctx => {
   // start now promise to load player, store this in the promise store
@@ -28,7 +28,9 @@ export default async ctx => {
     let ipMask = await IPMask.findOne({ ip: ctx.query.ip });
 
     if (ipMask === null) {
-      ipMask = await IPMask.create([{ ip: ctx.query.ip }], { setDefaultsOnInsert: true });
+      ipMask = await IPMask.create([{ ip: ctx.query.ip }], {
+        setDefaultsOnInsert: true
+      });
       ipMask = ipMask[0];
     }
 
@@ -49,14 +51,15 @@ export default async ctx => {
         {
           upsert: true
         },
-        (err, raw) =>{
-          resolve(raw.upserted.length > 0)
+        (err, raw) => {
+          console.log(err);
+          resolve(raw.upserted.length > 0);
         }
       );
     });
 
     // if guid-ip relation new check if it should be banned
-    if(checkIPBans){
+    if (checkIPBans) {
       /* Check player is not IP banned */
       let guids = await IPRecord.find({ ip: ctx.query.ip });
       guids = guids.map(record => record.player);
@@ -78,9 +81,9 @@ export default async ctx => {
           }
         ]
       });
-      if(bans > 0) return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
+      if (bans > 0)
+        return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
     }
-
 
     /* Check Player Name is not already in use */
     const playerName = await PlayerName.findOne({

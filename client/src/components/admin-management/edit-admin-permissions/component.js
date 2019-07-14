@@ -124,6 +124,7 @@ class Component extends React.Component{
                     player={this.state.guid}
                     allowNone={true}
                     onChange={guid => this.setState({ guid })}
+                    isDisabled={currentAdmin.manageAdminGUIDs === 0}
                   />
                 </FormGroup>
               </Col>

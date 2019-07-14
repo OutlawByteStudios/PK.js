@@ -1,4 +1,4 @@
-import { Player, AdminPermission, AdminLog } from '../../../../models';
+import { AdminPermission, AdminLog } from '../../../../models';
 
 import { gamePermissions, panelPermissions } from 'shared/constants';
 
@@ -19,7 +19,7 @@ export default async (parent, args, context) => {
   });
   if (selectedAdmin === null) throw new Error('Admin not found.');
 
-  selectedAdmin.player = args.guid;
+  if (currentAdmin.manageAdminGUIDs > 0) selectedAdmin.player = args.guid;
 
   for (let permission of panelPermissions.concat(gamePermissions)) {
     // don't allow admin to change own perms, but guid is fine

@@ -1,6 +1,7 @@
 import AdminLog from './admin-log';
 import AdminPermission from './admin-permission';
 import Ban from './ban';
+import Directives from './directives';
 import IPRecord from './ip-record';
 import Item from './item';
 import Mutation from './mutation';
@@ -19,6 +20,7 @@ export default [
   AdminLog,
   AdminPermission,
   Ban,
+  Directives,
   IPRecord,
   Item,
   Mutation,

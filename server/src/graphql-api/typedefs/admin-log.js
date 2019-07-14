@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-koa';
 
 export default gql`
-  type AdminLog {
+  type AdminLog @fieldViewPermission(requiresAdminPermission: "viewAdminLogs") {
     _id: String
     hasMore: Boolean
 

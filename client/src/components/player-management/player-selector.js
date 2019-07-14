@@ -65,6 +65,7 @@ class PlayerSelector extends React.Component {
         value={(this.props.player) ? { value: this.props.player, label: 'GUID: ' + this.props.player } : null}
         placeholder="Select a player..."
         onChange={option => this.props.onChange(option.value)}
+        isDisabled={this.props.isDisabled}
       />
     );
   }

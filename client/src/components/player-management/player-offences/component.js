@@ -38,7 +38,6 @@ class Component extends React.Component {
 
   render() {
     const { player } = this.props;
-    console.log(player);
     return (
       <Card className="shadow">
         <CardHeader className="border-0">
@@ -74,7 +73,7 @@ class Component extends React.Component {
             </Col>
           </Row>
         </CardHeader>
-        {(this.state.tab === 'Bans') ? (
+        {(this.state.tab === 'Bans' && player.bans !== null) ? (
           <>
             <Table className="align-items-center table-flush" responsive>
               <thead className="thead-light">
@@ -135,7 +134,20 @@ class Component extends React.Component {
             </CardBody>
           </>
         ) : null}
-        {(this.state.tab === 'Warnings') ? (
+        {(this.state.tab === 'Bans' && player.bans === null) ? (
+          <CardBody>
+            <div className="text-center mt-2 mb-2">
+              No Permission!
+            </div>
+            <div className="btn-wrapper text-center">
+              <i className="fas fa-lock fa-4x"/>
+            </div>
+            <div className="text-center mt-2 mb-2">
+              You do not have permission to view bans.
+            </div>
+          </CardBody>
+        ) : null}
+        {(this.state.tab === 'Warnings' && player.warnings !== null) ? (
           <>
             <Table className="align-items-center table-flush" responsive>
               <thead className="thead-light">
@@ -177,7 +189,20 @@ class Component extends React.Component {
             </CardBody>
           </>
         ) : null}
-        {(this.state.tab === 'Notes') ? (
+        {(this.state.tab === 'Warnings' && player.warnings === null) ? (
+          <CardBody>
+            <div className="text-center mt-2 mb-2">
+              No Permission!
+            </div>
+            <div className="btn-wrapper text-center">
+              <i className="fas fa-lock fa-4x"/>
+            </div>
+            <div className="text-center mt-2 mb-2">
+              You do not have permission to view warnings.
+            </div>
+          </CardBody>
+        ) : null}
+        {(this.state.tab === 'Notes' && player.notes !== null) ? (
           <>
             <Table className="align-items-center table-flush" responsive>
               <thead className="thead-light">
@@ -216,6 +241,19 @@ class Component extends React.Component {
               />
             </CardBody>
           </>
+        ) : null}
+        {(this.state.tab === 'Notes' && player.notes === null) ? (
+          <CardBody>
+            <div className="text-center mt-2 mb-2">
+              No Permission!
+            </div>
+            <div className="btn-wrapper text-center">
+              <i className="fas fa-lock fa-4x"/>
+            </div>
+            <div className="text-center mt-2 mb-2">
+              You do not have permission to view notes.
+            </div>
+          </CardBody>
         ) : null}
       </Card>
     );

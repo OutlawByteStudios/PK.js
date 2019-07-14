@@ -1,28 +1,42 @@
-import { IPRecord } from '../../../models';
+import { AdminPermission, IPRecord } from '../../../models';
 
 export default {
   Player: {
-    ipRecords: async (parent) => {
+    ipRecords: async parent => {
       return IPRecord.find({ player: parent.guid, server: parent.server });
     }
   },
 
   Server: {
-    ipRecords: async (parent, filter) => {
-      let query = {};
+    ipRecords: async (parent, filter, context) => {
+      let query = { server: parent.id };
 
-      if(filter.ipLike) query.$where = `function(){ return this.ip.includes('${filter.ipLike}') || this.id.toString().includes('${filter.ipLike}'); }`;
+      if (filter.ipLike) {
+        const adminPermission = await AdminPermission.findOne({
+          server: parent.id,
+          admin: context.user,
+          viewIPs: { $gt: 0 }
+        });
 
-      if(filter.ipMask) query.ipMask = filter.ipMask;
+        if (adminPermission === null) {
+          query.$where = `function(){ return this.ipMask.toString().includes('${filter.ipLike}'); }`;
+        } else {
+          query.$where = `function(){ return this.ip.includes('${filter.ipLike}') || this.ipMask.toString().includes('${filter.ipLike}'); }`;
+        }
+      }
+
+      if (filter.ipMask) query.ipMask = filter.ipMask;
 
       let ipRecords = await IPRecord.find(query);
 
-      if(filter.ipLike){
-        ipRecords = ipRecords.filter((record, index, self) => self.findIndex(r => r.ipMask === record.ipMask) === index);
+      if (filter.ipLike) {
+        ipRecords = ipRecords.filter(
+          (record, index, self) =>
+            self.findIndex(r => r.ipMask === record.ipMask) === index
+        );
       }
 
       return ipRecords;
     }
-
   }
 };

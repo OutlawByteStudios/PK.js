@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 export default gql`
-  query ServerConfigs($serverID: Int!, $name: String!){
+  query ServerConfigs($serverID: Int!, $steamID: String!, $name: String!){
     server(id: $serverID){
       _id
       id
@@ -10,6 +10,10 @@ export default gql`
         name
         config
       }
+    }
+    
+    adminPermission(serverID: $serverID, steamID: $steamID){
+      viewServerFiles
     }
   }
 `;

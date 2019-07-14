@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-koa';
 
 export default gql`
-  type Note {
+  type Note @fieldViewPermission(requiresAdminPermission: "viewNotes") {
     _id: String
     server: Int
     player: Player

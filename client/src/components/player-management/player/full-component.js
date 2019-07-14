@@ -12,7 +12,7 @@ import {
 import AdjustGold from './adjust-gold';
 import StripPlayer from './strip-player';
 
-class Component extends React.Component {
+class FullComponent extends React.Component {
   render() {
     const { player } = this.props;
     return (
@@ -121,4 +121,4 @@ class Component extends React.Component {
   }
 }
 
-export default Component;
+export default FullComponent;

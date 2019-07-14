@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 export default gql`
-  query PlayerIPs($serverID: Int!, $guid: String!){
+  query PlayerIPs($serverID: Int!, $steamID: String!, $guid: String!){
     server(id: $serverID){
       _id
       
@@ -16,6 +16,10 @@ export default gql`
           lastSeen
         }
       }
+    }
+    
+    adminPermission(serverID: $serverID, steamID: $steamID){
+      viewIPRecords
     }
   }
 `;

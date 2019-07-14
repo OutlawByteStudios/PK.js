@@ -42,11 +42,15 @@ async function updateBanList(server) {
     ]
   });
 
-  const bannedIPs = await IPRecord.distinct('ip', { player: { $in: ipBannedPlayers } });
-  let ipBannedGUIDs = await IPRecord.distinct('player', { ip: { $in: bannedIPs } });
+  const bannedIPs = await IPRecord.distinct('ip', {
+    player: { $in: ipBannedPlayers }
+  });
+  let ipBannedGUIDs = await IPRecord.distinct('player', {
+    ip: { $in: bannedIPs }
+  });
 
   ipBannedGUIDs.forEach(guid => {
-    if(!bannedPlayers.includes(guid)) bannedPlayers.push(guid);
+    if (!bannedPlayers.includes(guid)) bannedPlayers.push(guid);
   });
 
   fs.writeFileSync(banListFile, bannedPlayers.join('\r\n'), 'utf8');
