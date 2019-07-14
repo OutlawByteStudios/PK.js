@@ -5,6 +5,7 @@ import { PLAYER_NAMES } from '../../../graphql/queries';
 
 import Loader from './loader';
 import Error from './error';
+import NotFound from './not-found';
 import Component from './component';
 
 class PlayerNames extends React.Component{
@@ -21,6 +22,8 @@ class PlayerNames extends React.Component{
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
           if(error) return <Error />;
+
+          if(data.server.player === null) return <NotFound/>;
 
           return (
             <Component

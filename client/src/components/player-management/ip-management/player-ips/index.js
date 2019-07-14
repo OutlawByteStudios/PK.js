@@ -8,6 +8,7 @@ import Auth from '../../../../utils/auth';
 import Loader from './loader';
 import Error from './error';
 import NoPermission from './no-permission';
+import NotFound from './not-found';
 import Component from './component';
 
 class PlayerIPs extends React.Component{
@@ -28,6 +29,8 @@ class PlayerIPs extends React.Component{
 
           // if ipRecords is blank have no permission to view them
           if(data.adminPermission.viewIPRecords === 0) return <NoPermission />;
+
+          if(data.server.player === null) return <NotFound/>;
 
           return (
             <Component

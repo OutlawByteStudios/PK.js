@@ -7,6 +7,7 @@ import Auth from '../../../utils/auth';
 
 import Loader from './loader';
 import Error from './error';
+import NotFound from './not-found';
 import HalfComponent from './half-component';
 import FullComponent from './full-component';
 
@@ -25,6 +26,8 @@ class Player extends React.Component{
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
           if(error) return <Error />;
+
+          if(data.server.player === null) return <NotFound/>;
 
           if(data.adminPermission.viewPlayerInfo === 0) return (
             <HalfComponent
