@@ -18,7 +18,8 @@ export default async (parent, args, context) => {
 
   const requestingAdmin = await AdminPermission.findOne({
     server: args.serverID,
-    admin: context.user
+    admin: context.user,
+    renameServer: { $gt: 0 }
   });
 
   if (requestingAdmin === null)

@@ -5,7 +5,8 @@ export default async (parent, args, context) => {
     throw new Error('You must be logged in to complete this action.');
 
   const note = await Note.findOne({
-    _id: args.noteID
+    _id: args.noteID,
+    deleteNotes: { $gt: 0 }
   });
   if (note === null) throw new Error('Note not found.');
 

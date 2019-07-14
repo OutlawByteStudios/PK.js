@@ -11,7 +11,8 @@ export default async (parent, args, context) => {
 
   const requestingAdmin = await AdminPermission.findOne({
     server: ban.server,
-    admin: context.user
+    admin: context.user,
+    deleteBans: { $gt: 0 }
   });
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
