@@ -27,5 +27,11 @@ export default {
     server: async parent => {
       return Server.findOne({ id: parent.server });
     }
+  },
+
+  ServerStats: {
+    server: async parent => {
+      return Server.findOne({ id: parent.server });
+    }
   }
 };

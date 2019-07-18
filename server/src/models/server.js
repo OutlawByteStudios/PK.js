@@ -31,6 +31,12 @@ const ServerSchema = new mongoose.Schema({
     default: 1000000
   },
 
+  recordStats: {
+    type: Boolean,
+    require: true,
+    default: false
+  },
+
   apiKey: {
     type: String,
     require: true,

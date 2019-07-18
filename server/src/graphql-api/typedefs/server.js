@@ -6,12 +6,15 @@ export default gql`
 
     id: Int
     name: String
+    
+    welcomeMessage: String
 
     defaultBankGold: Int
     defaultPouchGold: Int
     defaultBankLimit: Int
-
-    welcomeMessage: String
+    
+    recordStats: Boolean
+    serverStats(startDate: Date, stopDate: Date): [ServerStats]
 
     gameserverOnline: Boolean
     serverStatus: ServerStatus

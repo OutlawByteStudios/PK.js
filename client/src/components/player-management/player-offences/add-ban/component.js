@@ -141,6 +141,7 @@ class Component extends React.Component{
                             <input
                               className="custom-control-input"
                               type="checkbox"
+                              checked={this.state.perm}
                               onChange={event => this.setState({ perm: event.target.checked })}
                               id="perm-ban"
                             />
@@ -156,6 +157,7 @@ class Component extends React.Component{
                             <input
                               className="custom-control-input"
                               type="checkbox"
+                              checked={this.state.ipBan}
                               onChange={event => this.setState({ ipBan: event.target.checked })}
                               id="ip-ban"
                             />

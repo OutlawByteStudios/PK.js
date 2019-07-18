@@ -57,7 +57,7 @@ async function updateBanList(server) {
 }
 
 export default async () => {
+  console.log('Updating Ban Lists...');
   const servers = await Server.find();
   servers.forEach(updateBanList);
-  console.log('Updated Ban Lists');
 };

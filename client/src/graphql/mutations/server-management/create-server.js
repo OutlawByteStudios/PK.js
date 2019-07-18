@@ -9,6 +9,7 @@ export default gql`
     $defaultBankGold: Int,
     $defaultPouchGold: Int,
     $defaultBankLimit: Int,
+    $recordStats: Boolean,
     $gameserverRestartCron: String,
     $steamID: String!
   ){
@@ -18,6 +19,7 @@ export default gql`
       defaultBankGold: $defaultBankGold,
       defaultPouchGold: $defaultPouchGold,
       defaultBankLimit: $defaultBankLimit,
+      recordStats: $recordStats,
       gameserverRestartCron: $gameserverRestartCron
     ){
       ...Server

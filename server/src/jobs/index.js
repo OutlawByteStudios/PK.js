@@ -1,10 +1,12 @@
 import { scheduleJob } from 'node-schedule';
 
+import recordStats from './record-stats';
 import restartServers from './restart-servers';
 import updateBanLists from './update-bans-list';
 
 class JobContainer {
   async initContainer() {
+    this.addJob('recordStats', '*/5 * * * *', recordStats);
     this.addJobs(await restartServers());
     this.addJob('updateBanList', '*/5 * * * *', updateBanLists);
   }

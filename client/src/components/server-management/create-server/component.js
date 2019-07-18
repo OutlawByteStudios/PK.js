@@ -22,6 +22,7 @@ class Component extends React.Component{
     defaultBankGold: 150000,
     defaultPouchGold: 10000,
     defaultBankLimit: 1000000,
+    recordStats: false,
     gameserverRestartCron: '0 6 * * *'
   };
   
@@ -144,6 +145,22 @@ class Component extends React.Component{
                     onChange={event => this.setState({ defaultBankLimit: parseInt(event.target.value) })}
                   />
                 </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className="custom-control custom-checkbox my-4">
+                  <input
+                    className="custom-control-input"
+                    type="checkbox"
+                    checked={this.state.recordStats}
+                    onChange={event => this.setState({ recordStats: event.target.checked })}
+                    id="record-stats"
+                  />
+                  <label className="custom-control-label" htmlFor="record-stats">
+                    Record Stats
+                  </label>
+                </div>
               </Col>
             </Row>
             <Row>

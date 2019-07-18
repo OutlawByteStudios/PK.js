@@ -46,6 +46,8 @@ export default async (parent, args, context) => {
   if (args.defaultBankLimit)
     serverInput.defaultBankLimit = args.defaultBankLimit;
 
+  if (args.recordStats) serverInput.recordStats = args.recordStats;
+
   if (args.gameserverRestartCron)
     serverInput.gameserverRestartCron = args.gameserverRestartCron;
 

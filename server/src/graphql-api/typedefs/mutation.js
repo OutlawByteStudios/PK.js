@@ -8,6 +8,7 @@ export default gql`
       defaultBankGold: Int
       defaultPouchGold: Int
       defaultBankLimit: Int
+      recordStats: Boolean
       gameserverRestartCron: String
     ): Server
     renameServer(serverID: Int!, name: String!): Server

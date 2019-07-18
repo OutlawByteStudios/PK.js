@@ -7,6 +7,7 @@ import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
 import Server from './server';
+import ServerStats from './server-stats';
 import SteamUser from './steam-user';
 import Warning from './warning';
 
@@ -20,6 +21,7 @@ export {
   Player,
   PlayerName,
   Server,
+  ServerStats,
   SteamUser,
   Warning
 };
