@@ -1,0 +1,618 @@
+{
+	"player_attacks_door": {
+		"name": "player_attacks_door",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) hit door of (.*) dealing (.*) damage",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"enemy_faction_name"
+			],
+			[
+				4,
+				"damage"
+			]
+		]
+	},
+	"player_attacks_player_torso": {
+		"name": "player_attacks_player_torso",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) \\(FID: ([0-9]{1,2})\\) attacked (.*) \\(FID: ([-0-9]{1,2})\\) with (.*) dealing ([0-9]*) damage\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"faction_id"
+			],
+			[
+				4,
+				"enemy_player"
+			],
+			[
+				5,
+				"enemy_faction"
+			],
+			[
+				6,
+				"player_weapon"
+			],
+			[
+				7,
+				"damage"
+			]
+		]
+	},
+	"player_attacks_player_shield": {
+		"name": "player_attacks_player_shield",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) attacked (.*)'s shield with (.*) dealing ([0-9]*) damage\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"enemy_player"
+			],
+			[
+				4,
+				"weapon"
+			],
+			[
+				5,
+				"damage"
+			]
+		]
+	},
+	"player_attacks_player_horse_aid": {
+		"name": "player_attacks_player_horse_aid",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) \\(FID: ([0-9]{1,2})\\) attacked Horse \\((.*) FID: ([-0-9]{1,2})\\)\\) with (.*) dealing ([0-9]*) damage \\(AID: ([0-9].*)\\)\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"faction_id"
+			],
+			[
+				4,
+				"enemy_player"
+			],
+			[
+				5,
+				"enemy_faction_id"
+			],
+			[
+				6,
+				"weapon"
+			],
+			[
+				7,
+				"damage"
+			],
+			[
+				8,
+				"aid"
+			]
+		]
+	},
+	"player_attacks_player_horse": {
+		"name": "player_attacks_player_horse",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) \\(FID: ([0-9]{1,2})\\) attacked Horse \\((.*) FID: ([-0-9]{1,2})\\)\\) with (.*) dealing ([0-9]*) damage\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"faction_id"
+			],
+			[
+				4,
+				"enemy_player"
+			],
+			[
+				5,
+				"enemy_faction_id"
+			],
+			[
+				6,
+				"weapon"
+			],
+			[
+				7,
+				"damage"
+			]
+		]
+	},
+	"player_kills_player": {
+		"name": "player_kills_player",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) \\(img=(.*)\\) (.*)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"weapon"
+			],
+			[
+				4,
+				"enemy_player"
+			]
+		]
+	},
+	"player_killed_friendly_faction_member": {
+		"name": "player_killed_friendly_faction_member",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) killed a member of a friendly faction!",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			]
+		]
+	},
+	"player_dropped_loot": {
+		"name": "player_dropped_loot",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) dropped a loot \\(IID: (.*)\\)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"item_id"
+			]
+		]
+	},
+	"player_picked_up_item": {
+		"name": "player_picked_up_item",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) picked up (.*)\\(IID: ([0-9]*)\\) from the ground\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"item_name"
+			],
+			[
+				4,
+				"item_id"
+			]
+		]
+	},
+	"player_dropped_item": {
+		"name": "player_dropped_item",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) dropped (.*)\\(IID: ([0-9]*)\\) on the ground\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"item_name"
+			],
+			[
+				4,
+				"item_id"
+			]
+		]
+	},
+	"player_mounted_horse": {
+		"name": "player_mounted_horse",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) has mounted a (.*) \\(AID: (.*)\\)\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"horse_name"
+			],
+			[
+				4,
+				"aid"
+			]
+		]
+	},
+	"player_used_pouch": {
+		"name": "player_used_pouch",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) used pouch containing ([0-9]*) gold\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"gold"
+			]
+		]
+	},
+	"local_chat": {
+		"name": "local_chat",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - \\*LOCAL\\* \\[(.*)\\] (.*)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"message"
+			]
+		]
+	},
+	"global_chat": {
+		"name": "global_chat",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - \\[(.*)\\] (.*)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"message"
+			]
+		]
+	},
+	"dead_chat": {
+		"name": "dead_chat",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - \\*DEAD\\* \\[(.*)\\] (.*)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"message"
+			]
+		]
+	},
+	"animation": {
+		"name": "animation",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - \\*ANIMATION\\* \\[(.*)\\] (.*)",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"animation_name"
+			]
+		]
+	},
+	"took_money_from_moneychest": {
+		"name": "took_money_from_moneychest",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) withdrew ([0-9]*) gold from chest belonging to (.*)\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"gold"
+			],
+			[
+				4,
+				"enemy_faction_name"
+			]
+		]
+	},
+	"player_disconnect_message": {
+		"name": "player_disconnect_message",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) left the server\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			]
+		]
+	},
+	"player_disconnect_message_guid": {
+		"name": "player_disconnect_message_guid",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*?) has left the game with ID: (.*?) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"guid"
+			]
+		]
+	},
+	"player_disconnect_database_save": {
+		"name": "player_disconnect_database_save",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - Saved (.*?). Head: (.*?), Body: (.*?), Legs: (.*?), Hand: (.*?), Slot 1\/2\/3\/4: (.*?)\/(.*?)\/(.*?)\/(.*?), Horse: (.*?) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"head_armor"
+			],
+			[
+				4,
+				"body_armor"
+			],
+			[
+				5,
+				"leg_armor"
+			],
+			[
+				6,
+				"hand_armor"
+			],
+			[
+				7,
+				"slot_1"
+			],
+			[
+				8,
+				"slot_2"
+			],
+			[
+				9,
+				"slot_3"
+			],
+			[
+				10,
+				"slot_4"
+			],
+			[
+				11,
+				"horse"
+			]
+		]
+	},
+	"player_disconnect_engine": {
+		"name": "player_disconnect_engine",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) -  \\(img=ico_headshot\\) (.*) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			]
+		]
+	},
+	"player_joined": {
+		"name": "player_joined",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) has joined the game with ID: (.*) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"guid"
+			]
+		]
+	},
+	"player_connected_health_food": {
+		"name": "player_connected_health_food",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*)'s health: (.*?), food: (.*?) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"health"
+			],
+			[
+				4,
+				"food"
+			]
+		]
+	},
+	"player_connected_inventory": {
+		"name": "player_connected_inventory",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - Loaded (.*). Head: (.*?), Body: (.*?) Legs: (.*?) Hand: (.*?), Slot 1\/2\/3\/4: (.*?)\/(.*?)\/(.*?)\/(.*?), Horse: (.*?) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"head_armor"
+			],
+			[
+				4,
+				"body_armor"
+			],
+			[
+				5,
+				"leg_armor"
+			],
+			[
+				6,
+				"hand_armor"
+			],
+			[
+				7,
+				"slot_1"
+			],
+			[
+				8,
+				"slot_2"
+			],
+			[
+				9,
+				"slot_3"
+			],
+			[
+				10,
+				"slot_4"
+			],
+			[
+				11,
+				"horse"
+			]
+		]
+	},
+	"player_connected_client": {
+		"name": "player_connected_client",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) has GUID: (.*?) and IP: (.*) ",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"guid"
+			],
+			[
+				4,
+				"ip"
+			]
+		]
+	},
+	"faction_name_change": {
+		"name": "faction_name_change",
+		"regex": "([0-9]{2}:[0-9]{2}:[0-9]{2}) - (.*) \\(FID: (.*?)\\) are now known as (.*)\\.",
+		"groups": [
+			[
+				1,
+				"time"
+			],
+			[
+				2,
+				"player"
+			],
+			[
+				3,
+				"guid"
+			],
+			[
+				4,
+				"ip"
+			]
+		]
+	}
+}

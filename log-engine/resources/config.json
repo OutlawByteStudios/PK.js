@@ -1,0 +1,16 @@
+{
+  "core": {
+    "version": "0.7.1",
+    "logPath": "logs"
+  },
+  "adapters": {
+    "TextSearch": {
+      "maxRequestLines": 500,
+      "maxOutputLines": 500
+    },
+    "Categorization": {
+      "maxCategorisations": 250,
+      "maxCategorisationTimeMS": 10000
+    }
+  }
+}
