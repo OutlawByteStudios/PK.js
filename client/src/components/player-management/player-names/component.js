@@ -39,6 +39,7 @@ class Component extends React.Component {
                   <>
                     <Badge
                       color="primary"
+                      className="mr-2"
                       onClick={modal.open}
                       style={{
                         cursor: 'pointer'
@@ -79,6 +80,7 @@ class Component extends React.Component {
                           serverID={this.props.serverID}
                           guid={this.props.guid}
                           name={name.name}
+                          onClick={modal.close}
                         />
                         <Button
                           className="text-white ml-auto"

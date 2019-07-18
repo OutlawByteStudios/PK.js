@@ -53,7 +53,7 @@ export default async ctx => {
         },
         (err, raw) => {
           console.log(err);
-          resolve(raw.upserted.length > 0);
+          resolve(raw.upserted && raw.upserted.length > 0);
         }
       );
     });

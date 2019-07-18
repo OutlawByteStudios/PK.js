@@ -5,14 +5,14 @@ export default async (parent, args, context) => {
     throw new Error('You must be logged in to complete this action.');
 
   const note = await Note.findOne({
-    _id: args.noteID,
-    deleteNotes: { $gt: 0 }
+    _id: args.noteID
   });
   if (note === null) throw new Error('Note not found.');
 
   const requestingAdmin = await AdminPermission.findOne({
     server: note.server,
-    admin: context.user
+    admin: context.user,
+    deleteNotes: { $gt: 0 }
   });
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');

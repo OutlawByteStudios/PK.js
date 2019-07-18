@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
+import { set } from 'lodash/fp';
 
 import {
   Button
@@ -16,7 +17,7 @@ class WipeName extends React.Component{
       <Mutation
         mutation={WIPE_PLAYER_NAME}
         update={(cache, { data: { wipePlayerName }}) => {
-          let data = cache.readQuery({
+          let oldData = cache.readQuery({
             query: PLAYER_NAMES,
             variables: {
               serverID: this.props.serverID,
@@ -24,8 +25,12 @@ class WipeName extends React.Component{
             }
           });
 
-          data.server.player.playerNames = data.server.player.playerNames.filter(
-            name => name._id !== wipePlayerName._id
+          let newData = set(
+            'server.player.playerNames',
+            oldData.server.player.playerNames.filter(
+              name => name._id !== wipePlayerName._id
+            ),
+            oldData
           );
 
           cache.writeQuery({
@@ -34,7 +39,7 @@ class WipeName extends React.Component{
               serverID: this.props.serverID,
               guid: this.props.guid
             },
-            data,
+            data: newData
           });
         }}
         onError={() => {}}

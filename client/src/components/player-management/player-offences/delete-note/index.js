@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
+import { set } from 'lodash/fp';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
 import { DELETE_NOTE } from '../../../../graphql/mutations';
@@ -14,7 +15,7 @@ class DeleteNote extends React.Component {
       <Mutation
         mutation={DELETE_NOTE}
         update={(cache, { data: { deleteNote }}) => {
-          let data = cache.readQuery({
+          let oldData = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
               serverID: this.props.serverID,
@@ -22,8 +23,12 @@ class DeleteNote extends React.Component {
             }
           });
 
-          data.server.player.notes = data.server.player.notes.filter(
-            note => note._id !== deleteNote._id
+          let newData = set(
+            'server.player.notes',
+            oldData.server.player.notes.filter(
+              note => note._id !== deleteNote._id
+            ),
+            oldData
           );
 
           cache.writeQuery({
@@ -32,14 +37,13 @@ class DeleteNote extends React.Component {
               serverID: this.props.serverID,
               guid: this.props.guid
             },
-            data
+            data: newData
           });
         }}
         onError={() => {}}
       >
         {(deleteNote, { loading, error }) => {
           if (loading) return <Loader/>;
-
           return (
             <>
               {

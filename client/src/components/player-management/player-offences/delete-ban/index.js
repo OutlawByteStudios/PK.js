@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
+import { set } from 'lodash/fp';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
 import { DELETE_BAN } from '../../../../graphql/mutations';
@@ -14,7 +15,7 @@ class DeleteBan extends React.Component {
       <Mutation
         mutation={DELETE_BAN}
         update={(cache, { data: { deleteBan }}) => {
-          let data = cache.readQuery({
+          let oldData = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
               serverID: this.props.serverID,
@@ -22,8 +23,12 @@ class DeleteBan extends React.Component {
             }
           });
 
-          data.server.player.bans = data.server.player.bans.filter(
-            ban => ban._id !== deleteBan._id
+          let newData = set(
+            'server.player.bans',
+            oldData.server.player.bans.filter(
+              ban => ban._id !== deleteBan._id
+            ),
+            oldData
           );
 
           cache.writeQuery({
@@ -32,7 +37,7 @@ class DeleteBan extends React.Component {
               serverID: this.props.serverID,
               guid: this.props.guid
             },
-            data
+            data: newData
           });
         }}
         onError={() => {}}

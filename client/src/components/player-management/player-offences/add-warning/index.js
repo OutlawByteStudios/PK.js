@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
+import { set } from 'lodash/fp';
 
 import { PLAYER_OFFENCES } from '../../../../graphql/queries';
 import { ADD_WARNING } from '../../../../graphql/mutations';
@@ -14,7 +15,7 @@ class AddWarning extends React.Component {
       <Mutation
         mutation={ADD_WARNING}
         update={(cache, { data: { addWarning }}) => {
-          let data = cache.readQuery({
+          let oldData = cache.readQuery({
             query: PLAYER_OFFENCES,
             variables: {
               serverID: this.props.serverID,
@@ -22,7 +23,11 @@ class AddWarning extends React.Component {
             }
           });
 
-          data.server.player.warnings = data.server.player.warnings.concat([addWarning]);
+          let newData = set(
+            'server.player.warnings',
+            oldData.server.player.warnings.concat([addWarning]),
+            oldData
+          );
 
           cache.writeQuery({
             query: PLAYER_OFFENCES,
@@ -30,7 +35,7 @@ class AddWarning extends React.Component {
               serverID: this.props.serverID,
               guid: this.props.guid
             },
-            data
+            data: newData
           });
         }}
         onError={() => {}}
