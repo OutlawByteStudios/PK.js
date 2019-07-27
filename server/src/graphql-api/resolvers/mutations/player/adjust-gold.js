@@ -18,8 +18,7 @@ export default async (parent, args, context) => {
   });
   if (player === null) throw new Error('Player not found.');
 
-  if(args.type === 'add'){
-
+  if (args.type === 'add') {
     player[args.pouch === true ? 'pouchGold' : 'bankGold'] += args.amount;
     await player.save();
 
@@ -35,13 +34,10 @@ export default async (parent, args, context) => {
       adjustmentType: 'add',
       from: args.pouch === true ? 'pouchGold' : 'bankGold'
     }).save();
-
-
-  } else if(args.type === 'remove'){
-
+  } else if (args.type === 'remove') {
     player[args.pouch === true ? 'pouchGold' : 'bankGold'] -= args.amount;
-    if(args.pouch === true && player.pouchGold < 0)
-      throw new Error('A player\'s pouch cannot go into a negative amount.');
+    if (args.pouch === true && player.pouchGold < 0)
+      throw new Error("A player's pouch cannot go into a negative amount.");
 
     await player.save();
 
@@ -57,18 +53,17 @@ export default async (parent, args, context) => {
       adjustmentType: 'remove',
       from: args.pouch === true ? 'pouchGold' : 'bankGold'
     }).save();
-
-
   } else {
     const recipientPlayer = await Player.findOne({
       server: args.serverID,
       guid: args.recipient
     });
 
-    if(recipientPlayer ===  null)
+    if (recipientPlayer === null)
       throw new Error('Could not find recipient player.');
 
-    if(recipientPlayer.guid === player.guid) throw new Error('Cannot transfer to the same player!');
+    if (recipientPlayer.guid === player.guid)
+      throw new Error('Cannot transfer to the same player!');
 
     player.bankGold -= args.amount;
     await player.save();
@@ -89,7 +84,6 @@ export default async (parent, args, context) => {
       recipientPlayer: recipientPlayer.guid,
       from: 'bankGold'
     }).save();
-
   }
 
   return player;

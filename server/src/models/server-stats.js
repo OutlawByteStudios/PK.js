@@ -20,7 +20,6 @@ const ServerStats = new mongoose.Schema({
   totalBankGold: Number,
   totalPouchGold: Number,
   bankLimit: Number
-
 });
 
 export default mongoose.model('ServerStat', ServerStats);

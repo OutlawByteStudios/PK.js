@@ -42,7 +42,7 @@ const parseStatus = (host, port) => {
 };
 
 export default async (host, port, serverID) => {
-  if(!await isServerOnline(serverID)) return {};
+  if (!(await isServerOnline(serverID))) return {};
 
   let status = await parseStatus(host, port);
   status = status.ServerStats;

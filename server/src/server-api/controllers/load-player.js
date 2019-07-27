@@ -168,8 +168,8 @@ export default async ctx => {
         return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
 
       let hasAPermission = false;
-      for(let permission of gamePermissions){
-        if(adminPermissions[permission.permission] === 0) continue;
+      for (let permission of gamePermissions) {
+        if (adminPermissions[permission.permission] === 0) continue;
         hasAPermission = true;
         break;
       }
