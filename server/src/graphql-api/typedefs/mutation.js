@@ -51,9 +51,10 @@ export default gql`
     adjustGold(
       serverID: Int!
       guid: String!
-      pouch: Boolean
+      type: String
       amount: Int!
-      remove: Boolean
+      pouch: Boolean
+      recipient: String
       reason: String!
     ): Player
     stripPlayer(serverID: Int!, guid: String!, reason: String!): Player

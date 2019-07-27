@@ -65,6 +65,12 @@ export default {
         server: parent.server,
         guid: parent.targetPlayer
       });
+    },
+    recipientPlayer: async parent => {
+      return Player.findOne({
+        server: parent.server,
+        guid: parent.recipientPlayer
+      });
     }
   },
   AdminPermission: {

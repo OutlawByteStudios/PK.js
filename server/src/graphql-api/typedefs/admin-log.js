@@ -20,6 +20,8 @@ export default gql`
     ipBanned: Boolean
 
     amount: Int
+    adjustmentType: String
+    recipientPlayer: Player
     from: String
 
     name: String

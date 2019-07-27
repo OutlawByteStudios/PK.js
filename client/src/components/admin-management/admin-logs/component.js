@@ -27,6 +27,7 @@ class Component extends React.Component{
   }
 
   render(){
+    console.log(this.props.adminLogs);
     return (
       <Card>
         <CardHeader>

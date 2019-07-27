@@ -52,7 +52,18 @@ export default [
   {
     type: 'adjust_gold',
     name: 'Adjust Gold',
-    toString: adminLog => `${adminLog.remove ? 'Removed' : 'Added'} ${adminLog.amount} gold ${adminLog.remove ? 'from' : 'to'} ${adminLog.targetPlayer.guid}'s ${adminLog.from === 'bankGold' ? 'bank' : 'pouch'} with reason: ${adminLog.reason}`
+    toString: adminLog => {
+      switch (adminLog.adjustmentType) {
+        case 'add':
+          return `Added ${adminLog.amount} gold ${adminLog.remove ? 'from' : 'to'} ${adminLog.targetPlayer.guid}'s ${adminLog.from === 'bankGold' ? 'bank' : 'pouch'} with reason: ${adminLog.reason}`;
+        case 'remove':
+          return `Removed ${adminLog.amount} gold ${adminLog.remove ? 'from' : 'to'} ${adminLog.targetPlayer.guid}'s ${adminLog.from === 'bankGold' ? 'bank' : 'pouch'} with reason: ${adminLog.reason}`;
+        case 'transfer':
+          return `Transferred ${adminLog.amount} gold from ${adminLog.targetPlayer.guid} to ${adminLog.recipientPlayer.guid} with reason: ${adminLog.reason}`;
+        default:
+          return 'Something went wrong here.';
+      }
+    }
   },
   {
     type: 'strip_player',

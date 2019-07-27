@@ -24,6 +24,7 @@ class AdjustGold extends React.Component {
                 <ErrorModal errors={error.graphQLErrors}/>
               }
               <Component
+                serverID={this.props.serverID}
                 action={variables => {
                   adjustGold({
                     variables: {

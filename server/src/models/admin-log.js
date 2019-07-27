@@ -17,6 +17,8 @@ const AdminLog = new mongoose.Schema({
   ipBanned: Boolean,
 
   amount: Number,
+  adjustmentType: String,
+  recipientPlayer: String,
   from: String,
 
   name: String

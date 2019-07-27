@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 export default gql`
-  mutation AdjustGold($serverID: Int!, $guid: String!, $amount: Int!, $remove: Boolean, $pouch: Boolean, $reason: String!){
-    adjustGold(serverID: $serverID, guid: $guid, amount: $amount, remove: $remove, pouch: $pouch, reason: $reason) {
+  mutation AdjustGold($serverID: Int!, $guid: String!, $type: String, $amount: Int!, $pouch: Boolean, $recipient: String, $reason: String!){
+    adjustGold(serverID: $serverID, guid: $guid, type: $type, amount: $amount, pouch: $pouch, recipient: $recipient, reason: $reason) {
       _id
       bankGold
       pouchGold

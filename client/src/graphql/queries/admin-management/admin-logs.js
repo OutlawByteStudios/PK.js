@@ -18,6 +18,7 @@ export default gql`
         date
         
         targetPlayer{
+          _id
           guid
         }
         targetAdmin{
@@ -30,6 +31,11 @@ export default gql`
         ipBanned
         
         amount
+        adjustmentType
+        recipientPlayer{
+          _id
+          guid
+        }
         from
         
         name
