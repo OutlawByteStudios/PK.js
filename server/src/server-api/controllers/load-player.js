@@ -1,5 +1,6 @@
 import { encode } from 'mb-warband-parser';
 import {
+  Ban,
   IPMask,
   IPRecord,
   PlayerName,
@@ -8,6 +9,7 @@ import {
   AdminPermission
 } from '../../models';
 import PromiseStore from '../../utils/promise-store';
+import { gamePermissions } from 'shared/constants';
 
 import {
   LOAD_PLAYER_ALREADY_CONNECTED,
@@ -16,7 +18,6 @@ import {
   LOAD_ADMIN,
   LOAD_FAIL_KICK
 } from '../actions';
-import Ban from '../../models/ban';
 
 export default async ctx => {
   // start now promise to load player, store this in the promise store
@@ -166,8 +167,17 @@ export default async ctx => {
       if (adminPermissions === null)
         return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
 
-      // need to flip admin permissions as they're the opposite in game, whoops
+      let hasAPermission = false;
+      for(let permission of gamePermissions){
+        if(adminPermissions[permission.permission] === 0) continue;
+        hasAPermission = true;
+        break;
+      }
 
+      if (hasAPermission === false)
+        return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
+
+      // need to flip admin permissions as they're the opposite in game, whoops
       resolve(
         encode([
           LOAD_ADMIN,

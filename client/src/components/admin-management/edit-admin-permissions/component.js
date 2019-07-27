@@ -6,10 +6,15 @@ import {
   CardHeader,
   Col,
   FormGroup,
+  Input,
   Row
 } from 'reactstrap';
 
-import { gamePermissions, panelPermissions } from 'shared/constants';
+import {
+  gamePermissions,
+  panelPermissions,
+  permissionPresets
+} from 'shared/constants';
 
 import SteamUser from '../../misc/steam-user';
 import PermissionCheckbox from './permission-checkbox';
@@ -27,6 +32,7 @@ class Component extends React.Component{
 
     this.updatePermission = this.updatePermission.bind(this);
     this.clearPermissions = this.clearPermissions.bind(this);
+    this.applyPreset = this.applyPreset.bind(this);
   }
 
   updatePermission(changedPermission, value){
@@ -63,6 +69,34 @@ class Component extends React.Component{
     }
   }
 
+  applyPreset(preset){
+    if(preset === null) return;
+
+    const selectedAdmin = this.state;
+    const { currentAdmin } = this.props;
+
+    if(selectedAdmin.admin.steamID === currentAdmin.admin.steamID) return;
+
+    for(let permission of panelPermissions.concat(gamePermissions)){
+      if (
+        (permission === 'manageAssignPermissions' &&
+          currentAdmin.manageAssignPermissions < 2) ||
+        (permission !== 'manageAssignPermissions' &&
+          ((selectedAdmin[permission] < 2 &&
+            selectedAdmin[permission] < 2 &&
+            currentAdmin.manageAssignPermissions < 1) ||
+            (selectedAdmin[permission] > 1 &&
+              (selectedAdmin.manageAssignPermissions > 0 ||
+                currentAdmin.manageAssignPermissions < 1))))
+      )
+        continue;
+
+      this.setState({
+        [permission.permission]: permissionPresets[preset][permission.permission]
+      });
+    }
+  }
+
   render(){
     const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
@@ -91,6 +125,30 @@ class Component extends React.Component{
           </Row>
         </CardHeader>
         <CardBody>
+          <h6 className="heading-small text-muted mb-4">Presets</h6>
+          <div className="pl-lg-4">
+            <Row>
+              <Col>
+                <Input
+                  type="select"
+                  bsSize="sm"
+                  onChange={event => this.applyPreset(event.target.value)}
+                  disabled={selectedAdmin.admin.steamID === currentAdmin.admin.steamID}
+                >
+                  <option value={null}>Select a preset to apply...</option>
+                  {
+                    Object.keys(permissionPresets).map((preset, key) => (
+                      <option
+                        value={preset}
+                        key={key}
+                      >{preset}</option>
+                    ))
+                  }
+                </Input>
+              </Col>
+            </Row>
+          </div>
+          <hr className="my-4" />
           <h6 className="heading-small text-muted mb-4">Panel Permissions</h6>
           <div className="pl-lg-4">
             <Row>

@@ -18,7 +18,7 @@ class Component extends React.Component {
         <Input
           type="textarea"
           className="form-control-alternative"
-          rows="20"
+          rows="30"
           value={this.state.config}
           onChange={event => this.setState({ config: event.target.value })}
         />
