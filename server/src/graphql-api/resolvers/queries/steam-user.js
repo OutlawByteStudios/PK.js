@@ -24,6 +24,9 @@ export default {
   AdminLog: {
     admin: async parent => {
       return SteamUser.findOne({ steamID: parent.admin });
+    },
+    targetAdmin: async parent => {
+      return SteamUser.findOne({ steamID: parent.admin });
     }
   },
   AdminPermission: {
