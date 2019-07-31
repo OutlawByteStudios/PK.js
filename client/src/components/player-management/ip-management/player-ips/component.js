@@ -8,11 +8,9 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Col,
   Modal,
   ModalBody,
-  ModalFooter,
-  Row
+  ModalFooter
 } from "reactstrap";
 
 import AdvancedModal from '../../../misc/modals/advanced-modal';
@@ -37,11 +35,7 @@ class Component extends React.Component {
     return (
       <Card className="bg-secondary shadow">
         <CardHeader className="bg-white border-0">
-          <Row className="align-items-center">
-            <Col xs="8">
-              <h3 className="mb-0">Player IPs</h3>
-            </Col>
-          </Row>
+          <h3 className="mb-0">Player IPs</h3>
         </CardHeader>
         <CardBody>
           {

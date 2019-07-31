@@ -57,7 +57,7 @@ export default gql`
         viewIfPlayer: true
       )
 
-    logSearch(search: [String]!, date: Date!): String
+    logSearch(searchString: String!): String
       @fieldViewPermission(requiresAdminPermission: "viewServerLogs")
 
     adminPermission(steamID: String!): AdminPermission

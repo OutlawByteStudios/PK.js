@@ -1,5 +1,15 @@
 import { gql } from 'apollo-server-koa';
 
+import { panelPermissions, gamePermissions } from 'shared/constants';
+
+const addPermissions = () => {
+  let permissions = '';
+  for (let permission of panelPermissions.concat(gamePermissions)) {
+    permissions += `${permission.permission}: Int\n`;
+  }
+  return permissions;
+};
+
 export default gql`
   type Mutation {
     createServer(
@@ -67,29 +77,7 @@ export default gql`
       serverID: Int!
       steamID: String!
       guid: String
-      manageAssignPermissions: Int
-      viewAdminPermissions: Int
-      adminTools: Int
-      adminPanel: Int
-      adminMute: Int
-      adminKick: Int
-      adminTemporaryBan: Int
-      adminPermanentBan: Int
-      adminKillFade: Int
-      adminFreeze: Int
-      adminSpectate: Int
-      adminTeleport: Int
-      adminHealSelf: Int
-      adminGodlike: Int
-      adminJoinFactions: Int
-      adminAnnouncements: Int
-      adminPolls: Int
-      adminShips: Int
-      adminGold: Int
-      adminItems: Int
-      adminAllItems: Int
-      adminFactions: Int
-      adminAnimals: Int
+      ${addPermissions()}
     ): AdminPermission
   }
 `;

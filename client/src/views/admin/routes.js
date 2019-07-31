@@ -10,6 +10,7 @@ import Admins from './pages/admins';
 import AdminLogs from './pages/admin-logs';
 import Players from './pages/players';
 import PlayersByIP from './pages/players-by-ip';
+import LogSearch from './pages/log-search';
 
 const pathPrefix = '/admin';
 
@@ -111,6 +112,21 @@ const serverRoutes = [
     name: "Players by IP",
     icon: "fas fa-users",
     component: PlayersByIP
+  },
+  {
+    path: pathPrefix + '/:serverID/logs/:searchString',
+    exact: false,
+    name: "Logs",
+    icon: "fas fa-clipboard-list",
+    component: LogSearch,
+    displayInSidebar: false
+  },
+  {
+    path: pathPrefix + '/:serverID/logs',
+    exact: false,
+    name: "Logs",
+    icon: "fas fa-clipboard-list",
+    component: LogSearch
   }
 ];
 

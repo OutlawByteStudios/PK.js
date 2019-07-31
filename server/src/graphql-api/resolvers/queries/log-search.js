@@ -2,8 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 
-// import moment from 'moment';
-
 export default {
   Server: {
     logSearch: (parent, filter) => {
@@ -18,25 +16,26 @@ export default {
       if (!fs.existsSync(logFolderPath))
         throw new Error('Logs folder does not exist!');
 
-      // const date = moment(filter.date);
+      let [date, startTime, endTime, ...searchTerms] = filter.searchString.split(';');
 
-      // const logFilePath = path.join(logFolderPath, `server_log_${date.format('MM_DD_YY')}.txt`);
-      const logFilePath = path.join(logFolderPath, `server_log_06_16_19.txt`);
-
-      if (!fs.existsSync(logFilePath))
-        throw new Error('Log file does not exist!');
+      const logFilePath = path.join(logFolderPath, `server_log_${date}.txt`);
+      if (!fs.existsSync(logFilePath)) return JSON.stringify([]);
 
       const logEnginePath = path.join(require.resolve('log-engine'), '..');
 
+      const payload = { searchTerms };
+      if(startTime !== 'null') payload.startTime = startTime;
+      if(endTime !== 'null') payload.endTime = endTime;
+
       const inputArgs = {
-        serverLogFile: logFilePath,
-        payload: JSON.stringify({
-          searchTerms: filter.search
-        }),
-        configFile: path.join(logEnginePath, '/config.json'),
+        configFile: path.join(logEnginePath, '/resources/config.json'),
+        prettyPrinting: false,
         function: 0,
-        prettyPrinting: false
+        serverLogFile: logFilePath,
+        payload: JSON.stringify(payload)
       };
+
+      console.log(inputArgs);
 
       const child = spawn(path.join(logEnginePath, '/log_engine'));
       child.stdin.setEncoding = 'utf-8';
@@ -51,11 +50,12 @@ export default {
           result += data.toString();
         });
 
-        child.stderr.on('data', data => {
+        child.stderr.on('error', data => {
           error += data.toString();
         });
 
         child.on('close', () => {
+          console.log('close');
           if (error !== '') reject(error);
           else resolve(result);
         });

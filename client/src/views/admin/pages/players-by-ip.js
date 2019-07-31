@@ -2,11 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import {
-  Card, CardBody, CardHeader,
+  Card,
+  CardBody,
+  CardHeader,
   Col,
-  Container, Form, FormGroup,
+  Container,
+  Form,
+  FormGroup,
   Row
-} from "reactstrap";
+} from 'reactstrap';
 
 import Header from '../layout/header';
 import Layout from '../layout/layout';
@@ -16,7 +20,7 @@ import {
   PlayersOnIP
 } from '../../../components';
 
-class Players extends React.Component {
+class PlayersByIP extends React.Component {
   constructor(){
     super();
     this.onIPMaskIDChange = this.onIPMaskIDChange.bind(this);
@@ -92,4 +96,4 @@ class Players extends React.Component {
   }
 }
 
-export default withRouter(Players);
+export default withRouter(PlayersByIP);
