@@ -40,7 +40,7 @@ export default async (parent, args, context) => {
 
   await new AdminLog({
     server: args.serverID,
-    admin: currentAdmin.steamID,
+    admin: currentAdmin.admin,
 
     type: 'add_admin_permission',
     targetAdmin: args.steamID

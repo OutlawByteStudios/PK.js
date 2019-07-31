@@ -42,10 +42,10 @@ export default async (parent, args, context) => {
 
   await new AdminLog({
     server: selectedAdmin.serverID,
-    admin: currentAdmin.steamID,
+    admin: currentAdmin.admin,
 
     type: 'remove_admin_permission',
-    targetAdmin: selectedAdmin.steamID
+    targetAdmin: selectedAdmin.admin
   }).save();
 
   return selectedAdmin;
