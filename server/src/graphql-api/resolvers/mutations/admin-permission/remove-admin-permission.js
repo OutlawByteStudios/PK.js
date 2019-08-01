@@ -41,7 +41,7 @@ export default async (parent, args, context) => {
   await selectedAdmin.delete();
 
   await new AdminLog({
-    server: selectedAdmin.serverID,
+    server: selectedAdmin.server,
     admin: currentAdmin.admin,
 
     type: 'remove_admin_permission',

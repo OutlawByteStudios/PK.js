@@ -53,7 +53,7 @@ export default async (parent, args, context) => {
   await selectedAdmin.save();
 
   await new AdminLog({
-    server: selectedAdmin.serverID,
+    server: selectedAdmin.server,
     admin: currentAdmin.admin,
 
     type: 'update_admin_permission',
