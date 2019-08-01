@@ -20,7 +20,7 @@ export default async (parent, args, context) => {
   });
   if (server === null) throw new Error('Server not found.');
 
-  await startServer(server, args.module, args.config);
+  await startServer(server.id, args.module, args.config);
 
   server.gameserverLastModule = args.module;
   server.gameserverLastConfig = args.config;
