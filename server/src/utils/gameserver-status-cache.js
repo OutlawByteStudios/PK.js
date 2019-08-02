@@ -37,22 +37,22 @@ class GameserverStatusCache {
     return this.gameserverOnlineCache[serverID].gameserverOnline;
   }
 
-  async fetchGameserverStatus(host, port, serverID) {
-    let gameserverStatus = await getServerStatus(host, port, serverID);
+  async fetchGameserverStatus(host, port) {
+    let gameserverStatus = await getServerStatus(host, port);
     this.gameserverStatusCache[`${host}:${port}`] = {
       gameserverStatus,
       lastFetched: Date.now()
     };
   }
 
-  async gameserverStatus(host, port, serverID) {
+  async gameserverStatus(host, port) {
     if (
       DISABLE_CACHE ||
       !this.gameserverStatusCache[`${host}:${port}`] ||
       this.gameserverStatusCache[`${host}:${port}`].lastFetched <
         Date.now() - GAMESERVER_STATUS_CACHE_TIME
     )
-      await this.fetchGameserverStatus(host, port, serverID);
+      await this.fetchGameserverStatus(host, port);
 
     return this.gameserverStatusCache[`${host}:${port}`].gameserverStatus;
   }

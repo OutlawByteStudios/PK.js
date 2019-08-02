@@ -1,8 +1,6 @@
 import net from 'net';
 import { parseString } from 'xml2js';
 
-import { isServerOnline } from './gameserver-instance-tools';
-
 const fetchStatus = (host, port) => {
   return new Promise((resolve, reject) => {
     const client = net.createConnection(port, host, () => {
@@ -41,16 +39,18 @@ const parseStatus = (host, port) => {
   });
 };
 
-export default async (host, port, serverID) => {
-  if (!(await isServerOnline(serverID))) return {};
+export default async (host, port) => {
+  try {
+    let status = await parseStatus(host, port);
+    status = status.ServerStats;
 
-  let status = await parseStatus(host, port);
-  status = status.ServerStats;
-
-  for (let key in status) {
-    status[key] = status[key][0];
-    if (status[key] === 'Yes') status[key] = true;
-    if (status[key] === 'No') status[key] = false;
+    for (let key in status) {
+      status[key] = status[key][0];
+      if (status[key] === 'Yes') status[key] = true;
+      if (status[key] === 'No') status[key] = false;
+    }
+    return status;
+  } catch (err){
+    return {};
   }
-  return status;
 };
