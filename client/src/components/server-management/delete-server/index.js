@@ -18,7 +18,6 @@ class DeleteServer extends React.Component{
       <Mutation
         mutation={DELETE_SERVER}
         update={(cache, { data: { deleteServer }}) => {
-          console.log(deleteServer);
           let { adminPermissions } = cache.readQuery({
             query: OWN_ADMIN_PERMISSIONS,
             variables: { steamID: Auth.claim.steamID }

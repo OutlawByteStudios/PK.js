@@ -38,8 +38,6 @@ export default async (parent, args, context) => {
     ipBan: !!args.ipBan
   });
 
-  console.log(ban);
-
   await ban.save();
 
   await new AdminLog({

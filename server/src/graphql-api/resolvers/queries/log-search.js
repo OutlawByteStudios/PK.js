@@ -16,7 +16,12 @@ export default {
       if (!fs.existsSync(logFolderPath))
         throw new Error('Logs folder does not exist!');
 
-      let [date, startTime, endTime, ...searchTerms] = filter.searchString.split(';');
+      let [
+        date,
+        startTime,
+        endTime,
+        ...searchTerms
+      ] = filter.searchString.split(';');
 
       const logFilePath = path.join(logFolderPath, `server_log_${date}.txt`);
       if (!fs.existsSync(logFilePath)) return JSON.stringify([]);
@@ -24,8 +29,8 @@ export default {
       const logEnginePath = path.join(require.resolve('log-engine'), '..');
 
       const payload = { searchTerms };
-      if(startTime !== 'null') payload.startTime = startTime;
-      if(endTime !== 'null') payload.endTime = endTime;
+      if (startTime !== 'null') payload.startTime = startTime;
+      if (endTime !== 'null') payload.endTime = endTime;
 
       const inputArgs = {
         configFile: path.join(logEnginePath, '/resources/config.json'),
@@ -34,8 +39,6 @@ export default {
         serverLogFile: logFilePath,
         payload: JSON.stringify(payload)
       };
-
-      console.log(inputArgs);
 
       const child = spawn(path.join(logEnginePath, '/log_engine'));
       child.stdin.setEncoding = 'utf-8';
@@ -55,7 +58,6 @@ export default {
         });
 
         child.on('close', () => {
-          console.log('close');
           if (error !== '') reject(error);
           else resolve(result);
         });

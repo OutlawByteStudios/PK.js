@@ -50,7 +50,7 @@ export default async (host, port) => {
       if (status[key] === 'No') status[key] = false;
     }
     return status;
-  } catch (err){
+  } catch (err) {
     return {};
   }
 };

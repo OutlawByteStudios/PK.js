@@ -78,8 +78,6 @@ class AdminLogs extends React.Component{
                 if(loading) return <Loader />;
                 if(error) return <Error />;
 
-                console.log(data);
-
                 if(data.adminPermission.viewAdminLogs === 0) return <NoPermission/>;
 
                 return (
