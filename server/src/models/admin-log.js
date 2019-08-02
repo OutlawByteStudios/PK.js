@@ -6,7 +6,7 @@ const AdminLog = new mongoose.Schema({
   admin: { type: String, require: true },
 
   type: { type: String, require: true },
-  date: { type: Date, default: new Date() },
+  date: { type: Date, default: new Date.now },
 
   targetPlayer: String,
   targetAdmin: String,

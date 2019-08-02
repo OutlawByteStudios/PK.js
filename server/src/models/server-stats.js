@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const ServerStats = new mongoose.Schema({
   server: { type: Number, require: true },
-  date: { type: Date, default: new Date() },
+  date: { type: Date, default: Date.now },
 
   uniqueGUIDs: Number,
   uniqueIPs: Number,

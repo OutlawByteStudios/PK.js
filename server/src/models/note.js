@@ -8,7 +8,7 @@ const NoteSchema = new mongoose.Schema({
 
   note: { type: String, require: true },
 
-  date: { type: Number, require: true }
+  date: { type: Number, require: true, default: Date.now }
 });
 
 export default mongoose.model('Note', NoteSchema);

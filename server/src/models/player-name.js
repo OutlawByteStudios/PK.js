@@ -6,7 +6,7 @@ const PlayerNameSchema = new mongoose.Schema({
 
   player: { type: String, require: true },
 
-  lastSeen: { type: Date, default: new Date() }
+  lastSeen: { type: Date, default: Date.now }
 });
 
 export default mongoose.model('PlayerName', PlayerNameSchema);

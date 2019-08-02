@@ -5,7 +5,7 @@ const PlayerSchema = new mongoose.Schema({
   guid: { type: String, require: true },
 
   online: { type: Number, require: true, default: 0 },
-  lastSeen: { type: Date, default: new Date() },
+  lastSeen: { type: Date, default: Date.now },
 
   factionID: Number,
   classID: Number,

@@ -9,7 +9,7 @@ const WarningSchema = new mongoose.Schema({
   privateReason: { type: String, require: true },
   publicReason: { type: String, require: true },
 
-  date: { type: Number, require: true }
+  date: { type: Number, require: true, default: Date.now }
 });
 
 export default mongoose.model('Warning', WarningSchema);
