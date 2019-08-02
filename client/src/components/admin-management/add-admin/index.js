@@ -33,7 +33,7 @@ class AddAdminPermission extends React.Component {
         {(addAdminPermission, { loading, error, data }) => {
           if (loading) return <Loader/>;
 
-          if(data) return (
+          if(!error && data) return (
             <Redirect
               to={
                 this.props.match.path
