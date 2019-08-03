@@ -63,21 +63,23 @@ const recordStats = async server => {
   const bankLimit = server.defaultBankLimit;
 
   await ServerStats.create(
-    {
-      server: server.id,
-      uniqueGUIDs,
-      uniqueIPs,
-      adminCount,
-      totalBans,
-      totalWarnings,
-      totalNotes,
-      playerCount,
-      currentMap,
-      totalGold,
-      totalBankGold,
-      totalPouchGold,
-      bankLimit
-    },
+    [
+      {
+        server: server.id,
+        uniqueGUIDs,
+        uniqueIPs,
+        adminCount,
+        totalBans,
+        totalWarnings,
+        totalNotes,
+        playerCount,
+        currentMap,
+        totalGold,
+        totalBankGold,
+        totalPouchGold,
+        bankLimit
+      }
+    ],
     {
       setDefaultsOnInsert: true
     }
