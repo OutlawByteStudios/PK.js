@@ -40,9 +40,9 @@ class Component extends React.Component{
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
-            <th scope="col">Admin</th>
-            <th scope="col">GUID</th>
-            <th scope="col">Actions</th>
+            <th>Admin</th>
+            <th>GUID</th>
+            <th>Actions</th>
           </tr>
           </thead>
           <tbody>

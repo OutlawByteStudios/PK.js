@@ -17,7 +17,8 @@ import CreateServer from './server-management/create-server';
 import DeleteServer from './server-management/delete-server';
 import RenameServer from './server-management/rename-server';
 import ServerController from './server-management/server-controller';
-import ServerSelectorSelect from './server-management/server-selector';
+import ServerSelectorMenu from './server-management/server-selector-menu';
+import ServerSelectorSelect from './server-management/server-selector-select';
 
 export {
   AdminList,
@@ -39,5 +40,6 @@ export {
   DeleteServer,
   RenameServer,
   ServerController,
+  ServerSelectorMenu,
   ServerSelectorSelect
 }

@@ -15,6 +15,7 @@ import SERVER_CONTROLLER from './server-management/server-controller';
 import SERVER_MODULES from './server-management/server-modules';
 import LOG_SEARCH from './log-search';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
+import OWN_ADMIN_PERMISSIONS_WITH_STATUS from './own-admin-permissions-with-status';
 
 export {
   ADMIN_LOGS,
@@ -33,5 +34,6 @@ export {
   SERVER_CONTROLLER,
   SERVER_MODULES,
   LOG_SEARCH,
-  OWN_ADMIN_PERMISSIONS
+  OWN_ADMIN_PERMISSIONS,
+  OWN_ADMIN_PERMISSIONS_WITH_STATUS
 }
