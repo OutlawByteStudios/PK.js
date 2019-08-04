@@ -47,13 +47,12 @@ class Component extends React.Component{
   }
 
   clearPermissions(){
-    const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
 
     // handle manageAssignPermissions first
     if(
       // do they have permission to do the remove?
-      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions')
+      assignPermissionCheck(currentAdmin, this.state.selectedAdmin, 'manageAssignPermissions')
     // apply change
     ) this.setState({ manageAssignPermissions: 0 });
 
@@ -63,7 +62,7 @@ class Component extends React.Component{
 
       if(
         // do they have permission to do the change?
-        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission)
+        assignPermissionCheck(currentAdmin, this.state.selectedAdmin, permission.permission)
       // apply change
       ) this.setState({ [permission.permission]: 0 });
     }
@@ -71,14 +70,13 @@ class Component extends React.Component{
 
   applyPreset(preset){
     if(preset === null) return;
-
-    const selectedAdmin = this.state;
+    
     const { currentAdmin } = this.props;
 
     // handle manageAssignPermissions first
     if(
       // do they have permission to do the remove?
-      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions', permissionPresets[preset].manageAssignPermissions > 1)
+      assignPermissionCheck(currentAdmin, this.state.selectedAdmin, 'manageAssignPermissions', permissionPresets[preset].manageAssignPermissions > 1)
     // apply change
     ) this.setState({ manageAssignPermissions: permissionPresets[preset].manageAssignPermissions });
 
@@ -88,7 +86,7 @@ class Component extends React.Component{
 
       if(
         // do they have permission to do the change?
-        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission, permissionPresets[preset].manageAssignPermissions > 1)
+        assignPermissionCheck(currentAdmin, this.state.selectedAdmin, permission.permission, permissionPresets[preset].manageAssignPermissions > 1)
       // apply change
       ) this.setState({ [permission.permission]: permissionPresets[preset][permission.permission] });
     }
