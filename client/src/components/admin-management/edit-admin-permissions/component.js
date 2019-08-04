@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 
 import {
+  assignPermissionCheck,
   gamePermissions,
   panelPermissions,
   permissionPresets
@@ -49,23 +50,22 @@ class Component extends React.Component{
     const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
 
-    if(selectedAdmin.admin.steamID === currentAdmin.admin.steamID) return;
+    // handle manageAssignPermissions first
+    if(
+      // do they have permission to do the remove?
+      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions')
+    // apply change
+    ) this.setState({ manageAssignPermissions: 0 });
 
-    for(let permission of panelPermissions.concat(gamePermissions)){
-      if (
-        (permission === 'manageAssignPermissions' &&
-          currentAdmin.manageAssignPermissions < 2) ||
-        (permission !== 'manageAssignPermissions' &&
-          ((selectedAdmin[permission] < 2 &&
-            selectedAdmin[permission] < 2 &&
-            currentAdmin.manageAssignPermissions < 1) ||
-            (selectedAdmin[permission] > 1 &&
-              (selectedAdmin.manageAssignPermissions > 0 ||
-                currentAdmin.manageAssignPermissions < 1))))
-      )
-        continue;
+    for (let permission of panelPermissions.concat(gamePermissions)) {
+      // we handled this permission already, so skip
+      if(permission.permission === 'manageAssignPermissions') continue;
 
-      this.setState({ [permission.permission]: 0 });
+      if(
+        // do they have permission to do the change?
+        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission)
+      // apply change
+      ) this.setState({ [permission.permission]: 0 });
     }
   }
 
@@ -75,25 +75,22 @@ class Component extends React.Component{
     const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
 
-    if(selectedAdmin.admin.steamID === currentAdmin.admin.steamID) return;
+    // handle manageAssignPermissions first
+    if(
+      // do they have permission to do the remove?
+      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions', permissionPresets[preset].manageAssignPermissions > 1)
+    // apply change
+    ) this.setState({ manageAssignPermissions: permissionPresets[preset].manageAssignPermissions });
 
-    for(let permission of panelPermissions.concat(gamePermissions)){
-      if (
-        (permission === 'manageAssignPermissions' &&
-          currentAdmin.manageAssignPermissions < 2) ||
-        (permission !== 'manageAssignPermissions' &&
-          ((selectedAdmin[permission] < 2 &&
-            selectedAdmin[permission] < 2 &&
-            currentAdmin.manageAssignPermissions < 1) ||
-            (selectedAdmin[permission] > 1 &&
-              (selectedAdmin.manageAssignPermissions > 0 ||
-                currentAdmin.manageAssignPermissions < 1))))
-      )
-        continue;
+    for (let permission of panelPermissions.concat(gamePermissions)) {
+      // we handled this permission already, so skip
+      if(permission.permission === 'manageAssignPermissions') continue;
 
-      this.setState({
-        [permission.permission]: permissionPresets[preset][permission.permission]
-      });
+      if(
+        // do they have permission to do the change?
+        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission, permissionPresets[preset].manageAssignPermissions > 1)
+      // apply change
+      ) this.setState({ [permission.permission]: permissionPresets[preset][permission.permission] });
     }
   }
 

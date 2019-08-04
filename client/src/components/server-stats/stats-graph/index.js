@@ -49,6 +49,8 @@ class AdminList extends React.Component{
         return 'Total Pouch Gold';
       case 'bankLimit':
         return 'Bank Limit';
+      default:
+        return 'unknown';
     }
   }
 

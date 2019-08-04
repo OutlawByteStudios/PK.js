@@ -1,6 +1,6 @@
 import { AdminPermission, AdminLog } from '../../../../models';
 
-import { gamePermissions, panelPermissions } from 'shared/constants';
+import { assignPermissionCheck, gamePermissions, panelPermissions } from "shared/constants";
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -19,36 +19,41 @@ export default async (parent, args, context) => {
   });
   if (selectedAdmin === null) throw new Error('Admin not found.');
 
+  // guid can be changed with no check
   if (currentAdmin.manageAdminGUIDs > 0) selectedAdmin.player = args.guid;
 
+
+  // handle manageAssignPermissions first
+  if(
+    // has a change been requested?
+    args.manageAssignPermissions !== undefined &&
+    selectedAdmin.manageAssignPermissions !== args.manageAssignPermissions &&
+    // do they have permission to do the change?
+    assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions', args.manageAssignPermissions > 1)
+    // apply change
+  ) selectedAdmin.manageAssignPermissions = args.manageAssignPermissions;
+
   for (let permission of panelPermissions.concat(gamePermissions)) {
-    // don't allow admin to change own perms, but guid is fine
-    if (context.user === args.steamID) break;
+    // we handled this permission already, so skip
+    if(permission.permission === 'manageAssignPermissions') continue;
 
-    if (args[permission.permission] === undefined) continue;
-
-    if (
-      (permission === 'manageAssignPermissions' &&
-        currentAdmin.manageAssignPermissions < 2) ||
-      (permission !== 'manageAssignPermissions' &&
-        ((selectedAdmin[permission] < 2 &&
-          currentAdmin[permission] < 2 &&
-          currentAdmin.manageAssignPermissions < 1) ||
-          (selectedAdmin[permission] > 1 &&
-            (selectedAdmin.manageAssignPermissions > 0 ||
-              currentAdmin.manageAssignPermissions < 1))))
-    )
-      continue;
-
-    selectedAdmin[permission.permission] = args[permission.permission];
+    if(
+      // has a change been requested?
+      args[permission.permission] !== undefined &&
+      selectedAdmin[permission.permission] !== args[permission.permission] &&
+      // do they have permission to do the change?
+      assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission, args[permission.permission] > 1)
+    // apply change
+    ) selectedAdmin[permission.permission] = args[permission.permission];
   }
 
-  if (selectedAdmin.manageAssignPermissions > 0) {
+  // if the manageAssignPermission was set to more than none, then apply
+  // assign permissions for all other permissions
+  if (selectedAdmin.manageAssignPermissions > 0)
     for (let permission of panelPermissions.concat(gamePermissions)) {
       if (permission.permission === 'manageAssignPermissions') continue;
-      selectedAdmin[permission] = 2;
+      selectedAdmin[permission.permission] = 2;
     }
-  }
 
   await selectedAdmin.save();
 

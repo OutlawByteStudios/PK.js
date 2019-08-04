@@ -15,6 +15,8 @@ export default async (parent, args, context) => {
   if (currentAdmin === null)
     throw new Error('You do not have permission to do that.');
 
+  // if they do not have the manageAssignPermissions permission, do they have permission
+  // to assign at least one other permission?
   if (currentAdmin.manageAssignPermissions < 1) {
     let allowed = false;
     for (let permission of panelPermissions.concat(gamePermissions)) {

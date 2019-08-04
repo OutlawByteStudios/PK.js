@@ -4,6 +4,8 @@ import {
   Row
 } from 'reactstrap';
 
+import { assignPermissionCheck } from 'shared/constants';
+
 class AdminPermissionCheckbox extends React.Component{
   constructor(){
     super();
@@ -28,16 +30,7 @@ class AdminPermissionCheckbox extends React.Component{
                 type="checkbox"
                 onChange={event => this.onCheckboxChange(event, 1)}
                 checked={selectedAdmin[permission] > 0}
-                disabled={
-                  (permission === 'manageAssignPermissions' && currentAdmin.manageAssignPermissions < 2) ||
-                  (permission !== 'manageAssignPermissions' &&
-                    (
-                      (selectedAdmin[permission] < 2 && currentAdmin[permission] < 2 && currentAdmin.manageAssignPermissions < 1) ||
-                      (selectedAdmin[permission] > 1 && (selectedAdmin.manageAssignPermissions > 0 || currentAdmin.manageAssignPermissions < 1))
-                    )
-                  ) ||
-                  selectedAdmin.admin.steamID === currentAdmin.admin.steamID
-                }
+                disabled={!assignPermissionCheck(currentAdmin, selectedAdmin, permission)}
                 id={this.props.permission+'access'}
               />
               <label className="custom-control-label" htmlFor={this.props.permission+'access'}>
@@ -52,11 +45,7 @@ class AdminPermissionCheckbox extends React.Component{
                 type="checkbox"
                 onChange={event => this.onCheckboxChange(event, 2)}
                 checked={selectedAdmin[permission] > 1}
-                disabled={
-                  (permission === 'manageAssignPermissions' && currentAdmin.manageAssignPermissions < 2) ||
-                  (permission !== 'manageAssignPermissions' && (selectedAdmin.manageAssignPermissions > 0 || currentAdmin.manageAssignPermissions < 1))||
-                  selectedAdmin.admin.steamID === currentAdmin.admin.steamID
-                }
+                disabled={!assignPermissionCheck(currentAdmin, selectedAdmin, permission, true)}
                 id={this.props.permission+'assignaccess'}
               />
               <label className="custom-control-label" htmlFor={this.props.permission+'assignaccess'}>
