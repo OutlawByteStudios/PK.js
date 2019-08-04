@@ -1,6 +1,10 @@
 import { AdminPermission, AdminLog } from '../../../../models';
 
-import { assignPermissionCheck, gamePermissions, panelPermissions } from "shared/constants";
+import {
+  assignPermissionCheck,
+  gamePermissions,
+  panelPermissions
+} from 'shared/constants';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -22,29 +26,40 @@ export default async (parent, args, context) => {
   // guid can be changed with no check
   if (currentAdmin.manageAdminGUIDs > 0) selectedAdmin.player = args.guid;
 
-
   // handle manageAssignPermissions first
-  if(
+  if (
     // has a change been requested?
     args.manageAssignPermissions !== undefined &&
     selectedAdmin.manageAssignPermissions !== args.manageAssignPermissions &&
     // do they have permission to do the change?
-    assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions', args.manageAssignPermissions > 1)
+    assignPermissionCheck(
+      currentAdmin,
+      selectedAdmin,
+      'manageAssignPermissions',
+      args.manageAssignPermissions > 1
+    )
     // apply change
-  ) selectedAdmin.manageAssignPermissions = args.manageAssignPermissions;
+  )
+    selectedAdmin.manageAssignPermissions = args.manageAssignPermissions;
 
   for (let permission of panelPermissions.concat(gamePermissions)) {
     // we handled this permission already, so skip
-    if(permission.permission === 'manageAssignPermissions') continue;
+    if (permission.permission === 'manageAssignPermissions') continue;
 
-    if(
+    if (
       // has a change been requested?
       args[permission.permission] !== undefined &&
       selectedAdmin[permission.permission] !== args[permission.permission] &&
       // do they have permission to do the change?
-      assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission, args[permission.permission] > 1)
-    // apply change
-    ) selectedAdmin[permission.permission] = args[permission.permission];
+      assignPermissionCheck(
+        currentAdmin,
+        selectedAdmin,
+        permission.permission,
+        args[permission.permission] > 1
+      )
+      // apply change
+    )
+      selectedAdmin[permission.permission] = args[permission.permission];
   }
 
   // if the manageAssignPermission was set to more than none, then apply

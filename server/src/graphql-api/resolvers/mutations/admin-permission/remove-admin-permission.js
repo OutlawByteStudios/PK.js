@@ -1,6 +1,10 @@
 import { AdminPermission, AdminLog } from '../../../../models';
 
-import { assignPermissionCheck, gamePermissions, panelPermissions } from 'shared/constants';
+import {
+  assignPermissionCheck,
+  gamePermissions,
+  panelPermissions
+} from 'shared/constants';
 
 export default async (parent, args, context) => {
   if (context.user === null)
@@ -22,20 +26,26 @@ export default async (parent, args, context) => {
   if (selectedAdmin === null) throw new Error('Admin not found.');
 
   // if the admin has the manageAssignPermissions permission, can this be removed?
-  if(
+  if (
     selectedAdmin.manageAssignPermissions > 0 &&
-    !assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions')
-  ) throw new Error('You do not have permission to do that.');
+    !assignPermissionCheck(
+      currentAdmin,
+      selectedAdmin,
+      'manageAssignPermissions'
+    )
+  )
+    throw new Error('You do not have permission to do that.');
 
-  for(let permission of panelPermissions.concat(gamePermissions)){
+  for (let permission of panelPermissions.concat(gamePermissions)) {
     // we handled this permission already, so skip
-    if(permission.permission === 'manageAssignPermissions') continue;
+    if (permission.permission === 'manageAssignPermissions') continue;
 
     // if they have the permission, check whether it can be removed
-    if(
+    if (
       selectedAdmin[permission.permission] > 0 &&
       !assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission)
-    ) throw new Error('You do not have permission to do that.');
+    )
+      throw new Error('You do not have permission to do that.');
   }
 
   await selectedAdmin.delete();

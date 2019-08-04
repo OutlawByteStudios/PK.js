@@ -14,7 +14,7 @@ export default gql`
     defaultBankLimit: Int
 
     recordStats: Boolean
-    
+
     serverStats(startDate: Date, stopDate: Date): [ServerStats]
       @fieldViewPermission(requiresAdminPermission: "viewServerStats")
 
