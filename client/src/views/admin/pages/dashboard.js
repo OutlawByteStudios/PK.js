@@ -1,12 +1,14 @@
 import React from 'react';
 
 import {
+  Col,
   Container,
   Row
-} from 'reactstrap';
+} from "reactstrap";
 
 import Header from '../layout/header';
 import Layout from '../layout/layout';
+import StatsGraph from "../../../components/server-stats/stats-graph";
 
 class Dashboard extends React.Component {
   render() {
@@ -23,7 +25,9 @@ class Dashboard extends React.Component {
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>
-
+            <Col>
+              <StatsGraph serverID={serverID} stat="playerCount" />
+            </Col>
           </Row>
         </Container>
       </Layout>
