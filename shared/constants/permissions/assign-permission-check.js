@@ -15,7 +15,7 @@ module.exports = function(currentAdmin, selectedAdmin, permission, assign = fals
   }
 
   // if the selected admin has the assign admin permission, then other permissions cannot be removed
-  if(permission !== 'manageAssignPermissions' && selectedAdmin[permission].manageAssignPermissions > 0) return false;
+  if(permission !== 'manageAssignPermissions' && selectedAdmin.manageAssignPermissions > 0) return false;
 
   // handle assign permissions check
   if(assign) return canRemoveAssignPermission(currentAdmin, selectedAdmin, permission);
