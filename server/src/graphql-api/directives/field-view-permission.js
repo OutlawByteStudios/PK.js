@@ -13,15 +13,15 @@ const getServerIDField = objectType => {
 
 class FieldViewPermission extends SchemaDirectiveVisitor {
   visitObject(type) {
-    this.ensureFieldsWrapped(type);
-    type._requiresAdminPermission = this.args.requiresAdminPermission;
+    type.requiresAdminPermission = this.args.requiresAdminPermission;
     type.viewIfPlayer = this.args.viewIfPlayer;
+    this.ensureFieldsWrapped(type);
   }
 
   visitFieldDefinition(field, details) {
-    this.ensureFieldsWrapped(details.objectType);
-    field._requiresAdminPermission = this.args.requiresAdminPermission;
+    field.requiresAdminPermission = this.args.requiresAdminPermission;
     field.viewIfPlayer = this.args.viewIfPlayer;
+    this.ensureFieldsWrapped(details.objectType);
   }
 
   ensureFieldsWrapped(objectType) {
@@ -36,7 +36,7 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
       const { resolve = defaultFieldResolver } = field;
 
       const requires =
-        field._requiresAdminPermission || objectType._requiresAdminPermission;
+        field.requiresAdminPermission || objectType.requiresAdminPermission;
 
       field.resolve = async function(parent, args, context, info) {
         if (!requires)
@@ -45,7 +45,7 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
         const adminPermission = await AdminPermission.findOne({
           server: parent[serverIDField],
           admin: context.user,
-          requires: { $gt: 0 }
+          [requires]: { $gt: 0 }
         });
 
         if (adminPermission !== null)

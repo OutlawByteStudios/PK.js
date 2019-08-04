@@ -6,6 +6,7 @@ import Profile from './pages/profile';
 // Server Routes
 import Dashboard from './pages/dashboard';
 import ServerManagement from './pages/server-management';
+import ServerStats from './pages/server-stats';
 import Admins from './pages/admins';
 import AdminLogs from './pages/admin-logs';
 import Players from './pages/players';
@@ -54,6 +55,14 @@ const serverRoutes = [
     name: "Server Management",
     icon: "fas fa-server",
     component: ServerManagement
+  },
+
+  {
+    path: pathPrefix + '/:serverID/server-stats',
+    exact: true,
+    name: "Server Stats",
+    icon: "fas fa-chart-line",
+    component: ServerStats
   },
 
   {

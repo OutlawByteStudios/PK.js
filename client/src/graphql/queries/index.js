@@ -13,6 +13,7 @@ import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
 import SERVER_CONTROLLER from './server-management/server-controller';
 import SERVER_MODULES from './server-management/server-modules';
+import SERVER_STATS_GRAPH from './server-stats/server-stats-graph';
 import LOG_SEARCH from './log-search';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
 import OWN_ADMIN_PERMISSIONS_WITH_STATUS from './own-admin-permissions-with-status';
@@ -33,6 +34,7 @@ export {
   SERVER_CONFIGS,
   SERVER_CONTROLLER,
   SERVER_MODULES,
+  SERVER_STATS_GRAPH,
   LOG_SEARCH,
   OWN_ADMIN_PERMISSIONS,
   OWN_ADMIN_PERMISSIONS_WITH_STATUS

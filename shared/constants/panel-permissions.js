@@ -32,6 +32,10 @@ module.exports = [
     permission: 'manageServerInstance'
   },
   {
+    label: 'View Server Stats',
+    permission: 'viewServerStats'
+  },
+  {
     label: 'View Server Logs',
     permission: 'viewServerLogs'
   },
