@@ -47,14 +47,15 @@ class Component extends React.Component{
   }
 
   clearPermissions(){
+    const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
 
     // handle manageAssignPermissions first
     if(
       // do they have permission to do the remove?
-      assignPermissionCheck(currentAdmin, this.state, 'manageAssignPermissions')
+      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions')
     // apply change
-    ) this.setState({ manageAssignPermissions: 0 });
+    ) selectedAdmin.manageAssignPermissions = 0;
 
     for (let permission of panelPermissions.concat(gamePermissions)) {
       // we handled this permission already, so skip
@@ -62,23 +63,26 @@ class Component extends React.Component{
 
       if(
         // do they have permission to do the change?
-        assignPermissionCheck(currentAdmin, this.state, permission.permission)
+        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission)
       // apply change
-      ) this.setState({ [permission.permission]: 0 });
+      ) selectedAdmin[permission.permission] = 0;
     }
+
+    this.setState(selectedAdmin);
   }
 
   applyPreset(preset){
     if(preset === null) return;
 
+    const selectedAdmin = this.state;
     const { currentAdmin } = this.props;
 
     // handle manageAssignPermissions first
     if(
       // do they have permission to do the remove?
-      assignPermissionCheck(currentAdmin, this.state, 'manageAssignPermissions', permissionPresets[preset].manageAssignPermissions > 1)
+      assignPermissionCheck(currentAdmin, selectedAdmin, 'manageAssignPermissions', permissionPresets[preset].manageAssignPermissions > 1)
     // apply change
-    ) this.setState({ manageAssignPermissions: permissionPresets[preset].manageAssignPermissions });
+    ) selectedAdmin.manageAssignPermissions = permissionPresets[preset].manageAssignPermissions;
 
     for (let permission of panelPermissions.concat(gamePermissions)) {
       // we handled this permission already, so skip
@@ -86,10 +90,12 @@ class Component extends React.Component{
 
       if(
         // do they have permission to do the change?
-        assignPermissionCheck(currentAdmin, this.state, permission.permission, permissionPresets[preset].manageAssignPermissions > 1)
+        assignPermissionCheck(currentAdmin, selectedAdmin, permission.permission, permissionPresets[preset].manageAssignPermissions > 1)
       // apply change
-      ) this.setState({ [permission.permission]: permissionPresets[preset][permission.permission] });
+      ) selectedAdmin[permission.permission] = permissionPresets[preset][permission.permission];
     }
+
+    this.setState(selectedAdmin);
   }
 
   render(){
