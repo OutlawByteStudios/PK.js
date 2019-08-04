@@ -54,7 +54,7 @@ module.exports = {
     viewAdminPermissions: 2,
     manageAdminGUIDs: 2,
     viewAdminLogs: 2,
-    renameServer: 0,
+    renameServer: 2,
     viewServerFiles: 2,
     editConfigFiles: 2,
     manageServerInstance: 2,

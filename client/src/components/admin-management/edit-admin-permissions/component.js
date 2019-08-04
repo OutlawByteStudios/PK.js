@@ -95,6 +95,14 @@ class Component extends React.Component{
       ) selectedAdmin[permission.permission] = permissionPresets[preset][permission.permission];
     }
 
+    // if the manageAssignPermission was set to more than none, then apply
+    // assign permissions for all other permissions
+    if (selectedAdmin.manageAssignPermissions > 0)
+      for (let permission of panelPermissions.concat(gamePermissions)) {
+        if (permission.permission === 'manageAssignPermissions') continue;
+        selectedAdmin[permission.permission] = 2;
+      }
+
     this.setState(selectedAdmin);
   }
 
