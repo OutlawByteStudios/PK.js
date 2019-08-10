@@ -51,7 +51,7 @@ class LogSearch extends React.Component {
       date: moment(date, 'MM_DD_YY'),
       allDay: !(startTime && endTime),
       startTime: startTime ? startTime.slice(0, -3) : moment(),
-      endTime: endTime ? endTime.slice(0, -3) : moment,
+      endTime: endTime ? endTime.slice(0, -3) : moment(),
       searchTerms
     });
   }
