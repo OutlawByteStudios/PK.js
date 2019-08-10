@@ -12,7 +12,7 @@ export default {
     playerNames: async (parent, filter) => {
       let query = { server: parent.id };
       if (filter.nameLike)
-        query.name = new RegExp('.*' + filter.nameLike + '.*');
+        query.name = new RegExp('.*' + filter.nameLike + '.*', 'i');
       return PlayerName.find(query);
     }
   },
