@@ -7,12 +7,16 @@ import jobContainer from '../../../../jobs';
 import {
   SteamUser,
   Server,
+  AdminLog,
   AdminPermission,
+  Ban,
+  IPRecord,
+  Note,
   Player,
   PlayerName,
-  Ban,
-  Warning,
-  Note
+  PlayerStats,
+  ServerStats,
+  Warning
 } from '../../../../models';
 
 export default async (parent, args, context) => {
@@ -38,12 +42,16 @@ export default async (parent, args, context) => {
   /* Delete all documents related to server */
   await Promise.all([
     Server.deleteOne({ id: server.id }),
+    AdminLog.deleteMany({ server: server.id }),
     AdminPermission.deleteMany({ server: server.id }),
+    Ban.deleteMany({ server: server.id }),
+    IPRecord.deleteMany({ server: server.id }),
+    Note.deleteMany({ server: server.id }),
     Player.deleteMany({ server: server.id }),
     PlayerName.deleteMany({ server: server.id }),
-    Ban.deleteMany({ server: server.id }),
-    Warning.deleteMany({ server: server.id }),
-    Note.deleteMany({ server: server.id })
+    PlayerStats.deleteMany({ server: server.id }),
+    ServerStats.deleteMany({ server: server.id }),
+    Warning.deleteMany({ server: server.id })
   ]);
 
   /* Delete server folder */
