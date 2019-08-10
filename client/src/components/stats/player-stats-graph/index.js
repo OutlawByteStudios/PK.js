@@ -34,6 +34,32 @@ class PlayerStatsGraph extends React.Component{
     }
   }
 
+  fillMissingData(dataPoints){
+    for(let i = 0; i < dataPoints.length; i++){
+      dataPoints[i].date = moment(dataPoints[i].date).seconds(0).millisecond(0);
+    }
+
+    console.log(dataPoints.map(point => point.date.format() + point.totalGold));
+
+    let completeDataPoints = [dataPoints.shift()];
+    for(let dataPoint of dataPoints){
+      while(
+        completeDataPoints[completeDataPoints.length-1].date
+          .clone()
+          .add(30, 'minutes')
+          .isBefore(dataPoint.date)
+        ){
+        completeDataPoints.push({
+          ...completeDataPoints[completeDataPoints.length-1],
+          date: completeDataPoints[completeDataPoints.length-1].date.clone().add(30, 'minutes')
+        })
+      }
+      completeDataPoints.push(dataPoint);
+    }
+
+    return completeDataPoints;
+  }
+
   formatData(dataPoints){
     let formatString;
     switch(this.state.mode){
@@ -103,7 +129,8 @@ class PlayerStatsGraph extends React.Component{
 
           if(data.adminPermission.viewServerStats === 0) return <NoPermission statName={this.statName(this.props.stat)} />;
 
-          data = this.formatData(data.server.player.playerStats);
+          data = this.fillMissingData(data.server.player.playerStats);
+          data = this.formatData(data);
 
           return (
             <Component

@@ -8,7 +8,7 @@ export default {
       if (filter.startDate) query.date.$gte = filter.startDate;
       if (filter.stopDate) query.date.$lt = filter.stopDate;
 
-      return PlayerStats.find(query);
+      return PlayerStats.find(query).sort({ date: 1 });
     }
   }
 };
