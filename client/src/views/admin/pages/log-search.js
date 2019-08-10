@@ -28,16 +28,11 @@ class LogSearchPage extends React.Component {
         />
         {/* Page content */}
         <Container className="mt--7" fluid>
-          {
-            searchString === null &&
-            (
-              <Row className="mb-4">
-                <Col>
-                  <LogSearch />
-                </Col>
-              </Row>
-            )
-          }
+          <Row className="mb-4">
+            <Col>
+              <LogSearch searchString={searchString} />
+            </Col>
+          </Row>
           {
             searchString !== null &&
             (

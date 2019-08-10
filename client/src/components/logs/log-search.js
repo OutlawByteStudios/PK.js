@@ -33,6 +33,26 @@ class LogSearch extends React.Component {
     this.onSearch = this.onSearch.bind(this);
   }
 
+  componentDidMount(){
+    this.splitSearchString();
+  }
+
+  splitSearchString(){
+    if(!this.props.searchString) return;
+    let [date, startTime, endTime, ...searchTerms] = this.props.searchString.split(';');
+
+    let addTerms = 3 - searchTerms.length % 3;
+    for(let i = 0; i < addTerms; i++) searchTerms.push('');
+
+    this.setState({
+      date: moment(date, 'MM_DD_YY'),
+      allDay: !(startTime && endTime),
+      startTime: startTime.slice(0, -3),
+      endTime: endTime.slice(0, -3),
+      searchTerms
+    });
+  }
+
   getSearchLink(){
     let searchString =
       `${this.state.date.format('MM_DD_YY')};` +
