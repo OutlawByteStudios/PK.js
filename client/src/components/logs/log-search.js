@@ -44,11 +44,14 @@ class LogSearch extends React.Component {
     let addTerms = 3 - searchTerms.length % 3;
     for(let i = 0; i < addTerms; i++) searchTerms.push('');
 
+    if(startTime === 'null') startTime = null;
+    if(endTime === 'null') endTime = null;
+
     this.setState({
       date: moment(date, 'MM_DD_YY'),
       allDay: !(startTime && endTime),
-      startTime: startTime.slice(0, -3),
-      endTime: endTime.slice(0, -3),
+      startTime: startTime ? startTime.slice(0, -3) : moment(),
+      endTime: endTime ? endTime.slice(0, -3) : moment,
       searchTerms
     });
   }
