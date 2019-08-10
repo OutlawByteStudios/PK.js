@@ -6,6 +6,7 @@ import IPRecord from './ip-record';
 import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
+import PlayerStats from './player-stats';
 import Server from './server';
 import ServerStats from './server-stats';
 import SteamUser from './steam-user';
@@ -20,6 +21,7 @@ export {
   Note,
   Player,
   PlayerName,
+  PlayerStats,
   Server,
   ServerStats,
   SteamUser,

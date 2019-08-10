@@ -12,7 +12,7 @@ import {
 import gameserverStatusCache from '../utils/gameserver-status-cache';
 import { assignPorts } from '../utils/server-config-parser';
 
-const recordStats = async server => {
+const recordServerStats = async server => {
   const uniqueGUIDs = await Player.countDocuments({ server: server.id });
   const uniqueIPs = (await IPRecord.distinct('ip', { server: server.id }))
     .length;
@@ -93,5 +93,5 @@ export default async () => {
     recordStats: true
   });
 
-  servers.forEach(recordStats);
+  servers.forEach(recordServerStats);
 };

@@ -9,6 +9,9 @@ export default gql`
 
     online: Int
     lastSeen: Date
+    
+    playerStats(startDate: Date, stopDate: Date): [PlayerStats]
+      @fieldViewPermission(requiresAdminPermission: "viewServerStats")
 
     factionID: Int
       @fieldViewPermission(

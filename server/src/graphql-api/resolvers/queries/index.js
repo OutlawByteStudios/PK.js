@@ -8,6 +8,7 @@ import Modules from './modules';
 import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
+import PlayerStats from './player-stats';
 import Scalars from './scalars';
 import Server from './server';
 import ServerConfigFile from './server-config-file';
@@ -28,6 +29,7 @@ export default [
   Note,
   Player,
   PlayerName,
+  PlayerStats,
   Scalars,
   Server,
   ServerConfigFile,

@@ -27,7 +27,7 @@ export default function(props) {
           <i className="fas fa-lock fa-4x"/>
         </div>
         <div className="text-center mt-2 mb-2">
-          You do not have permission to view player IPs.
+          You do not have permission to view server stats.
         </div>
       </CardBody>
     </Card>

@@ -8,7 +8,7 @@ import {
 
 import Header from '../layout/header';
 import Layout from '../layout/layout';
-import StatsGraph from "../../../components/server-stats/stats-graph";
+import StatsGraph from "../../../components/stats/server-stats-graph";
 
 class Dashboard extends React.Component {
   render() {

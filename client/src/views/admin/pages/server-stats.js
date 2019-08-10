@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 
 import {
-  StatsGraph
+  ServerStatsGraph
 } from '../../../components';
 
 import Header from '../layout/header';
@@ -29,57 +29,57 @@ class Dashboard extends React.Component {
         <Container className="mt--7" fluid>
           <Row>
             <Col>
-              <StatsGraph serverID={serverID} stat="uniqueGUIDs" />
+              <ServerStatsGraph serverID={serverID} stat="uniqueGUIDs" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="uniqueIPs" />
+              <ServerStatsGraph serverID={serverID} stat="uniqueIPs" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="adminCount" />
+              <ServerStatsGraph serverID={serverID} stat="adminCount" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalBans" />
+              <ServerStatsGraph serverID={serverID} stat="totalBans" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalWarnings" />
+              <ServerStatsGraph serverID={serverID} stat="totalWarnings" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalNotes" />
+              <ServerStatsGraph serverID={serverID} stat="totalNotes" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="playerCount" />
+              <ServerStatsGraph serverID={serverID} stat="playerCount" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalGold" />
+              <ServerStatsGraph serverID={serverID} stat="totalGold" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalBankGold" />
+              <ServerStatsGraph serverID={serverID} stat="totalBankGold" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="totalPouchGold" />
+              <ServerStatsGraph serverID={serverID} stat="totalPouchGold" />
             </Col>
           </Row>
           <Row className="mt-4">
             <Col>
-              <StatsGraph serverID={serverID} stat="bankLimit" />
+              <ServerStatsGraph serverID={serverID} stat="bankLimit" />
             </Col>
           </Row>
         </Container>

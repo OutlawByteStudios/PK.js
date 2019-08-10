@@ -58,7 +58,7 @@ const serverRoutes = [
   },
 
   {
-    path: pathPrefix + '/:serverID/server-stats',
+    path: pathPrefix + '/:serverID/stats',
     exact: true,
     name: "Server Stats",
     icon: "fas fa-chart-line",

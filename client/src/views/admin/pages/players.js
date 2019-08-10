@@ -20,7 +20,8 @@ import {
   PlayerIPs,
   PlayerOffences,
   PlayerNames,
-  PlayerSelector
+  PlayerSelector,
+  PlayerStatsGraph
 } from '../../../components';
 
 class Players extends React.Component {
@@ -105,6 +106,11 @@ class Players extends React.Component {
                 <Row className="mt-4">
                   <Col className="order-xl-1">
                     <PlayerIPs serverID={serverID} guid={guid} />
+                  </Col>
+                </Row>
+                <Row className="mt-4">
+                  <Col className="order-xl-1">
+                    <PlayerStatsGraph serverID={serverID} guid={guid} stat="totalGold" />
                   </Col>
                 </Row>
               </>

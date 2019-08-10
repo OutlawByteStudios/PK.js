@@ -19,7 +19,8 @@ import RenameServer from './server-management/rename-server';
 import ServerController from './server-management/server-controller';
 import ServerSelectorMenu from './server-management/server-selector-menu';
 import ServerSelectorSelect from './server-management/server-selector-select';
-import StatsGraph from './server-stats/stats-graph';
+import PlayerStatsGraph from './stats/player-stats-graph';
+import ServerStatsGraph from './stats/server-stats-graph';
 
 export {
   AdminList,
@@ -43,5 +44,6 @@ export {
   ServerController,
   ServerSelectorMenu,
   ServerSelectorSelect,
-  StatsGraph
+  PlayerStatsGraph,
+  ServerStatsGraph
 }

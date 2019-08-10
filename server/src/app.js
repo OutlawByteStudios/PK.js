@@ -30,7 +30,7 @@ mongoose.connect(serverConfig.mongoDB, {
 const app = new Koa();
 const router = new Router();
 
-jobContainer.initContainer();
+if(!serverConfig.disableCronJobs) jobContainer.initContainer();
 app.jobContainer = jobContainer;
 
 app.use(Helmet());

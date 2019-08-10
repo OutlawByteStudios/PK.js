@@ -8,6 +8,7 @@ import Mutation from './mutation';
 import Note from './note';
 import Player from './player';
 import PlayerName from './player-name';
+import PlayerStats from './player-stats';
 import Query from './query';
 import Scalars from './scalars';
 import Server from './server';
@@ -28,6 +29,7 @@ export default [
   Note,
   Player,
   PlayerName,
+  PlayerStats,
   Query,
   Scalars,
   Server,

@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Query } from 'react-apollo';
 
-import { SERVER_STATS_GRAPH } from '../../../graphql/queries';
+import { PLAYER_STATS_GRAPH } from '../../../graphql/queries';
 
 import Auth from '../../../utils/auth';
 
@@ -11,7 +11,7 @@ import Error from './error';
 import NoPermission from './no-permission';
 import Component from './component';
 
-class AdminList extends React.Component{
+class PlayerStatsGraph extends React.Component{
   state = {
     mode: 'month'
   };
@@ -27,28 +27,8 @@ class AdminList extends React.Component{
 
   statName(stat){
     switch (stat) {
-      case 'uniqueGUIDs':
-        return 'Unique GUIDs';
-      case 'uniqueIPs':
-        return 'Unique IPs';
-      case 'adminCount':
-        return 'Admin Count';
-      case 'totalBans':
-        return 'Total Bans';
-      case 'totalWarnings':
-        return 'Total Warnings';
-      case 'totalNotes':
-        return 'Total Notes';
-      case 'playerCount':
-        return 'Player Count';
       case 'totalGold':
         return 'Total Gold';
-      case 'totalBankGold':
-        return 'Total Bank Gold';
-      case 'totalPouchGold':
-        return 'Total Pouch Gold';
-      case 'bankLimit':
-        return 'Bank Limit';
       default:
         return 'unknown';
     }
@@ -107,10 +87,11 @@ class AdminList extends React.Component{
 
     return (
       <Query
-        query={SERVER_STATS_GRAPH}
+        query={PLAYER_STATS_GRAPH}
         variables={{
           serverID: this.props.serverID,
           steamID: Auth.claim.steamID,
+          guid: this.props.guid,
           startDate,
           stopDate
         }}
@@ -122,7 +103,7 @@ class AdminList extends React.Component{
 
           if(data.adminPermission.viewServerStats === 0) return <NoPermission statName={this.statName(this.props.stat)} />;
 
-          data = this.formatData(data.server.serverStats);
+          data = this.formatData(data.server.player.playerStats);
 
           return (
             <Component
@@ -138,4 +119,4 @@ class AdminList extends React.Component{
   }
 }
 
-export default AdminList;
+export default PlayerStatsGraph;

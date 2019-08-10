@@ -1,12 +1,14 @@
 import { scheduleJob } from 'node-schedule';
 
-import recordStats from './record-stats';
+import recordPlayerStats from './record-player-stats';
+import recordServerStats from './record-server-stats';
 import restartServers from './restart-servers';
 import updateBanLists from './update-bans-list';
 
 class JobContainer {
   async initContainer() {
-    this.addJob('recordStats', '*/5 * * * *', recordStats);
+    this.addJob('recordPlayerStats', '*/1 * * * *', recordPlayerStats);
+    this.addJob('recordServerStats', '*/5 * * * *', recordServerStats);
     this.addJobs(await restartServers());
     this.addJob('updateBanList', '*/5 * * * *', updateBanLists);
   }

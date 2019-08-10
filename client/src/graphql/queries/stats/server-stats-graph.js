@@ -6,6 +6,7 @@ export default gql`
       _id
       
       serverStats(startDate: $startDate, stopDate: $stopDate){
+        _id
         date
     
         uniqueGUIDs
