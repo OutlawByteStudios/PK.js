@@ -7,7 +7,7 @@ import updateBanLists from './update-bans-list';
 
 class JobContainer {
   async initContainer() {
-    this.addJob('recordPlayerStats', '*/1 * * * *', recordPlayerStats);
+    this.addJob('recordPlayerStats', '*/30 * * * *', recordPlayerStats);
     this.addJob('recordServerStats', '*/5 * * * *', recordServerStats);
     this.addJobs(await restartServers());
     this.addJob('updateBanList', '*/5 * * * *', updateBanLists);
