@@ -26,6 +26,7 @@ export default {
       );
 
       return {
+        server: parent.id,
         name: filter.name,
         config: parseConfig(rawConfig),
         rawConfig: rawConfig
@@ -50,7 +51,7 @@ export default {
 
       files = files
         .filter(file => file.isFile())
-        .map(file => ({ name: file.name }));
+        .map(file => ({ server: parent.id, name: file.name }));
 
       return files;
     }

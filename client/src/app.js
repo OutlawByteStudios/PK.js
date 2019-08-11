@@ -16,9 +16,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache({
     dataIdFromObject: obj => {
       switch (obj.__typename) {
-        case 'serverconfigfile':
+        case 'ServerConfigFile':
           return obj.name;
-        case 'item':
+        case 'Item':
           return obj.id;
         default:
           return obj._id;
