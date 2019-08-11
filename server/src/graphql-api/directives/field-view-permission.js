@@ -42,21 +42,11 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
         if (!requires)
           return resolve.apply(this, [parent, args, context, info]);
 
-        console.log(requires);
-
-        console.log({
-          server: parent[serverIDField],
-          admin: context.user,
-          [requires]: { $gt: 0 }
-        });
-
         const adminPermission = await AdminPermission.findOne({
           server: parent[serverIDField],
           admin: context.user,
           [requires]: { $gt: 0 }
         });
-
-        console.log(adminPermission);
 
         if (adminPermission !== null)
           return resolve.apply(this, [parent, args, context, info]);
