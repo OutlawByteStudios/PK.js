@@ -14,24 +14,37 @@ import Auth from '../../../../utils/auth';
 
 import { serverRoutes } from '../../routes';
 
+import Fragments from '../../../../graphql/fragments';
+
 const QUERY = gql`
   query ServerLinks($serverID: Int!, $steamID: String!){
     server(id: $serverID){
       _id
       name
       adminPermission(steamID: $steamID){
-        _id
-        viewAdminPermissions
+        ...AdminPermission
       }
     }
   }
+  ${Fragments.AdminPermission}
 `;
 
 class ServerLinks extends React.Component {
   createLinks(routes, permissions) {
     return routes.map((route, key) => {
       if(route.displayInSidebar === false) return null;
-      if(route.requiredPermission && permissions[route.requiredPermission] === 0) return null;
+
+      let hasPermission = true;
+      if(route.requiresPermission && route.requiresPermission.length > 0){
+        hasPermission = false;
+        for(let permission of route.requiresPermission){
+          if(permissions[permission] <= 0) continue;
+          hasPermission = true;
+          break;
+        }
+      }
+
+      if(!hasPermission) return null;
       return (
         <NavItem key={key}>
           <NavLink

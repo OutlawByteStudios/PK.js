@@ -17,7 +17,8 @@ class PlayerSelector extends React.Component {
       variables: {
         serverID: this.props.serverID,
         search
-      }
+      },
+      fetchPolicy: 'cache-first'
     });
 
     const options = [];

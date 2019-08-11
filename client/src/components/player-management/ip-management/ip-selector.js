@@ -17,7 +17,8 @@ class PlayerSelector extends React.Component {
       variables: {
         serverID: this.props.serverID,
         search
-      }
+      },
+      fetchPolicy: 'cache-first'
     });
 
     return data.server.ipRecords.map(record => ({ value: record.ipMask, label: `ID: #${record.ipMask}, IP: ${record.ip || '***.***.***.***'}`}));

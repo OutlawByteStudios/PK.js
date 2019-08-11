@@ -54,7 +54,14 @@ const serverRoutes = [
     exact: true,
     name: "Server Management",
     icon: "fas fa-server",
-    component: ServerManagement
+    component: ServerManagement,
+    requiresPermission: [
+      'renameServer',
+      'viewServerFiles',
+      'editConfigFiles',
+      'manageServerInstance',
+      'clearPlayerLocations'
+    ]
   },
 
   {
@@ -62,7 +69,10 @@ const serverRoutes = [
     exact: true,
     name: "Server Stats",
     icon: "fas fa-chart-line",
-    component: ServerStats
+    component: ServerStats,
+    requiresPermission: [
+      'viewServerStats'
+    ]
   },
 
   {
@@ -71,16 +81,14 @@ const serverRoutes = [
     name: "Admins",
     icon: "fas fa-user-shield",
     component: Admins,
-    displayInSidebar: false,
-    requiredPermission: 'viewAdminPermissions'
+    displayInSidebar: false
   },
   {
     path: pathPrefix + '/:serverID/admins',
     exact: false,
     name: "Admins",
     icon: "fas fa-user-shield",
-    component: Admins,
-    requiredPermission: 'viewAdminPermissions'
+    component: Admins
   },
 
   {
@@ -89,6 +97,9 @@ const serverRoutes = [
     name: "Admin Logs",
     icon: "fas fa-clipboard-list",
     component: AdminLogs,
+    requiresPermission: [
+      'viewAdminLogs'
+    ]
   },
 
   {
@@ -104,7 +115,24 @@ const serverRoutes = [
     exact: false,
     name: "Players",
     icon: "fas fa-users",
-    component: Players
+    component: Players,
+    requiresPermission: [
+      'viewPlayerInfo',
+      'adjustGold',
+      'stripPlayer',
+      'wipePlayerNames',
+      'viewBans',
+      'manageBans',
+      'deleteBans',
+      'viewWarning',
+      'createWarnings',
+      'deleteWarnings',
+      'viewNotes',
+      'createNotes',
+      'deleteNotes',
+      'viewIPRecords',
+      'viewIPs'
+    ]
   },
 
   {
@@ -120,7 +148,11 @@ const serverRoutes = [
     exact: false,
     name: "Players by IP",
     icon: "fas fa-users",
-    component: PlayersByIP
+    component: PlayersByIP,
+    requiresPermission: [
+      'viewIPRecords',
+      'viewIPs'
+    ]
   },
   {
     path: pathPrefix + '/:serverID/logs/:searchString',
@@ -135,7 +167,10 @@ const serverRoutes = [
     exact: false,
     name: "Logs",
     icon: "fas fa-clipboard-list",
-    component: LogSearch
+    component: LogSearch,
+    requiresPermission: [
+      'viewServerLogs'
+    ]
   }
 ];
 

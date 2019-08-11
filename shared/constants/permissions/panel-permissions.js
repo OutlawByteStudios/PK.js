@@ -4,10 +4,6 @@ module.exports = [
     permission: 'manageAssignPermissions',
   },
   {
-    label: 'View Admin Permissions',
-    permission: 'viewAdminPermissions',
-  },
-  {
     label: 'Manage Admin GUIDs',
     permission: 'manageAdminGUIDs'
   },

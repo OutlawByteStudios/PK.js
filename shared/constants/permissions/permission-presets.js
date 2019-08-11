@@ -1,7 +1,6 @@
 module.exports = {
   'Server Owner': {
     manageAssignPermissions: 1,
-    viewAdminPermissions: 2,
     manageAdminGUIDs: 2,
     viewAdminLogs: 2,
     renameServer: 2,
@@ -51,7 +50,6 @@ module.exports = {
   },
   'Head Admin': {
     manageAssignPermissions: 1,
-    viewAdminPermissions: 2,
     manageAdminGUIDs: 2,
     viewAdminLogs: 2,
     renameServer: 2,
@@ -101,7 +99,6 @@ module.exports = {
   },
   'Senior Admin': {
     manageAssignPermissions: 0,
-    viewAdminPermissions: 1,
     manageAdminGUIDs: 0,
     viewAdminLogs: 0,
     renameServer: 0,
@@ -151,7 +148,6 @@ module.exports = {
   },
   'Game Admin': {
     manageAssignPermissions: 0,
-    viewAdminPermissions: 1,
     manageAdminGUIDs: 0,
     viewAdminLogs: 0,
     renameServer: 0,
@@ -201,7 +197,6 @@ module.exports = {
   },
   'Forum Complaint Admin': {
     manageAssignPermissions: 0,
-    viewAdminPermissions: 1,
     manageAdminGUIDs: 0,
     viewAdminLogs: 0,
     renameServer: 0,

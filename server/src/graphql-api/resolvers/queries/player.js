@@ -10,6 +10,7 @@ export default {
     },
 
     players: async (parent, filter) => {
+      console.log(filter);
       let query = { server: parent.id };
       if (filter.guidLike)
         query.guid = new RegExp('.*' + filter.guidLike + '.*');
