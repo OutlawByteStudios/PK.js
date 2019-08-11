@@ -7,7 +7,7 @@ export default gql`
     server: Server
     player: Player
     date: Date
-    
+
     totalGold: Int
   }
 `;

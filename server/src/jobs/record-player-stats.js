@@ -1,16 +1,16 @@
-import {
-  Server,
-  Player,
-  PlayerStats
-} from '../models';
+import { Server, Player, PlayerStats } from '../models';
 
 const recordStats = async player => {
   const lastRecord = await PlayerStats.findOne({
     server: player.server,
-    player: player.guid,
+    player: player.guid
   }).sort({ date: -1 });
 
-  if(lastRecord !== null && lastRecord.totalGold === player.bankGold + player.pouchGold) return;
+  if (
+    lastRecord !== null &&
+    lastRecord.totalGold === player.bankGold + player.pouchGold
+  )
+    return;
 
   await PlayerStats.create(
     [
