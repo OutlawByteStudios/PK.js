@@ -35,11 +35,10 @@ class PlayerStatsGraph extends React.Component{
   }
 
   fillMissingData(dataPoints){
+    if(dataPoints.length === 0) return [];
     for(let i = 0; i < dataPoints.length; i++){
       dataPoints[i].date = moment(dataPoints[i].date).seconds(0).millisecond(0);
     }
-
-    console.log(dataPoints.map(point => point.date.format() + point.totalGold));
 
     let completeDataPoints = [dataPoints.shift()];
     for(let dataPoint of dataPoints){
