@@ -33,6 +33,7 @@ client.defaultOptions = {
   },
   query: {
     errorPolicy: 'all',
+    fetchPolicy: 'cache-and-network'
   },
   mutate: {
     errorPolicy: 'all',
