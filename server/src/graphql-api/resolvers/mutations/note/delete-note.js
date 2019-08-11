@@ -21,7 +21,7 @@ export default async (parent, args, context) => {
 
   await new AdminLog({
     server: note.server,
-    admin: note.admin,
+    admin: context.user,
 
     type: 'delete_note',
     targetPlayer: note.player,

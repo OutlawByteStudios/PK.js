@@ -21,7 +21,7 @@ export default async (parent, args, context) => {
 
   await new AdminLog({
     server: warning.server,
-    admin: warning.admin,
+    admin: context.user,
 
     type: 'delete_warning',
     targetPlayer: warning.player,

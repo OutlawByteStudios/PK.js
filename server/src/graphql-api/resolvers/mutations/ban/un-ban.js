@@ -28,7 +28,7 @@ export default async (parent, args, context) => {
 
   await new AdminLog({
     server: ban.server,
-    admin: ban.admin,
+    admin: context.user,
 
     type: 'un_ban',
     targetPlayer: ban.player,
