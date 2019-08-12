@@ -124,7 +124,7 @@ const serverRoutes = [
       'viewBans',
       'manageBans',
       'deleteBans',
-      'viewWarning',
+      'viewWarnings',
       'createWarnings',
       'deleteWarnings',
       'viewNotes',

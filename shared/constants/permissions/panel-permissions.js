@@ -69,7 +69,7 @@ module.exports = [
   },
   {
     label: 'View Warnings',
-    permission: 'viewWarning'
+    permission: 'viewWarnings'
   },
   {
     label: 'Create Warnings',
