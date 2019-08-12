@@ -9,9 +9,6 @@ import {
   Row,
   Table
 } from 'reactstrap';
-import moment from "moment";
-import SteamUser from "../steam-user";
-import logTypes from "../../admin-management/admin-logs/log-types";
 
 
 class Component extends React.Component{
@@ -21,7 +18,7 @@ class Component extends React.Component{
 
   render(){
     return (
-      <Card className="bg-secondary shadow">
+      <Card className="shadow">
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
