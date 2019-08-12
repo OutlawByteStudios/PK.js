@@ -3,6 +3,7 @@ import AdminLogs from './admin-management/admin-logs';
 import EditAdminPermissions from './admin-management/edit-admin-permissions';
 import LogResults from './logs/log-results';
 import LogSearch from './logs/log-search';
+import ItemIDs from './misc/item-ids';
 import Player from './player-management/player';
 import PlayerIPs from './player-management/ip-management/player-ips';
 import PlayersOnIP from './player-management/ip-management/players-on-ip';
@@ -28,6 +29,7 @@ export {
   EditAdminPermissions,
   LogResults,
   LogSearch,
+  ItemIDs,
   Player,
   PlayerIPs,
   PlayersOnIP,

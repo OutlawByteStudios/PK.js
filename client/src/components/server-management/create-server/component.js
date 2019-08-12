@@ -48,9 +48,13 @@ class Component extends React.Component{
 
   render(){
     return (
-      <Card>
-        <CardHeader>
-          <h3 className="mb-0">Create Server</h3>
+      <Card className="bg-secondary shadow">
+        <CardHeader className="bg-white border-0">
+          <Row className="align-items-center">
+            <Col xs="8">
+              <h3 className="mb-0">Create Server</h3>
+            </Col>
+          </Row>
         </CardHeader>
         <CardBody
           className="bg-secondary shadow"

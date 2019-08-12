@@ -1,6 +1,7 @@
 // General Routes
 import Home from './pages/home';
 import CreateServer from './pages/create-server';
+import ItemIDs from './pages/item-ids';
 import Profile from './pages/profile';
 
 // Server Routes
@@ -30,6 +31,13 @@ const generalRoutes = [
     icon: "fas fa-plus-square",
     component: CreateServer,
     requiredPermission: 'panelAdmin'
+  },
+  {
+    path: pathPrefix + '/item-ids',
+    exact: true,
+    name: "Item IDs",
+    icon: "fas fa-list-ol",
+    component: ItemIDs
   },
   {
     path: pathPrefix + '/profile/:steamID',

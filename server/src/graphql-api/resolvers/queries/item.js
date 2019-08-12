@@ -6,7 +6,7 @@ export default {
       return items[filter.id];
     },
     items: () => {
-      return items;
+      return Object.values(items);
     }
   },
 
