@@ -161,6 +161,7 @@ export default async ctx => {
       );
     } else {
       const adminPermissions = await AdminPermission.findOne({
+        server: ctx.query.serverID,
         player: ctx.query.guid
       });
 
