@@ -10,7 +10,8 @@ async function updateBanList(server) {
   if (!fs.existsSync(currentGameserverPath)) return;
   const banListFile = path.join(currentGameserverPath, '/bans.txt');
 
-  let bannedPlayers = await Ban.distinct('player', {
+  // get all active bans
+  const activeBans = await Ban.find({
     $or: [
       {
         unbannedDate: null,
@@ -25,35 +26,30 @@ async function updateBanList(server) {
     ]
   });
 
-  const ipBannedPlayers = await Ban.distinct('player', {
-    $or: [
-      {
-        unbannedDate: null,
-        startDate: { $lte: Date.now() },
-        endDate: null,
-        ipBan: true
-      },
-      {
-        unbannedDate: null,
-        startDate: { $lte: Date.now() },
-        endDate: { $gt: Date.now() },
-        ipBan: true
-      }
-    ]
+  // split bans into array of banned guids and array of ip banned guids
+  let bannedGUIDs = [];
+  let ipBannedGUIDs = [];
+  activeBans.forEach(ban => {
+    if(ban.ipBan) ipBannedGUIDs.push(ban.player);
+    bannedGUIDs.push(ban.player);
   });
 
-  const bannedIPs = await IPRecord.distinct('ip', {
-    player: { $in: ipBannedPlayers }
-  });
-  let ipBannedGUIDs = await IPRecord.distinct('player', {
-    ip: { $in: bannedIPs }
-  });
-
-  ipBannedGUIDs.forEach(guid => {
-    if (!bannedPlayers.includes(guid)) bannedPlayers.push(guid);
+  // get guids that are victims of an ip ban
+  const ipBannedVictims = await IPRecord.distinct('player', {
+    ip: {
+      $in: await IPRecord.distinct('ip', {
+        player: { $in: ipBannedGUIDs }
+      })
+    }
   });
 
-  fs.writeFileSync(banListFile, bannedPlayers.join('\r\n'), 'utf8');
+  ipBannedVictims.forEach(player => {
+    if(!bannedGUIDs.includes(player)) bannedGUIDs.push(player);
+  });
+
+  console.log(bannedGUIDs);
+
+  fs.writeFileSync(banListFile, bannedGUIDs.join('\r\n'), 'utf8');
 }
 
 export default async () => {
