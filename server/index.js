@@ -6,3 +6,4 @@ const server = require(config.env === 'production'
 server.listen(config.port, () =>
   console.log(`Server started on port ${config.port}`)
 );
+server.timeout = 240000;
