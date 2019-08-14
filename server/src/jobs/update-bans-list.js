@@ -47,8 +47,6 @@ async function updateBanList(server) {
     if(!bannedGUIDs.includes(player)) bannedGUIDs.push(player);
   });
 
-  console.log(bannedGUIDs);
-
   fs.writeFileSync(banListFile, bannedGUIDs.join('\r\n'), 'utf8');
 }
 

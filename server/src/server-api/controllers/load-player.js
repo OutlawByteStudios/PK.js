@@ -23,11 +23,13 @@ export default async ctx => {
   // start now promise to load player, store this in the promise store
   // so we can wait for it to resolve in load gear
   PromiseStore[`load-player-${ctx.query.guid}`] = new Promise(async resolve => {
+    // get ip mask if it is already created
+    let ipMask = await IPMask.findOne({ ip: ctx.query.ip });
+
+    // add ip mask if it doesn't exist
     // oddly the autoincrement package doesn't seem to work on findOneAndUpdate
     // so we're going to use create instead. Probably should revisit this at some
     // point and possibly make an issue / PR on the package repo
-    let ipMask = await IPMask.findOne({ ip: ctx.query.ip });
-
     if (ipMask === null) {
       ipMask = await IPMask.create([{ ip: ctx.query.ip }], {
         setDefaultsOnInsert: true
@@ -35,6 +37,7 @@ export default async ctx => {
       ipMask = ipMask[0];
     }
 
+    // create or update existing ip record and return true if its a new record
     let checkIPBans = await new Promise(resolve => {
       IPRecord.update(
         {
@@ -44,6 +47,7 @@ export default async ctx => {
           player: ctx.query.guid
         },
         {
+          ip: ctx.query.ip,
           ipMask: ipMask.id,
           server: ctx.query.serverID,
           player: ctx.query.guid,
@@ -60,7 +64,8 @@ export default async ctx => {
     });
 
     // if guid-ip relation new check if it should be banned
-    if (checkIPBans) {
+    // or whether it was create since roughly the last ban list update
+    if (checkIPBans || (new Date() - new Date(ipMask.firstSeen)) < 30 * 60 * 1000) {
       /* Check player is not IP banned */
       let guids = await IPRecord.find({ ip: ctx.query.ip });
       guids = guids.map(record => record.player);
@@ -140,6 +145,7 @@ export default async ctx => {
 
       // increase the player online count by one
       player.online += 1;
+      player.lastSeen = Date.now();
       await player.save();
 
       // if player is already connected kick them to prevent duping
