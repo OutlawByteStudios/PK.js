@@ -88,7 +88,7 @@ class Component extends React.Component {
                           <h4 className="heading mt-4">
                             {record.player.guid}
                           </h4>
-                          <p><strong>Last Seen on IP:</strong> {moment(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>Last Seen on IP:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>

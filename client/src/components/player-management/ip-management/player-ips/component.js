@@ -84,7 +84,7 @@ class Component extends React.Component {
                             #{record.ipMask.toString().padStart(6, '0')}
                           </h4>
                           <p><strong>IP Address:</strong> {(record.ip) ? record.ip : '***.***.***.***'}</p>
-                          <p><strong>Last Seen:</strong> {moment(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>Last Seen:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>

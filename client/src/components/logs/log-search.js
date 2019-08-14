@@ -19,10 +19,10 @@ import {
 
 class LogSearch extends React.Component {
   state = {
-    date: moment(),
+    date: moment.utc(),
     allDay: true,
-    startTime: moment(),
-    endTime: moment(),
+    startTime: moment.utc(),
+    endTime: moment.utc(),
     searchTerms: ['', '', '']
   };
 
@@ -48,10 +48,10 @@ class LogSearch extends React.Component {
     if(endTime === 'null') endTime = null;
 
     this.setState({
-      date: moment(date, 'MM_DD_YY'),
+      date: moment.utc(date, 'MM_DD_YY'),
       allDay: !(startTime && endTime),
-      startTime: startTime ? moment(startTime.slice(0, -3), 'HH:mm') : moment(),
-      endTime: endTime ? moment(endTime.slice(0, -3), 'HH:mm') : moment(),
+      startTime: startTime ? moment.utc(startTime.slice(0, -3), 'HH:mm') : moment.utc(),
+      endTime: endTime ? moment.utc(endTime.slice(0, -3), 'HH:mm') : moment.utc(),
       searchTerms
     });
   }

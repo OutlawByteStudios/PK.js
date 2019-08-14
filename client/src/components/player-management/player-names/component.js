@@ -72,7 +72,7 @@ class Component extends React.Component {
                         <div className="py-3 text-center">
                           <i className="fas fa-info-circle fa-4x" />
                           <h4 className="heading mt-4">{name.name}</h4>
-                          <p><strong>Last Seen:</strong> {moment(name.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>Last Seen:</strong> {moment.utc(name.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>

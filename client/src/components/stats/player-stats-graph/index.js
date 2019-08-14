@@ -37,7 +37,7 @@ class PlayerStatsGraph extends React.Component{
   fillMissingData(dataPoints){
     if(dataPoints.length === 0) return [];
     for(let i = 0; i < dataPoints.length; i++){
-      dataPoints[i].date = moment(dataPoints[i].date).seconds(0).millisecond(0);
+      dataPoints[i].date = moment.utc(dataPoints[i].date).seconds(0).millisecond(0);
     }
 
     let completeDataPoints = [dataPoints.shift()];
@@ -78,7 +78,7 @@ class PlayerStatsGraph extends React.Component{
     let labels = [];
     let data = [];
     for(let dataPoint of dataPoints){
-      labels.push(moment(dataPoint.date).format(formatString));
+      labels.push(moment.utc(dataPoint.date).format(formatString));
       data.push(dataPoint[this.props.stat]);
     }
 
@@ -94,8 +94,8 @@ class PlayerStatsGraph extends React.Component{
   }
 
   render(){
-    let startDate = moment();
-    let stopDate = moment();
+    let startDate = moment.utc();
+    let stopDate = moment.utc();
     switch(this.state.mode){
       case 'month':
         startDate = startDate.subtract(1, 'months');

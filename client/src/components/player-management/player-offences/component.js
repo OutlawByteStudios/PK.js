@@ -93,11 +93,11 @@ class Component extends React.Component {
                   <tr key={key}>
                     <th scope="row">{ban.privateReason}</th>
                     <td>{ban.publicReason}</td>
-                    <td>{moment(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>{moment.utc(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
-                      {(ban.endDate ===  null) ? 'Perm Ban' : moment(ban.endDate).format('DD/MM/YYYY HH:mm')}
+                      {(ban.endDate ===  null) ? 'Perm Ban' : moment.utc(ban.endDate).format('DD/MM/YYYY HH:mm')}
                       <br />
-                      {(ban.unbannedDate !==  null) ? `(Unbanned at: ${moment(ban.unbannedDate).format('DD/MM/YYYY HH:mm')})` : ''}
+                      {(ban.unbannedDate !==  null) ? `(Unbanned at: ${moment.utc(ban.unbannedDate).format('DD/MM/YYYY HH:mm')})` : ''}
                     </td>
                     <td>
                       {(ban.ipBan) ? 'Yes' : 'No'}
@@ -165,7 +165,7 @@ class Component extends React.Component {
                   <tr key={key}>
                     <th scope="row">{warning.privateReason}</th>
                     <td>{warning.publicReason}</td>
-                    <td>{moment(warning.date).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>{moment.utc(warning.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <SteamUser steamUser={warning.admin} />
                     </td>
@@ -218,7 +218,7 @@ class Component extends React.Component {
                 player.notes.map((note, key) => (
                   <tr key={key}>
                     <th scope="row">{note.note}</th>
-                    <td>{moment(note.date).format('DD/MM/YYYY HH:mm')}</td>
+                    <td>{moment.utc(note.date).format('DD/MM/YYYY HH:mm')}</td>
                     <td>
                       <SteamUser steamUser={note.admin} />
                     </td>

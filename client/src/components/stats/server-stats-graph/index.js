@@ -73,7 +73,7 @@ class ServerStatsGraph extends React.Component{
     let labels = [];
     let data = [];
     for(let dataPoint of dataPoints){
-      labels.push(moment(dataPoint.date).format(formatString));
+      labels.push(moment.utc(dataPoint.date).format(formatString));
       data.push(dataPoint[this.props.stat]);
     }
 
@@ -89,8 +89,8 @@ class ServerStatsGraph extends React.Component{
   }
 
   render(){
-    let startDate = moment();
-    let stopDate = moment();
+    let startDate = moment.utc();
+    let stopDate = moment.utc();
     switch(this.state.mode){
       case 'month':
         startDate = startDate.subtract(1, 'months');

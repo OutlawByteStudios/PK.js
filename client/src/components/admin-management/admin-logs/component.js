@@ -82,7 +82,7 @@ class Component extends React.Component{
           {
             this.props.adminLogs.map((adminLog, key) => (
               <tr key={key}>
-                <td>{moment(adminLog.date).format('DD/MM/YYYY HH:mm')}</td>
+                <td>{moment.utc(adminLog.date).format('DD/MM/YYYY HH:mm')}</td>
                 <td>
                   <SteamUser steamUser={adminLog.admin} />
                 </td>
