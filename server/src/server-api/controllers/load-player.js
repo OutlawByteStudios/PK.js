@@ -37,35 +37,30 @@ export default async ctx => {
       ipMask = ipMask[0];
     }
 
-    // create or update existing ip record and return true if its a new record
-    let checkIPBans = await new Promise(resolve => {
-      IPRecord.update(
-        {
-          ip: ctx.query.ip,
-          ipMask: ipMask.id,
-          server: ctx.query.serverID,
-          player: ctx.query.guid
-        },
-        {
-          ip: ctx.query.ip,
-          ipMask: ipMask.id,
-          server: ctx.query.serverID,
-          player: ctx.query.guid,
-          lastSeen: Date.now()
-        },
-        {
-          upsert: true
-        },
-        (err, raw) => {
-          console.log(err);
-          resolve(raw.upserted && raw.upserted.length > 0);
-        }
-      );
-    });
+    let ipRecord = await IPRecord.findOneAndUpdate(
+      {
+        ip: ctx.query.ip,
+        ipMask: ipMask.id,
+        server: ctx.query.serverID,
+        player: ctx.query.guid
+      },
+      {
+        ip: ctx.query.ip,
+        ipMask: ipMask.id,
+        server: ctx.query.serverID,
+        player: ctx.query.guid,
+        lastSeen: Date.now()
+      },
+      {
+        new: true,
+        upsert: true,
+        setDefaultsOnInsert: true
+      }
+    );
 
     // if guid-ip relation new check if it should be banned
     // or whether it was create since roughly the last ban list update
-    if (checkIPBans || (new Date() - new Date(ipMask.firstSeen)) < 30 * 60 * 1000) {
+    if ((new Date() - new Date(ipRecord.firstSeen)) < 30 * 60 * 1000) {
       /* Check player is not IP banned */
       let guids = await IPRecord.find({ ip: ctx.query.ip });
       guids = guids.map(record => record.player);

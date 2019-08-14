@@ -6,6 +6,7 @@ const IPRecordSchema = new mongoose.Schema({
   server: { type: Number, require: true },
   player: { type: String, require: true },
 
+  firstSeen: { type: Date, require: true, default: Date.now },
   lastSeen: { type: Date, default: Date.now }
 });
 
