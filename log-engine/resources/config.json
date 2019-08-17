@@ -1,7 +1,7 @@
 {
   "core": {
     "version": "0.7.3",
-    "logPath": "logs"
+    "logPath": "/home/tommy/PK.js/log-engine/logs"
   },
   "adapters": {
     "TextSearch": {
