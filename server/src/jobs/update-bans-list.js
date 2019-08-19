@@ -30,7 +30,7 @@ async function updateBanList(server) {
   let bannedGUIDs = [];
   let ipBannedGUIDs = [];
   activeBans.forEach(ban => {
-    if(ban.ipBan) ipBannedGUIDs.push(ban.player);
+    if (ban.ipBan) ipBannedGUIDs.push(ban.player);
     bannedGUIDs.push(ban.player);
   });
 
@@ -44,7 +44,7 @@ async function updateBanList(server) {
   });
 
   ipBannedVictims.forEach(player => {
-    if(!bannedGUIDs.includes(player)) bannedGUIDs.push(player);
+    if (!bannedGUIDs.includes(player)) bannedGUIDs.push(player);
   });
 
   fs.writeFileSync(banListFile, bannedGUIDs.join('\r\n'), 'utf8');
