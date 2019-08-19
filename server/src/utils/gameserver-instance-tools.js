@@ -31,14 +31,14 @@ const startServer = async (serverID, module, config) => {
 
   if (!serverConfig.gameserverDevDryRun) {
     execSync(
-      `screen -m -d -S serverscreen${serverID} wine WSELoaderServer.exe -r "Configs/${config}" -m "${module}"`,
+      `screen -m -d -S serverscreen${serverID} wine mb_warband_wse2_dedicated.exe --config-path server_config.ini -r "Configs/${config}" -m "${module}"`,
       {
         cwd: currentGameserverPath
       }
     );
   } else {
     console.log(
-      `Gameserver Dry Run Exec (${currentGameserverPath}): screen -m -d -S serverscreen${serverID} wine WSELoaderServer.exe -r "Configs/${config}" -m "${module}"`
+      `Gameserver Dry Run Exec (${currentGameserverPath}): screen -m -d -S serverscreen${serverID} wine mb_warband_wse2_dedicated.exe --config-path server_config.ini -r "Configs/${config}" -m "${module}"`
     );
   }
 
