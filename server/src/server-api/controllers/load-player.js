@@ -45,8 +45,10 @@ export default async ctx => {
     }
 
     // increase the player online count by one
-    player.online += 1;
-    player.lastSeen = Date.now();
+    if (ctx.query.admin !== '') {
+      player.online += 1;
+      player.lastSeen = Date.now();
+    }
     await player.save();
 
     /* Log IP & Kick of IP banned */
