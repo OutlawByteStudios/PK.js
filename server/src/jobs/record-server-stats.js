@@ -27,7 +27,7 @@ const recordServerStats = async server => {
 
   const status = await gameserverStatusCache.gameserverStatus(
     'localhost',
-    assignPorts(server.id),
+    assignPorts(server.id).port,
     server.id
   );
   const playerCount = status.NumberOfActivePlayers;
