@@ -23,7 +23,7 @@ export default {
         ...searchTerms
       ] = filter.searchString.split(';');
 
-      const logFilePath = path.join(logFolderPath, `server_log_${date}.txt`);
+      const logFilePath = path.join(logFolderPath, `server_log.txt_${date}.txt`);
       if (!fs.existsSync(logFilePath)) return JSON.stringify([]);
 
       const logEnginePath = path.join(require.resolve('log-engine'), '..');
