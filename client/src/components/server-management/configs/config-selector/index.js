@@ -26,8 +26,6 @@ class ConfigSelector extends React.Component{
 
           if(data.adminPermission.viewServerFiles === 0) return <NoPermission/>;
 
-          console.log(data);
-
           return (
             <Component
               configs={data.server.serverConfigFiles}
