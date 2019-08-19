@@ -23,6 +23,33 @@ export default async ctx => {
   // start now promise to load player, store this in the promise store
   // so we can wait for it to resolve in load gear
   PromiseStore[`load-player-${ctx.query.guid}`] = new Promise(async resolve => {
+    /* Find & create a player */
+    // find server for use in following steps
+    const server = await Server.findOne({ id: ctx.query.serverID });
+
+    // attempt to find existing player
+    let player = await Player.findOne({
+      server: ctx.query.serverID,
+      guid: ctx.query.guid
+    });
+
+    // if no existing player, create one.
+    if (player === null) {
+      player = new Player({
+        server: ctx.query.serverID,
+        guid: ctx.query.guid,
+        bankGold: server.defaultBankGold,
+        pouchGold: server.defaultPouchGold,
+        bankLimit: server.defaultBankLimit
+      });
+    }
+
+    // increase the player online count by one
+    player.online += 1;
+    player.lastSeen = Date.now();
+    await player.save();
+
+    /* Log IP & Kick of IP banned */
     // get ip mask if it is already created
     let ipMask = await IPMask.findOne({ ip: ctx.query.ip });
 
@@ -86,6 +113,14 @@ export default async ctx => {
         return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
     }
 
+    /* Kick if already logged in */
+    // if player is already connected kick them to prevent duping
+    if (player.online > 1) {
+      return resolve(
+        encode([LOAD_PLAYER_ALREADY_CONNECTED, ctx.query.playerID])
+      );
+    }
+
     /* Check Player Name is not already in use */
     const playerName = await PlayerName.findOne({
       server: ctx.query.serverID,
@@ -117,39 +152,6 @@ export default async ctx => {
     );
 
     if (ctx.query.admin !== '') {
-      /* Find player */
-      // find server for use in following steps
-      const server = await Server.findOne({ id: ctx.query.serverID });
-
-      // attempt to find existing player
-      let player = await Player.findOne({
-        server: ctx.query.serverID,
-        guid: ctx.query.guid
-      });
-
-      // if no existing player, create one.
-      if (player === null) {
-        player = new Player({
-          server: ctx.query.serverID,
-          guid: ctx.query.guid,
-          bankGold: server.defaultBankGold,
-          pouchGold: server.defaultPouchGold,
-          bankLimit: server.defaultBankLimit
-        });
-      }
-
-      // increase the player online count by one
-      player.online += 1;
-      player.lastSeen = Date.now();
-      await player.save();
-
-      // if player is already connected kick them to prevent duping
-      if (player.online > 1) {
-        return resolve(
-          encode([LOAD_PLAYER_ALREADY_CONNECTED, ctx.query.playerID])
-        );
-      }
-
       // return player information
       return resolve(
         encode([
