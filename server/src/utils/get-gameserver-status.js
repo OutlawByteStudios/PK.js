@@ -1,8 +1,28 @@
-import axios from 'axios';
+import net from 'net';
 import { parseString } from 'xml2js';
 
-const fetchStatus = async (host, port) => {
-  return (await axios.get(`http://${host}:${port}`)).data;
+const fetchStatus = (host, port) => {
+  return new Promise((resolve, reject) => {
+    const client = net.createConnection(port, host, () => {
+      client.write('');
+    });
+
+    // Timeout request if need be
+    setTimeout(() => {
+      client.end();
+      reject(new Error('Server status request timed out.'));
+    }, 2000);
+
+    client.on('error', () => {
+      reject(new Error('Server status request throw an error.'));
+    });
+
+    // Handle data if returned
+    client.on('data', data => {
+      client.end();
+      resolve(data);
+    });
+  });
 };
 
 const parseStatus = (host, port) => {
