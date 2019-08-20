@@ -48,7 +48,7 @@ class LogSearch extends React.Component {
     if(endTime === 'null') endTime = null;
 
     this.setState({
-      date: moment.utc(date, 'MM.DD.YYYY'),
+      date: moment.utc(date, 'MM_DD_YY'),
       allDay: !(startTime && endTime),
       startTime: startTime ? moment.utc(startTime.slice(0, -3), 'HH:mm') : moment.utc(),
       endTime: endTime ? moment.utc(endTime.slice(0, -3), 'HH:mm') : moment.utc(),
@@ -58,7 +58,7 @@ class LogSearch extends React.Component {
 
   getSearchLink(){
     let searchString =
-      `${this.state.date.format('MM.DD.YYYY')};` +
+      `${this.state.date.format('MM_DD_YY')};` +
       `${(this.state.allDay) ? 'null' : this.state.startTime.format('HH:mm:00')};` +
       `${(this.state.allDay) ? 'null' : this.state.endTime.format('HH:mm:00')};` +
       this.state.searchTerms.filter(term => term !== '').join(';');
