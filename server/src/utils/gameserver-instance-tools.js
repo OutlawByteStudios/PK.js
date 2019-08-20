@@ -18,7 +18,7 @@ const startServer = async (serverID, module, config) => {
 
   const executablePath = path.join(
     currentGameserverPath,
-    '/mb_warband_wse2_dedicated.exe'
+    '/WSELoaderServer.exe'
   );
   if (!fs.existsSync(executablePath))
     throw new Error('Executable does not exist!');
