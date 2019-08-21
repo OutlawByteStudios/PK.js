@@ -13,7 +13,7 @@ import Component from './component';
 
 class ServerStatsGraph extends React.Component{
   state = {
-    mode: 'week'
+    mode: 'day'
   };
 
   constructor(){
