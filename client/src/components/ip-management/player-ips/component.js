@@ -36,9 +36,7 @@ class Component extends React.Component {
     this.props.history.push(
       this.props.match.path
         .replace(':serverID', this.props.match.params.serverID)
-        .replace('playersbyip', 'players')
-        .replace('/:ipMask', '')
-      + '/' + guid
+        .replace(':guid', guid)
     );
   }
 
