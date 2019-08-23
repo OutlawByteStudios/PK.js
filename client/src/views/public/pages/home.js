@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+
 import {
   Button,
   Card,
@@ -8,9 +10,12 @@ import {
 
 import Layout from '../layout/layout';
 
+import Auth from '../../../utils/auth';
+
 class Login extends React.Component {
 
   render(){
+    if(!Auth.isLoggedIn) return <Redirect to="/login" />;
     return (
       <Layout>
         <Col lg="5" md="7">
@@ -23,10 +28,10 @@ class Login extends React.Component {
                 <Button
                   className="btn-neutral btn-icon"
                   color="default"
-                  href="/login"
+                  href="/admin"
                 >
-                  <i className="fas fa-key" />
-                  <span className="btn-inner--text">Login</span>
+                  <i className="fas fa-user-shield" />
+                  <span className="btn-inner--text">Admin Panel</span>
                 </Button>
               </div>
             </CardHeader>

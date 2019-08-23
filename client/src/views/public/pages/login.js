@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { 
   Button, 
   Card, 
@@ -111,32 +112,6 @@ class Login extends React.Component {
     );
   }
 
-  renderPanelSelection(){
-    return (
-      <Layout>
-        <Col lg="5" md="7">
-          <Card className="bg-secondary shadow border-0">
-            <CardHeader className="bg-transparent pb-5">
-              <div className="text-muted text-center mt-2 mb-3">
-                <small>Where to?</small>
-              </div>
-              <div className="btn-wrapper text-center">
-                <Button
-                  className="btn-neutral btn-icon"
-                  color="default"
-                  href="/admin"
-                >
-                  <i className="fas fa-user-shield" />
-                  <span className="btn-inner--text">Admin Panel</span>
-                </Button>
-              </div>
-            </CardHeader>
-          </Card>
-        </Col>
-      </Layout>
-    );
-  }
-
   render(){
     // not logged in,
     // show loading while validating login attempt if callback present
@@ -159,7 +134,7 @@ class Login extends React.Component {
 
     // logged in, select location to go to
     if(Auth.isLoggedIn && Auth.saveToken !== null){
-      return this.renderPanelSelection();
+      return <Redirect to="/" />;
     }
   }
 }
