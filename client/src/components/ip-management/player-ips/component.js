@@ -141,7 +141,7 @@ class Component extends React.Component {
                           cursor: 'pointer'
                         }}
                       >
-                        {record.player.guid}
+                        {record.player.guid} (#{record.ipMask})
                       </Badge>
 
                       <Modal
@@ -168,7 +168,7 @@ class Component extends React.Component {
                           <div className="py-3 text-center">
                             <i className="fas fa-info-circle fa-4x" />
                             <h4 className="heading mt-4">
-                              {record.player.guid}
+                              {record.player.guid} (#{record.ipMask})
                             </h4>
                             <p><strong>Last Seen on IP:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                           </div>
