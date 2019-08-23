@@ -67,19 +67,23 @@ const installServer = async server => {
   );
 };
 
-const deleteServer = async server => {
+const deleteServer = async (server, deleteLogs = true) => {
   /* Delete server folder */
   const currentGameserverPath = path.join(
     require.resolve('gameservers'),
     `../${server.id}`
   );
   if (!fs.existsSync(currentGameserverPath)) return server;
-  await del([currentGameserverPath], { force: true });
+
+  let files = [currentGameserverPath];
+  if(!deleteLogs) files.push(path.join(currentGameserverPath, '/logs'));
+  
+  await del(files, { force: true });
 };
 
 const reinstallServer = async server => {
   await deleteServer(server);
-  await installServer(server);
+  await installServer(server, false);
 };
 
 export { installServer, deleteServer, reinstallServer };
