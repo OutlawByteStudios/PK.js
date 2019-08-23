@@ -11,7 +11,7 @@ export default {
         player: parent.guid
       })).map(record => record.ip);
 
-      return IPRecord.find({ ip: { $in: usedIPs } });
+      return IPRecord.find({ server: parent.server, ip: { $in: usedIPs } });
     }
   },
 
