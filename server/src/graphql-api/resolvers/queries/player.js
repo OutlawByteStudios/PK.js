@@ -1,4 +1,6 @@
 import { Player } from '../../../models';
+import IPRecord from "../../../models/ip-record";
+import Ban from "../../../models/ban";
 
 export default {
   Server: {
@@ -17,6 +19,25 @@ export default {
     }
   },
 
+  Player: {
+    ipBanned: async parent => {
+      const usedIPs = (await IPRecord.find({
+        server: parent.server,
+        player: parent.guid
+      })).map(record => record.ip);
+
+      const linkedGUIDs = (await IPRecord.find({
+        ip: { $in: usedIPs }
+      })).map(record => record.player);
+
+      const linkedIPBannedGUIDs = (await Ban.find({
+        ipBan: true,
+        player: { $in: linkedGUIDs }
+      })).map(ban => ban.player);
+
+      return Player.find({ server: parent.server, guid: { $in: linkedIPBannedGUIDs } });
+    }
+  },
   PlayerName: {
     player: async parent => {
       return Player.findOne({

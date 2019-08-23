@@ -136,6 +136,9 @@ export default gql`
         requiresAdminPermission: "viewBans"
         viewIfPlayer: true
       )
+
+    ipBanned: [Player] @fieldViewPermission(requiresAdminPermission: "viewBans")
+
     warnings: [Warning]
       @fieldViewPermission(
         requiresAdminPermission: "viewWarnings"

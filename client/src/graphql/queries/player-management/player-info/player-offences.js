@@ -11,6 +11,10 @@ export default gql`
         _id
         
         guid
+        
+        ipBanned {
+          guid
+        }
             
         bans {
           _id

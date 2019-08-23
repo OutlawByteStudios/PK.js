@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import {
+  Alert,
   Button,
   Card,
   CardBody,
@@ -75,6 +76,16 @@ class Component extends React.Component {
         </CardHeader>
         {(this.state.tab === 'Bans' && player.bans !== null) ? (
           <>
+            {
+              player.ipBanned &&
+              (
+                <CardBody className="text-center">
+                  <Alert color="danger">
+                    <strong>This player is IP banned on the following GUID(s):</strong> { player.ipBanned.map(player => player.guid).join(',')}
+                  </Alert>
+                </CardBody>
+              )
+            }
             <Table className="align-items-center table-flush" responsive>
               <thead className="thead-light">
               <tr>

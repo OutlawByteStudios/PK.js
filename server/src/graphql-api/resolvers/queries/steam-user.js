@@ -8,7 +8,10 @@ export default {
     steamUsers: async (parent, filter) => {
       let query = {};
       if (filter.displayNameLike)
-        query.displayName = new RegExp('.*' + filter.displayNameLike + '.*', 'i');
+        query.displayName = new RegExp(
+          '.*' + filter.displayNameLike + '.*',
+          'i'
+        );
       return SteamUser.find(query);
     }
   },
