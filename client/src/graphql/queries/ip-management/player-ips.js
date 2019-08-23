@@ -22,6 +22,7 @@ export default gql`
             _id
             guid
           }
+          ipMask
           lastSeen
         }
       }
