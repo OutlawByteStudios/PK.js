@@ -1,6 +1,4 @@
-import { Player } from '../../../models';
-import IPRecord from "../../../models/ip-record";
-import Ban from "../../../models/ban";
+import { Player, IPRecord, Ban } from '../../../models';
 
 export default {
   Server: {
@@ -35,8 +33,22 @@ export default {
       })).map(record => record.player);
 
       const linkedIPBannedGUIDs = (await Ban.find({
-        ipBan: true,
-        player: { $in: linkedGUIDs }
+        $or: [
+          {
+            ipBan: true,
+            player: { $in: linkedGUIDs },
+            unbannedDate: null,
+            startDate: { $lte: Date.now() },
+            endDate: null,
+          },
+          {
+            ipBan: true,
+            player: { $in: linkedGUIDs },
+            unbannedDate: null,
+            startDate: { $lte: Date.now() },
+            endDate: { $gt: Date.now() }
+          }
+        ]
       })).map(ban => ban.player);
 
       return Player.find({ server: parent.server, guid: { $in: linkedIPBannedGUIDs } });
