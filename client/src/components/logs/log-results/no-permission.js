@@ -10,7 +10,7 @@ export default function() {
   return (
     <Card>
       <CardHeader>
-        <h3 className="mb-0">Player IPs</h3>
+        <h3 className="mb-0">Search Results</h3>
       </CardHeader>
       <CardBody>
         <div className="text-center mt-2 mb-2">
@@ -20,7 +20,7 @@ export default function() {
           <i className="fas fa-lock fa-4x"/>
         </div>
         <div className="text-center mt-2 mb-2">
-          You do not have permission to view player IPs.
+          You do not have permission to view server logs.
         </div>
       </CardBody>
     </Card>
