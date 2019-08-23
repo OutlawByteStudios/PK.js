@@ -15,6 +15,15 @@ export default gql`
           ipMask
           lastSeen
         }
+        
+        ipLinkedRecords {
+          _id
+          player {
+            _id
+            guid
+          }
+          lastSeen
+        }
       }
     }
     

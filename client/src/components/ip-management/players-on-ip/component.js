@@ -54,6 +54,7 @@ class Component extends React.Component {
                   <>
                     <Badge
                       color="primary"
+                      className="mr-2"
                       onClick={modal.open}
                       style={{
                         cursor: 'pointer'

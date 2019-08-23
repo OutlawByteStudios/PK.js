@@ -152,5 +152,8 @@ export default gql`
 
     ipRecords: [IPRecord]
       @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
+      
+    ipLinkedRecords: [IPRecord]
+      @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
   }
 `;

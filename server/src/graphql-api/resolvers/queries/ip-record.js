@@ -4,6 +4,14 @@ export default {
   Player: {
     ipRecords: async parent => {
       return IPRecord.find({ player: parent.guid, server: parent.server });
+    },
+    ipLinkedRecords: async parent => {
+      const usedIPs = (await IPRecord.find({
+        server: parent.server,
+        player: parent.guid
+      })).map(record => record.ip);
+
+      return IPRecord.find({ ip: { $in: usedIPs } });
     }
   },
 

@@ -35,6 +35,7 @@ class PlayerIPs extends React.Component{
           return (
             <Component
               ipRecords={data.server.player.ipRecords}
+              ipLinkedRecords={data.server.player.ipLinkedRecords}
             />
           );
         }}
