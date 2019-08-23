@@ -177,7 +177,10 @@ class Component extends React.Component {
                           <Button
                             color="default"
                             className="btn-white"
-                            onClick={() => this.viewPlayerPage(record.player.guid)}
+                            onClick={() => {
+                              modal.close();
+                              this.viewPlayerPage(record.player.guid)
+                            }}
                           >
                             View Player Page
                           </Button>
