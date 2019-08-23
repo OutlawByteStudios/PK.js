@@ -23,8 +23,8 @@ export default async (parent, args, context) => {
 
   if (server === null) throw new Error('Server not found.');
 
-  if (gameserverStatusCache.gameserverOnline(server.id))
-    throw new Error('You cannot delete a server while it is running!');
+  if (await gameserverStatusCache.gameserverOnline(server.id))
+    throw new Error('You cannot reinstall a server while it is running!');
 
   await reinstallServer(server);
 

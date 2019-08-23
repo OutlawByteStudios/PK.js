@@ -35,7 +35,7 @@ export default async (parent, args, context) => {
   if (!validatorServerName(args.name))
     throw new UserInputError('Invalid Server Name.');
 
-  if (gameserverStatusCache.gameserverOnline(args.serverID))
+  if (await gameserverStatusCache.gameserverOnline(args.serverID))
     throw new Error('Server must be offline to be renamed.');
 
   server.name = args.name;
