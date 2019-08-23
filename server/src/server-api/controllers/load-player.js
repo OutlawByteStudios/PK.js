@@ -49,7 +49,6 @@ export default async ctx => {
       player.online += 1;
       player.lastSeen = Date.now();
     }
-    await player.save();
 
     /* Log IP & Kick of IP banned */
     // get ip mask if it is already created
@@ -111,8 +110,10 @@ export default async ctx => {
           }
         ]
       });
-      if (bans > 0)
+      if (bans > 0){
+        await player.save();
         return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
+      }
     }
 
     /* Kick if already logged in */
@@ -134,6 +135,9 @@ export default async ctx => {
     if (playerName) {
       return resolve(encode([LOAD_PLAYER_NAME_TAKEN, ctx.query.playerID]));
     }
+
+    player.lastPlayerName = ctx.query.name;
+    await player.save();
 
     // insert new player name / update last seen
     await PlayerName.updateOne(

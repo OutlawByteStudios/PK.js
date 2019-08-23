@@ -8,7 +8,8 @@ import {
 
 import Header from '../layout/header';
 import Layout from '../layout/layout';
-import StatsGraph from "../../../components/stats/server-stats-graph";
+
+import { ServerStatsGraph, OnlinePlayers } from '../../../components';
 
 class Dashboard extends React.Component {
   render() {
@@ -26,7 +27,12 @@ class Dashboard extends React.Component {
         <Container className="mt--7" fluid>
           <Row>
             <Col>
-              <StatsGraph serverID={serverID} stat="playerCount" />
+              <ServerStatsGraph serverID={serverID} stat="playerCount" />
+            </Col>
+          </Row>
+          <Row className="mt-4">
+            <Col>
+              <OnlinePlayers serverID={serverID} />
             </Col>
           </Row>
         </Container>

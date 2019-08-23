@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 
 import {
-  ServerInfo,
+  ServerStatus,
 } from '../../../components';
 
 class Header extends React.Component {
@@ -34,7 +34,7 @@ class Header extends React.Component {
                   {/* Card stats */}
                   <Row className="mt-5 mt-lg-0">
                     <Col md="12" lg="6">
-                      <ServerInfo
+                      <ServerStatus
                         serverID={this.props.serverID}
                       />
                     </Col>

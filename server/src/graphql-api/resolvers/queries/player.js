@@ -16,6 +16,10 @@ export default {
       if (filter.guidLike)
         query.guid = new RegExp('.*' + filter.guidLike + '.*');
       return Player.find(query);
+    },
+
+    onlinePlayers: async parent => {
+      return Player.find({ server: parent.id, online: { $gt: 0 } });
     }
   },
 

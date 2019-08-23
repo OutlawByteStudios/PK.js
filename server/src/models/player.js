@@ -7,6 +7,8 @@ const PlayerSchema = new mongoose.Schema({
   online: { type: Number, require: true, default: 0 },
   lastSeen: { type: Date, default: Date.now },
 
+  lastPlayerName: { type: String },
+
   factionID: Number,
   classID: Number,
   health: Number,

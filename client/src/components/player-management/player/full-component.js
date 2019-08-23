@@ -40,7 +40,7 @@ class FullComponent extends React.Component {
             <th>GUID</th>
             <th>Online</th>
             <th>Last Seen</th>
-            <th>{null}</th>
+            <th>Last Player Name</th>
           </tr>
           </thead>
           <tbody>
@@ -48,7 +48,7 @@ class FullComponent extends React.Component {
             <th>{player.guid}</th>
             <td>{(player.online > 0) ? 'Online' : 'Offline'}</td>
             <td>{moment.utc(player.lastSeen).format('DD/MM/YYYY HH:mm')}</td>
-            <td>{null}</td>
+            <td>{player.lastPlayerName}</td>
           </tr>
           </tbody>
           <thead className="thead-light">

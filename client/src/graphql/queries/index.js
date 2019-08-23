@@ -8,6 +8,7 @@ import PLAYER_OFFENCES from './player-management/player-info/player-offences';
 import IP_SEARCH from './player-management/ip-search';
 import PLAYER_SEARCH from './ip-management/player-search';
 import PLAYERS_ON_IP from './ip-management/players-on-ip';
+import ONLINE_PLAYERS from './server-info/online-players';
 import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
@@ -32,6 +33,7 @@ export {
   IP_SEARCH,
   PLAYER_SEARCH,
   PLAYERS_ON_IP,
+  ONLINE_PLAYERS,
   SERVER_STATUS,
   SERVER_CONFIG,
   SERVER_CONFIGS,

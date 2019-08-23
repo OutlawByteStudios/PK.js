@@ -11,7 +11,8 @@ import IPSelector from './ip-management/ip-selector';
 import PlayerNames from './player-management/player-names';
 import PlayerOffences from './player-management/player-offences';
 import PlayerSelector from './player-management/player-selector';
-import ServerInfo from './server-info/server-status';
+import OnlinePlayers from './server-info/online-players';
+import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
 import ConfigManager from './server-management/configs/config-manager';
 import CreateServer from './server-management/create-server';
@@ -37,7 +38,8 @@ export {
   PlayerNames,
   PlayerOffences,
   PlayerSelector,
-  ServerInfo,
+  OnlinePlayers,
+  ServerStatus,
   ClearPlayerLocations,
   ConfigManager,
   CreateServer,

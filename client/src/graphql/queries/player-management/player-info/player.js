@@ -14,6 +14,8 @@ export default gql`
         online
         lastSeen
         
+        lastPlayerName
+        
         pouchGold
         bankGold
         bankLimit

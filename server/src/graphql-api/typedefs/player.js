@@ -9,6 +9,8 @@ export default gql`
 
     online: Int
     lastSeen: Date
+    
+    lastPlayerName: String
 
     playerStats(startDate: Date, stopDate: Date): [PlayerStats]
       @fieldViewPermission(requiresAdminPermission: "viewServerStats")
