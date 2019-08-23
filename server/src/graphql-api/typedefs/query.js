@@ -2,7 +2,8 @@ import { gql } from 'apollo-server-koa';
 
 export default gql`
   type Query {
-    steamuser(steamID: String!): SteamUser
+    steamUser(steamID: String!): SteamUser
+    steamUsers(displayNameLike: String): [SteamUser]
 
     item(id: Int): Item
     items: [Item]

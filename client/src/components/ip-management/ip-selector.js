@@ -1,7 +1,7 @@
 import React from 'react';
 import { withApollo } from 'react-apollo';
 
-import { IP_SEARCH } from '../../../graphql/queries';
+import { IP_SEARCH } from '../../graphql/queries/index';
 
 import AsyncSelect from 'react-select/lib/Async';
 

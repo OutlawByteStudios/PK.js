@@ -19,6 +19,7 @@ import ITEM_IDS from './item-ids';
 import LOG_SEARCH from './log-search';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
 import OWN_ADMIN_PERMISSIONS_WITH_STATUS from './own-admin-permissions-with-status';
+import STEAM_USER_SELECTOR from './steam-user-selector';
 
 export {
   ADMIN_LOGS,
@@ -41,5 +42,6 @@ export {
   ITEM_IDS,
   LOG_SEARCH,
   OWN_ADMIN_PERMISSIONS,
-  OWN_ADMIN_PERMISSIONS_WITH_STATUS
+  OWN_ADMIN_PERMISSIONS_WITH_STATUS,
+  STEAM_USER_SELECTOR
 }

@@ -14,7 +14,7 @@ import Auth from "../../../../utils/auth";
 
 const QUERY = gql`
 query GeneralLinks($steamID: String!){
-  steamuser(steamID: $steamID){
+  steamUser(steamID: $steamID){
     _id
     panelAdmin
   }
@@ -60,7 +60,7 @@ class GeneralLinks extends React.Component {
           );
 
           return (
-            <Nav navbar>{this.createLinks(generalRoutes, data.steamuser)}</Nav>
+            <Nav navbar>{this.createLinks(generalRoutes, data.steamUser)}</Nav>
           );
         }}
       </Query>

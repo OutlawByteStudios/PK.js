@@ -1,9 +1,9 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { PLAYERS_ON_IP } from '../../../../graphql/queries/index';
+import { PLAYERS_ON_IP } from '../../../graphql/queries/index';
 
-import Auth from '../../../../utils/auth';
+import Auth from '../../../utils/auth';
 
 import Loader from './loader';
 import Error from './error';

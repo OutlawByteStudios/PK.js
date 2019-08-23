@@ -2,8 +2,14 @@ import { SteamUser } from '../../../models';
 
 export default {
   Query: {
-    steamuser: async (parent, filter) => {
+    steamUser: async (parent, filter) => {
       return SteamUser.findOne({ steamID: filter.steamID });
+    },
+    steamUsers: async (parent, filter) => {
+      let query = {};
+      if (filter.displayNameLike)
+        query.displayName = new RegExp('.*' + filter.displayNameLike + '.*', 'i');
+      return SteamUser.find(query);
     }
   },
   Ban: {

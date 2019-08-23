@@ -8,28 +8,26 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Col,
   Modal,
   ModalBody,
-  ModalFooter,
-  Row
+  ModalFooter
 } from "reactstrap";
 
-import AdvancedModal from '../../../misc/modals/advanced-modal';
+import AdvancedModal from '../../misc/modals/advanced-modal';
 
 class Component extends React.Component {
   constructor(){
     super();
-    this.viewPlayerPage = this.viewPlayerPage.bind(this);
+    this.viewIPPage = this.viewIPPage.bind(this);
   }
 
-  viewPlayerPage(guid){
+  viewIPPage(ipMaskID){
     this.props.history.push(
       this.props.match.path
         .replace(':serverID', this.props.match.params.serverID)
-        .replace('playersbyip', 'players')
-        .replace('/:ipMask', '')
-      + '/' + guid
+        .replace('players', 'playersbyip')
+        .replace('/:guid', '')
+      + '/' + ipMaskID
     );
   }
 
@@ -37,11 +35,7 @@ class Component extends React.Component {
     return (
       <Card className="bg-secondary shadow">
         <CardHeader className="bg-white border-0">
-          <Row className="align-items-center">
-            <Col xs="8">
-              <h3 className="mb-0">Player IPs</h3>
-            </Col>
-          </Row>
+          <h3 className="mb-0">Player IPs</h3>
         </CardHeader>
         <CardBody>
           {
@@ -54,12 +48,13 @@ class Component extends React.Component {
                   <>
                     <Badge
                       color="primary"
+                      className="mr-2"
                       onClick={modal.open}
                       style={{
                         cursor: 'pointer'
                       }}
                     >
-                      {record.player.guid}
+                      #{record.ipMask.toString().padStart(6, '0')}
                     </Badge>
 
                     <Modal
@@ -86,18 +81,19 @@ class Component extends React.Component {
                         <div className="py-3 text-center">
                           <i className="fas fa-info-circle fa-4x" />
                           <h4 className="heading mt-4">
-                            {record.player.guid}
+                            #{record.ipMask.toString().padStart(6, '0')}
                           </h4>
-                          <p><strong>Last Seen on IP:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>IP Address:</strong> {(record.ip) ? record.ip : '***.***.***.***'}</p>
+                          <p><strong>Last Seen:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>
                         <Button
                           color="default"
                           className="btn-white"
-                          onClick={() => this.viewPlayerPage(record.player.guid)}
+                          onClick={() => this.viewIPPage(record.ipMask)}
                         >
-                          View Player Page
+                          View IP Page
                         </Button>
                         <Button
                           className="text-white ml-auto"

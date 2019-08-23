@@ -2,11 +2,10 @@ import React from 'react';
 
 import { 
   Button, 
-  Form, 
-  Input, 
-  InputGroup, 
-  InputGroupAddon 
+  Form
 } from 'reactstrap';
+
+import SteamUserSelector from '../../misc/steam-user-selector';
 
 class Component extends React.Component{
   state = {
@@ -30,23 +29,17 @@ class Component extends React.Component{
       <Form
         onSubmit={this.onSubmit}
       >
-        <InputGroup>
-          <Input
-            type="text"
-            bsSize="sm"
-            placeholder="Steam ID"
-            value={this.state.steamID}
-            onChange={event => this.setState({ steamID: event.target.value })}
-          />
-          <InputGroupAddon addonType="append">
-            <Button
-              color="primary"
-              size="sm"
-            >
-              Add Admin
-            </Button>
-          </InputGroupAddon>
-        </InputGroup>
+        <SteamUserSelector
+          steamID={this.state.steamID}
+          onChange={steamID => this.setState({ steamID })}
+        />
+        <Button
+          color="primary"
+          size="md"
+          className="mt-4"
+        >
+          Add Admin
+        </Button>
       </Form>
     );
   }
