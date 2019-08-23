@@ -66,14 +66,6 @@ class AdminNavbar extends React.Component {
                   </Media>
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-menu-arrow" right>
-                  <DropdownItem className="noti-title" header tag="div">
-                    <h6 className="text-overflow m-0">Options</h6>
-                  </DropdownItem>
-                  <DropdownItem to={"/admin/profile/" + Auth.claim.steamID} tag={Link}>
-                    <i className="ni ni-single-02" />
-                    <span>My profile</span>
-                  </DropdownItem>
-                  <DropdownItem divider />
                   <DropdownItem href="/login" onClick={() => {
                     Auth.logout();
                   }}>
