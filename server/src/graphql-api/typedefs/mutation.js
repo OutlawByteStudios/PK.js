@@ -22,6 +22,7 @@ export default gql`
       gameserverRestartCron: String
     ): Server
     renameServer(serverID: Int!, name: String!): Server
+    reinstallServer(serverID: Int!): Server
     deleteServer(serverID: Int!): Server
 
     saveServerConfig(

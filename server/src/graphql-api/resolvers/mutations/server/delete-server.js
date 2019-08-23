@@ -1,7 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import del from 'del';
-
+import { deleteServer } from '../../../../utils/server-folder-manager';
 import jobContainer from '../../../../jobs';
 
 import {
@@ -18,6 +15,7 @@ import {
   ServerStats,
   Warning
 } from '../../../../models';
+import gameserverStatusCache from '../../../../utils/gameserver-status-cache';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -39,6 +37,9 @@ export default async (parent, args, context) => {
 
   if (server === null) throw new Error('Server not found.');
 
+  if (gameserverStatusCache.gameserverOnline(server.id))
+    throw new Error('You cannot delete a server while it is running!');
+
   /* Delete all documents related to server */
   await Promise.all([
     Server.deleteOne({ id: server.id }),
@@ -54,13 +55,7 @@ export default async (parent, args, context) => {
     Warning.deleteMany({ server: server.id })
   ]);
 
-  /* Delete server folder */
-  const currentGameserverPath = path.join(
-    require.resolve('gameservers'),
-    `../${server.id}`
-  );
-  if (!fs.existsSync(currentGameserverPath)) return server;
-  await del([currentGameserverPath], { force: true });
+  await deleteServer(server);
 
   jobContainer.deleteJob(`restart-server-${server.id}`);
 

@@ -1,5 +1,6 @@
 import createServer from './create-server';
 import deleteServer from './delete-server';
+import reinstallServer from './reinstall-server';
 import renameServer from './rename-server';
 import restartServer from './restart-server';
 import saveServerConfig from './save-server-config';
@@ -10,6 +11,7 @@ export default {
   Mutation: {
     createServer,
     deleteServer,
+    reinstallServer,
     renameServer,
     restartServer,
     saveServerConfig,

@@ -110,7 +110,7 @@ export default async ctx => {
           }
         ]
       });
-      if (bans > 0){
+      if (bans > 0) {
         await player.save();
         return resolve(encode([LOAD_FAIL_KICK, ctx.query.playerID]));
       }

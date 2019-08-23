@@ -46,7 +46,7 @@ class DeleteServer extends React.Component{
             </Button>
           );
 
-          if(data) return (
+          if(!error && data) return (
             <Redirect
               to={this.props.match.path.split('/:serverID')[0]}
             />

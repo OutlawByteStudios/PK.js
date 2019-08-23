@@ -17,7 +17,8 @@ import {
   ConfigManager,
   DeleteServer,
   RenameServer,
-  ServerController
+  ServerController,
+  ReinstallServer
 } from '../../../components';
 
 class ServerManagement extends React.Component {
@@ -64,6 +65,7 @@ class ServerManagement extends React.Component {
                 <CardBody>
                   <ClearPlayerLocations serverID={serverID} />
                   <RenameServer serverID={serverID} />
+                  <ReinstallServer serverID={serverID} />
                   <DeleteServer serverID={serverID} />
                 </CardBody>
               </Card>

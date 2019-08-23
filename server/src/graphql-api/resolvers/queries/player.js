@@ -39,7 +39,7 @@ export default {
             player: { $in: linkedGUIDs },
             unbannedDate: null,
             startDate: { $lte: Date.now() },
-            endDate: null,
+            endDate: null
           },
           {
             ipBan: true,
@@ -51,7 +51,10 @@ export default {
         ]
       })).map(ban => ban.player);
 
-      return Player.find({ server: parent.server, guid: { $in: linkedIPBannedGUIDs } });
+      return Player.find({
+        server: parent.server,
+        guid: { $in: linkedIPBannedGUIDs }
+      });
     }
   },
   PlayerName: {
@@ -90,10 +93,12 @@ export default {
   IPRecord: {
     player: async parent => {
       console.log(parent);
-      console.log(await Player.findOne({
-        server: parent.server,
-        guid: parent.player
-      }));
+      console.log(
+        await Player.findOne({
+          server: parent.server,
+          guid: parent.player
+        })
+      );
       return Player.findOne({
         server: parent.server,
         guid: parent.player

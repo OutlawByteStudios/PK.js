@@ -9,7 +9,7 @@ export default gql`
 
     online: Int
     lastSeen: Date
-    
+
     lastPlayerName: String
 
     playerStats(startDate: Date, stopDate: Date): [PlayerStats]
@@ -154,7 +154,7 @@ export default gql`
 
     ipRecords: [IPRecord]
       @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
-      
+
     ipLinkedRecords: [IPRecord]
       @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
   }
