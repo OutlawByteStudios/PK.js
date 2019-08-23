@@ -122,7 +122,7 @@ module.exports = {
     createNotes: 1,
     deleteNotes: 1,
     viewIPRecords: 1,
-    viewIPs: 1,
+    viewIPs: 0,
 
     adminPanel: 0,
     adminTools: 1,
