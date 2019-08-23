@@ -77,7 +77,7 @@ class Component extends React.Component {
         {(this.state.tab === 'Bans' && player.bans !== null) ? (
           <>
             {
-              player.ipBanned &&
+              player.ipBanned.length > 0 &&
               (
                 <CardBody className="text-center">
                   <Alert color="danger">
