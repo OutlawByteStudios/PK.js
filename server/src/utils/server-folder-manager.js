@@ -82,8 +82,8 @@ const deleteServer = async (server, deleteLogs = true) => {
 };
 
 const reinstallServer = async server => {
-  await deleteServer(server);
-  await installServer(server, false);
+  await deleteServer(server, false);
+  await installServer(server);
 };
 
 export { installServer, deleteServer, reinstallServer };
