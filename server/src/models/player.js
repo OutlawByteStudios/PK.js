@@ -1,12 +1,19 @@
 import mongoose from 'mongoose';
 
+import generatePin from '../utils/generate-pin';
+
 const PlayerSchema = new mongoose.Schema({
   server: { type: Number, require: true },
   guid: { type: String, require: true },
 
+  pin: {
+    type: String,
+    require: true,
+    default: generatePin
+  },
+
   online: { type: Number, require: true, default: 0 },
   lastSeen: { type: Date, default: Date.now },
-
   lastPlayerName: { type: String },
 
   factionID: Number,

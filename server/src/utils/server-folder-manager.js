@@ -77,7 +77,7 @@ const deleteServer = async (server, deleteLogs = true) => {
 
   let files = [currentGameserverPath];
   if(!deleteLogs) files.push(path.join(currentGameserverPath, '/logs'));
-  
+
   await del(files, { force: true });
 };
 

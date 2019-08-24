@@ -6,7 +6,8 @@
     "start": "cross-env NODE_ENV=production node index.js",
     "build": "del-cli build && babel src -d build --copy-files",
     "dev": "nodemon index.js",
-    "lint": "eslint --fix src && prettier --write \"src/**/*.js\""
+    "lint": "eslint --fix src && prettier --write \"src/**/*.js\"",
+    "refresh-pins": "babel-node scripts/refresh-pins.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.2",
