@@ -12,10 +12,6 @@ import {
 import LinkSteamUser from '../link-steam-user';
 
 class Component extends React.Component{
-  constructor(){
-    super();
-  }
-
   render(){
     return (
       <Card>

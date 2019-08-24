@@ -99,13 +99,6 @@ export default {
 
   IPRecord: {
     player: async parent => {
-      console.log(parent);
-      console.log(
-        await Player.findOne({
-          server: parent.server,
-          guid: parent.player
-        })
-      );
       return Player.findOne({
         server: parent.server,
         guid: parent.player

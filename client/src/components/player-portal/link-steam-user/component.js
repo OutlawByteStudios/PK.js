@@ -1,11 +1,9 @@
 import React from 'react';
 
 import {
-  Button, Col,
+  Button,
   Form,
-  Input,
-  InputGroup,
-  InputGroupAddon
+  Input
 } from "reactstrap";
 
 class Component extends React.Component{

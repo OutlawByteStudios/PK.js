@@ -15,6 +15,11 @@ export default {
       return SteamUser.find(query);
     }
   },
+  Player: {
+    linkedSteamUser: async parent => {
+      return SteamUser.findOne({ steamID: parent.linkedSteamUser });
+    }
+  },
   Ban: {
     admin: async parent => {
       return SteamUser.findOne({ steamID: parent.admin });

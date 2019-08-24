@@ -6,10 +6,15 @@ export default gql`
 
     server: Server
     guid: String
+    
+    linkedSteamUser: SteamUser
+      @fieldViewPermission(
+        requiresAdminPermission: "viewPlayerInfo"
+        viewIfPlayer: true
+      )
 
     online: Int
     lastSeen: Date
-
     lastPlayerName: String
 
     playerStats(startDate: Date, stopDate: Date): [PlayerStats]

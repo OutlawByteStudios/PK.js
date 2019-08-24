@@ -11,6 +11,7 @@ import {
 
 import AdjustGold from './adjust-gold';
 import StripPlayer from './strip-player';
+import SteamUser from '../../misc/steam-user';
 
 class FullComponent extends React.Component {
   render() {
@@ -39,16 +40,16 @@ class FullComponent extends React.Component {
           <tr>
             <th>GUID</th>
             <th>Online</th>
-            <th>Last Seen</th>
             <th>Last Player Name</th>
+            <th>Linked Steam User</th>
           </tr>
           </thead>
           <tbody>
           <tr>
             <th>{player.guid}</th>
-            <td>{(player.online > 0) ? 'Online' : 'Offline'}</td>
-            <td>{moment.utc(player.lastSeen).format('DD/MM/YYYY HH:mm')}</td>
+            <td>{moment.utc(player.lastSeen).format('DD/MM/YYYY HH:mm')} ({(player.online > 0) ? 'Online' : 'Offline'})</td>
             <td>{player.lastPlayerName}</td>
+            <td>{(player.linkedSteamUser) ? <SteamUser steamUser={player.linkedSteamUser} /> : 'No linked Steam User'}</td>
           </tr>
           </tbody>
           <thead className="thead-light">

@@ -11,9 +11,13 @@ export default gql`
         _id
         
         guid
+        
+        linkedSteamUser {
+          ...SteamUser
+        }
+        
         online
         lastSeen
-        
         lastPlayerName
         
         pouchGold
@@ -62,4 +66,5 @@ export default gql`
   }
  
   ${Fragments.Item}
+  ${Fragments.SteamUser}
 `;
