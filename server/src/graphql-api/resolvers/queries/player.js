@@ -1,6 +1,13 @@
 import { Player, IPRecord, Ban } from '../../../models';
 
 export default {
+  Query: {
+    linkedPlayers: async (parent, filter, context) => {
+      return Player.find({
+        linkedSteamUser: context.user
+      });
+    }
+  },
   Server: {
     player: async (parent, filter) => {
       return Player.findOne({

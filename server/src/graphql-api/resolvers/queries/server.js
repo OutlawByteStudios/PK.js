@@ -11,6 +11,12 @@ export default {
     }
   },
 
+  Player: {
+    server: async parent => {
+      return Server.findOne({ id: parent.server });
+    }
+  },
+
   IPRecord: {
     server: async parent => {
       return Server.findOne({ id: parent.server });

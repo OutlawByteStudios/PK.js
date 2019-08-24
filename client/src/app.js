@@ -6,7 +6,8 @@ import { ApolloProvider } from 'react-apollo';
 
 import Auth from './utils/auth';
 
-import indexRoutes from './views/public';
+import publicRoutes from './views/public';
+import playerRoutes from './views/player';
 import adminRoutes from './views/admin';
 
 const client = new ApolloClient({
@@ -56,7 +57,8 @@ class App extends React.Component {
       <ApolloProvider client={client}>
         <BrowserRouter>
           <Switch>
-            {indexRoutes}
+            {publicRoutes}
+            {playerRoutes}
             {adminRoutes}
           </Switch>
         </BrowserRouter>

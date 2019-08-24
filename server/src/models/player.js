@@ -11,6 +11,7 @@ const PlayerSchema = new mongoose.Schema({
     require: true,
     default: generatePin
   },
+  linkedSteamUser: String,
 
   online: { type: Number, require: true, default: 0 },
   lastSeen: { type: Date, default: Date.now },

@@ -4,7 +4,7 @@ export default gql`
   type Player {
     _id: String
 
-    server: Int
+    server: Server
     guid: String
 
     online: Int

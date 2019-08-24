@@ -12,7 +12,7 @@ import Layout from '../layout/layout';
 
 import Auth from '../../../utils/auth';
 
-class Login extends React.Component {
+class Home extends React.Component {
 
   render(){
     if(!Auth.isLoggedIn) return <Redirect to="/login" />;
@@ -25,6 +25,14 @@ class Login extends React.Component {
                 <small>Where to?</small>
               </div>
               <div className="btn-wrapper text-center">
+                <Button
+                  className="btn-neutral btn-icon"
+                  color="default"
+                  href="/player"
+                >
+                  <i className="fas fa-user" />
+                  <span className="btn-inner--text">Player Portal</span>
+                </Button>
                 <Button
                   className="btn-neutral btn-icon"
                   color="default"
@@ -42,4 +50,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Home;

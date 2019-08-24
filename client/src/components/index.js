@@ -11,6 +11,7 @@ import IPSelector from './ip-management/ip-selector';
 import PlayerNames from './player-management/player-names';
 import PlayerOffences from './player-management/player-offences';
 import PlayerSelector from './player-management/player-selector';
+import LinkedPlayers from './player-portal/linked-players';
 import OnlinePlayers from './server-info/online-players';
 import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
@@ -39,6 +40,7 @@ export {
   PlayerNames,
   PlayerOffences,
   PlayerSelector,
+  LinkedPlayers,
   OnlinePlayers,
   ServerStatus,
   ClearPlayerLocations,

@@ -13,5 +13,7 @@ export default gql`
 
     adminPermission(serverID: Int!, steamID: String!): AdminPermission
     adminPermissions(serverID: Int, steamID: String): [AdminPermission]
+
+    linkedPlayers: [Player]
   }
 `;

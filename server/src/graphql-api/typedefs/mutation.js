@@ -80,5 +80,8 @@ export default gql`
       guid: String
       ${addPermissions()}
     ): AdminPermission
+    
+    
+    linkSteamUser(guid: String!, pin: String!): Player
   }
 `;

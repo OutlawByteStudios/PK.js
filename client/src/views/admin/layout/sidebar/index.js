@@ -64,7 +64,7 @@ class Sidebar extends React.Component {
           {/* Brand */}
           <NavbarBrand
             className="pt-0"
-            to="/admin"
+            to="/"
             tag={Link}
           >
             <img
