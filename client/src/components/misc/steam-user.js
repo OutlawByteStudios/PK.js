@@ -1,22 +1,28 @@
 import React from 'react';
 import {
-  Media
+  Media,
+  NavLink
 } from 'reactstrap';
 
 export default function(props) {
   return (
-    <Media className="align-items-center">
+    <NavLink
+      href={`https://steamcommunity.com/profiles/${props.steamUser.steamID}/`}
+      target="_blank"
+    >
+      <Media className="align-items-center">
         <span className="avatar avatar-sm rounded-circle">
           <img
             alt="..."
             src={props.steamUser.avatar}
           />
         </span>
-      <Media className="ml-2">
+        <Media className="ml-2">
           <span className="mb-0 text-sm font-weight-bold">
             {props.steamUser.displayName}
           </span>
+        </Media>
       </Media>
-    </Media>
+    </NavLink>
   );
 }
