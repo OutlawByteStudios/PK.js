@@ -23,6 +23,7 @@ class Component extends React.Component{
           <tr>
             <th>GUID</th>
             <th>Server Name</th>
+            <th>Player Count</th>
             <th>Go To Server</th>
           </tr>
           </thead>
@@ -35,6 +36,20 @@ class Component extends React.Component{
                 </td>
                 <td>
                   {player.server.name}
+                </td>
+                <td>
+                  {
+                    player.server.serverStatus &&
+                    (
+                      <>{player.server.serverStatus.NumberOfActivePlayers} / {player.server.serverStatus.MaxNumberOfPlayers}</>
+                    )
+                  }
+                  {
+                    !player.server.serverStatus &&
+                    (
+                      <>Server Offline</>
+                    )
+                  }
                 </td>
                 <td>
                   PLACEHOLDER

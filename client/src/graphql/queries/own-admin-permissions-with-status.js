@@ -11,11 +11,9 @@ export default gql`
         serverStatus{
           _id
           Name
-          ModuleName
           MapName
           NumberOfActivePlayers
           MaxNumberOfPlayers
-          HasPassword
         }
       }
             

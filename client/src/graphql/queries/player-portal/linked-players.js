@@ -10,6 +10,14 @@ export default gql`
         _id
         id
         name
+        
+        serverStatus{
+          _id
+          Name
+          MapName
+          NumberOfActivePlayers
+          MaxNumberOfPlayers
+        }
       }  
     }
   }
