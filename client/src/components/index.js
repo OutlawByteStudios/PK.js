@@ -13,6 +13,7 @@ import PlayerOffences from './player-management/player-offences';
 import PlayerSelector from './player-management/player-selector';
 import LinkedPlayers from './player-portal/linked-players';
 import Offences from './player-portal/offences';
+import OwnPlayer from './player-portal/own-player';
 import OnlinePlayers from './server-info/online-players';
 import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
@@ -43,6 +44,7 @@ export {
   PlayerSelector,
   LinkedPlayers,
   Offences,
+  OwnPlayer,
   OnlinePlayers,
   ServerStatus,
   ClearPlayerLocations,

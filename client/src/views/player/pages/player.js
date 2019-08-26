@@ -7,7 +7,10 @@ import {
 
 import Layout from '../layout/layout';
 
-import { Offences } from '../../../components';
+import {
+  OwnPlayer,
+  Offences
+} from '../../../components';
 
 class Player extends React.Component {
   render(){
@@ -19,6 +22,14 @@ class Player extends React.Component {
         guid={guid}
       >
         <Row className="justify-content-center">
+          <Col>
+            <OwnPlayer
+              serverID={serverID}
+              guid={guid}
+            />
+          </Col>
+        </Row>
+        <Row className="justify-content-center mt-4">
           <Col>
             <Offences
               serverID={serverID}
