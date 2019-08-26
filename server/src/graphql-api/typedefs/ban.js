@@ -20,6 +20,6 @@ export default gql`
     endDate: Date
     unbannedDate: Date
 
-    ipBan: Boolean
+    ipBan: Boolean @fieldViewPermission(requiresAdminPermission: "viewBans")
   }
 `;

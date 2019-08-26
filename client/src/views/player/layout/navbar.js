@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import {
   Col,
   Container,
@@ -17,20 +17,32 @@ import routes from '../routes';
 class CustomNavbar extends React.Component {
 
   createLinks(routes){
-    return routes.map((route, key) => (
-      <NavItem key={key}>
-        <NavLink
-          className="nav-link-icon"
-          to={route.path}
-          tag={Link}
-        >
-          <i className={route.icon} />
-          <span className="nav-link-inner--text">{route.name}</span>
-        </NavLink>
-      </NavItem>
+    return routes.map((route, key) => {
+      if(
+        route.displayWhenPlayerSelected &&
+        (
+          !this.props.match.params.serverID ||
+          !this.props.match.params.guid
+        )
+      ) return null;
 
-    ));
-
+      return (
+        <NavItem key={key}>
+          <NavLink
+            className="nav-link-icon"
+            to={
+              route.path
+                .replace(':serverID', this.props.serverID)
+                .replace(':guid', this.props.guid)
+            }
+            tag={Link}
+          >
+            <i className={route.icon} />
+            <span className="nav-link-inner--text">{route.name}</span>
+          </NavLink>
+        </NavItem>
+      );
+    });
   }
 
   render(){
@@ -79,4 +91,4 @@ class CustomNavbar extends React.Component {
     );
   }
 }
-export default CustomNavbar;
+export default withRouter(CustomNavbar);

@@ -9,6 +9,7 @@ import IP_SEARCH from './player-management/ip-search';
 import PLAYER_SEARCH from './ip-management/player-search';
 import PLAYERS_ON_IP from './ip-management/players-on-ip';
 import LINKED_PLAYERS from './player-portal/linked-players';
+import OFFENCES from './player-portal/offences';
 import ONLINE_PLAYERS from './server-info/online-players';
 import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
@@ -35,6 +36,7 @@ export {
   PLAYER_SEARCH,
   PLAYERS_ON_IP,
   LINKED_PLAYERS,
+  OFFENCES,
   ONLINE_PLAYERS,
   SERVER_STATUS,
   SERVER_CONFIG,

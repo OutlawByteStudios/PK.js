@@ -6,7 +6,7 @@ export default gql`
 
     server: Server
     guid: String
-    
+
     linkedSteamUser: SteamUser
       @fieldViewPermission(
         requiresAdminPermission: "viewPlayerInfo"

@@ -23,7 +23,10 @@ class Layout extends React.Component {
     return (
       <>
         <div className="main-content">
-          <Navbar/>
+          <Navbar
+            serverID={this.props.serverID}
+            guid={this.props.guid}
+          />
           <div className="header bg-gradient-info py-7 py-lg-8">
             <Container>
               <div className="header-body text-center mb-7">

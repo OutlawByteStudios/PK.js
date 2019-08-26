@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
+  Button,
   Card,
   CardBody,
   CardHeader,
   Col,
   Row,
   Table
-} from 'reactstrap';
+} from "reactstrap";
 
 import LinkSteamUser from '../link-steam-user';
 
@@ -52,7 +54,14 @@ class Component extends React.Component{
                   }
                 </td>
                 <td>
-                  PLACEHOLDER
+                  <Button
+                    color="primary"
+                    size="sm"
+                    tag={Link}
+                    to={`/player/${player.server.id}/${player.guid}`}
+                  >
+                    Go to Server...
+                  </Button>
                 </td>
               </tr>
             ))
