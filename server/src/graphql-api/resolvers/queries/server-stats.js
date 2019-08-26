@@ -16,7 +16,9 @@ export default {
       if (filter.startDate) query.date.$gte = filter.startDate;
       if (filter.stopDate) query.date.$lt = filter.stopDate;
 
-      return ServerStats.find(query).select('server date playerCount').sort({ date: 1 });
+      return ServerStats.find(query)
+        .select('server date playerCount')
+        .sort({ date: 1 });
     }
   }
 };

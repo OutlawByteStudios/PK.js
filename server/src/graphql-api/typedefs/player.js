@@ -136,7 +136,7 @@ export default gql`
     bankGold: Int
     bankLimit: Int
 
-    playerNames: [PlayerName] 
+    playerNames: [PlayerName]
       @fieldViewPermission(
         requiresAdminPermission: "viewPlayerInfo"
         viewIfPlayer: true

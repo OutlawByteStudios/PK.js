@@ -14,7 +14,7 @@ export default gql`
     defaultBankLimit: Int
 
     recordStats: Boolean
-    
+
     serverStatsLite(startDate: Date, stopDate: Date): [ServerStats]
 
     serverStats(startDate: Date, stopDate: Date): [ServerStats]
