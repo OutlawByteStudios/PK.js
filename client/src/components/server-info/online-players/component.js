@@ -55,9 +55,8 @@ class Component extends React.Component {
           }
           {
             this.props.onlinePlayers.map((player, key) => {
-              // if the guid is null then the player is not an admin, so we
-              // do not display the popup
-              if(player.guid === null) return (
+              // hide popup in player portal
+              if(this.props.playerPortal) return (
                 <Badge
                   color="primary"
                   className="mr-2"

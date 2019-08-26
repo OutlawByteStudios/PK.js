@@ -33,7 +33,10 @@ class ServerInfo extends React.Component {
         </Row>
         <Row className="justify-content-center mt-4">
           <Col>
-            <OnlinePlayers serverID={serverID} />
+            <OnlinePlayers
+              serverID={serverID}
+              playerPortal={true}
+            />
           </Col>
         </Row>
       </Layout>
