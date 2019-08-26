@@ -28,12 +28,12 @@ class ServerInfo extends React.Component {
         </Row>
         <Row className="justify-content-center mt-4">
           <Col>
-            <ServerStatsGraph serverID={serverID} stat="playerCount" />
+            <ServerStatsGraph serverID={serverID} stat="playerCount" lite={true} />
           </Col>
         </Row>
         <Row className="justify-content-center mt-4">
           <Col>
-            <OnlinePlayers serverID={serverID}/>
+            <OnlinePlayers serverID={serverID} />
           </Col>
         </Row>
       </Layout>

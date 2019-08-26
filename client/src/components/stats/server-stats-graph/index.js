@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Query } from 'react-apollo';
 
-import { SERVER_STATS_GRAPH } from '../../../graphql/queries';
+import { SERVER_STATS_GRAPH, SERVER_STATS_GRAPH_LITE } from '../../../graphql/queries';
 
 import Auth from '../../../utils/auth';
 
@@ -10,8 +10,6 @@ import Loader from './loader';
 import Error from './error';
 import NoPermission from './no-permission';
 import Component from './component';
-
-const publicStats = ['playerCount'];
 
 class ServerStatsGraph extends React.Component{
   state = {
@@ -109,7 +107,7 @@ class ServerStatsGraph extends React.Component{
 
     return (
       <Query
-        query={SERVER_STATS_GRAPH}
+        query={!this.props.lite ? SERVER_STATS_GRAPH : SERVER_STATS_GRAPH_LITE}
         variables={{
           serverID: this.props.serverID,
           steamID: Auth.claim.steamID,
@@ -123,11 +121,11 @@ class ServerStatsGraph extends React.Component{
           if(error) return <Error statName={this.statName(this.props.stat)} />;
 
           if(
-            !publicStats.includes(this.props.stat) &&
+            !this.props.lite &&
             data.adminPermission.viewServerStats === 0
           ) return <NoPermission statName={this.statName(this.props.stat)} />;
 
-          data = this.formatData(data.server.serverStats);
+          data = this.formatData(data.server.serverStats || data.server.serverStatsLite);
 
           return (
             <Component
