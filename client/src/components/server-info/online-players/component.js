@@ -55,75 +55,90 @@ class Component extends React.Component {
             )
           }
           {
-            this.props.onlinePlayers.map((player, key) => (
-              <AdvancedModal
-                isOpen={false}
-                key={key}
-              >
-                {(modal) =>  (
-                  <>
-                    <Badge
-                      color="primary"
-                      className="mr-2"
-                      onClick={modal.open}
-                      style={{
-                        cursor: 'pointer'
-                      }}
-                    >
-                      {player.lastPlayerName}
-                    </Badge>
+            this.props.onlinePlayers.map((player, key) => {
+              // if the guid is null then the player is not an admin, so we
+              // do not display the popup
+              if(player.guid === null) return (
+                <Badge
+                  color="primary"
+                  className="mr-2"
+                  style={{
+                    cursor: 'pointer'
+                  }}
+                >
+                  {player.lastPlayerName}
+                </Badge>
+              );
 
-                    <Modal
-                      className="modal-dialog-centered modal-primary"
-                      contentClassName="bg-gradient-primary"
-                      isOpen={modal.isOpen}
-                      toggle={modal.close}
-                    >
-                      <div className="modal-header">
-                        <h6 className="modal-title">
-                          Player Info
-                        </h6>
-                        <button
-                          aria-label="Close"
-                          className="close"
-                          data-dismiss="modal"
-                          type="button"
-                          onClick={modal.close}
-                        >
-                          <span aria-hidden={true}>×</span>
-                        </button>
-                      </div>
-                      <ModalBody>
-                        <div className="py-3 text-center">
-                          <i className="fas fa-info-circle fa-4x" />
-                          <h4 className="heading mt-4">
-                            {player.guid}
-                          </h4>
-                          <p><strong>Last Seen:</strong> {moment.utc(player.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+              return (
+                <AdvancedModal
+                  isOpen={false}
+                  key={key}
+                >
+                  {(modal) =>  (
+                    <>
+                      <Badge
+                        color="primary"
+                        className="mr-2"
+                        onClick={modal.open}
+                        style={{
+                          cursor: 'pointer'
+                        }}
+                      >
+                        {player.lastPlayerName}
+                      </Badge>
+
+                      <Modal
+                        className="modal-dialog-centered modal-primary"
+                        contentClassName="bg-gradient-primary"
+                        isOpen={modal.isOpen}
+                        toggle={modal.close}
+                      >
+                        <div className="modal-header">
+                          <h6 className="modal-title">
+                            Player Info
+                          </h6>
+                          <button
+                            aria-label="Close"
+                            className="close"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={modal.close}
+                          >
+                            <span aria-hidden={true}>×</span>
+                          </button>
                         </div>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button
-                          color="default"
-                          className="btn-white"
-                          onClick={() => this.viewPlayerPage(player.guid)}
-                        >
-                          View Player Page
-                        </Button>
-                        <Button
-                          className="text-white ml-auto"
-                          color="link"
-                          data-dismiss="modal"
-                          onClick={modal.close}
-                        >
-                          Close
-                        </Button>
-                      </ModalFooter>
-                    </Modal>
-                  </>
-                )}
-              </AdvancedModal>
-            ))
+                        <ModalBody>
+                          <div className="py-3 text-center">
+                            <i className="fas fa-info-circle fa-4x" />
+                            <h4 className="heading mt-4">
+                              {player.guid}
+                            </h4>
+                          </div>
+                        </ModalBody>
+                        <ModalFooter>
+                          <Button
+                            color="default"
+                            className="btn-white"
+                            onClick={() => this.viewPlayerPage(player.guid)}
+                          >
+                            View Player Page
+                          </Button>
+                          <Button
+                            className="text-white ml-auto"
+                            color="link"
+                            data-dismiss="modal"
+                            onClick={modal.close}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </Modal>
+                    </>
+                  )}
+                </AdvancedModal>
+              );
+            })
           }
         </CardBody>
       </Card>
