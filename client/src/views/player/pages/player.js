@@ -9,6 +9,7 @@ import Layout from '../layout/layout';
 
 import {
   OwnPlayer,
+  OwnPlayerNames,
   Offences
 } from '../../../components';
 
@@ -24,6 +25,14 @@ class Player extends React.Component {
         <Row className="justify-content-center">
           <Col>
             <OwnPlayer
+              serverID={serverID}
+              guid={guid}
+            />
+          </Col>
+        </Row>
+        <Row className="justify-content-center mt-4">
+          <Col>
+            <OwnPlayerNames
               serverID={serverID}
               guid={guid}
             />
