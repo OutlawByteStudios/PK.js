@@ -25,9 +25,6 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
   }
 
   ensureFieldsWrapped(objectType) {
-    if (objectType._authFieldsWrapped) return;
-    objectType._authFieldsWrapped = true;
-
     const serverIDField = getServerIDField(objectType);
     const fields = objectType.getFields();
 
