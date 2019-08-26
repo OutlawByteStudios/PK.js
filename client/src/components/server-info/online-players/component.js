@@ -60,9 +60,6 @@ class Component extends React.Component {
                 <Badge
                   color="primary"
                   className="mr-2"
-                  style={{
-                    cursor: 'pointer'
-                  }}
                 >
                   {player.lastPlayerName}
                 </Badge>
