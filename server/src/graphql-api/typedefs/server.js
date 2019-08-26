@@ -16,7 +16,6 @@ export default gql`
     recordStats: Boolean
 
     serverStats(startDate: Date, stopDate: Date): [ServerStats]
-      @fieldViewPermission(requiresAdminPermission: "viewServerStats")
 
     gameserverOnline: Boolean
     serverStatus: ServerStatus

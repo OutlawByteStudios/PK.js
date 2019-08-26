@@ -1,14 +1,15 @@
 import React from 'react';
 
 import {
-  Col
+  Col,
+  Row
 } from 'reactstrap';
 
 import Layout from '../layout/layout';
 
 import { Offences } from '../../../components';
 
-class SelectPlayer extends React.Component {
+class Player extends React.Component {
   render(){
     let serverID = parseInt(this.props.match.params.serverID) || null;
     let guid = this.props.match.params.guid || null;
@@ -17,15 +18,17 @@ class SelectPlayer extends React.Component {
         serverID={serverID}
         guid={guid}
       >
-        <Col>
-          <Offences
-            serverID={serverID}
-            guid={guid}
-          />
-        </Col>
+        <Row className="justify-content-center">
+          <Col>
+            <Offences
+              serverID={serverID}
+              guid={guid}
+            />
+          </Col>
+        </Row>
       </Layout>
     );
   }
 }
 
-export default SelectPlayer;
+export default Player;

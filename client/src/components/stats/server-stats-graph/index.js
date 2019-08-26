@@ -11,6 +11,8 @@ import Error from './error';
 import NoPermission from './no-permission';
 import Component from './component';
 
+const publicStats = ['playerCount'];
+
 class ServerStatsGraph extends React.Component{
   state = {
     mode: 'day'
@@ -120,7 +122,10 @@ class ServerStatsGraph extends React.Component{
           if(loading) return <Loader statName={this.statName(this.props.stat)} />;
           if(error) return <Error statName={this.statName(this.props.stat)} />;
 
-          if(data.adminPermission.viewServerStats === 0) return <NoPermission statName={this.statName(this.props.stat)} />;
+          if(
+            !publicStats.includes(this.props.stat) &&
+            data.adminPermission.viewServerStats === 0
+          ) return <NoPermission statName={this.statName(this.props.stat)} />;
 
           data = this.formatData(data.server.serverStats);
 

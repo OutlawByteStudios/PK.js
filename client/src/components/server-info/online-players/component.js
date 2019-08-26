@@ -43,6 +43,18 @@ class Component extends React.Component {
         </CardHeader>
         <CardBody>
           {
+            this.props.onlinePlayers.length === 0 && (
+              <>
+                <div className="text-center mt-2 mb-2">
+                  No Players Online!
+                </div>
+                <div className="btn-wrapper text-center">
+                  <i className="far fa-frown-open fa-4x"/>
+                </div>
+              </>
+            )
+          }
+          {
             this.props.onlinePlayers.map((player, key) => (
               <AdvancedModal
                 isOpen={false}

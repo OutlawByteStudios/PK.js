@@ -55,9 +55,7 @@ class Layout extends React.Component {
           </div>
           {/* Page content */}
           <Container className="mt--8 pb-5">
-            <Row className="justify-content-center">
-              {this.props.children}
-            </Row>
+            {this.props.children}
           </Container>
         </div>
         <Footer />

@@ -58,7 +58,7 @@ class Component extends React.Component{
                     color="primary"
                     size="sm"
                     tag={Link}
-                    to={`/player/${player.server.id}/${player.guid}`}
+                    to={`/player/${player.server.id}/${player.guid}/`}
                   >
                     Go to Server...
                   </Button>

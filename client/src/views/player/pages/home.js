@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {
-  Col
-} from 'reactstrap';
+  Col, Row
+} from "reactstrap";
 
 import Layout from '../layout/layout';
 
@@ -13,9 +13,11 @@ class SelectPlayer extends React.Component {
   render(){
     return (
       <Layout>
-        <Col>
-          <LinkedPlayers />
-        </Col>
+        <Row className="justify-content-center">
+          <Col>
+            <LinkedPlayers />
+          </Col>
+        </Row>
       </Layout>
     );
   }
