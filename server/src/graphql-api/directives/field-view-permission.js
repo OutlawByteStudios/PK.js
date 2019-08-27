@@ -55,24 +55,13 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
         // which is assigned to this object
         if (viewIfPlayer) {
           const guid = parent[getPlayerIDField(objectType)];
-          const players = await Player.countDocuments({
-            server,
-            guid,
-            linkedSteamUser: context.user
-          });
-          if (players > 0)
+          if(context.players[`${server}-${guid}`])
             return resolve.apply(this, [parent, args, context, info]);
         }
 
         // if they are not the player check if they have permission to access
         // the data via an admin permission
-        const adminPermissions = await AdminPermission.countDocuments({
-          server,
-          admin: context.user,
-          [requires]: { $gt: 0 }
-        });
-        if (adminPermissions > 0)
-          return resolve.apply(this, [parent, args, context, info]);
+        if(context.adminPermissions[server] && context.adminPermissions[server][requires]) return resolve.apply(this, [parent, args, context, info]);
 
         return null;
       };
