@@ -19,7 +19,6 @@ import SERVER_CONTROLLER from './server-management/server-controller';
 import SERVER_MODULES from './server-management/server-modules';
 import PLAYER_STATS_GRAPH from './stats/player-stats-graph';
 import SERVER_STATS_GRAPH from './stats/server-stats-graph';
-import SERVER_STATS_GRAPH_LITE from './stats/server-stats-graph-lite';
 import ITEM_IDS from './item-ids';
 import LOG_SEARCH from './log-search';
 import OWN_ADMIN_PERMISSIONS from './own-admin-permissions';
@@ -48,7 +47,6 @@ export {
   SERVER_MODULES,
   PLAYER_STATS_GRAPH,
   SERVER_STATS_GRAPH,
-  SERVER_STATS_GRAPH_LITE,
   ITEM_IDS,
   LOG_SEARCH,
   OWN_ADMIN_PERMISSIONS,

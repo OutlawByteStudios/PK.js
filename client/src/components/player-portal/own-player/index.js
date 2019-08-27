@@ -3,6 +3,8 @@ import { Query } from 'react-apollo';
 
 import { OWN_PLAYER } from '../../../graphql/queries/index';
 
+import Auth from '../../../utils/auth';
+
 import Loader from './loader';
 import Error from './error';
 import NotFound from './not-found';
@@ -28,7 +30,7 @@ class OwnPlayer extends React.Component{
 
           // if this is null then they should not be able to see this as they're
           // looking at a different player
-          if(data.server.player.linkedSteamUser === null) return <NoPermission />;
+          if(data.server.player.linkedSteamUser.steamID !== Auth.claim.steamID) return <NoPermission />;
 
           return (
             <Component
