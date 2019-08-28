@@ -103,7 +103,7 @@ class Component extends React.Component {
                             color="primary"
                             size="sm"
                             tag={Link}
-                            to={`/admin/${player.server.id}/players/${player.guid}/`}
+                            to={`/admin/${this.props.serverID}/players/${player.guid}/`}
                           >
                             View Player Page
                           </Button>
