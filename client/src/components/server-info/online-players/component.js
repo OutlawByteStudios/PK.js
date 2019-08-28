@@ -100,8 +100,8 @@ class Component extends React.Component {
                         </ModalBody>
                         <ModalFooter>
                           <Button
-                            color="primary"
-                            size="sm"
+                            color="default"
+                            className="btn-white"
                             tag={Link}
                             to={`/admin/${this.props.serverID}/players/${player.guid}/`}
                           >
