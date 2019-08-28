@@ -34,6 +34,7 @@ class PlayerIPs extends React.Component{
 
           return (
             <Component
+              serverID={this.props.serverID}
               ipRecords={data.server.player.ipRecords}
               ipLinkedRecords={data.server.player.ipLinkedRecords}
             />

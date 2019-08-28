@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   Button,
@@ -17,20 +17,6 @@ import AddAdmin from '../add-admin';
 
 
 class Component extends React.Component{
-  constructor(){
-    super();
-    this.editAdminRedirect = this.editAdminRedirect.bind(this);
-  }
-
-  editAdminRedirect(steamID){
-    this.props.history.push(
-      this.props.match.path
-        .replace(':serverID', this.props.serverID)
-        .replace('/:steamID', '')
-      + ((steamID) ? '/' + steamID : '')
-    );
-  }
-
   render(){
     return (
       <Card>
@@ -58,7 +44,8 @@ class Component extends React.Component{
                     color="primary"
                     size="sm"
                     className={(this.props.currentSelectedSteamID === adminPermission.admin.steamID) ? 'disabled' : null}
-                    onClick={() => { this.editAdminRedirect(adminPermission.admin.steamID); }}
+                    tag={Link}
+                    to={`/admin/${this.props.serverID}/admins/${adminPermission.admin.steamID}/`}
                   >
                     Edit Permission
                   </Button>
@@ -81,4 +68,4 @@ class Component extends React.Component{
   }
 }
 
-export default withRouter(Component);
+export default Component;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   Badge,
@@ -17,19 +17,6 @@ import {
 import AdvancedModal from '../../misc/modals/advanced-modal';
 
 class Component extends React.Component {
-  constructor(){
-    super();
-    this.viewPlayerPage = this.viewPlayerPage.bind(this);
-  }
-
-  viewPlayerPage(guid){
-    this.props.history.push(
-      this.props.match.path
-        .replace(':serverID', this.props.match.params.serverID)
-      + '/players/' + guid
-    );
-  }
-
   render() {
     return (
       <Card className="bg-secondary shadow">
@@ -113,9 +100,10 @@ class Component extends React.Component {
                         </ModalBody>
                         <ModalFooter>
                           <Button
-                            color="default"
-                            className="btn-white"
-                            onClick={() => this.viewPlayerPage(player.guid)}
+                            color="primary"
+                            size="sm"
+                            tag={Link}
+                            to={`/admin/${player.server.id}/players/${player.guid}/`}
                           >
                             View Player Page
                           </Button>
@@ -141,4 +129,4 @@ class Component extends React.Component {
   }
 }
 
-export default withRouter(Component);
+export default Component;

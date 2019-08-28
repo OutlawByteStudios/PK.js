@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import {
@@ -16,30 +16,6 @@ import {
 import AdvancedModal from '../../misc/modals/advanced-modal';
 
 class Component extends React.Component {
-  constructor(){
-    super();
-    this.viewIPPage = this.viewIPPage.bind(this);
-    this.viewPlayerPage = this.viewPlayerPage.bind(this);
-  }
-
-  viewIPPage(ipMaskID){
-    this.props.history.push(
-      this.props.match.path
-        .replace(':serverID', this.props.match.params.serverID)
-        .replace('players', 'playersbyip')
-        .replace('/:guid', '')
-      + '/' + ipMaskID
-    );
-  }
-
-  viewPlayerPage(guid){
-    this.props.history.push(
-      this.props.match.path
-        .replace(':serverID', this.props.match.params.serverID)
-        .replace(':guid', guid)
-    );
-  }
-
   render() {
     return (
       <Card className="bg-secondary shadow">
@@ -102,7 +78,8 @@ class Component extends React.Component {
                           <Button
                             color="default"
                             className="btn-white"
-                            onClick={() => this.viewIPPage(record.ipMask)}
+                            tag={Link}
+                            to={`/admin/${this.props.serverID}/playersbyip/${record.ipMask}/`}
                           >
                             View IP Page
                           </Button>
@@ -177,10 +154,9 @@ class Component extends React.Component {
                           <Button
                             color="default"
                             className="btn-white"
-                            onClick={() => {
-                              modal.close();
-                              this.viewPlayerPage(record.player.guid)
-                            }}
+                            onClick={() => modal.close()}
+                            tag={Link}
+                            to={`/admin/${this.props.serverID}/players/${record.player.guid}/`}
                           >
                             View Player Page
                           </Button>
@@ -206,4 +182,4 @@ class Component extends React.Component {
   }
 }
 
-export default withRouter(Component);
+export default Component;

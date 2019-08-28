@@ -23,6 +23,7 @@ class Player extends React.Component{
 
           return (
             <Component
+              serverID={this.props.serverID}
               playerPortal={this.props.playerPortal}
               onlinePlayers={data.server.onlinePlayers}
             />

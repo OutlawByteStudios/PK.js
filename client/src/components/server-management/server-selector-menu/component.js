@@ -1,27 +1,14 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   Button,
   Card,
   CardHeader,
   Table
-} from 'reactstrap';
+} from "reactstrap";
 
 class Component extends React.Component {
-  constructor(){
-    super();
-    this.goToServer = this.goToServer.bind(this);
-  }
-
-  goToServer(serverID){
-    this.props.history.push(
-      this.props.match.path
-        .replace(':serverID', '')
-      + serverID
-    );
-  }
-
   render(){
     return (
       <Card>
@@ -65,7 +52,8 @@ class Component extends React.Component {
                   <Button
                     color="primary"
                     size="sm"
-                    onClick={() => { this.goToServer(adminPermission.server.id) }}
+                    tag={Link}
+                    to={`/admin/${adminPermission.server.id}/`}
                   >
                     Go to Server...
                   </Button>
@@ -80,4 +68,4 @@ class Component extends React.Component {
   }
 }
 
-export default withRouter(Component);
+export default Component;

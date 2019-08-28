@@ -30,6 +30,7 @@ class Player extends React.Component{
 
           return (
             <Component
+              serverID={this.props.serverID}
               ipRecords={data.server.ipRecords}
             />
           );
