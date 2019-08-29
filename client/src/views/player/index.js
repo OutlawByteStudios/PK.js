@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import ProtectedRoute from '../../components/misc/protected-route';
 
 import routes from './routes';
 
 function createRoutes(){
   return routes.map((route, key) => (
-    <Route
+    <ProtectedRoute
       path={route.path}
+      redirect={'/login'}
       exact={route.exact}
       component={route.component}
       key={key}

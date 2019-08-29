@@ -9,10 +9,16 @@ import {
   Navbar,
   NavbarBrand,
   Row,
-  UncontrolledCollapse
+  UncontrolledCollapse,
+  UncontrolledDropdown,
+  DropdownToggle,
+  Media,
+  DropdownMenu,
+  DropdownItem
 } from 'reactstrap';
 
 import routes from '../routes';
+import Auth from "../../../utils/auth";
 
 class CustomNavbar extends React.Component {
 
@@ -53,12 +59,37 @@ class CustomNavbar extends React.Component {
           expand="md"
         >
           <Container className="px-4">
-            <NavbarBrand to="/" tag={Link}>
-              <img alt="..." src={require("assets/img/brand/pk-js-white.png")} />
-            </NavbarBrand>
             <button className="navbar-toggler" id="navbar-collapse-main">
               <span className="navbar-toggler-icon" />
             </button>
+            <NavbarBrand
+              to="/"
+              tag={Link}
+            >
+              <img alt="..." src={require("assets/img/brand/pk-js-white.png")} />
+            </NavbarBrand>
+            <Nav className="align-items-center d-md-none">
+              <UncontrolledDropdown nav>
+                <DropdownToggle nav>
+                  <Media className="align-items-center">
+                  <span className="avatar avatar-sm rounded-circle">
+                    <img
+                      alt="..."
+                      src={Auth.claim.avatar}
+                    />
+                  </span>
+                  </Media>
+                </DropdownToggle>
+                <DropdownMenu className="dropdown-menu-arrow" right>
+                  <DropdownItem href="#pablo" onClick={() => {
+                    Auth.logout();
+                  }}>
+                    <i className="ni ni-user-run" />
+                    <span>Logout</span>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
             <UncontrolledCollapse navbar toggler="#navbar-collapse-main">
               <div className="navbar-collapse-header d-md-none">
                 <Row>
