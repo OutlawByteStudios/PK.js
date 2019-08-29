@@ -42,7 +42,7 @@ class LogSearch extends React.Component {
     let [date, startTime, endTime, ...searchTerms] = this.props.searchString.split(';');
 
     let addTerms = 3 - searchTerms.length % 3;
-    for(let i = 0; i < addTerms; i++) searchTerms.push('');
+    if(addTerms !== 3) for(let i = 0; i < addTerms; i++) searchTerms.push('');
 
     if(startTime === 'null') startTime = null;
     if(endTime === 'null') endTime = null;
