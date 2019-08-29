@@ -68,28 +68,6 @@ class CustomNavbar extends React.Component {
             >
               <img alt="..." src={require("assets/img/brand/pk-js-white.png")} />
             </NavbarBrand>
-            <Nav className="align-items-center d-md-none">
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
-                  <Media className="align-items-center">
-                  <span className="avatar avatar-sm rounded-circle">
-                    <img
-                      alt="..."
-                      src={Auth.claim.avatar}
-                    />
-                  </span>
-                  </Media>
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-arrow" right>
-                  <DropdownItem href="#pablo" onClick={() => {
-                    Auth.logout();
-                  }}>
-                    <i className="ni ni-user-run" />
-                    <span>Logout</span>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
             <UncontrolledCollapse navbar toggler="#navbar-collapse-main">
               <div className="navbar-collapse-header d-md-none">
                 <Row>
@@ -116,6 +94,28 @@ class CustomNavbar extends React.Component {
                 {this.createLinks(routes)}
               </Nav>
             </UncontrolledCollapse>
+            <Nav className="align-items-center">
+              <UncontrolledDropdown nav>
+                <DropdownToggle nav>
+                  <Media className="align-items-center">
+                  <span className="avatar avatar-sm rounded-circle">
+                    <img
+                      alt="..."
+                      src={Auth.claim.avatar}
+                    />
+                  </span>
+                  </Media>
+                </DropdownToggle>
+                <DropdownMenu className="dropdown-menu-arrow" right>
+                  <DropdownItem href="#pablo" onClick={() => {
+                    Auth.logout();
+                  }}>
+                    <i className="ni ni-user-run" />
+                    <span>Logout</span>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
           </Container>
         </Navbar>
       </>
