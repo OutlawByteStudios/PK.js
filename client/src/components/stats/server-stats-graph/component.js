@@ -71,6 +71,16 @@ class Component extends React.Component{
                     <span className="d-md-none">D</span>
                   </Button>
                 </NavItem>
+                <NavItem>
+                  <Button
+                    color={this.props.mode === 'hour' ? 'primary' : 'secondary'}
+                    className="py-2 px-3"
+                    onClick={() => this.props.onModeChange('hour')}
+                  >
+                    <span className="d-none d-md-block">Hour</span>
+                    <span className="d-md-none">H</span>
+                  </Button>
+                </NavItem>
               </Nav>
             </Col>
           </Row>

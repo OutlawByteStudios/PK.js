@@ -66,6 +66,7 @@ class ServerStatsGraph extends React.Component{
         formatString = 'HH:mm dddd';
         break;
       case 'day':
+      case 'hour':
         formatString = 'HH:mm';
         break;
       default:
@@ -102,6 +103,9 @@ class ServerStatsGraph extends React.Component{
         break;
       case 'day':
         startDate = startDate.subtract(1, 'days');
+        break;
+      case 'hour':
+        startDate = startDate.subtract(1, 'hours');
         break;
       default:
         startDate = startDate.subtract(1, 'months');
