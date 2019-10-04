@@ -14,7 +14,7 @@ export default async (parent, args, context) => {
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
 
-  await Player.update(
+  await Player.updateMany(
     {
       server: args.serverID
     },
