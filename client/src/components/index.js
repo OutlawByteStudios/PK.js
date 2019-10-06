@@ -15,6 +15,7 @@ import LinkedPlayers from './player-portal/linked-players';
 import Offences from './player-portal/offences';
 import OwnPlayer from './player-portal/own-player';
 import OwnPlayerNames from './player-portal/own-player-names';
+import BanList from './server-info/ban-list';
 import OnlinePlayers from './server-info/online-players';
 import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
@@ -47,6 +48,7 @@ export {
   Offences,
   OwnPlayer,
   OwnPlayerNames,
+  BanList,
   OnlinePlayers,
   ServerStatus,
   ClearPlayerLocations,

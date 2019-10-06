@@ -12,6 +12,7 @@ import AdminLogs from './pages/admin-logs';
 import Players from './pages/players';
 import PlayersByIP from './pages/players-by-ip';
 import LogSearch from './pages/log-search';
+import BanList from './pages/ban-list';
 
 const pathPrefix = '/admin';
 
@@ -170,6 +171,16 @@ const serverRoutes = [
     component: LogSearch,
     requiresPermission: [
       'viewServerLogs'
+    ]
+  },
+  {
+    path: pathPrefix + '/:serverID/ban-list',
+    exact: false,
+    name: "Ban List",
+    icon: "fas fa-clipboard-list",
+    component: BanList,
+    requiresPermission: [
+      'viewBans'
     ]
   }
 ];

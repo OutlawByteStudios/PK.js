@@ -14,11 +14,13 @@ async function updateBanList(server) {
   const activeBans = await Ban.find({
     $or: [
       {
+        server: server.id,
         unbannedDate: null,
         startDate: { $lte: Date.now() },
         endDate: null
       },
       {
+        server: server.id,
         unbannedDate: null,
         startDate: { $lte: Date.now() },
         endDate: { $gt: Date.now() }
@@ -36,6 +38,7 @@ async function updateBanList(server) {
 
   // get guids that are victims of an ip ban
   const ipBannedVictims = await IPRecord.distinct('player', {
+    server: server.id,
     ip: {
       $in: await IPRecord.distinct('ip', {
         player: { $in: ipBannedGUIDs }

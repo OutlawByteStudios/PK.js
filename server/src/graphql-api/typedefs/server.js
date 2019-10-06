@@ -43,7 +43,7 @@ export default gql`
     ipRecords(ipMask: Int, ipLike: String): [IPRecord]
       @fieldViewPermission(requiresAdminPermission: "viewIPRecords")
 
-    bans(player: String): [Ban]
+    bans(player: String, active: Boolean): [Ban]
       @fieldViewPermission(
         requiresAdminPermission: "viewBans"
         viewIfPlayer: true

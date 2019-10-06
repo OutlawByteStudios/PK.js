@@ -11,6 +11,7 @@ import PLAYERS_ON_IP from './ip-management/players-on-ip';
 import LINKED_PLAYERS from './player-portal/linked-players';
 import OFFENCES from './player-portal/offences';
 import OWN_PLAYER from './player-portal/own-player';
+import BAN_LIST from './server-info/ban-list';
 import ONLINE_PLAYERS from './server-info/online-players';
 import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
@@ -39,6 +40,7 @@ export {
   LINKED_PLAYERS,
   OFFENCES,
   OWN_PLAYER,
+  BAN_LIST,
   ONLINE_PLAYERS,
   SERVER_STATUS,
   SERVER_CONFIG,
