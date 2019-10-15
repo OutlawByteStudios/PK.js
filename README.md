@@ -2,6 +2,7 @@
 
 ![Logo](client/src/assets/img/brand/pk-js.png)
 #### Persistent Kingdoms Script Set & Admin Panel
+##### [PK.js Module System](https://github.com/SmartPhoenix/PK.js-Module-System)
 
 ![GitHub release](https://img.shields.io/github/release/SmartPhoenix/PK.js.svg?style=flat-square)
 ![GitHub contributors](https://img.shields.io/github/contributors/SmartPhoenix/PK.js.svg?style=flat-square)
