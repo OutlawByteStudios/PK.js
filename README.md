@@ -36,7 +36,7 @@ PK.js has many features that make it simple and easy for you to run a Persistent
  * And Much more!
  
 ## Contributing
-Feel free to contribute to PK.js, however, please ensure that any contributions fall inline with the aims of PK.js, e.g. please do not make a pull request attempting to add roleplay additions that will not benefit the majority of servers. Before working on large pieces of functionality it is suggested that you make an issue to discuss the changes you intend to make. This will allow ensure you do not waste time on a feature that will not be accepted and will also allow suggestions on the best way to implement these new pieces of functionality.
+Feel free to contribute to PK.js, however, please ensure that any contributions fall inline with the aims of PK.js, e.g. please do not make a pull request attempting to add roleplay additions that will not benefit the majority of servers. Before working on large pieces of functionality it is suggested that you make an issue to discuss the changes you intend to make. This will allow you to ensure you do not waste time developing a feature that will not be accepted and will also allow suggestions to be made on the best way to implement these new pieces of functionality.
 
 Please note this project relies on / is split across multiple repositories and contributions may need to be made in other repositories to ensure they are released.
  * [Persistent Kingdoms](https://github.com/SmartPhoenix/Persistent-Kingdoms) - Anything not directly relating to the scripts (i.e. saving system) or that would benefit those not using PK.js need to be made here. Any client side changes must be made here too, however, please be aware that client side changes are made infrequently.
