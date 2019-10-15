@@ -2,7 +2,6 @@
 
 ![Logo](client/src/assets/img/brand/pk-js.png)
 #### Persistent Kingdoms Script Set & Admin Panel
-##### [PK.js Module System](https://github.com/SmartPhoenix/PK.js-Module-System)
 
 ![GitHub release](https://img.shields.io/github/release/SmartPhoenix/PK.js.svg?style=flat-square)
 ![GitHub contributors](https://img.shields.io/github/contributors/SmartPhoenix/PK.js.svg?style=flat-square)
@@ -11,6 +10,8 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/SmartPhoenix/PK.js.svg?style=flat-square)](https://github.com/SmartPhoenix/PK.js/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/SmartPhoenix/PK.js.svg?style=flat-square)](https://github.com/SmartPhoenix/PK.js/pulls)
+
+##### [PK.js Module System](https://github.com/SmartPhoenix/PK.js-Module-System)
 <br><br>
 </div>
 
@@ -45,3 +46,4 @@ Please note this project relies on / is split across multiple repositories and c
 
 ## License
 PK.js is licensed under the _Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License_. For more details please refer to the [license](LICENSE.md).
+
