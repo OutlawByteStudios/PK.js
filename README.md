@@ -33,6 +33,7 @@ PK.js has many features that make it simple and easy for you to run a Persistent
  * Anti Duping Monitoring - Monitor how much gold a player has over time and be able to quickly spot any suspicious increased or decreases in wealth.
  * Log Searching Tool - With immense control and great speed quickly search your server's log files for what you're looking for.
  * Easy Sharing - All pages within the admin panel have unique URLs that allow you to quickly link and share information with other admins.
+ * Player Portal - Give players the ability to see what is going on in the server, their save information and their offences from the web panel.
  * And Much more!
  
 ## Contributing
