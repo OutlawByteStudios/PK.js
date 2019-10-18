@@ -62,6 +62,7 @@ class PlayerStatsGraph extends React.Component{
   formatData(dataPoints){
     let formatString;
     switch(this.state.mode){
+      case 'year':
       case 'month':
         formatString = 'DD/MM';
         break;
@@ -97,6 +98,9 @@ class PlayerStatsGraph extends React.Component{
     let startDate = moment.utc();
     let stopDate = moment.utc();
     switch(this.state.mode){
+      case 'year':
+        startDate = startDate.subtract(1, 'years');
+        break;
       case 'month':
         startDate = startDate.subtract(1, 'months');
         break;

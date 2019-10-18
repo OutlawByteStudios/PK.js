@@ -43,6 +43,18 @@ class Component extends React.Component{
               <Nav className="justify-content-end" pills>
                 <NavItem>
                   <Button
+                    size="sm"
+                    color={this.props.mode === 'year' ? 'primary' : 'secondary'}
+                    className="py-2 px-3"
+                    onClick={() => this.props.onModeChange('year')}
+                  >
+                    <span className="d-none d-md-block">Year</span>
+                    <span className="d-md-none">Y</span>
+                  </Button>
+                </NavItem>
+                <NavItem>
+                  <Button
+                    size="sm"
                     color={this.props.mode === 'month' ? 'primary' : 'secondary'}
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('month')}
@@ -53,6 +65,7 @@ class Component extends React.Component{
                 </NavItem>
                 <NavItem>
                   <Button
+                    size="sm"
                     color={this.props.mode === 'week' ? 'primary' : 'secondary'}
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('week')}
@@ -63,6 +76,7 @@ class Component extends React.Component{
                 </NavItem>
                 <NavItem>
                   <Button
+                    size="sm"
                     color={this.props.mode === 'day' ? 'primary' : 'secondary'}
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('day')}

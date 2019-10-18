@@ -2,10 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import {
-  Alert,
-  Button,
   Card,
-  CardBody,
   CardHeader,
   Col,
   Row,
