@@ -7,22 +7,23 @@ export default {
 
       if (filter.player) query.player = filter.player;
 
-      if(filter.active && filter.active === true) query = {
-        $or: [
-          {
-            ...query,
-            unbannedDate: null,
-            startDate: { $lte: Date.now() },
-            endDate: null
-          },
-          {
-            ...query,
-            unbannedDate: null,
-            startDate: { $lte: Date.now() },
-            endDate: { $gt: Date.now() }
-          }
-        ]
-      };
+      if (filter.active && filter.active === true)
+        query = {
+          $or: [
+            {
+              ...query,
+              unbannedDate: null,
+              startDate: { $lte: Date.now() },
+              endDate: null
+            },
+            {
+              ...query,
+              unbannedDate: null,
+              startDate: { $lte: Date.now() },
+              endDate: { $gt: Date.now() }
+            }
+          ]
+        };
 
       return Ban.find(query);
     }

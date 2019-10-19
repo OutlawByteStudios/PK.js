@@ -1,21 +1,26 @@
 import { AdminPermission } from '../../../models';
 import { panelPermissions, gamePermissions } from 'shared/constants';
 
-const sortAdmins = (admins) => {
-  admins = admins.map(admin => {
-    admin = admin.toObject();
+const sortAdmins = admins => {
+  admins = admins
+    .map(admin => {
+      admin = admin.toObject();
 
-    let totalPermissions = 0;
-    for(let permission of panelPermissions.concat(gamePermissions)) totalPermissions += admin[permission.permission];
+      let totalPermissions = 0;
+      for (let permission of panelPermissions.concat(gamePermissions))
+        totalPermissions += admin[permission.permission];
 
-    return {
-      ...admin,
-      totalPermissions
-    }
-  }).sort((a, b) => { return b.totalPermissions - a.totalPermissions });
+      return {
+        ...admin,
+        totalPermissions
+      };
+    })
+    .sort((a, b) => {
+      return b.totalPermissions - a.totalPermissions;
+    });
 
   return admins;
-} ;
+};
 
 export default {
   Query: {

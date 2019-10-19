@@ -23,10 +23,16 @@ export default new ApolloServer({
       }).user.steamID;
 
       let adminPermissions = {};
-      (await AdminPermission.find({ admin: user })).forEach(adminPermission => adminPermissions[adminPermission.server] = adminPermission);
+      (await AdminPermission.find({ admin: user })).forEach(function(
+        adminPermission
+      ) {
+        adminPermissions[adminPermission.server] = adminPermission;
+      });
 
       let players = {};
-      (await Player.find({ linkedSteamUser: user })).forEach(player => players[`${player.server}-${player.guid}`] = player);
+      (await Player.find({ linkedSteamUser: user })).forEach(function(player) {
+        players[`${player.server}-${player.guid}`] = player;
+      });
 
       return {
         user,

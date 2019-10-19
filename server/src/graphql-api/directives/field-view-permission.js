@@ -1,6 +1,5 @@
 import { defaultFieldResolver } from 'graphql';
 import { SchemaDirectiveVisitor } from 'apollo-server-koa';
-import { AdminPermission, Player } from '../../models';
 
 const getServerIDField = objectType => {
   switch (objectType.toString()) {
@@ -55,13 +54,17 @@ class FieldViewPermission extends SchemaDirectiveVisitor {
         // which is assigned to this object
         if (viewIfPlayer) {
           const guid = parent[getPlayerIDField(objectType)];
-          if(context.players[`${server}-${guid}`])
+          if (context.players[`${server}-${guid}`])
             return resolve.apply(this, [parent, args, context, info]);
         }
 
         // if they are not the player check if they have permission to access
         // the data via an admin permission
-        if(context.adminPermissions[server] && context.adminPermissions[server][requires]) return resolve.apply(this, [parent, args, context, info]);
+        if (
+          context.adminPermissions[server] &&
+          context.adminPermissions[server][requires]
+        )
+          return resolve.apply(this, [parent, args, context, info]);
 
         return null;
       };

@@ -5,7 +5,7 @@ export default gql`
     _id: String
 
     server: Server
-    
+
     guid: String
       @fieldViewPermission(
         requiresAdminPermission: "viewPlayerInfo"
