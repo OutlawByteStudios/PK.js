@@ -41,7 +41,8 @@ async function updateBanList(server) {
     server: server.id,
     ip: {
       $in: await IPRecord.distinct('ip', {
-        player: { $in: ipBannedGUIDs }
+        player: { $in: ipBannedGUIDs },
+        server: server.id
       })
     }
   });
