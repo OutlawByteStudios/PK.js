@@ -36,6 +36,7 @@ export default {
       })).map(record => record.ip);
 
       const linkedGUIDs = (await IPRecord.find({
+        server: parent.server,
         ip: { $in: usedIPs }
       })).map(record => record.player);
 
@@ -46,14 +47,16 @@ export default {
             player: { $in: linkedGUIDs },
             unbannedDate: null,
             startDate: { $lte: Date.now() },
-            endDate: null
+            endDate: null,
+            server: parent.server
           },
           {
             ipBan: true,
             player: { $in: linkedGUIDs },
             unbannedDate: null,
             startDate: { $lte: Date.now() },
-            endDate: { $gt: Date.now() }
+            endDate: { $gt: Date.now() },
+            server: parent.server
           }
         ]
       })).map(ban => ban.player);
