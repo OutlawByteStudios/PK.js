@@ -3,11 +3,15 @@ import { Player } from '../../models';
 import { BANK_DEPOSIT } from '../actions';
 
 export default async function(ctx) {
-  const player = await Player.findOne({
+  let player;
+
+  // get player value to check increment value with
+  player = await Player.findOne({
     server: ctx.query.serverID,
     guid: ctx.query.guid
   });
 
+  // find amount to increment player bank by
   let amount = ctx.query.amount;
   let amountToDeposit = Math.min(
     player.bankGold >= player.bankLimit
@@ -16,15 +20,24 @@ export default async function(ctx) {
     ctx.query.amount
   );
 
-  player.bankGold = player.bankGold + amountToDeposit;
-  await player.save();
+  // use update query rather than .save() to ensure we increment the freshest value
+  // get new data to return to player below
+  player = await Player.findOneAndUpdate({
+    server: player.server,
+    guid: player.guid
+  }, {
+    $inc: { bankGold: amountToDeposit }
+  }, {
+    new: true
+  });
 
+  // return info to player
   ctx.body = encode([
     BANK_DEPOSIT,
     ctx.query.playerID,
     amountToDeposit,
     player.bankGold,
     amount - amountToDeposit, // amount go give back to player-selector
-    'Bank limit reached.' // reason  for above
+    'Bank limit reached.' // reason for above
   ]);
 }
