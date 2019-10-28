@@ -90,7 +90,10 @@ export default async ctx => {
     // or whether it was create since roughly the last ban list update
     if (new Date() - new Date(ipRecord.firstSeen) < 30 * 60 * 1000) {
       /* Check player is not IP banned */
-      let guids = (await IPRecord.find({ ip: ctx.query.ip })).map(
+      let guids = (await IPRecord.find({
+        server: ctx.query.serverID,
+        ip: ctx.query.ip
+      })).map(
         record => record.player
       );
       const bans = await Ban.count({
