@@ -1,12 +1,15 @@
 import { encode } from 'mb-warband-parser';
 import { Player } from '../../models';
 import { BANK_WITHDRAW } from '../actions';
+import bankLock from "../../utils/bank-lock";
 
 export default async function(ctx) {
-  let player;
+  // return no / bogus response if bank is locked.
+  if(bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
+  bankLock.lock(ctx.query.guid);
 
   // get player value to check increment value with
-  player = await Player.findOne({
+  const player = await Player.findOne({
     server: ctx.query.serverID,
     guid: ctx.query.guid
   });
@@ -14,20 +17,9 @@ export default async function(ctx) {
   // find amount to increment player bank by
   let amount = Math.min(player.bankGold, ctx.query.amount);
 
-  // use update query rather than .save() to ensure we increment the freshest value
-  // get new data to return to player below
-  player = await Player.findOneAndUpdate(
-    {
-      server: player.server,
-      guid: player.guid
-    },
-    {
-      $inc: { bankGold: amount * -1 }
-    },
-    {
-      new: true
-    }
-  );
+  player.bankGold = player.bankGold - amount;
+
+  await player.save();
 
   // return info to player
   ctx.body = encode([
@@ -36,4 +28,6 @@ export default async function(ctx) {
     amount,
     player.bankGold
   ]);
+
+  bankLock.unlock(ctx.query.guid);
 }
