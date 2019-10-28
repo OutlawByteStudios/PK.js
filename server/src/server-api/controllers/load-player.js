@@ -93,9 +93,7 @@ export default async ctx => {
       let guids = (await IPRecord.find({
         server: ctx.query.serverID,
         ip: ctx.query.ip
-      })).map(
-        record => record.player
-      );
+      })).map(record => record.player);
       const bans = await Ban.count({
         $or: [
           {

@@ -16,14 +16,18 @@ export default async function(ctx) {
 
   // use update query rather than .save() to ensure we increment the freshest value
   // get new data to return to player below
-  player = await Player.findOneAndUpdate({
-    server: player.server,
-    guid: player.guid
-  }, {
-    $inc: { bankGold: amount * -1 }
-  }, {
-    new: true
-  });
+  player = await Player.findOneAndUpdate(
+    {
+      server: player.server,
+      guid: player.guid
+    },
+    {
+      $inc: { bankGold: amount * -1 }
+    },
+    {
+      new: true
+    }
+  );
 
   // return info to player
   ctx.body = encode([
