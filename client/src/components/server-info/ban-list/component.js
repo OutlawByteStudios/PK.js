@@ -39,7 +39,7 @@ class Component extends React.Component {
             this.props.bans.map((ban, key) => (
               <tr key={key}>
                 <th scope="row">{ban.player.guid}</th>
-                <td scope="row">{ban.privateReason}</td>
+                <td>{ban.privateReason}</td>
                 <td>{ban.publicReason}</td>
                 <td>{moment.utc(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
                 <td>

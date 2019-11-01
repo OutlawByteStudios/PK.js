@@ -1,5 +1,20 @@
 export default [
   {
+    type: 'start_server',
+    name: 'Start Server',
+    toString: () => `Started the Server.`
+  },
+  {
+    type: 'stop_server',
+    name: 'Stop Server',
+    toString: () => `Stopped the Server.`
+  },
+  {
+    type: 'restart_server',
+    name: 'Restart Server',
+    toString: () => `Restarted the Server.`
+  },
+  {
     type: 'add_admin_permission',
     name: 'Add Admin',
     toString: adminLog => `Added ${adminLog.targetAdmin.displayName} as an admin.`

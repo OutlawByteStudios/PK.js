@@ -1,6 +1,7 @@
 import { AdminPermission, Server } from '../../../../models';
 
 import { startServer } from '../../../../utils/gameserver-instance-tools';
+import AdminLog from '../../../../models/admin-log';
 export default async (parent, args, context) => {
   /* Check for Permissions */
   if (context.user === null)
@@ -25,6 +26,13 @@ export default async (parent, args, context) => {
   server.gameserverLastModule = args.module;
   server.gameserverLastConfig = args.config;
   await server.save();
+
+  await new AdminLog({
+    server: server.id,
+    admin: requestingAdmin.admin,
+
+    type: 'start_server'
+  }).save();
 
   return server;
 };

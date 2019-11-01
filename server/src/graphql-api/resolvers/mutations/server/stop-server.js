@@ -1,6 +1,7 @@
 import { AdminPermission, Server } from '../../../../models';
 
 import { stopServer } from '../../../../utils/gameserver-instance-tools';
+import AdminLog from '../../../../models/admin-log';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -22,6 +23,13 @@ export default async (parent, args, context) => {
   if (server === null) throw new Error('Server not found.');
 
   await stopServer(args.serverID);
+
+  await new AdminLog({
+    server: server.id,
+    admin: requestingAdmin.admin,
+
+    type: 'stop_server'
+  }).save();
 
   return server;
 };
