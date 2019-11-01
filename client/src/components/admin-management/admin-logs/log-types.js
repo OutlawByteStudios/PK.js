@@ -2,17 +2,17 @@ export default [
   {
     type: 'start_server',
     name: 'Start Server',
-    toString: () => `Started the Server.`
+    toString: () => `Started the server.`
   },
   {
     type: 'stop_server',
     name: 'Stop Server',
-    toString: () => `Stopped the Server.`
+    toString: () => `Stopped the server.`
   },
   {
     type: 'restart_server',
     name: 'Restart Server',
-    toString: () => `Restarted the Server.`
+    toString: () => `Restarted the server.`
   },
   {
     type: 'add_admin_permission',
