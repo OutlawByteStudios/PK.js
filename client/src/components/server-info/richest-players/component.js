@@ -19,7 +19,7 @@ class Component extends React.Component {
             </Col>
           </Row>
         </CardHeader>
-        <Table className="align-items-center table-flush" responsive size="sm">
+        <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
             <th scope="col">Position</th>

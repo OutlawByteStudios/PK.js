@@ -13,6 +13,7 @@ import Players from './pages/players';
 import PlayersByIP from './pages/players-by-ip';
 import LogSearch from './pages/log-search';
 import BanList from './pages/ban-list';
+import RichestPlayers from './pages/richest-players';
 
 const pathPrefix = '/admin';
 
@@ -182,6 +183,13 @@ const serverRoutes = [
     requiresPermission: [
       'viewBans'
     ]
+  },
+  {
+    path: pathPrefix + '/:serverID/richest-players',
+    exact: false,
+    name: "Richest Players",
+    icon: "fas fa-university",
+    component: RichestPlayers
   }
 ];
 
