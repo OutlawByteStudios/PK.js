@@ -4,10 +4,9 @@ import { BANK_DEPOSIT } from '../actions';
 
 import bankLock from '../../utils/bank-lock';
 
-
 export default async function(ctx) {
   // return no / bogus response if bank is locked.
-  if(bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
+  if (bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
   bankLock.lock(ctx.query.guid);
 
   // get player value to check increment value with
@@ -28,7 +27,6 @@ export default async function(ctx) {
   player.bankGold = player.bankGold + amountToDeposit;
 
   await player.save();
-
 
   // return info to player
   ctx.body = encode([

@@ -1,11 +1,11 @@
 import { encode } from 'mb-warband-parser';
 import { Player } from '../../models';
 import { BANK_WITHDRAW } from '../actions';
-import bankLock from "../../utils/bank-lock";
+import bankLock from '../../utils/bank-lock';
 
 export default async function(ctx) {
   // return no / bogus response if bank is locked.
-  if(bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
+  if (bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
   bankLock.lock(ctx.query.guid);
 
   // get player value to check increment value with

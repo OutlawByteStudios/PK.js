@@ -13,6 +13,7 @@ import OFFENCES from './player-portal/offences';
 import OWN_PLAYER from './player-portal/own-player';
 import BAN_LIST from './server-info/ban-list';
 import ONLINE_PLAYERS from './server-info/online-players';
+import RICHEST_PLAYERS from './server-info/richest-players';
 import SERVER_STATUS from './server-info/server-status';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
@@ -42,6 +43,7 @@ export {
   OWN_PLAYER,
   BAN_LIST,
   ONLINE_PLAYERS,
+  RICHEST_PLAYERS,
   SERVER_STATUS,
   SERVER_CONFIG,
   SERVER_CONFIGS,

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { ONLINE_PLAYERS } from '../../../graphql/queries';
+import { RICHEST_PLAYERS } from '../../../graphql/queries';
 
 import Loader from './loader';
 import Error from './error';
 import Component from './component';
 
-class OnlinePlayers extends React.Component{
+class RichestPlayers extends React.Component{
   render(){
     return (
       <Query
-        query={ONLINE_PLAYERS}
+        query={RICHEST_PLAYERS}
         variables={{
           serverID: this.props.serverID
         }}
@@ -24,8 +24,7 @@ class OnlinePlayers extends React.Component{
           return (
             <Component
               serverID={this.props.serverID}
-              playerPortal={this.props.playerPortal}
-              onlinePlayers={data.server.onlinePlayers}
+              richestPlayers={data.server.richestPlayers}
             />
           );
         }}
@@ -34,4 +33,4 @@ class OnlinePlayers extends React.Component{
   }
 }
 
-export default OnlinePlayers;
+export default RichestPlayers;

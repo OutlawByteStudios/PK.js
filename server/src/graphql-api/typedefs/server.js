@@ -36,6 +36,7 @@ export default gql`
     player(guid: String!): Player
     players(guidLike: String): [Player]
     onlinePlayers: [Player]
+    richestPlayers(limit: Int): [Player]
 
     playerName(name: String!): PlayerName
     playerNames(nameLike: String): [PlayerName]

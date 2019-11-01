@@ -17,6 +17,7 @@ import OwnPlayer from './player-portal/own-player';
 import OwnPlayerNames from './player-portal/own-player-names';
 import BanList from './server-info/ban-list';
 import OnlinePlayers from './server-info/online-players';
+import RichestPlayers from './server-info/richest-players';
 import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
 import ConfigManager from './server-management/configs/config-manager';
@@ -50,6 +51,7 @@ export {
   OwnPlayerNames,
   BanList,
   OnlinePlayers,
+  RichestPlayers,
   ServerStatus,
   ClearPlayerLocations,
   ConfigManager,

@@ -25,6 +25,14 @@ export default {
 
     onlinePlayers: async parent => {
       return Player.find({ server: parent.id, online: { $gt: 0 } });
+    },
+
+    richestPlayers: async (parent, filter) => {
+      return Player.find({
+        server: parent.id
+      })
+        .sort({ bankGold: -1 })
+        .limit(30 || filter.limit);
     }
   },
 
