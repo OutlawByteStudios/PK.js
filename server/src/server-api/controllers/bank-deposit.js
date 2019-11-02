@@ -2,12 +2,7 @@ import { encode } from 'mb-warband-parser';
 import { Player } from '../../models';
 import { BANK_DEPOSIT } from '../actions';
 
-import bankLock from '../../utils/bank-lock';
-
 export default async function(ctx) {
-  // return no / bogus response if bank is locked.
-  if (bankLock.isLocked(ctx.query.guid)) ctx.body = encode([-1]);
-  bankLock.lock(ctx.query.guid);
 
   // get player value to check increment value with
   const player = await Player.findOne({
@@ -37,6 +32,4 @@ export default async function(ctx) {
     amount - amountToDeposit, // amount go give back to player-selector
     'Bank limit reached.' // reason for above
   ]);
-
-  bankLock.unlock(ctx.query.guid);
 }
