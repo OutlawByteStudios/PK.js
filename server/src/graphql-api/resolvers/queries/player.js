@@ -38,36 +38,42 @@ export default {
 
   Player: {
     ipBanned: async parent => {
-      const usedIPs = (await IPRecord.find({
-        server: parent.server,
-        player: parent.guid
-      })).map(record => record.ip);
+      const usedIPs = (
+        await IPRecord.find({
+          server: parent.server,
+          player: parent.guid
+        })
+      ).map(record => record.ip);
 
-      const linkedGUIDs = (await IPRecord.find({
-        server: parent.server,
-        ip: { $in: usedIPs }
-      })).map(record => record.player);
+      const linkedGUIDs = (
+        await IPRecord.find({
+          server: parent.server,
+          ip: { $in: usedIPs }
+        })
+      ).map(record => record.player);
 
-      const linkedIPBannedGUIDs = (await Ban.find({
-        $or: [
-          {
-            ipBan: true,
-            player: { $in: linkedGUIDs },
-            unbannedDate: null,
-            startDate: { $lte: Date.now() },
-            endDate: null,
-            server: parent.server
-          },
-          {
-            ipBan: true,
-            player: { $in: linkedGUIDs },
-            unbannedDate: null,
-            startDate: { $lte: Date.now() },
-            endDate: { $gt: Date.now() },
-            server: parent.server
-          }
-        ]
-      })).map(ban => ban.player);
+      const linkedIPBannedGUIDs = (
+        await Ban.find({
+          $or: [
+            {
+              ipBan: true,
+              player: { $in: linkedGUIDs },
+              unbannedDate: null,
+              startDate: { $lte: Date.now() },
+              endDate: null,
+              server: parent.server
+            },
+            {
+              ipBan: true,
+              player: { $in: linkedGUIDs },
+              unbannedDate: null,
+              startDate: { $lte: Date.now() },
+              endDate: { $gt: Date.now() },
+              server: parent.server
+            }
+          ]
+        })
+      ).map(ban => ban.player);
 
       return Player.find({
         server: parent.server,

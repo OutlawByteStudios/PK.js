@@ -20,10 +20,7 @@ export default {
       const configFilePath = path.join(configFolderPath, `/${filter.name}`);
       if (!fs.existsSync(configFilePath)) return null;
 
-      const rawConfig = await fs.promises.readFile(
-        path.join(configFilePath),
-        'utf8'
-      );
+      const rawConfig = await fs.promises.readFile(configFilePath, 'utf8');
 
       return {
         server: parent.id,
@@ -42,7 +39,7 @@ export default {
         throw new Error('Server folder does not exist!');
 
       const configFolderPath = path.join(currentGameserverPath, '/Configs');
-      if (!fs.existsSync(currentGameserverPath))
+      if (!fs.existsSync(configFolderPath))
         throw new Error('Configs folder does not exist!');
 
       let files = fs.readdirSync(configFolderPath, {

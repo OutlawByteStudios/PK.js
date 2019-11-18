@@ -5,8 +5,6 @@ import {
   Button
 } from 'reactstrap';
 
-import Auth from '../../../../../utils/auth';
-
 import { SERVER_CONFIG } from '../../../../../graphql/queries';
 import { SAVE_SERVER_CONFIG } from '../../../../../graphql/mutations';
 
@@ -55,8 +53,7 @@ class SaveServerConfig extends React.Component{
                   variables: {
                     serverID: this.props.serverID,
                     name: this.props.name,
-                    config: this.props.config,
-                    steamID: Auth.claim.steamID
+                    config: this.props.config
                   }
                 })
               }}

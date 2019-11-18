@@ -49,6 +49,11 @@ const ServerSchema = new mongoose.Schema({
   gameserverRestartCron: {
     type: String,
     default: serverConfig.gameserverRestartCron
+  },
+
+  useCustomBanList: {
+    type: Boolean,
+    default: false
   }
 });
 ServerSchema.plugin(AutoIncrement, { inc_field: 'id', id: 'serverID' });

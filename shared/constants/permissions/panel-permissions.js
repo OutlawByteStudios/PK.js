@@ -24,6 +24,10 @@ module.exports = [
     permission: 'editConfigFiles'
   },
   {
+    label: 'Manage Custom Ban List',
+    permission: 'editCustomBanList'
+  },
+  {
     label: 'Manage Server Instance',
     permission: 'manageServerInstance'
   },

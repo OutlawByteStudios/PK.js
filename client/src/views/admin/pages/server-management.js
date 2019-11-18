@@ -15,6 +15,7 @@ import Layout from '../layout/layout';
 import {
   ClearPlayerLocations,
   ConfigManager,
+  CustomBanListManager,
   DeleteServer,
   RenameServer,
   ServerController,
@@ -47,6 +48,11 @@ class ServerManagement extends React.Component {
           <Row className="mt-4">
             <Col>
               <ConfigManager serverID={serverID} />
+            </Col>
+          </Row>
+          <Row className="mt-4">
+            <Col>
+              <CustomBanListManager serverID={serverID} />
             </Col>
           </Row>
           <Row className="mt-4">

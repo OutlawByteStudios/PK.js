@@ -15,10 +15,12 @@ import BAN_LIST from './server-info/ban-list';
 import ONLINE_PLAYERS from './server-info/online-players';
 import RICHEST_PLAYERS from './server-info/richest-players';
 import SERVER_STATUS from './server-info/server-status';
+import CUSTOM_BAN_LIST from './server-management/custom-ban-list';
 import SERVER_CONFIG from './server-management/server-config';
 import SERVER_CONFIGS from './server-management/server-configs';
 import SERVER_CONTROLLER from './server-management/server-controller';
 import SERVER_MODULES from './server-management/server-modules';
+import USE_CUSTOM_BAN_LIST from './server-management/use-custom-ban-list';
 import PLAYER_STATS_GRAPH from './stats/player-stats-graph';
 import SERVER_STATS_GRAPH from './stats/server-stats-graph';
 import ITEM_IDS from './item-ids';
@@ -45,10 +47,12 @@ export {
   ONLINE_PLAYERS,
   RICHEST_PLAYERS,
   SERVER_STATUS,
+  CUSTOM_BAN_LIST,
   SERVER_CONFIG,
   SERVER_CONFIGS,
   SERVER_CONTROLLER,
   SERVER_MODULES,
+  USE_CUSTOM_BAN_LIST,
   PLAYER_STATS_GRAPH,
   SERVER_STATS_GRAPH,
   ITEM_IDS,

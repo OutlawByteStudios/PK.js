@@ -1,15 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import { UserInputError } from 'apollo-server-koa';
-
 import { AdminPermission, Server } from '../../../../models';
-import { validatorServerName } from 'shared/validators';
-import gameserverStatusCache from '../../../../utils/gameserver-status-cache';
 
 import {
   parseConfig,
   buildConfig
 } from '../../../../utils/server-config-parser';
+import path from 'path';
+import fs from 'fs';
 
 export default async (parent, args, context) => {
   /* Check for Permissions */
@@ -19,32 +15,23 @@ export default async (parent, args, context) => {
   const requestingAdmin = await AdminPermission.findOne({
     server: args.serverID,
     admin: context.user,
-    renameServer: { $gt: 0 }
+    editCustomBanList: { $gt: 0 }
   });
 
   if (requestingAdmin === null)
     throw new Error('You do not have permission to do that.');
-
-  /* Create Server Document in DB */
-  if (!validatorServerName(args.name))
-    throw new UserInputError('Invalid Server Name.');
-
-  if (await gameserverStatusCache.gameserverOnline(args.serverID))
-    throw new Error('Server must be offline to be renamed.');
 
   const server = await Server.findOneAndUpdate(
     {
       id: args.serverID
     },
     {
-      name: args.name
+      useCustomBanList: args.on
     },
     {
       new: true
     }
   );
-
-  if (server === null) throw new Error('Server not found.');
 
   const currentGameserverPath = path.join(
     require.resolve('gameservers'),

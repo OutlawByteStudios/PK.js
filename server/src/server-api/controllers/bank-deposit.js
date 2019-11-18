@@ -3,7 +3,6 @@ import { Player } from '../../models';
 import { BANK_DEPOSIT } from '../actions';
 
 export default async function(ctx) {
-
   // get player value to check increment value with
   const player = await Player.findOne({
     server: ctx.query.serverID,

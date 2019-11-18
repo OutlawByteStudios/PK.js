@@ -14,6 +14,7 @@ import WIPE_PLAYER_NAME from './player-management/wipe-player-name';
 import LINK_STEAM_USER from './player-portal/link-steam-user';
 import CLEAR_PLAYER_LOCATIONS from './server-management/clear-player-locations';
 import CREATE_SERVER from './server-management/create-server';
+import SAVE_CUSTOM_BAN_LIST from './server-management/save-custom-ban-list';
 import DELETE_SERVER from './server-management/delete-server';
 import REINSTALL_SERVER from './server-management/reinstall-server';
 import RENAME_SERVER from './server-management/rename-server';
@@ -21,6 +22,7 @@ import RESTART_SERVER from './server-management/restart-server';
 import SAVE_SERVER_CONFIG from './server-management/save-server-config'
 import START_SERVER from './server-management/start-server';
 import STOP_SERVER from './server-management/stop-server';
+import USE_CUSTOM_BAN_LIST from './server-management/use-custom-ban-list';
 
 
 export {
@@ -40,11 +42,13 @@ export {
   LINK_STEAM_USER,
   CLEAR_PLAYER_LOCATIONS,
   CREATE_SERVER,
+  SAVE_CUSTOM_BAN_LIST,
   DELETE_SERVER,
   REINSTALL_SERVER,
   RENAME_SERVER,
   RESTART_SERVER,
   SAVE_SERVER_CONFIG,
   START_SERVER,
-  STOP_SERVER
+  STOP_SERVER,
+  USE_CUSTOM_BAN_LIST
 }

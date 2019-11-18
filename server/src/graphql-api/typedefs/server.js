@@ -24,6 +24,9 @@ export default gql`
     gameserverLastConfig: String
       @fieldViewPermission(requiresAdminPermission: "viewServerFiles")
 
+    useCustomBanList: Boolean
+    customBanList: String
+
     apiKey: String @fieldViewPermission(requiresAdminPermission: "viewAPIKey")
 
     serverConfigFile(name: String!): ServerConfigFile

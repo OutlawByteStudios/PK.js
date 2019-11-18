@@ -30,9 +30,11 @@ export default gql`
       name: String!
       config: String!
     ): ServerConfigFile
+    
+    useCustomBanList(serverID: Int!, on: Boolean!): Server
+    saveCustomBanList(serverID: Int!, customBanList: String!): Server
 
     startServer(serverID: Int!, module: String!, config: String!): Server
-
     stopServer(serverID: Int!): Server
     restartServer(serverID: Int!): Server
 

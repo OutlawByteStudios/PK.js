@@ -22,6 +22,7 @@ import ServerStatus from './server-info/server-status';
 import ClearPlayerLocations from './server-management/clear-player-locations';
 import ConfigManager from './server-management/configs/config-manager';
 import CreateServer from './server-management/create-server';
+import CustomBanListManager from './server-management/custom-ban-list/custom-ban-list-manager';
 import DeleteServer from './server-management/delete-server';
 import ReinstallServer from './server-management/reinstall-server';
 import RenameServer from './server-management/rename-server';
@@ -56,6 +57,7 @@ export {
   ClearPlayerLocations,
   ConfigManager,
   CreateServer,
+  CustomBanListManager,
   DeleteServer,
   ReinstallServer,
   RenameServer,

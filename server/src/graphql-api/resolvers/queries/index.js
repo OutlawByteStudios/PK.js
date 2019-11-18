@@ -1,6 +1,7 @@
 import AdminLog from './admin-log';
 import AdminPermission from './admin-permission';
 import Ban from './ban';
+import CustomBanList from './custom-ban-list';
 import IPRecord from './ip-record';
 import Item from './item';
 import LogSearch from './log-search';
@@ -22,6 +23,7 @@ export default [
   AdminLog,
   AdminPermission,
   Ban,
+  CustomBanList,
   IPRecord,
   Item,
   LogSearch,

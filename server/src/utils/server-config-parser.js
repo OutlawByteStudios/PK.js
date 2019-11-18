@@ -40,7 +40,9 @@ const buildConfig = (server, config) => {
     `set_steam_port ${assignPorts(server.id).steamPort}\r\n` +
     `set_add_to_game_servers_list 1\r\n` +
     `set_server_log_folder logs\r\n` +
-    `set_server_ban_list_file bans.txt\r\n` +
+    `set_server_ban_list_file ${
+      server.useCustomBanList ? 'custom_bans.txt ' : 'bans.txt'
+    }\r\n` +
     `${parseConfig(config)}\r\n` +
     'start'
   );
