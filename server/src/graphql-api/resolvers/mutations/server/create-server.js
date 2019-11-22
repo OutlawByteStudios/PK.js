@@ -51,13 +51,17 @@ export default async (parent, args, context) => {
   server = server[0];
 
   /* Create AdminPermisisons Document in DB */
-  let adminPermission = { server: server.id, admin: context.user };
+  let adminPermission = { server: server.id };
 
   for (let permission of panelPermissions.concat(gamePermissions)) {
     adminPermission[permission.permission] = 2;
   }
 
-  await AdminPermission.create(adminPermission);
+  const panelAdmins = await SteamUser.find({ panelAdmin: true });
+  for(let panelAdmin of panelAdmins){
+    adminPermission.admin = panelAdmin.steamID;
+    await AdminPermission.create(adminPermission);
+  }
 
   await installServer(server);
 
