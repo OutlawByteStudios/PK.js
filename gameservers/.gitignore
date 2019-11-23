@@ -4,4 +4,4 @@
 ## Keep package.json, index.js and configs
 !package.json
 !index.js
-!default/Configs/*.txt
+!default/Configs/PK_cfg.txt
