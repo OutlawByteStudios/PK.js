@@ -1,7 +1,7 @@
 ## Ignore All Files
 *
 
-## Keep package.json, index.js and .gitkeeps
+## Keep package.json, index.js and configs
 !package.json
-!.gitkeep
 !index.js
+!Configs/PK_cfg.txt
