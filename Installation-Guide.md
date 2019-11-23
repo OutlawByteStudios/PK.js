@@ -15,6 +15,11 @@
 <br><br>
 </div>
 
+## Improving the Guide
+**This guide is a work in progress.**
+
+Please make an issue / contact a developer if you have any issues setting up PK.js to allow us to improve the guide to better support others in the future.
+
 ## Prerequisite
  * Dedicated Server Box or a Virtual Private Server. Note, performance may lack with the latter.
  * The above should be running a Linux OS. Note, Debian and Ubuntu are the only distributions that have been tested, so it is recommend you use one of those.
