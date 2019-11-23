@@ -84,7 +84,7 @@ yarn run build
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 ```
-15. pm2 can be used to manage the server instance. To create the pm2 job, run:
+15. pm2 can be used to manage the server instance. To create the pm2 job, run the below. Please see pm2 guides for further information on how to control the server instance via pm2.
 ```bash
 pm2 start npm --env production --name "PKjs" -- start
 ```
