@@ -36,7 +36,7 @@ PK.js has many features that make it simple and easy for you to run a Persistent
  * Player Portal - Give players the ability to see what is going on in the server, their save information and their offences from the web panel.
  * And Much more!
  
-**PK.js now supports non Persistent Kingdom modules.** Servers of other modules can be started from the Server Management tab and a custom ban list is provided to allow you to control bans in those modules.
+**PK.js now supports non Persistent Kingdoms modules.** Servers of other modules can be started from the Server Management tab and a custom ban list is provided to allow you to control bans in those modules.
 
 ## Installation Guide
 Please see our [Installation Guide](Installation-Guide.md) for guidance on how to install PK.js.
