@@ -1,0 +1,62 @@
+#SERVER SETTINGS
+set_server_name Test_Server
+set_port 7240
+set_upload_limit 580000 # set this to the correct value for your server bandwidth (explained in the previously linked tutorial)
+
+set_max_players 64 64
+set_add_to_game_servers_list 1
+
+set_welcome_message Welcome!
+
+#ADMIN & SERVER MANAGEMENT SETTINGS
+set_pass_admin password
+
+set_maps_voteable 0
+set_kick_voteable 0
+set_ban_voteable 0
+
+#MAP / MISSION SETTINGS
+set_mission conquest # other options: quick_battle, no_money
+
+set_map scene_1 # this is the map that is started first
+add_map scene_2 # this adds scene_2 to the rotation
+
+#DAY / NIGHT CYCLE
+limit_sapper 1 # turn on day / night cycle. any other value is off.
+limit_rocket 1800 # length of day in seconds. the minimum is 1800 and if what you state is lower than that, 1800 is taken as the value automatically
+limit_artillery 400 # scale_for_skyboxes, the default is 400 and you should test other values and their effects yourself. You should use it when the skybox sizes don’t suffice your map’s boundaries
+
+#COMBAT SETTINGS
+set_control_block_direction 1
+set_combat_speed 2
+set_respawn_period 10
+
+#REQUIRED
+set_factions 0 0 # this is ignored by the mod, but warband needs it to start
+
+#PW/PK SETTINGS
+#SCENE SETTINGS
+set_map_time_limit 1440 # start next scene once a day
+set_force_default_armor 2 # control of weather systems if added to the scene: 0 is always fine, 1 is always raining, 2 is dynamic
+scale_squad 50 # percentage of stockpile target count setting to start the mission with
+
+#PLAYER SETTINGS
+set_disallow_ranged_weapons 0 # set this to 1 to disable combat troops respawning with partial health
+set_starting_gold 100 # adjustment in percent to the default starting gold of 30 – 100
+
+set_combat_gold_bonus 10 # gold drop on death percentage for commoners
+set_round_gold_bonus 20 # gold drop on death percentage
+
+set_ghost_mode 2 # enable spectator 0=free camera, 1=camera locked on players, 2=off, 3=off with death cam
+
+#PERFORMANCE SETTINGS
+set_round_max_seconds 600 # time in seconds before items are removed; set the same value in module.ini for mission_object_prune_time
+set_num_bots_voteable 50 # set this to the maximum number of herd animals
+
+#MISC
+set_team_point_limit 0 # if 1 or above, when a faction holds all castles for this many minutes, the mission ends
+set_valid_vote_ratio 60 # percent of players voting yes for a poll to succeed
+
+limit_officer 0 # disable global chat 0=toggle current value, 1=force off (default on server start is on)
+
+start
