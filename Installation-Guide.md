@@ -3,15 +3,15 @@
 ![Logo](client/src/assets/img/brand/pk-js.png)
 #### Persistent Kingdoms Script Set & Admin Panel
 
-![GitHub release](https://img.shields.io/github/release/SmartPhoenix/PK.js.svg?style=flat-square)
-![GitHub contributors](https://img.shields.io/github/contributors/SmartPhoenix/PK.js.svg?style=flat-square)
+![GitHub release](https://img.shields.io/github/release/OutlawByteStudios/PK.js.svg?style=flat-square)
+![GitHub contributors](https://img.shields.io/github/contributors/OutlawByteStudios/PK.js.svg?style=flat-square)
 [![Discord](https://img.shields.io/discord/450652484634148875.svg?style=flat-square&logo=discord)](https://discord.gg/jwM54DB)
 [![Steam Group](https://img.shields.io/badge/Steam-Group-lightgrey.svg?style=flat-square)](https://steamcommunity.com/groups/persistent-kingdoms)
 
-[![GitHub issues](https://img.shields.io/github/issues/SmartPhoenix/PK.js.svg?style=flat-square)](https://github.com/SmartPhoenix/PK.js/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/SmartPhoenix/PK.js.svg?style=flat-square)](https://github.com/SmartPhoenix/PK.js/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/OutlawByteStudios/PK.js.svg?style=flat-square)](https://github.com/OutlawByteStudios/PK.js/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/OutlawByteStudios/PK.js.svg?style=flat-square)](https://github.com/OutlawByteStudios/PK.js/pulls)
 
-##### [PK.js Module System](https://github.com/SmartPhoenix/PK.js-Module-System)
+##### [PK.js Module System](https://github.com/OutlawByteStudios/PK.js-Module-System)
 <br><br>
 </div>
 
@@ -46,7 +46,7 @@ npm install -g pm2
 1. [Create a new user](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart) named `pkjs`. Login as this new user.
 2. Clone the PK.js repository into the new user's home folder.
 ```bash
-git clone https://github.com/SmartPhoenix/PK.js
+git clone https://github.com/OutlawByteStudios/PK.js
 ```
 3. Enter the repository directory.
 ```bash
@@ -96,7 +96,7 @@ When creating a new server in the panel, the server files are copied from a defa
 1. Download the [Warband dedicated server files](https://www.taleworlds.com/en/Games/Warband/Download) from the Taleworld's website.
 2. Download [WSE1](https://forums.taleworlds.com/index.php?topic=324890.0) from the Taleworld's forums. Move the contents into the dedicated server files folder.
 3. All sample config files and bat files can be removed from the dedicated server files.
-4. Download the [PK.js Module System](https://github.com/SmartPhoenix/PK.js-Module-System) and copy the `Persistent Kingdoms` folder into the `Modules` folder in the dedicated server files.
+4. Download the [PK.js Module System](https://github.com/OutlawByteStudios/PK.js-Module-System) and copy the `Persistent Kingdoms` folder into the `Modules` folder in the dedicated server files.
 5. Copy the contents of the dedicated server files content to the default server folder located at `gameservers/default/` inside the PK.js repository. This can be done via SFTP. 
 
 You can now go ahead and create servers in the PK.js Admin Panel. This feature is only accessable to the first user to login to the panel, so make sure that is you!
@@ -113,7 +113,7 @@ A game server's config can be changed in the PK.js admin panel in the Server Man
 ### Changing the Scene
 All major PK scenes are preinstalled in the module system, so only the server config needs changing.
 
-Insert the relevant scene number on this line in the config: `set_map scene_<scene number>`. The scene numbers are the same as those found in the [PK Scene Pack](https://github.com/SmartPhoenix/PK-Scene-Pack).
+Insert the relevant scene number on this line in the config: `set_map scene_<scene number>`. The scene numbers are the same as those found in the [PK Scene Pack](https://github.com/OutlawByteStudios/PK-Scene-Pack).
 
 **Please ensure you abide by the PK Scene Pack license.**
 
@@ -153,6 +153,6 @@ This can be done while the server is live, providing it has been tested to ensur
 You should check the log_engine executable has permissions 755 as it can be lost during an update causing the log search to stop working.
 
 ### Updating the Module System
-If the module system needs to be updated then the new build from the [PK.js Module System repository](https://github.com/SmartPhoenix/PK.js-Module-System)  should be updated in the default server directory and then the other servers should be reinstalled via the "Reinstall Server" option in the Server Management tab of the admin panel. 
+If the module system needs to be updated then the new build from the [PK.js Module System repository](https://github.com/OutlawByteStudios/PK.js-Module-System)  should be updated in the default server directory and then the other servers should be reinstalled via the "Reinstall Server" option in the Server Management tab of the admin panel. 
 
 Note all changes to the server folder made after the server was created will be lost, including log files, config files, custom maps, etc.

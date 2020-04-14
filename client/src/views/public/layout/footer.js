@@ -20,7 +20,7 @@ class Footer extends React.Component {
                   © 2019{" "}
                   <a
                     className="font-weight-bold ml-1"
-                    href="https://github.com/SmartPhoenix"
+                    href="https://github.com/OutlawByteStudios"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -32,7 +32,7 @@ class Footer extends React.Component {
                 <Nav className="nav-footer justify-content-center justify-content-xl-end">
                   <NavItem>
                     <NavLink
-                      href="https://github.com/SmartPhoenix/Persistent-Kingdoms"
+                      href="https://github.com/OutlawByteStudios/Persistent-Kingdoms"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -42,7 +42,7 @@ class Footer extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://github.com/SmartPhoenix/PK.js"
+                      href="https://github.com/OutlawByteStudios/PK.js"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
